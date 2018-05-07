@@ -1,0 +1,336 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+  src: local('Material Icons'),
+       local('MaterialIcons-Regular'),
+       url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+       url(/fonts/MaterialIcons-Regular.woff) format('woff'),
+       url(/fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  /*font-family: 'Material Icons';*/
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  vertical-align: middle;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Tauri', sans-serif;
+	background: #222;
+	color: #eee;
+}
+
+p { margin: 0; padding: 0; }
+
+a { color: #ccc; }
+
+form label, form input { vertical-align: middle; }
+
+div#heure {
+	position: fixed;
+	top: -40pt;
+	right: 8pt;
+	width: 3.8em;
+	padding: 0.2em;
+	padding-top: 40pt;
+	margin: 0;
+
+	background-color: navy;
+	border-radius: 0.56em;
+	border: white 0.18em solid;
+	font-size: 125%;
+
+	z-index: 1;
+	cursor: default;
+
+	text-align: center;
+}
+div#heure small {
+  color: #59599e;
+}
+
+div#more_options { cursor: default; }
+
+
+div.train {
+	padding: 5pt;
+	background-color: #0c5da5;
+}
+
+div.train:nth-child(2n) {
+	background-color: #043a6b;
+}
+
+div.train:nth-child(2n+1) {
+	background-color: #0c5da5;
+}
+
+div.train span.heure-train { font-size: 125%; }
+div.train.delayed span.heure-train { font-size: 100%; }
+div.train.canceled span.heure-train { font-size: 90%; }
+
+span.destination-train img {
+	position: relative;
+	top: 0.1em;
+	height: 1em;
+}
+
+div.train div.desserte-train {
+	padding: 0;
+
+	color: #679fd2;
+
+	height: 1.3em;
+	line-height: 1.5em;
+	overflow: hidden;
+
+	word-wrap: break-word;
+}
+
+div.train div.desserte-train p {
+	position: relative;
+	bottom: 0.1em;
+
+	transition-property: bottom;
+	transition-duration: 0.9s;
+	transition-timing-function: linear;
+	-webkit-transition-property: bottom;
+	-webkit-transition-duration: 0.9s;
+	-webkit-transition-timing-function: linear;
+}
+
+div.train div.heure-train.approche { text-decoration: blink; line-height: 0.9; }
+
+div.train.delayed:nth-child(2n)   { background-color: #a05522; }
+div.train.delayed:nth-child(2n+1) { background-color: #b63; }
+div.train.canceled { background-color: #b44; }
+
+div.train.delayed div.desserte-train,
+	div.train.delayed span.numero-train { color: #d9a45a; }
+div.train.canceled div.desserte-train,
+	div.train.canceled span.numero-train { color: #e89090; }
+
+
+span.numero-train { color: #679fd2; }
+
+
+input#s2 {
+	display: none;
+	font-family: 'Tauri', sans-serif;
+	font-size: 11pt;
+	max-width: 22em;
+	color: white;
+	border: solid #777 1px;
+	background-color: #333;
+	padding: 0.2em 0.1em;
+	margin-left: 0.2em;
+}
+
+::input-placeholder {
+	font-style: italic;
+	color: #666;
+}
+
+input:-moz-placeholder {
+	font-style: italic;
+	color: #666;
+}
+
+input::-moz-placeholder {
+	font-style: italic;
+	color: #666;
+}
+
+input:-ms-input-placeholder {
+	font-style: italic;
+	color: #666;
+}
+
+input::-webkit-input-placeholder {
+	font-style: italic;
+	color: #666;
+}
+
+div#autocomp {
+	position: absolute;
+	display: none;
+
+	font-family: sans-serif;
+	background-color: white;
+	border: 1px solid black;
+	color: black;
+	padding: 0.2em;
+
+	z-index: 2;
+}
+div#autocomp ul, div#line_filter ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+div#autocomp ul {
+	display: table;
+}
+div#autocomp ul li {
+	padding: 0;
+	display: table-row;
+}
+div#autocomp ul li.autocompItemHilight {
+	background-color: #ccc;
+	min-width: 12em;
+	cursor: pointer;
+}
+div#autocomp ul li span.name, div#autocomp ul li span.trig { display: table-cell; padding: 0.2em; height: 1.4em }
+div#autocomp ul li span.name { padding-right: 1em; }
+div#autocomp ul li span.name span.lines { text-align: right; }
+div#autocomp ul li span.trig { font-family: monospace; font-style: italic; color: #666; }
+div#autocomp img, div#line_filter img { position: relative; top: 0.2em; padding-left: 0.2em; max-height: 1.4em; }
+
+div#line_filter ul { margin-top: 0.3em; }
+div#line_filter li { text-decoration: underline; }
+div#line_filter img { position: relative; left: -2px; top: 4px; }
+div#line_filter li.selected { font-weight: bold; }
+div#line_filter { display: inline-block; }
+
+div#error {
+	z-index: 10;
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+div.error-overlay {
+	left: 0;
+	top: 0;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+p#errormsg {
+	display: block;
+	padding: 0.4em;
+	background-color: #b40404;
+	text-align: center;
+	color: white;
+}
+
+div#disclaimer {
+	text-align: center;
+}
+
+
+div#heure, div#listetrains { cursor: default; }
+
+div#listemessages { max-height: 6em; overflow: hidden; cursor: default; }
+
+div#conteneurmessages {
+	position: relative;
+	bottom: 0px;
+	transition-timing-function: linear;
+	-webkit-transition-timing-function: linear;
+}
+
+div.message {
+    background: #d09955;
+    color: black;
+    height: 5em;
+    max-height: 5em;
+    overflow: hidden;
+    padding: 0.5em 0.5em 0.5em 3em;
+}
+
+
+
+
+
+div.subwindow {
+	border-top: 1px solid gray;
+	padding-top: 1em;
+	padding-bottom: 2em;
+	width: 100%;
+
+	background-color: rgba(34, 34, 34, 0.8);
+	z-index: 1;
+}
+
+div.subwindow p {
+	text-align: center;
+}
+
+div.subwindow div.content {
+	transition-property: height;
+	transition-duration: 0.9s;
+	transition-timing-function: linear;
+	-webkit-transition-property: height;
+	-webkit-transition-duration: 0.9s;
+	-webkit-transition-timing-function: linear;
+}
+	
+
+
+div#footer {
+	border-top: 1px solid gray;
+	padding-top: 1em;
+
+	width: 100%;
+	z-index: 1;
+	background-color: #222;
+
+	text-align: center;
+}
+
+
+.button { 
+	position: relative;
+	display: inline-block;
+	text-align: center;
+	margin: 0 3px;
+	color: white; background: #555; padding: 4px;
+	min-width: 2.5em; line-height: 1.7em;
+	border-radius: 4px;
+	box-shadow: 0 4px 0 0 #333;
+	vertical-align: middle;
+}
+
+.button:hover { background: #666; cursor: pointer; }
+.button.pressed:active, .button:active { top: 4px; box-shadow: 0 0; }
+.button.pressed { top: 2px; box-shadow: 0 2px 0 0 #333; background: #567; }
+.button.pressed:hover { background: #678; cursor: pointer; }
+
+select {
+	background-color: #444;
+	border-color: #666;
+	border-radius: 3px;
+	color: white;
+}
+
+select option {
+	background-color: #444;
+	color: white;
+}
