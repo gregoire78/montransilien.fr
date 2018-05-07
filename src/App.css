@@ -334,3 +334,7 @@ select option {
 	background-color: #444;
 	color: white;
 }
+
+small.route-name {
+	font-size: 14px;
+}
