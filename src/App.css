@@ -1,13 +1,20 @@
 @font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(/fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
-  src: local('Material Icons'),
-       local('MaterialIcons-Regular'),
-       url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
-       url(/fonts/MaterialIcons-Regular.woff) format('woff'),
-       url(/fonts/MaterialIcons-Regular.ttf) format('truetype');
+	font-family: 'Material Icons';
+	font-style: normal;
+	font-weight: 400;
+	src: url(/fonts/MaterialIcons-Regular.eot); /* For IE6-8 */
+	src: local('Material Icons'),
+		local('MaterialIcons-Regular'),
+		url(/fonts/MaterialIcons-Regular.woff2) format('woff2'),
+		url(/fonts/MaterialIcons-Regular.woff) format('woff'),
+		url(/fonts/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'sncf';
+	font-style: normal;
+	font-weight: 400;
+	src: url('./fonts/achemine-webfont.ttf') format('truetype');
 }
 
 .material-icons {
@@ -41,7 +48,7 @@
 body {
 	margin: 0;
 	padding: 0;
-	font-family: 'Tauri', sans-serif;
+	font-family: 'sncf', sans-serif;
 	background: #222;
 	color: #eee;
 }
@@ -108,21 +115,30 @@ div.train div.desserte-train {
 
 	height: 1.3em;
 	line-height: 1.5em;
-	overflow: hidden;
+	/*overflow: hidden;*/
 
 	word-wrap: break-word;
-}
 
+	width: calc(100vw - 9.5em);
+}
+div.train div.desserte-train marquee {
+	position: relative;
+	bottom: 0.1em;
+}
 div.train div.desserte-train p {
 	position: relative;
 	bottom: 0.1em;
 
-	transition-property: bottom;
+	overflow: hidden;
+    /*text-overflow: ellipsis;*/
+    white-space: nowrap;
+
+	/*transition-property: bottom;
 	transition-duration: 0.9s;
 	transition-timing-function: linear;
 	-webkit-transition-property: bottom;
 	-webkit-transition-duration: 0.9s;
-	-webkit-transition-timing-function: linear;
+	-webkit-transition-timing-function: linear;*/
 }
 
 div.train div.heure-train.approche { text-decoration: blink; line-height: 0.9; }
@@ -138,79 +154,6 @@ div.train.canceled div.desserte-train,
 
 
 span.numero-train { color: #679fd2; }
-
-
-input#s2 {
-	display: none;
-	font-family: 'Tauri', sans-serif;
-	font-size: 11pt;
-	max-width: 22em;
-	color: white;
-	border: solid #777 1px;
-	background-color: #333;
-	padding: 0.2em 0.1em;
-	margin-left: 0.2em;
-}
-
-::input-placeholder {
-	font-style: italic;
-	color: #666;
-}
-
-input:-moz-placeholder {
-	font-style: italic;
-	color: #666;
-}
-
-input::-moz-placeholder {
-	font-style: italic;
-	color: #666;
-}
-
-input:-ms-input-placeholder {
-	font-style: italic;
-	color: #666;
-}
-
-input::-webkit-input-placeholder {
-	font-style: italic;
-	color: #666;
-}
-
-div#autocomp {
-	position: absolute;
-	display: none;
-
-	font-family: sans-serif;
-	background-color: white;
-	border: 1px solid black;
-	color: black;
-	padding: 0.2em;
-
-	z-index: 2;
-}
-div#autocomp ul, div#line_filter ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
-div#autocomp ul {
-	display: table;
-}
-div#autocomp ul li {
-	padding: 0;
-	display: table-row;
-}
-div#autocomp ul li.autocompItemHilight {
-	background-color: #ccc;
-	min-width: 12em;
-	cursor: pointer;
-}
-div#autocomp ul li span.name, div#autocomp ul li span.trig { display: table-cell; padding: 0.2em; height: 1.4em }
-div#autocomp ul li span.name { padding-right: 1em; }
-div#autocomp ul li span.name span.lines { text-align: right; }
-div#autocomp ul li span.trig { font-family: monospace; font-style: italic; color: #666; }
-div#autocomp img, div#line_filter img { position: relative; top: 0.2em; padding-left: 0.2em; max-height: 1.4em; }
 
 div#line_filter ul { margin-top: 0.3em; }
 div#line_filter li { text-decoration: underline; }
