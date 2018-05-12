@@ -49,7 +49,7 @@ body {
 	margin: 0;
 	padding: 0;
 	font-family: 'sncf', sans-serif;
-	background: #222;
+	background: /*#222;*/#265277;
 	color: #eee;
 }
 
@@ -99,8 +99,8 @@ div.train:nth-child(2n+1) {
 }
 
 div.train span.heure-train { font-size: 125%; }
-div.train.delayed span.heure-train { font-size: 100%; }
-div.train.canceled span.heure-train { font-size: 90%; }
+/*div.train.delayed span.heure-train { font-size: 100%; }*/
+/*div.train.canceled span.heure-train { font-size: 100%; }*/
 
 span.destination-train img {
 	position: relative;
@@ -114,7 +114,7 @@ div.train div.desserte-train {
 	color: #679fd2;
 
 	height: 1.3em;
-	line-height: 1.5em;
+	line-height: 1em;
 	/*overflow: hidden;*/
 
 	word-wrap: break-word;
@@ -123,13 +123,13 @@ div.train div.desserte-train {
 }
 div.train div.desserte-train marquee {
 	position: relative;
-	bottom: 0.1em;
+	bottom: -0.1em;
 }
 div.train div.desserte-train p {
 	position: relative;
-	bottom: 0.1em;
+	bottom: -0.1em;
 
-	overflow: hidden;
+	/*overflow: hidden;*/
     /*text-overflow: ellipsis;*/
     white-space: nowrap;
 
@@ -187,7 +187,6 @@ div#disclaimer {
 	text-align: center;
 }
 
-
 div#heure, div#listetrains { cursor: default; }
 
 div#listemessages { max-height: 6em; overflow: hidden; cursor: default; }
@@ -207,10 +206,6 @@ div.message {
     overflow: hidden;
     padding: 0.5em 0.5em 0.5em 3em;
 }
-
-
-
-
 
 div.subwindow {
 	border-top: 1px solid gray;
@@ -234,8 +229,6 @@ div.subwindow div.content {
 	-webkit-transition-duration: 0.9s;
 	-webkit-transition-timing-function: linear;
 }
-	
-
 
 div#footer {
 	border-top: 1px solid gray;
@@ -247,7 +240,6 @@ div#footer {
 
 	text-align: center;
 }
-
 
 .button { 
 	position: relative;
@@ -280,4 +272,11 @@ select option {
 
 small.route-name {
 	font-size: 14px;
+}
+
+div.station-name {
+	width: 100%;
+    text-align: center;
+    background-color: #164770;
+    padding: 2px 0;
 }

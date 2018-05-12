@@ -10,9 +10,9 @@ import './metrodna.css';
 function ListOfTrainLoading() {
     return (
         <div>
-            <b>Chargement ...</b>
+            <div className="station-name">Chargement ...</div>
             <div id="listetrains">
-                {[0,1,2,3,4,5].map((train, i) => {
+                {[0,1,2,3,4,5,6].map((train, i) => {
                     return (
                         <div className="train" key={i}>
                             <div className="force-height"></div>
@@ -42,7 +42,7 @@ function ListOfTrainLoading() {
   function ListOfTrainLoaded(props) {
     return (
         <div>
-            <b>{props.data.station}</b>
+            <div className="station-name">{props.data.station}</div>
             <div id="listetrains">
                 {props.data.trains.map((train, i) => {
                     return (
