@@ -278,5 +278,6 @@ div.station-name {
 	width: 100%;
     text-align: center;
     background-color: #164770;
-    padding: 2px 0;
+	padding: 2px 0;
+	cursor: none;
 }
