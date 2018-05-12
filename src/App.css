@@ -124,6 +124,7 @@ div.train div.desserte-train {
 div.train div.desserte-train marquee {
 	position: relative;
 	bottom: -0.1em;
+	height: 100%;
 }
 div.train div.desserte-train p {
 	position: relative;
