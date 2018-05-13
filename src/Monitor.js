@@ -29,7 +29,7 @@ function ListOfTrainLoading() {
                                     <span className="transilien symbole" style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} /> 
                                     <span className="rer symbole" style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} /> Chargement ...
                                 </span>
-                                <div className="desserte-train"><p>Chargement ...</p></div>
+                                <div className="desserte-train"><marquee scrollamount="0">...</marquee></div>
                             </div>
                         </div>
                     )
@@ -63,7 +63,7 @@ function ListOfTrainLoading() {
                                 </span>
                                 <div className="desserte-train" title={train.journey_text}>
                                     {/*<VelocityComponent animation={{left: '-100%'}} axis="x" runOnMount={true} duration={5000} loop={true} >*/}
-                                    {train.journey_text ? <marquee>{train.journey_text}</marquee> : <p>Desserte indisponible</p>}
+                                    {train.journey_text ? <marquee>{train.journey_text}</marquee> : <marquee scrollamount="0">Desserte indisponible</marquee>}
                                     {/*</VelocityComponent>*/}
                                 </div>
                             </div>
