@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import moment from 'moment-timezone';
 import Marquee from './Marquee';
+import {API_IP} from './config';
 //import {VelocityComponent} from 'velocity-react';
 import 'moment/locale/fr';
 import './App.css';
@@ -104,7 +105,7 @@ export default class Monitor extends React.Component {
     }
 
     getTrainList() {
-        axios.get(`http://localhost:3000?code_uic=${this.props.match.params.uic}`)
+        axios.get(`http://${API_IP}?code_uic=${this.props.match.params.uic}`)
         .then(response => {
             //console.log(response.data)
             this.setState({trains: response.data.trains, station: response.data.station, isLoading: false})
