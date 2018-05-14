@@ -17,6 +17,9 @@
 	src: url('./fonts/achemine-webfont.ttf') format('truetype');
 }
 
+.Marquee { overflow-x: hidden; }
+.MarqueeContent { display: inline-block;}
+
 .material-icons {
   /*font-family: 'Material Icons';*/
   font-weight: normal;
@@ -110,36 +113,32 @@ span.destination-train img {
 
 div.train div.desserte-train {
 	padding: 0;
-
 	color: #679fd2;
-
-	/*height: 1.3em;
-	line-height: 1em;*/
-	/*overflow: hidden;*/
-
-	word-wrap: break-word;
-
+	height: 1.3em;
+	/*line-height: 1em;*/
+	overflow: hidden;
+	white-space: nowrap;
 	width: calc(100vw - 9.5em);
 }
-div.train div.desserte-train marquee {
+/*div.train div.desserte-train marquee {
 	position: relative;
 	bottom: -0.1em;
-}
-div.train div.desserte-train p {
+}*/
+/*div.train div.desserte-train p {
 	position: relative;
 	bottom: -0.1em;
 
-	/*overflow: hidden;*/
-    /*text-overflow: ellipsis;*/
+	overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
 
-	/*transition-property: bottom;
+	transition-property: bottom;
 	transition-duration: 0.9s;
 	transition-timing-function: linear;
 	-webkit-transition-property: bottom;
 	-webkit-transition-duration: 0.9s;
-	-webkit-transition-timing-function: linear;*/
-}
+	-webkit-transition-timing-function: linear;
+}*/
 
 div.train div.heure-train.approche { text-decoration: blink; line-height: 0.9; }
 
@@ -280,4 +279,8 @@ div.station-name {
     background-color: #164770;
 	padding: 2px 0;
 	cursor: none;
+}
+div.station-name span {
+	vertical-align: middle;
+	line-height: normal;
 }

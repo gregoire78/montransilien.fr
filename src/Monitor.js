@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import moment from 'moment-timezone';
+import Marquee from './Marquee';
 //import {VelocityComponent} from 'velocity-react';
 import 'moment/locale/fr';
 import './App.css';
@@ -8,10 +9,18 @@ import './big.css';
 import './metrodna.css';
 
 function ListOfTrainLoading() {
+    let stationHeight;
+    let stationElem;
     return (
         <div>
-            <div className="station-name">Chargement ...</div>
-            <div id="listetrains">
+            <div ref={elem => stationElem = elem} className="station-name"><span>Chargement ...</span></div>
+            <div ref={(elem) => {
+                if(elem){
+                    stationHeight = window.innerHeight - elem.clientHeight;
+                    stationElem.style.height = stationHeight+"px";
+                    stationElem.style.lineHeight = stationHeight+"px";
+                }
+            }} id="listetrains">
                 {[0,1,2,3,4,5,6].map((train, i) => {
                     return (
                         <div className="train" key={i}>
@@ -29,7 +38,7 @@ function ListOfTrainLoading() {
                                     <span className="transilien symbole" style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} /> 
                                     <span className="rer symbole" style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} /> Chargement ...
                                 </span>
-                                <div className="desserte-train"><marquee scrollamount="0">...</marquee></div>
+                                <div className="desserte-train"><p>...</p></div>
                             </div>
                         </div>
                     )
@@ -40,10 +49,17 @@ function ListOfTrainLoading() {
   }
   
   function ListOfTrainLoaded(props) {
+    let stationHeight;
+    let stationElem;
     return (
         <div>
-            <div className="station-name">{props.data.station}</div>
-            <div id="listetrains">
+            <div ref={elem => stationElem = elem} className="station-name"><span>{props.data.station}</span></div>
+            <div ref={(elem) => {
+                if(elem){
+                    stationHeight = window.innerHeight - elem.clientHeight;
+                    if(props.data.trains.length === 7) { stationElem.style.height = stationHeight+"px";stationElem.style.lineHeight = stationHeight+"px";}
+                }
+            }} id="listetrains">
                 {props.data.trains.map((train, i) => {
                     return (
                         <div className={"train" + (train.state ? (train.state === "Retardé" ? " delayed" : ((train.state === "Supprimé") ? " canceled" : "")) : "")} key={i}>
@@ -63,7 +79,7 @@ function ListOfTrainLoading() {
                                 </span>
                                 <div className="desserte-train" title={train.journey_text}>
                                     {/*<VelocityComponent animation={{left: '-100%'}} axis="x" runOnMount={true} duration={5000} loop={true} >*/}
-                                    {train.journey_text ? <marquee>{train.journey_text}</marquee> : <marquee scrollamount="0">Desserte indisponible</marquee>}
+                                    {train.journey_text ? <Marquee velocity={0.06}>{train.journey_text}</Marquee> : <p>Desserte indisponible</p>}
                                     {/*</VelocityComponent>*/}
                                 </div>
                             </div>
@@ -123,8 +139,6 @@ export default class Monitor extends React.Component {
         // setState method is used to update the state
         this.setState({ currentTime: moment().locale('fr') });
     }
-
-    list
 
 //<img src="#" alt={train.route.line}/>
     render()  {
