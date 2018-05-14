@@ -26,7 +26,9 @@ export default class Marquee extends React.Component
     start ()
     {
         if (this.outerDiv && this.innerDiv && !this.tickRequested){
-            setTimeout(this.startInit.bind(this), this.getWaitBeforeStart())
+            if(this.outerDiv.clientWidth - this.innerDiv.clientWidth < 0 ) {
+                setTimeout(this.startInit.bind(this), this.getWaitBeforeStart())
+            }
         }
     }
     startInit(){
