@@ -36,8 +36,8 @@ function ListOfTrainLoading() {
                             </div>
                             <div className="group">
                                 <span className="destination-train">
-                                    <span className="transilien symbole" style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} /> 
-                                    <span className="rer symbole" style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} /> Chargement ...
+                                    <span className="transilien symbole dark" style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} /> 
+                                    <span className="rer symbole dark" style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} /> Chargement ...
                                 </span>
                                 <div className="desserte-train"><p>...</p></div>
                             </div>
@@ -58,7 +58,8 @@ function ListOfTrainLoading() {
             <div ref={(elem) => {
                 if(elem){
                     stationHeight = window.innerHeight - elem.clientHeight;
-                    if(props.data.trains.length === 7) { stationElem.style.height = stationHeight+"px";stationElem.style.lineHeight = stationHeight+"px";}
+                    if(props.data.trains.length >= 6) { stationElem.style.height = stationHeight+"px"; stationElem.style.lineHeight = stationHeight+"px";}
+                    else {stationElem.style.height = "100px"; stationElem.style.lineHeight = "100px";}
                 }
             }} id="listetrains">
                 {props.data.trains.map((train, i) => {
@@ -74,14 +75,12 @@ function ListOfTrainLoading() {
                             </div>
                             <div className="group">
                                 <span className="destination-train" title={train.route.long_name}>
-                                    <span className={train.route.type + " symbole"} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />
-                                    <span className={train.route.type + " ligne" + train.route.line} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />
+                                    <span className={train.route.type + " symbole dark"} style={train.route.type !== 'ter' ? {height: "1em", width: "1em", top: "0.1em", left: "0"} : {height: "1em", top: "0.1em", left: "0"}} />
+                                    {train.route.type !== 'ter' ? <span className={train.route.type + " ligne" + train.route.line} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />: ''}
                                     {" "+train.terminus}
                                 </span>
                                 <div className="desserte-train" title={train.journey_text}>
-                                    {/*<VelocityComponent animation={{left: '-100%'}} axis="x" runOnMount={true} duration={5000} loop={true} >*/}
                                     {train.journey_text ? <Marquee velocity={0.06}>{train.journey_text}</Marquee> : <p>Desserte indisponible</p>}
-                                    {/*</VelocityComponent>*/}
                                 </div>
                             </div>
                         </div>
