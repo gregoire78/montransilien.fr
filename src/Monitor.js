@@ -36,8 +36,8 @@ function ListOfTrainLoading() {
                             </div>
                             <div className="group">
                                 <span className="destination-train">
-                                    <span className="transilien symbole dark" style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} /> 
-                                    <span className="rer symbole dark" style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} /> Chargement ...
+                                    <span className="transilien symbole dark alpha" style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} /> 
+                                    <span className="rer symbole dark alpha" style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} /> Chargement ...
                                 </span>
                                 <div className="desserte-train"><p>...</p></div>
                             </div>
@@ -75,8 +75,8 @@ function ListOfTrainLoading() {
                             </div>
                             <div className="group">
                                 <span className="destination-train" title={train.route.long_name}>
-                                    <span className={train.route.type + " symbole dark"} style={train.route.type !== 'ter' ? {height: "1em", width: "1em", top: "0.1em", left: "0"} : {height: "1em", top: "0.1em", left: "0"}} />
-                                    {train.route.type !== 'ter' ? <span className={train.route.type + " ligne" + train.route.line} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />: ''}
+                                    <span className={train.route.type + " symbole dark alpha"} style={train.route.type !== 'ter' ? {height: "1em", width: "1em", top: "0.1em", left: "0"} : {height: "1em", top: "0.1em", left: "0"}} />
+                                    {train.route.type !== 'ter' ? <span className={train.route.type + " alpha ligne" + train.route.line} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />: ''}
                                     {" "+train.terminus}
                                 </span>
                                 <div className="desserte-train" title={train.journey_text}>

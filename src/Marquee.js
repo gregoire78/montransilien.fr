@@ -37,12 +37,14 @@ export default class Marquee extends React.Component
     }
     tick_ (timestamp)
     {
-        if (!this.outerDiv || !this.innerDiv)
+        if (!this.outerDiv || !this.innerDiv || this.outerDiv.clientWidth - this.innerDiv.clientWidth > 0 )
         {
             // one or more components have been unmounted.  stop animation
             // until they are remounted (if ever)
             this.tickRequested = false;
             return;
+        } else {
+            this.tickRequested = true;
         }
 
         if (this.lastTimestamp !== null)
