@@ -26,9 +26,9 @@ export default class Marquee extends React.Component
     start ()
     {
         if (this.outerDiv && this.innerDiv && !this.tickRequested){
-            if(this.outerDiv.clientWidth - this.innerDiv.clientWidth < 0 ) {
+            //if(this.outerDiv.clientWidth - this.innerDiv.clientWidth < 0 ) {
                 setTimeout(this.startInit.bind(this), this.getWaitBeforeStart())
-            }
+            //}
         }
     }
     startInit(){
@@ -37,14 +37,17 @@ export default class Marquee extends React.Component
     }
     tick_ (timestamp)
     {
-        if (!this.outerDiv || !this.innerDiv || this.outerDiv.clientWidth - this.innerDiv.clientWidth > 0 )
+        if (this.outerDiv.clientWidth - this.innerDiv.clientWidth >= 0 && this.tickRequested)
         {
             // one or more components have been unmounted.  stop animation
             // until they are remounted (if ever)
+            this.setOuterRef = this.setOuterRef_.bind(this);
+            this.setContentRef = this.setContentRef_.bind(this);
+            this.tick = this.tick_.bind(this);
             this.tickRequested = false;
+            this.lastTimestamp = null;
+            this.x = 0;
             return;
-        } else {
-            this.tickRequested = true;
         }
 
         if (this.lastTimestamp !== null)
@@ -61,7 +64,8 @@ export default class Marquee extends React.Component
     {
         this.x -= deltaT * this.getVelocity ();
         if (this.x + this.innerDiv.clientWidth < 0)
-            this.x += this.innerDiv.clientWidth + this.outerDiv.clientWidth;
+            //this.x = 0; // repart au début
+            this.x += this.innerDiv.clientWidth + this.outerDiv.clientWidth; // repart de l'autre bout de l'écran
         this.innerDiv.style.transform = this.calculateTransform();
     }
 
