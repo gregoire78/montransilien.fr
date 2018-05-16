@@ -71,8 +71,7 @@ div#heure {
 	padding-top: 40pt;
 	margin: 0;
 
-	/*background-color: navy;*/
-	background-color: black;
+	background-color: navy;
 	border-radius: 0.56em;
 	border: white 0.18em solid;
 	font-size: 125%;
@@ -83,8 +82,7 @@ div#heure {
 	text-align: center;
 }
 div#heure small {
-  /*color: #59599e;*/
-  color: #616060;
+  color: #59599e;
 }
 
 div#more_options { cursor: default; }
@@ -96,13 +94,11 @@ div.train {
 }
 
 div.train:nth-child(2n) {
-	/*background-color: #043a6b;*/
-	background-color: #131313;
+	background-color: #043a6b;
 }
 
 div.train:nth-child(2n+1) {
-	/*background-color: #0c5da5;*/
-	background-color: #020202;
+	background-color: #0c5da5;
 }
 
 div.train span.heure-train { font-size: 125%; }
@@ -117,8 +113,7 @@ span.destination-train img {
 
 div.train div.desserte-train {
 	padding: 0;
-	/*color: #679fd2;*/
-	color: #505050;
+	color: #679fd2;
 	height: 1.3em;
 	/*line-height: 1em;*/
 	overflow: hidden;
@@ -157,7 +152,7 @@ div.train.canceled div.desserte-train,
 	div.train.canceled span.numero-train { color: #e89090; }
 
 
-span.numero-train { /*color: #679fd2;*/color : #505050; }
+span.numero-train { color: #679fd2; }
 
 div#line_filter ul { margin-top: 0.3em; }
 div#line_filter li { text-decoration: underline; }
@@ -281,8 +276,7 @@ small.route-name {
 div.station-name {
 	width: 100%;
     text-align: center;
-	/*background-color: #164770;*/
-	background-color: #191818;
+	background-color: #164770;
 	/*padding: 2px 0;*/
 	cursor: none;
 }

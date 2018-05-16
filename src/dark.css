@@ -1,0 +1,28 @@
+div#heure {
+    background-color: black;
+}
+div#heure small {
+    color: #616060;
+}
+div.train {
+	padding: 5pt;
+	background-color: #000000;
+}
+
+div.train:nth-child(2n) {
+	background-color: #000b29;
+}
+
+div.train:nth-child(2n+1) {
+	background-color: #020202;
+}
+
+div.train div.desserte-train {
+    color: #9c9c9c;
+}
+
+span.numero-train { color : #9c9c9c; }
+
+div.station-name {
+	background-color: #191818;
+}
