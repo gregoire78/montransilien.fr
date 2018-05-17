@@ -1,28 +1,41 @@
-div#heure {
-    background-color: black;
+body {
+	background: black;
+	color: #eee;
 }
+
+/*div#listetrains {
+    border-collapse: collapse;
+}*/
+
+div#heure {
+	background-color: black;
+	border: #9c9c9c 0.18em solid;
+}
+
 div#heure small {
     color: #616060;
 }
+
 div.train {
 	padding: 5pt;
 	background-color: #000000;
+	/*border-top: 1px #b2cbff dashed;*/
+	background-image: linear-gradient(to right, #cc9900 33%, rgba(199, 52, 52, 0) 0%);
+	background-position: top;
+	background-size: 18px 1px;
+	background-repeat: repeat-x;
 }
 
-div.train:nth-child(2n) {
-	background-color: #000b29;
-}
-
-div.train:nth-child(2n+1) {
-	background-color: #020202;
-}
-
-div.train div.desserte-train {
+div.train div.desserte-train, span.numero-train {
     color: #9c9c9c;
 }
 
-span.numero-train { color : #9c9c9c; }
-
+div.train:nth-child(2n) ,
+div.train:nth-child(2n+1),
 div.station-name {
-	background-color: #191818;
+	background-color: #000000;
+}
+
+div.train span.heure-train {
+    color: #ffcf42;
 }

@@ -59,7 +59,7 @@ function ListOfTrainLoading() {
             <div ref={(elem) => {
                 if(elem){
                     stationHeight = window.innerHeight - elem.clientHeight;
-                    if(props.data.trains.length >= 6) { stationElem.style.height = stationHeight+"px"; stationElem.style.lineHeight = stationHeight+"px";}
+                    if(props.data.trains.length >= 7) { stationElem.style.height = stationHeight+"px"; stationElem.style.lineHeight = stationHeight+"px";}
                     else {stationElem.style.height = "100px"; stationElem.style.lineHeight = "100px";}
                 }
             }} id="listetrains">
