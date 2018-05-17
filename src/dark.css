@@ -20,9 +20,9 @@ div.train {
 	padding: 5pt;
 	background-color: #000000;
 	/*border-top: 1px #b2cbff dashed;*/
-	background-image: linear-gradient(to right, #cc9900 33%, rgba(199, 52, 52, 0) 0%);
-	background-position: top;
-	background-size: 18px 1px;
+	background-image: linear-gradient(to right, #5a5a5a 33%, rgba(199, 52, 52, 0) 0%);
+    background-position: top;
+    background-size: 12px 1px;
 	background-repeat: repeat-x;
 }
 
