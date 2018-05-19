@@ -148,8 +148,10 @@ div.train.canceled { background-color: #b44; }
 
 div.train.delayed div.desserte-train,
 	div.train.delayed span.numero-train { color: #d9a45a; }
+span.train.delayed span.dot-separator { color : #ffcf8d }
 div.train.canceled div.desserte-train,
 	div.train.canceled span.numero-train { color: #e89090; }
+span.train.delayed span.dot-separator { color : #ffbdb8 }	
 
 
 span.numero-train { color: #679fd2; }
