@@ -284,3 +284,7 @@ div.station-name {
 	vertical-align: middle;
 	line-height: normal;
 }*/
+
+span.dot-separator {
+	color: #008e68;
+}

@@ -87,7 +87,7 @@ export default class Marquee extends React.Component
     {
         return (
             <div className="Marquee" ref={this.setOuterRef}>
-                <div className="MarqueeContent" ref={this.setContentRef} style={{transform: this.calculateTransform()}}>{this.props.children}</div>
+                <div className="MarqueeContent" ref={this.setContentRef} style={{transform: this.calculateTransform()}} dangerouslySetInnerHTML={{__html: this.props.children}}></div>
             </div>
         );
     }

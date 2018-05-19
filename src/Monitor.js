@@ -81,7 +81,7 @@ function ListOfTrainLoading() {
                                     {" "+train.terminus}
                                 </span>
                                 <div className="desserte-train" title={train.journey_text}>
-                                    {train.journey_text ? <Marquee velocity={0.06}>{train.journey_text}</Marquee> : <p>Desserte indisponible</p>}
+                                    {train.journey_text ? <Marquee velocity={0.06}>{train.journey_text_html}</Marquee> : <p>Desserte indisponible</p>}
                                 </div>
                             </div>
                         </div>
