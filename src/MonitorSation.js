@@ -10,8 +10,6 @@ import './big.css';
 import './metrodna.css';
 
 function ListOfTrainLoading() {
-    let stationHeight;
-    let stationElem;
     return (
         <div>
             <div className="station-name"><span>Chargement ...</span></div>
