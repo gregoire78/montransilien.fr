@@ -79,7 +79,7 @@ function ListOfTrainLoading() {
                                     {train.route.type !== 'ter' ? <span className={train.route.type + " alpha ligne" + train.route.line} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />: ''}
                                     {" "+train.terminus} <small>{train.route.infos}</small>
                                 </span>
-                                {train.lane !== "BL" ? <span className="voie-train">{train.lane}</span> : ''}
+                                {train.lane !== " " && train.lane !== "BL" ? <span className="voie-train">{train.lane}</span> : ''}
                                 <div className="desserte-train" title={train.journey_text}>
                                     {train.journey_text ? <Marquee velocity={0.06}>{train.journey_text_html}</Marquee> : <p>Desserte indisponible</p>}
                                 </div>
