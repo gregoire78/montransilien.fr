@@ -14,14 +14,8 @@ function ListOfTrainLoading() {
     let stationElem;
     return (
         <div>
-            <div ref={elem => stationElem = elem} className="station-name"><span>Chargement ...</span></div>
-            <div ref={(elem) => {
-                if(elem){
-                    stationHeight = window.innerHeight - elem.clientHeight;
-                    stationElem.style.height = stationHeight+"px";
-                    stationElem.style.lineHeight = stationHeight+"px";
-                }
-            }} id="listetrains">
+            <div className="station-name"><span>Chargement ...</span></div>
+            <div id="listetrains">
                 {[0,1,2,3,4,5,6].map((train, i) => {
                     return (
                         <div className="train" key={i}>
@@ -29,7 +23,7 @@ function ListOfTrainLoading() {
                             <div className="group group-left">
                                 <span className="mission-train"></span>
                                 <span className="numero-train">ABCD</span>
-                                <span className="retard-train">en attente</span><br className="after-retard-train"/>
+                                <span className="retard-train">attente</span><br className="after-retard-train"/>
                             </div>
                             <div className="group group-middle">
                                 <span className="heure-train">--:--</span>

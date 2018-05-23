@@ -178,7 +178,7 @@ div.train.canceled div.desserte-train,
 div.train.canceled span.dot-separator { color : #ffbdb8; }
 
 
-span.numero-train { color: #679fd2; }
+span.numero-train { color: #679fd2; min-width: 75px;}
 
 div#line_filter ul { margin-top: 0.3em; }
 div#line_filter li { text-decoration: underline; }
