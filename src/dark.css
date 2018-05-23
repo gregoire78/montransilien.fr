@@ -40,6 +40,8 @@ div.train span.heure-train {
     color: #ffcf42;
 }
 
+div.train span.dot-separator { color : #0061ca; }
+
 div.train.delayed:nth-child(2n)   { background-color: #a05522; }
 div.train.delayed:nth-child(2n+1) { background-color: #b63; }
 div.train.canceled { background-color: #b44; }
