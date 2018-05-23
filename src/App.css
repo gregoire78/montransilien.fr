@@ -106,17 +106,17 @@ div.train:nth-child(2n+1) {
 
 span.voie-train {
 	text-align: center;
-	width: 1.2em;
-	height: 1.2em;
+	width: 1.3em;
+	height: 1.3em;
 	border: 3px solid #ccc;
-	border-radius: 3px;
-	/* padding-right: 2px; */
+	border-radius: 5px;
+	 padding: 2px;
 	/* letter-spacing: -2px; */
 	right: 0;
 	position: absolute;
-	margin-top: 10px;
-	margin-right: 10px;
-	line-height: 1.25em;
+	margin-top: 8px;
+	margin-right: 8px;
+	line-height: 1.3em;
 }
 
 div.train span.heure-train { font-size: 125%; }
@@ -131,6 +131,7 @@ span.destination-train img {
 
 span.destination-train small {
 	font-size: 40%;
+	font-weight: lighter;
 	font-style: italic;
 }
 
