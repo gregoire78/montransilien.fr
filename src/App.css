@@ -84,6 +84,9 @@ div#heure {
 div#heure small {
   color: #59599e;
 }
+div#heure.voie {
+	right: 45pt;
+}
 
 div#more_options { cursor: default; }
 
@@ -101,6 +104,21 @@ div.train:nth-child(2n+1) {
 	background-color: #0c5da5;
 }
 
+span.voie-train {
+	text-align: center;
+	width: 1.2em;
+	height: 1.2em;
+	border: 3px solid #ccc;
+	border-radius: 3px;
+	/* padding-right: 2px; */
+	/* letter-spacing: -2px; */
+	right: 0;
+	position: absolute;
+	margin-top: 10px;
+	margin-right: 10px;
+	line-height: 1.25em;
+}
+
 div.train span.heure-train { font-size: 125%; }
 /*div.train.delayed span.heure-train { font-size: 100%; }*/
 /*div.train.canceled span.heure-train { font-size: 100%; }*/
@@ -109,6 +127,11 @@ span.destination-train img {
 	position: relative;
 	top: 0.1em;
 	height: 1em;
+}
+
+span.destination-train small {
+	font-size: 40%;
+	font-style: italic;
 }
 
 div.train div.desserte-train {
@@ -129,8 +152,8 @@ div.train div.desserte-train {
 	bottom: -0.1em;
 
 	overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 
 	transition-property: bottom;
 	transition-duration: 0.9s;
@@ -200,12 +223,12 @@ div#conteneurmessages {
 }
 
 div.message {
-    background: #d09955;
-    color: black;
-    height: 5em;
-    max-height: 5em;
-    overflow: hidden;
-    padding: 0.5em 0.5em 0.5em 3em;
+	background: #d09955;
+	color: black;
+	height: 5em;
+	max-height: 5em;
+	overflow: hidden;
+	padding: 0.5em 0.5em 0.5em 3em;
 }
 
 div.subwindow {
@@ -277,7 +300,7 @@ small.route-name {
 
 div.station-name {
 	width: 100%;
-    text-align: center;
+	text-align: center;
 	background-color: #164770;
 	/*padding: 2px 0;*/
 	cursor: none;
