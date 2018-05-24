@@ -52,3 +52,7 @@ div.train.delayed span.dot-separator { color : #ffcf8d; }
 div.train.canceled div.desserte-train,
 	div.train.canceled span.numero-train { color: #e89090; }
 div.train.canceled span.dot-separator { color : #ffbdb8; }
+
+span.voie-train {
+	background-color: #000023;
+}

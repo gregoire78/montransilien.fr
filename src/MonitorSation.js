@@ -60,7 +60,7 @@ function ListOfTrainLoading() {
                             <div className="force-height"></div>
                             <div className="group group-left">
                                 <span className="numero-train">{train.name}</span>
-                                <span className="retard-train">{train.state ? train.state : train.late}</span><br className="after-retard-train"/>
+                                <span className="retard-train">{train.state}</span><br className="after-retard-train"/>
                             </div>
                             <div className="group group-middle">
                                 <span className="heure-train">{train.expectedDepartureTime}</span>
