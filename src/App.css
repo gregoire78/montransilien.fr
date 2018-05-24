@@ -105,18 +105,21 @@ div.train:nth-child(2n+1) {
 }
 
 span.voie-train {
-	text-align: center;
+	display: inline-flex;
+    align-items: center;
+    justify-content: center;
+	/*text-align: center;*/
+	/*line-height: 1.3em;*/
 	width: 1.3em;
 	height: 1.3em;
-	border: 0.1em solid #ccc;
+	border: .1em solid #ccc;
 	border-radius: 5px;
-	padding: 0.05em;
+	padding: .05em;
 	/* letter-spacing: -2px; */
 	right: 0;
 	position: absolute;
 	margin-top: 0.2em;
 	margin-right: 0.2em;
-	line-height: 1.3em;
 }
 
 div.train span.heure-train { font-size: 125%; }
