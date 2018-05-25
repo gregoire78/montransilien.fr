@@ -7,6 +7,7 @@ import {API_IP} from './config';
 import 'moment/locale/fr';
 import './App.css';
 import './big.css';
+import './small.css';
 import './metrodna.css';
 
 function ListOfTrainLoading() {
@@ -19,7 +20,6 @@ function ListOfTrainLoading() {
                         <div className="train" key={i}>
                             <div className="force-height"></div>
                             <div className="group group-left">
-                                <span className="mission-train"></span>
                                 <span className="numero-train">ABCD</span>
                                 <span className="retard-train">attente</span><br className="after-retard-train"/>
                             </div>
@@ -50,13 +50,13 @@ function ListOfTrainLoading() {
             <div ref={(elem) => {
                 if(elem){
                     stationHeight = window.innerHeight - elem.clientHeight;
-                    if(props.data.trains.length >= 7) { stationElem.style.height = stationHeight+"px"; stationElem.style.lineHeight = stationHeight+"px";}
+                    if(props.data.trains.length >= 7 && stationHeight <= 200) { stationElem.style.height = stationHeight+"px"; stationElem.style.lineHeight = stationHeight+"px";}
                     else {stationElem.style.height = "100px"; stationElem.style.lineHeight = "100px";}
                 }
             }} id="listetrains">
                 {props.data.trains.map((train, i) => {
                     return (
-                        <div className={"train" + (train.state ? (train.state === "retardé" ? " delayed" : ((train.state === "rupprimé") ? " canceled" : "")) : "")} key={i}>
+                        <div className={"train" + (train.state ? (train.state === "retardé" ? " delayed" : ((train.state === "supprimé") ? " canceled" : "")) : "")} key={i}>
                             <div className="force-height"></div>
                             <div className="group group-left">
                                 <span className="numero-train">{train.name}</span>
@@ -69,7 +69,7 @@ function ListOfTrainLoading() {
                                 <span className="destination-train" title={train.route.long_name}>
                                     <span className={train.route.type + " symbole light alpha"} style={train.route.type !== 'ter' ? {height: "1em", width: "1em", top: "0.1em", left: "0"} : {height: "1em", top: "0.1em", left: "0"}} />
                                     {train.route.type !== 'ter' ? <span className={train.route.type + " alpha ligne" + train.route.line} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />: ''}
-                                    {" "+train.terminus} <small>{train.route.infos}</small>
+                                    {" "+train.terminus}
                                 </span>
                                 {train.lane !== " " && train.lane !== "BL" ? <span className="voie-train">{train.lane}</span> : ''}
                                 <div className="desserte-train" title={train.journey_text}>

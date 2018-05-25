@@ -106,7 +106,7 @@ div.train:nth-child(2n+1) {
 
 span.voie-train {
 	display: inline-flex;
-    align-items: center;
+    /*align-items: flex-end;*/
     justify-content: center;
 	/*text-align: center;*/
 	/*line-height: 1.3em;*/
@@ -118,7 +118,6 @@ span.voie-train {
 	/* letter-spacing: -2px; */
 	right: 0;
 	position: absolute;
-	margin-top: 0.2em;
 	margin-right: 0.2em;
 }
 
@@ -145,7 +144,6 @@ div.train div.desserte-train {
 	/*line-height: 1em;*/
 	overflow: hidden;
 	white-space: nowrap;
-	width: calc(100vw - 9.5em);
 }
 /*div.train div.desserte-train marquee {
 	position: relative;

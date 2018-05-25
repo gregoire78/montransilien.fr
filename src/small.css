@@ -1,13 +1,21 @@
-body { font-size: 11pt; }
-div#heure { display: none; }
-div#haut { padding: 0.9em 0.9em 1.0em 0.7em; }
+@media screen and (max-width: 480px) {
+	body { font-size: 11pt; }
+	div#heure { display: none; }
+	div#haut { padding: 0.9em 0.9em 1.0em 0.7em; }
 
-div.group { display: inline; }
+	div.group { display: inline; }
+	div.group-middle { margin-right: 4px; }
 
-span.mission-train:after, 
-	span.retard-train:before { color: white; content: " â€¢ "; }
-span.destination-train { font-size: 140%; }
-div#line_filter ul:before { content: "LignesÂ : "; }
+	span.mission-train:after, 
+		span.retard-train:before { color: white; content: "\00a0•\00a0"; color: yellowgreen}
+	span.destination-train { font-size: 140%; }
+	div#line_filter ul:before { content: "LignesÂ : "; }
+
+	span.voie-train {
+		align-items: flex-end;
+	}
 
 
-.no-data { display: none; }
+	.no-data { display: none; }
+}
+
