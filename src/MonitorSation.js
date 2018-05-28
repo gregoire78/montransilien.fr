@@ -3,6 +3,7 @@ import axios from 'axios';
 import moment from 'moment-timezone';
 import Marquee from './Marquee';
 import {API_IP} from './config';
+//import {Helmet} from 'react-helmet';
 //import {VelocityComponent} from 'velocity-react';
 import 'moment/locale/fr';
 import './App.css';
@@ -142,6 +143,9 @@ export default class MonitorStation extends React.Component {
         )
         return (
             <div>
+                {/*<Helmet defer={true} >
+                    <link rel="stylesheet" type="text/css" href="dark.css" />
+                </Helmet>*/}
                 <div id="heure" className="voie" title={moment(this.state.currentTime).format('LLLL')}>{moment(this.state.currentTime).format('LT')} <small>{moment(this.state.currentTime).format('ss')}</small></div>
                 {listOfTrains}
             </div>
