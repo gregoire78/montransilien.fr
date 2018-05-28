@@ -78,7 +78,7 @@ export default class Marquee extends React.Component
     getVelocity ()
     {
         const varition1 = (this.outerDiv.clientWidth*100)/this.innerDiv.clientWidth;
-        const varition = 100 - Math.round(varition1*Math.pow(10, 2))/Math.pow(10, 2);        
+        const varition = 100 - Math.round(varition1*Math.pow(10, 2))/Math.pow(10, 2);
         /*if(varition > 50)
             return this.props.velocity ? this.props.velocity : 0.12;
         else*/

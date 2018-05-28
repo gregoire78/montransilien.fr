@@ -181,12 +181,6 @@ div.train.canceled span.dot-separator { color : #ffbdb8; }
 
 span.numero-train { color: #679fd2; min-width: 75px;}
 
-div#line_filter ul { margin-top: 0.3em; }
-div#line_filter li { text-decoration: underline; }
-div#line_filter img { position: relative; left: -2px; top: 4px; }
-div#line_filter li.selected { font-weight: bold; }
-div#line_filter { display: inline-block; }
-
 div#error {
 	z-index: 10;
 	position: fixed;
@@ -209,52 +203,7 @@ p#errormsg {
 	color: white;
 }
 
-div#disclaimer {
-	text-align: center;
-}
-
 div#heure, div#listetrains { cursor: default; }
-
-div#listemessages { max-height: 6em; overflow: hidden; cursor: default; }
-
-div#conteneurmessages {
-	position: relative;
-	bottom: 0px;
-	transition-timing-function: linear;
-	-webkit-transition-timing-function: linear;
-}
-
-div.message {
-	background: #d09955;
-	color: black;
-	height: 5em;
-	max-height: 5em;
-	overflow: hidden;
-	padding: 0.5em 0.5em 0.5em 3em;
-}
-
-div.subwindow {
-	border-top: 1px solid gray;
-	padding-top: 1em;
-	padding-bottom: 2em;
-	width: 100%;
-
-	background-color: rgba(34, 34, 34, 0.8);
-	z-index: 1;
-}
-
-div.subwindow p {
-	text-align: center;
-}
-
-div.subwindow div.content {
-	transition-property: height;
-	transition-duration: 0.9s;
-	transition-timing-function: linear;
-	-webkit-transition-property: height;
-	-webkit-transition-duration: 0.9s;
-	-webkit-transition-timing-function: linear;
-}
 
 div#footer {
 	border-top: 1px solid gray;
@@ -314,4 +263,24 @@ div.station-name {
 
 span.dot-separator {
 	color: #e6e014;
+}
+
+
+
+#Home h1 {
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	width: 100%;
+	margin: 0.67em 0;
+
+	font-size: 1.5em;
+}
+#Home h1 span {
+	margin-left: 10px;
+}
+#Home .search {
+	display: flex;
+	align-items:center;
+	justify-content: center;
 }
