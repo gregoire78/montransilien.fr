@@ -1,6 +1,6 @@
 {
   "short_name": "Mon Transilien",
-  "name": "Mon Transilien et RER - transports en IDF",
+  "name": "Mon Transilien - Moniteur",
   "icons": [
     {
       "src": "favicon.ico",
@@ -11,6 +11,11 @@
       "src": "favicon24.ico",
       "sizes": "24x24",
       "type": "image/x-icon"
+    },
+    {
+      "src": "favicon144.png",
+      "size": "144x144",
+      "type": "image/png"
     }
   ],
   "start_url": "./index.html",
