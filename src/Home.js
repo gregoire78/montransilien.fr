@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 import _ from 'lodash';
 import './App.css';
@@ -18,7 +19,7 @@ export class SearchBox extends React.Component {
     componentWillMount () {
         this.handleSearchDebounced = _.debounce(() => {
             this.props.handleSearch.apply(this, [this.state.query]);
-        }, 250);
+        }, 500);
     }
 
     handleChange (event) {
@@ -28,7 +29,7 @@ export class SearchBox extends React.Component {
 
     render () {
         return (
-            <input type="search" value={this.state.query} onChange={this.handleChange} />
+            <input type="search" placeholder={this.props.placeholder} value={this.state.query} onChange={this.handleChange} />
         );
     }
 }
@@ -36,7 +37,7 @@ export class SearchBox extends React.Component {
 export default class Home extends React.Component {
     constructor (props) {
         super(props);
-        this.state = {result: ""};
+        this.state = {result: "", stations: []};
         this.handleSearch = this.handleSearch.bind(this);
     }
 
@@ -48,11 +49,12 @@ export default class Home extends React.Component {
          */
         axios.get(`https://cors-anywhere.herokuapp.com/https://transilien.mobi/getProchainTrainAutocomplete?value=${encodeURI(value)}`)
         .then(response => {
-            console.log(response.data)
-           // this.setState({trains: response.data.trains, station: response.data.station, isLoading: false})
+            if(!response.data.error)
+                this.setState({stations: response.data})
+            else
+                this.setState({stations: []})
         })
         .catch(error => {
-            //console.log("error")
         });
     }
 
@@ -60,6 +62,10 @@ export default class Home extends React.Component {
         /*var xhr = new XMLHttpRequest();
         xhr.open("GET", "https://cors-escape.herokuapp.com/https://transilien.mobi/getProchainTrainAutocomplete?value=cloud");*/
         document.body.style.backgroundColor = "#252438";
+    }
+
+    componentWillUnmount() {
+        document.body.style.backgroundColor = null;
     }
 
     handleSearch(query) {
@@ -72,8 +78,12 @@ export default class Home extends React.Component {
             <div id="Home">
                 <h1><img src="./favicon144.png" height="50px" alt="logo train" /><span>Mon Transilien - Monitoring</span></h1>
                 <div className="search">
-                    <SearchBox query={this.state.result} handleSearch={this.handleSearch} />
-                    <p>You searched for: <strong>{this.state.result}</strong></p>
+                    <SearchBox query={this.state.result} placeholder="Rechercher une gare" handleSearch={this.handleSearch} />
+                    <div>
+                        {this.state.stations.map((v,i) => {
+                            return (<p key={i}><Link to={v.codeTR3A}>{v.name}</Link></p>)
+                        })}
+                    </div>
                 </div>
             </div>
         )

@@ -42,16 +42,16 @@
 		align-items: center;
 	}
 
-	@media screen and (min-width: 600px)  { body {/* font-size: 14pt; */} }
-	@media screen and (min-width: 750px)  { body {/* font-size: 16pt; */} }
-	@media screen and (min-width: 950px)  { body { font-size: 18pt; } }
-	@media screen and (min-width: 1050px) { body { font-size: 20pt; } }
-	@media screen and (min-width: 1200px) { body { font-size: 22pt; } }
-	@media screen and (min-width: 1350px) { body { font-size: 24pt; } }
-	@media screen and (min-width: 1420px) { body { font-size: 26pt; } }
-	@media screen and (min-width: 1570px) { body { font-size: 28pt; } }
-	@media screen and (min-width: 1750px) { body { font-size: 30pt; } }
-	@media screen and (min-width: 1880px) { body { font-size: 32pt; } }
+	@media screen and (min-width: 600px)  { body, input {/* font-size: 14pt; */} }
+	@media screen and (min-width: 750px)  { body, input {/* font-size: 16pt; */} }
+	@media screen and (min-width: 950px)  { body, input { font-size: 18pt; } }
+	@media screen and (min-width: 1050px) { body, input { font-size: 20pt; } }
+	@media screen and (min-width: 1200px) { body, input { font-size: 22pt; } }
+	@media screen and (min-width: 1350px) { body, input { font-size: 24pt; } }
+	@media screen and (min-width: 1420px) { body, input { font-size: 26pt; } }
+	@media screen and (min-width: 1570px) { body, input { font-size: 28pt; } }
+	@media screen and (min-width: 1750px) { body, input { font-size: 30pt; } }
+	@media screen and (min-width: 1880px) { body, input { font-size: 32pt; } }
 
 
 }

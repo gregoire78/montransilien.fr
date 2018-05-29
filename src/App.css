@@ -280,7 +280,22 @@ span.dot-separator {
 	margin-left: 10px;
 }
 #Home .search {
-	display: flex;
+	/*display: flex;
 	align-items:center;
-	justify-content: center;
+	justify-content: center;*/
+	text-align: center;
+}
+
+#Home input {
+	background-color: #747296;
+    border: none;
+	font-family: 'sncf', sans-serif;
+	color: #eee;
+}
+#Home input:focus {
+	outline:0;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #eee;
+    opacity: 1; /* Firefox */
 }
