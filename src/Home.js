@@ -1,12 +1,43 @@
 import React from 'react';
 import axios from 'axios';
+import _ from 'lodash';
 import './App.css';
+
+/**
+ * https://reactjs.org/docs/forms.html#controlled-components
+ * https://codesandbox.io/s/3vw2onz526          https://www.peterbe.com/plog/how-to-throttle-and-debounce-an-autocomplete-input-in-react
+ * https://stackoverflow.com/questions/23123138/perform-debounce-in-react-js
+ */
+export class SearchBox extends React.Component {
+    constructor (props) {
+        super(props);
+        this.state = { query: this.props.query };
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    componentWillMount () {
+        this.handleSearchDebounced = _.debounce(() => {
+            this.props.handleSearch.apply(this, [this.state.query]);
+        }, 250);
+    }
+
+    handleChange (event) {
+        this.setState({query: event.target.value});
+        this.handleSearchDebounced();
+    }
+
+    render () {
+        return (
+            <input type="search" value={this.state.query} onChange={this.handleChange} />
+        );
+    }
+}
 
 export default class Home extends React.Component {
     constructor (props) {
         super(props);
-        this.state = {valueSearch: ''};
-        this.handleChange = this.handleChange.bind(this);
+        this.state = {result: ""};
+        this.handleSearch = this.handleSearch.bind(this);
     }
 
     getDataAutocomplete(value) {
@@ -31,9 +62,9 @@ export default class Home extends React.Component {
         document.body.style.backgroundColor = "#252438";
     }
 
-    handleChange (e) {
-        this.getDataAutocomplete(e.target.value)
-        this.setState({valueSearch: e.target.value});
+    handleSearch(query) {
+        this.getDataAutocomplete(query)
+        this.setState({result: query});
     }
 
     render() {
@@ -41,7 +72,8 @@ export default class Home extends React.Component {
             <div id="Home">
                 <h1><img src="./favicon144.png" height="50px" alt="logo train" /><span>Mon Transilien - Monitoring</span></h1>
                 <div className="search">
-                    <input onChange={this.handleChange} type="text" />
+                    <SearchBox query={this.state.result} handleSearch={this.handleSearch} />
+                    <p>You searched for: <strong>{this.state.result}</strong></p>
                 </div>
             </div>
         )
