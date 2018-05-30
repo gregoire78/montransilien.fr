@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios';
+import Footer from './Footer';
 import _ from 'lodash';
 import './App.css';
 
@@ -78,19 +79,22 @@ export default class Home extends React.Component {
     render() {
         return (
             <div id="Home">
-                <h1><img src="./favicon144.png" alt="logo train" /><span>Mon Transilien</span></h1>
-                <div className="search">
-                    <SearchBox query={this.state.result} placeholder="Rechercher une gare" handleSearch={this.handleSearch} />
-                    <div>
-                        {this.state.stations.map((v,i) => {
-                            return (
-                             <p key={i}style={{marginTop: ".3em"}}>
-                                <Link to={v.codeTR3A} ><LignesSymboles lignes={v.lignes}/> {v.name}</Link>
-                            </p>
-                            )
-                        })}
+                <div className="content">
+                    <h1><img src="./favicon144.png" alt="logo train" /><span>Mon Transilien</span></h1>
+                    <div className="search">
+                        <SearchBox query={this.state.result} placeholder="Rechercher une gare" handleSearch={this.handleSearch} />
+                        <div>
+                            {this.state.stations.map((v,i) => {
+                                return (
+                                <p key={i}style={{marginTop: ".3em"}}>
+                                    <Link to={v.codeTR3A} ><LignesSymboles lignes={v.lignes}/> {v.name}</Link>
+                                </p>
+                                )
+                            })}
+                        </div>
                     </div>
                 </div>
+                <Footer />
             </div>
         )
     }

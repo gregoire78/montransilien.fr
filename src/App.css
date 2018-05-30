@@ -272,7 +272,8 @@ span.dot-separator {
 	align-items:center;
 	justify-content: center;
 	width: 100%;
-	margin: 0.67em 0;
+	margin: 0;
+	padding: 0.67em 0;
 
 	font-size: 1.5em;
 }
@@ -302,4 +303,16 @@ span.dot-separator {
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 	color: #eee;
 	opacity: 1; /* Firefox */
+}
+
+
+.content {
+	min-height: calc(100vh - 50px);
+}
+footer {
+	text-align: center;
+	background-color: #222;
+	height: 50px;
+	line-height: 50px;
+	vertical-align: middle;
 }
