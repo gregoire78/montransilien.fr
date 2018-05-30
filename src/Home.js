@@ -73,6 +73,8 @@ export default class Home extends React.Component {
         this.setState({result: query});
     }
 
+
+
     render() {
         return (
             <div id="Home">
@@ -81,11 +83,23 @@ export default class Home extends React.Component {
                     <SearchBox query={this.state.result} placeholder="Rechercher une gare" handleSearch={this.handleSearch} />
                     <div>
                         {this.state.stations.map((v,i) => {
-                            return (<p key={i}><Link to={v.codeTR3A}>{v.name}</Link></p>)
+                            return (
+                             <p key={i}style={{marginTop: ".3em"}}>
+                                <Link to={v.codeTR3A} ><LignesSymboles lignes={v.lignes}/> {v.name}</Link>
+                            </p>
+                            )
                         })}
                     </div>
                 </div>
             </div>
         )
     }
+}
+
+function LignesSymboles(props) {
+    return props.lignes.map((ligne, i) => {
+        return (
+            <span key={i} className={(ligne.type === "TRAIN" ? "transilien" : "rer") + " alpha ligne" + ligne.idLigne} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />
+        )
+    })
 }

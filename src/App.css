@@ -58,7 +58,7 @@ body {
 
 p { margin: 0; padding: 0; }
 
-a { color: #ccc; }
+a { color: #ccc; text-decoration-line: none }
 
 form label, form input { vertical-align: middle; }
 
