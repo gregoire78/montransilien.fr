@@ -78,7 +78,7 @@ export default class Home extends React.Component {
     render() {
         return (
             <div id="Home">
-                <h1><img src="./favicon144.png" height="50px" alt="logo train" /><span>Mon Transilien - Monitoring</span></h1>
+                <h1><img src="./favicon144.png" alt="logo train" /><span>Mon Transilien</span></h1>
                 <div className="search">
                     <SearchBox query={this.state.result} placeholder="Rechercher une gare" handleSearch={this.handleSearch} />
                     <div>

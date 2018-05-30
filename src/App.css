@@ -106,8 +106,8 @@ div.train:nth-child(2n+1) {
 
 span.voie-train {
 	display: inline-flex;
-    /*align-items: flex-end;*/
-    justify-content: center;
+	/*align-items: flex-end;*/
+	justify-content: center;
 	/*text-align: center;*/
 	/*line-height: 1.3em;*/
 	width: 1.3em;
@@ -279,6 +279,9 @@ span.dot-separator {
 #Home h1 span {
 	margin-left: 10px;
 }
+#Home h1 img {
+	height: 1em;
+}
 #Home .search {
 	/*display: flex;
 	align-items:center;
@@ -287,15 +290,16 @@ span.dot-separator {
 }
 
 #Home input {
-	background-color: #747296;
-    border: none;
+	background-color: #070D46;
+	border: none;
 	font-family: 'sncf', sans-serif;
 	color: #eee;
+	padding: 0.3em 0.5em;
 }
 #Home input:focus {
 	outline:0;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #eee;
-    opacity: 1; /* Firefox */
+	color: #eee;
+	opacity: 1; /* Firefox */
 }
