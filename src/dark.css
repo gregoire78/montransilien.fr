@@ -1,5 +1,4 @@
 body {
-	background: black;
 	color: #eee;
 }
 
@@ -8,7 +7,7 @@ body {
 }*/
 
 div#heure {
-	background-color: black;
+	background-color: #252438;
 	border: #9c9c9c 0.18em solid;
 }
 
@@ -16,31 +15,40 @@ div#heure small {
 	color: #616060;
 }
 
-div.train {
-	padding: 5pt;
-	background-color: #000000;
+/*div.train {*/
+	/*padding: 5pt;*/
+	/*background-color: #000000;*/
 	/*border-top: 1px #b2cbff dashed;*/
-	background-image: linear-gradient(to right, #727272 33%, rgba(199, 52, 52, 0) 0%);
+	/*background-image: linear-gradient(to right, #727272 33%, rgba(199, 52, 52, 0) 0%);
 	background-position: top;
 	background-size: 12px 1px;
-	background-repeat: repeat-x;
-}
+	background-repeat: repeat-x;*/
+/*}*/
 
 div.train div.desserte-train, span.numero-train, span.destination-train small {
 	color: #9c9c9c;
 }
 
-div.train:nth-child(2n) ,
+/*div.train:nth-child(2n) ,
 div.train:nth-child(2n+1),
 div.station-name {
 	background-color: #000000;
+}*/
+div.train:nth-child(2n+1) {
+	background-color: #252438;
+}
+
+body,
+div.train:nth-child(2n),
+div.station-name {
+	background-color: #191927;
 }
 
 div.train span.heure-train {
 	color: #ffcf42;
 }
 
-div.train span.dot-separator { color : #0061ca; }
+div.train span.dot-separator { color : #7a7a9c; }
 
 div.train.delayed:nth-child(2n)   { background-color: #a05522; }
 div.train.delayed:nth-child(2n+1) { background-color: #b63; }
@@ -53,6 +61,9 @@ div.train.canceled div.desserte-train,
 	div.train.canceled span.numero-train { color: #e89090; }
 div.train.canceled span.dot-separator { color : #ffbdb8; }
 
-span.voie-train {
-	background-color: #00006e;
+div.train:nth-child(2n) span.voie-train {
+	background-color: #252438;
+}
+div.train:nth-child(2n+1) span.voie-train {
+	background-color: #191927;
 }

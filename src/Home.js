@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Footer from './Footer';
 import _ from 'lodash';
@@ -56,6 +56,7 @@ export default class Home extends React.Component {
                 this.setState({stations: []})
         })
         .catch(error => {
+            this.setState({stations: []})
         });
     }
 
