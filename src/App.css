@@ -296,6 +296,7 @@ span.dot-separator {
 	font-family: 'sncf', sans-serif;
 	color: #eee;
 	padding: 0.3em 0.5em;
+	margin-bottom: 8px;
 }
 #Home input:focus {
 	outline:0;
@@ -315,4 +316,16 @@ footer {
 	height: 50px;
 	line-height: 50px;
 	vertical-align: middle;
+}
+
+.loader {
+	height: 0;
+	position: relative;
+	top: -8px;
+}
+.loader-hidden {
+	display: none;
+}
+.loader-active {
+	display: block;
 }

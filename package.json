@@ -4,11 +4,13 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "loaders.css": "^0.1.2",
     "lodash": "^4.17.10",
     "moment-timezone": "^0.5.17",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-helmet": "^5.2.0",
+    "react-loaders": "^3.0.1",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
     "throttle-debounce": "^1.0.1",

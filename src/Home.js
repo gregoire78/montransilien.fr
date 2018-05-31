@@ -4,6 +4,8 @@ import axios from 'axios';
 import Footer from './Footer';
 import _ from 'lodash';
 import './App.css';
+import Loader from 'react-loaders';
+import 'loaders.css';
 
 /**
  * https://reactjs.org/docs/forms.html#controlled-components
@@ -13,7 +15,7 @@ import './App.css';
 export class SearchBox extends React.Component {
     constructor (props) {
         super(props);
-        this.state = { query: this.props.query };
+        this.state = { query: this.props.query};
         this.handleChange = this.handleChange.bind(this);
     }
 
@@ -38,7 +40,7 @@ export class SearchBox extends React.Component {
 export default class Home extends React.Component {
     constructor (props) {
         super(props);
-        this.state = {result: "", stations: []};
+        this.state = {result: "", stations: [], isLoading: false};
         this.handleSearch = this.handleSearch.bind(this);
     }
 
@@ -51,31 +53,19 @@ export default class Home extends React.Component {
         axios.get(`https://stormy-atoll-29313.herokuapp.com/https://transilien.mobi/getProchainTrainAutocomplete?value=${encodeURI(value)}`)
         .then(response => {
             if(!response.data.error)
-                this.setState({stations: response.data})
+                this.setState({stations: response.data, isLoading: false})
             else
-                this.setState({stations: []})
+                this.setState({stations: [], isLoading: false})
         })
         .catch(error => {
-            this.setState({stations: []})
+            this.setState({stations: [], isLoading: false})
         });
     }
 
-    componentDidMount() {
-        /*var xhr = new XMLHttpRequest();
-        xhr.open("GET", "https://cors-escape.herokuapp.com/https://transilien.mobi/getProchainTrainAutocomplete?value=cloud");*/
-        document.body.style.backgroundColor = "#252438";
-    }
-
-    componentWillUnmount() {
-        document.body.style.backgroundColor = null;
-    }
-
     handleSearch(query) {
-        this.getDataAutocomplete(query)
-        this.setState({result: query});
+        this.setState({result: query, isLoading: true});
+        this.getDataAutocomplete(query);
     }
-
-
 
     render() {
         return (
@@ -84,10 +74,11 @@ export default class Home extends React.Component {
                     <h1><img src="./favicon144.png" alt="logo train" /><span>Mon Transilien</span></h1>
                     <div className="search">
                         <SearchBox query={this.state.result} placeholder="Rechercher une gare" handleSearch={this.handleSearch} />
+                        <Loader type="ball-pulse" color="#e6e014" style={{transform: 'scale(0.5)'}} active={this.state.isLoading} size="md"/>
                         <div>
                             {this.state.stations.map((v,i) => {
                                 return (
-                                <p key={i}style={{marginTop: ".3em"}}>
+                                <p key={i} style={{marginTop: ".3em"}}>
                                     <Link to={v.codeTR3A} ><LignesSymboles lignes={v.lignes}/> {v.name}</Link>
                                 </p>
                                 )
