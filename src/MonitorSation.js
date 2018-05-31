@@ -74,7 +74,7 @@ function ListOfTrainLoading() {
                                 </span>
                                 {train.lane !== " " && train.lane !== "BL" ? <span className="voie-train">{train.lane}</span> : ''}
                                 <div className="desserte-train" title={train.journey_text}>
-                                    {train.journey_text ? <Marquee velocity={0.06}>{train.journey_text_html}</Marquee> : <p>Desserte indisponible</p>}
+                                    {train.journey.length !== 0 ? <Marquee velocity={0.06}>{train.journey_text_html}</Marquee> : <p>{train.journey_text}</p>}
                                 </div>
                             </div>
                         </div>
