@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import moment from 'moment-timezone';
 import Marquee from './Marquee';
-import {API_IP} from './config';
+import {API_IP, SSL} from './config';
 //import {Helmet} from 'react-helmet';
 //import {VelocityComponent} from 'velocity-react';
 import 'moment/locale/fr';
@@ -98,7 +98,7 @@ export default class MonitorStation extends React.Component {
     }
 
     getTrainList() {
-        axios.get(`http://${API_IP}/mobi?code_tr3a=${this.props.match.params.tr3a}`)
+        axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/mobi?code_tr3a=${this.props.match.params.tr3a}`)
         .then(response => {
             //console.log(response.data)
             this.setState({trains: response.data.trains, station: response.data.station, isLoading: false})
