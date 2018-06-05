@@ -5,7 +5,10 @@ import Footer from './Footer';
 import _ from 'lodash';
 import './App.css';
 import Loader from 'react-loaders';
+import {Helmet} from "react-helmet";
 import 'loaders.css';
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import {THNDER_KEY} from './config';
 
 /**
  * https://reactjs.org/docs/forms.html#controlled-components
@@ -68,8 +71,12 @@ export default class Home extends React.Component {
     }
 
     render() {
+        let last = _.last(this.state.stations);
         return (
             <div id="Home">
+                <Helmet>
+                    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"/>
+                </Helmet>
                 <div className="content">
                     <h1><img src="./favicon144.png" alt="logo train" /><span>Mon Transilien</span></h1>
                     <div className="search">
@@ -86,6 +93,25 @@ export default class Home extends React.Component {
                         </div>
                     </div>
                 </div>
+                {_.isEmpty(this.state.stations) ? "" : 
+                    <Map
+                        zoomControl={false}
+                        scrollWheelZoom={false}
+                        style={{position: 'absolute',top: '0',left: '0',zIndex: '-100',width: '100%', height: '100%', margin:'auto'}}
+                        center={[last.latitude, last.longitude]}
+                        zoom={17}
+                    >
+                        <TileLayer
+                            attribution="Tiles Courtesy of <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a> - &amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                            url={"https://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=" + THNDER_KEY }
+                        />
+                        <Marker position={[last.latitude, last.longitude]}>
+                            <Popup>
+                                <span>A pretty CSS3 popup. <br/> Easily customizable.</span>
+                            </Popup>
+                        </Marker>
+                    </Map>
+                }
                 <Footer />
             </div>
         )

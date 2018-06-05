@@ -67,3 +67,7 @@ div.train:nth-child(2n) span.voie-train {
 div.train:nth-child(2n+1) span.voie-train {
 	background-color: #191927;
 }
+
+#Home .content {
+	background-color: #191927cb;
+}
