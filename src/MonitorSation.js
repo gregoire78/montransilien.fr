@@ -2,7 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import moment from 'moment-timezone';
 import Marquee from './Marquee';
-import {API_IP, SSL} from './config';
+import _ from 'lodash';
+import { Map, TileLayer } from 'react-leaflet';
+import {Helmet} from "react-helmet";
+import {API_IP, SSL, THNDER_KEY} from './config';
 //import {Helmet} from 'react-helmet';
 //import {VelocityComponent} from 'velocity-react';
 import 'moment/locale/fr';
@@ -93,12 +96,13 @@ export default class MonitorStation extends React.Component {
             station: '',
             trains: [],
             currentTime: moment().locale('fr'),
-            isLoading: false
+            isLoading: false,
+            stationDetails: {}
         };
     }
 
     getTrainList() {
-        axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/mobi?code_tr3a=${this.props.match.params.tr3a}`)
+        return axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/mobi?code_tr3a=${this.props.match.params.tr3a}`)
         .then(response => {
             //console.log(response.data)
             this.setState({trains: response.data.trains, station: response.data.station, isLoading: false})
@@ -110,13 +114,22 @@ export default class MonitorStation extends React.Component {
         });
     }
 
+    getStationDetails(q) {
+        axios.get(`https://data.sncf.com/api/records/1.0/search/?dataset=sncf-gares-et-arrets-transilien-ile-de-france&q="${q}"&rows=1&sort=-gare_non_sncf`)
+        .then(response => {
+            if (!_.isEmpty(response.data.records)){
+                this.setState({stationDetails: response.data.records[0].fields})
+            }
+        });
+    }
+
     componentWillMount() {
         document.title = "Chargement gare ...";
     }
 
     componentDidMount() {
         this.setState({isLoading: true});
-        this.getTrainList();
+        this.getTrainList().then(() => this.getStationDetails(this.state.station));
         //this.interval = setInterval(this.timer.bind(this), 2000);
         this.interval = setInterval(this.getTrainList.bind(this), 15000);
         this.intervalTime = setInterval(this.timer.bind(this), 1000);
@@ -142,12 +155,29 @@ export default class MonitorStation extends React.Component {
             <ListOfTrainLoaded data={this.state} />
         )
         return (
-            <div>
+            <div id="listView">
+                <Helmet>
+                    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"/>
+                </Helmet>
                 {/*<Helmet defer={true} >
                     <link rel="stylesheet" type="text/css" href="dark.css" />
                 </Helmet>*/}
                 <div id="heure" className="voie" title={moment(this.state.currentTime).format('LLLL')}>{moment(this.state.currentTime).format('LT')} <small>{moment(this.state.currentTime).format('ss')}</small></div>
                 {listOfTrains}
+                <div id="bottomList"></div>
+                {_.isEmpty(this.state.stationDetails) ? "" : 
+                    <Map
+                        zoomControl={false}
+                        scrollWheelZoom={false}
+                        style={{position: 'absolute',top: '0',left: '0',zIndex: '-100',width: '100%', height: '100%', margin:'auto'}}
+                        center={[this.state.stationDetails.coord_gps_wgs84[0], this.state.stationDetails.coord_gps_wgs84[1]]}
+                        zoom={18}>
+                        <TileLayer
+                            attribution="Tiles Courtesy of <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a> - &amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                            url={"https://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=" + THNDER_KEY }
+                        />
+                    </Map>
+                }
             </div>
         )
     }

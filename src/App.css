@@ -47,7 +47,7 @@
   /* Support for IE. */
   font-feature-settings: 'liga';
 }
-
+html,body,#root {height: 100%;}
 body {
 	margin: 0;
 	padding: 0;
@@ -102,6 +102,15 @@ div.train:nth-child(2n) {
 
 div.train:nth-child(2n+1) {
 	background-color: #0c5da5;
+}
+
+div#listView {
+	display: flex;
+	flex-flow: column;
+	height: 100%;
+}
+div#bottomList {
+	flex: 1 1 auto;
 }
 
 span.voie-train {

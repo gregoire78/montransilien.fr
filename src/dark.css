@@ -1,5 +1,6 @@
 body {
 	color: #eee;
+	background-color: #191927;
 }
 
 /*div#listetrains {
@@ -35,13 +36,13 @@ div.station-name {
 	background-color: #000000;
 }*/
 div.train:nth-child(2n+1) {
-	background-color: #252438;
+	background-color: #252438e0;
 }
 
-body,
 div.train:nth-child(2n),
-div.station-name {
-	background-color: #191927;
+div.station-name,
+div#bottomList {
+	background-color: #191927e0;
 }
 
 div.train span.heure-train {
