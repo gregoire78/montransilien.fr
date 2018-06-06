@@ -36,13 +36,13 @@ div.station-name {
 	background-color: #000000;
 }*/
 div.train:nth-child(2n+1) {
-	background-color: #252438e0;
+	background-color: rgba(37, 36, 56, 0.88);
 }
 
 div.train:nth-child(2n),
 div.station-name,
 div#bottomList {
-	background-color: #191927e0;
+	background-color: rgba(25, 25, 39, 0.88);
 }
 
 div.train span.heure-train {
@@ -70,5 +70,5 @@ div.train:nth-child(2n+1) span.voie-train {
 }
 
 #Home .content {
-	background-color: #191927cb;
+	background-color: rgba(25, 25, 39, 0.8);
 }
