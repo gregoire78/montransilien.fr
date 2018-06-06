@@ -338,3 +338,7 @@ footer {
 .loader-active {
 	display: block;
 }
+
+.leaflet-bottom.leaflet-right {
+	display: none;
+}
