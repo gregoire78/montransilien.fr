@@ -97,7 +97,7 @@ export default class Home extends React.Component {
                     <Map
                         zoomControl={false}
                         scrollWheelZoom={false}
-                        style={{position: 'absolute',top: '0',left: '0',zIndex: '-100',width: '100%', height: '100%', margin:'auto'}}
+                        style={{position: 'fixed',top: '0',left: '0',zIndex: '-100',width: '100%', height: '100%', margin:'auto'}}
                         center={[firstStation.latitude, firstStation.longitude]}
                         zoom={17}
                     >

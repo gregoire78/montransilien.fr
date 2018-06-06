@@ -169,7 +169,7 @@ export default class MonitorStation extends React.Component {
                     <Map
                         zoomControl={false}
                         scrollWheelZoom={false}
-                        style={{position: 'absolute',top: '0',left: '0',zIndex: '-100',width: '100%', height: '100%', margin:'auto'}}
+                        style={{position: 'fixed',top: '0',left: '0',zIndex: '-100',width: '100%', height: '100%', margin:'auto'}}
                         center={[this.state.stationDetails.coord_gps_wgs84[0], this.state.stationDetails.coord_gps_wgs84[1]]}
                         zoom={18}>
                         <TileLayer
