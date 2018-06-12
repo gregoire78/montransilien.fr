@@ -50,7 +50,7 @@ function ListOfTrainLoading() {
     let stationElem;
     return (
         <div>
-            <div ref={elem => stationElem = elem} className="station-name"><span>{props.data.station}</span></div>
+            <div ref={elem => stationElem = elem} className="station-name"><span>{props.data.station.name}</span></div>
             <div ref={(elem) => {
                 if(elem){
                     stationHeight = window.innerHeight - elem.clientHeight;
@@ -75,7 +75,7 @@ function ListOfTrainLoading() {
                                     {train.route.type !== 'ter' ? <span className={train.route.type + " alpha ligne" + train.route.line} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />: ''}
                                     {" "+train.terminus}
                                 </span>
-                                {train.lane !== " " && train.lane !== "BL" ? <span className="voie-train">{train.lane}</span> : ''}
+                                <span className="infos-track"><span className="train-nature">{train.nature}</span>{train.lane !== " " && train.lane !== "BL" ? <span className="voie-train">{train.lane}</span> : ''}</span>
                                 <div className="desserte-train" title={train.journey_text}>
                                     {train.journey.length !== 0 ? <Marquee velocity={0.06}>{train.journey_text_html}</Marquee> : <p>{train.journey_text}</p>}
                                 </div>
@@ -129,7 +129,7 @@ export default class MonitorStation extends React.Component {
 
     componentDidMount() {
         this.setState({isLoading: true});
-        this.getTrainList().then(() => this.getStationDetails(this.state.station));
+        this.getTrainList().then(() => this.getStationDetails(this.state.station.uic));
         //this.interval = setInterval(this.timer.bind(this), 2000);
         this.interval = setInterval(this.getTrainList.bind(this), 15000);
         this.intervalTime = setInterval(this.timer.bind(this), 1000);

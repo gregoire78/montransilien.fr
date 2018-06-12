@@ -37,9 +37,11 @@
 	div.train div.desserte-train {
 		width: calc(100vw - 9.5em);
 	}
-
-	span.voie-train {
+	
+	span.infos-track{
 		margin-top: 0.2em;
+	}
+	span.voie-train {
 		align-items: center;
 	}
 
