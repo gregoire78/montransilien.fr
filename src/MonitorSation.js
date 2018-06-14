@@ -106,11 +106,11 @@ export default class MonitorStation extends React.Component {
         .then(response => {
             //console.log(response.data)
             this.setState({trains: response.data.trains, station: response.data.station, isLoading: false})
-            document.title = this.state.station;
+            document.title = this.state.station.name;
         })
         .catch(error => {
             this.setState({station: error.response.data.station, isLoading: false});
-            document.title = this.state.station;
+            document.title = this.state.station.name;
         });
     }
 
