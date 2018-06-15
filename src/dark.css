@@ -62,12 +62,12 @@ div.train.canceled div.desserte-train,
 	div.train.canceled span.numero-train { color: #e89090; }
 div.train.canceled span.dot-separator { color : #ffbdb8; }
 
-div.train:nth-child(2n) span.voie-train {
+/*div.train:nth-child(2n) span.voie-train {
 	background-color: #252438;
 }
 div.train:nth-child(2n+1) span.voie-train {
 	background-color: #191927;
-}
+}*/
 
 #Home .content {
 	background-color: rgba(25, 25, 39, 0.8);

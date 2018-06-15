@@ -64,7 +64,7 @@ function ListOfTrainLoading() {
                             <div className="force-height"></div>
                             <div className="group group-left">
                                 <span className="numero-train">{train.name}</span>
-                                <span className="retard-train">{train.state}</span><br className="after-retard-train"/>
+                                {train.state ? <span className="retard-train">{train.state}</span>: ""}<br className="after-retard-train"/>
                             </div>
                             <div className="group group-middle">
                                 <span className="heure-train">{train.expectedDepartureTime}</span>
@@ -75,7 +75,7 @@ function ListOfTrainLoading() {
                                     {train.route.type !== 'ter' ? <span className={train.route.type + " alpha ligne" + train.route.line} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />: ''}
                                     {" "+train.terminus}
                                 </span>
-                                <span className="infos-track"><span className="train-nature">{train.nature}</span>{train.lane !== " " && train.lane !== "BL" ? <span className="voie-train">{train.lane}</span> : ''}</span>
+                                <span className="infos-track">{train.nature ? <span className="train-nature"><span style={{fontSize: '0.7em'}}>train<br/></span>{train.nature}</span> : ""}{train.lane !== " " && train.lane !== "BL" ? <span className="voie-train">{train.lane}</span> : ''}</span>
                                 <div className="desserte-train" title={train.journey_text}>
                                     {train.journey.length !== 0 ? <Marquee velocity={0.06}>{train.journey_text_html}</Marquee> : <p>{train.journey_text}</p>}
                                 </div>
