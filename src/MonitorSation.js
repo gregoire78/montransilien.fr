@@ -69,7 +69,7 @@ function ListOfTrainLoading() {
                             <div className="group group-middle">
                                 <span className="heure-train">{train.expectedDepartureTime}</span>
                             </div>
-                            <div className="group">
+                            <div className="group" style={{marginRight: '3.2em'}}>
                                 <span className="destination-train" title={train.route.long_name}>
                                     <span className={train.route.type + " symbole light alpha"} style={train.route.type !== 'ter' ? {height: "1em", width: "1em", top: "0.1em", left: "0"} : {height: "1em", top: "0.1em", left: "0"}} />
                                     {train.route.type !== 'ter' ? <span className={train.route.type + " alpha ligne" + train.route.line} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />: ''}
