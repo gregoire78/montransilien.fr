@@ -9,6 +9,8 @@ import {Helmet} from "react-helmet";
 import 'loaders.css';
 import { Map, TileLayer } from 'react-leaflet';
 import {THNDER_KEY} from './config';
+import garesId from './gares.json';
+import lignes from './lignes.json';
 
 /**
  * https://reactjs.org/docs/forms.html#controlled-components
@@ -45,6 +47,13 @@ export default class Home extends React.Component {
         super(props);
         this.state = {result: "", stations: [], isLoading: false};
         this.handleSearch = this.handleSearch.bind(this);
+    }
+
+    getLignes(trea) {
+        const uic = _.result(_.find(garesId, (obj) => {
+			return obj.code === trea;
+        }), 'uic7');
+        return _.filter(lignes, {"uic": uic}).map(values => {return values.line})
     }
 
     getDataAutocomplete(value) {
@@ -84,9 +93,10 @@ export default class Home extends React.Component {
                         <Loader type="ball-pulse" color="#e6e014" style={{transform: 'scale(0.5)'}} active={this.state.isLoading} size="md"/>
                         <div>
                             {this.state.stations.map((v,i) => {
+                                const line = !_.isEmpty(v.lignes) ? v.lignes.map(values => {return values.idLigne}) : this.getLignes(v.codeTR3A);
                                 return (
                                 <p key={i} style={{marginTop: ".3em"}}>
-                                    <Link to={v.codeTR3A} ><LignesSymboles lignes={v.lignes}/> {v.name}</Link>
+                                    <Link to={v.codeTR3A} ><LignesSymboles lignes={line}/> {v.name}</Link>
                                 </p>
                                 )
                             })}
@@ -121,7 +131,7 @@ export default class Home extends React.Component {
 function LignesSymboles(props) {
     return props.lignes.map((ligne, i) => {
         return (
-            <span key={i} className={(ligne.type === "TRAIN" ? "transilien" : "rer") + " alpha ligne" + ligne.idLigne} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />
+            <span key={i} className={"line-img alpha ligne" + ligne} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />
         )
     })
 }

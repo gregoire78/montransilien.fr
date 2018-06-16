@@ -1,0 +1,2827 @@
+[
+	{
+		"uic": 8700147,
+		"line": "B",
+		"label": "AEROPORT CHARLES DE GAULLE 2 TGV - Roissy"
+	},
+	{
+		"uic": 8711127,
+		"line": "C",
+		"label": "PORTE DE CLICHY"
+	},
+	{
+		"uic": 8711300,
+		"line": "P",
+		"label": "PARIS EST (GARE DE LEST)"
+	},
+	{
+		"uic": 8711320,
+		"line": "E",
+		"label": "PANTIN"
+	},
+	{
+		"uic": 8711321,
+		"line": "E",
+		"label": "NOISY LE SEC"
+	},
+	{
+		"uic": 8711340,
+		"line": "E",
+		"label": "BONDY"
+	},
+	{
+		"uic": 8711340,
+		"line": "T4",
+		"label": "BONDY"
+	},
+	{
+		"uic": 8711347,
+		"line": "E",
+		"label": "LE RAINCY VILLEMONBLE MONTFERMEIL"
+	},
+	{
+		"uic": 8711351,
+		"line": "E",
+		"label": "GAGNY"
+	},
+	{
+		"uic": 8711352,
+		"line": "E",
+		"label": "LE CHENAY GAGNY"
+	},
+	{
+		"uic": 8711369,
+		"line": "E",
+		"label": "ROSNY BOIS PERRIER"
+	},
+	{
+		"uic": 8711370,
+		"line": "E",
+		"label": "ROSNY SOUS BOIS"
+	},
+	{
+		"uic": 8711371,
+		"line": "E",
+		"label": "VAL DE FONTENAY"
+	},
+	{
+		"uic": 8711374,
+		"line": "E",
+		"label": "NOGENT LE PERREUX"
+	},
+	{
+		"uic": 8711377,
+		"line": "E",
+		"label": "LES BOULLEREAUX CHAMPIGNY"
+	},
+	{
+		"uic": 8711379,
+		"line": "E",
+		"label": "VILLIERS SUR MARNE PLESSIS TREVISE"
+	},
+	{
+		"uic": 8711380,
+		"line": "E",
+		"label": "LES YVRIS - NOISY LE GRAND"
+	},
+	{
+		"uic": 8711384,
+		"line": "T4",
+		"label": "LES COQUETIERS (T4)"
+	},
+	{
+		"uic": 8711385,
+		"line": "T4",
+		"label": "LES PAVILLONS SOUS BOIS (T4)"
+	},
+	{
+		"uic": 8711386,
+		"line": "T4",
+		"label": "GARGAN (T4)"
+	},
+	{
+		"uic": 8711387,
+		"line": "T4",
+		"label": "ALLEE DE LA TOUR RENDEZ VOUS (T4)"
+	},
+	{
+		"uic": 8711388,
+		"line": "T4",
+		"label": "LABBAYE (T4)"
+	},
+	{
+		"uic": 8711389,
+		"line": "T4",
+		"label": "FREINVILLE SEVRAN (T4)"
+	},
+	{
+		"uic": 8711587,
+		"line": "P",
+		"label": "CHAMPBENOIST POIGNY"
+	},
+	{
+		"uic": 8711601,
+		"line": "E",
+		"label": "GRETZ ARMAINVILLIERS"
+	},
+	{
+		"uic": 8711601,
+		"line": "P",
+		"label": "GRETZ ARMAINVILLIERS"
+	},
+	{
+		"uic": 8711602,
+		"line": "E",
+		"label": "OZOIR LA FERRIERE"
+	},
+	{
+		"uic": 8711603,
+		"line": "E",
+		"label": "ROISSY EN BRIE"
+	},
+	{
+		"uic": 8711604,
+		"line": "E",
+		"label": "EMERAINVILLE - PONTAULT COMBAULT"
+	},
+	{
+		"uic": 8711607,
+		"line": "P",
+		"label": "VERNEUIL LETANG"
+	},
+	{
+		"uic": 8711608,
+		"line": "P",
+		"label": "MORMANT"
+	},
+	{
+		"uic": 8711609,
+		"line": "P",
+		"label": "NANGIS"
+	},
+	{
+		"uic": 8711610,
+		"line": "P",
+		"label": "MEAUX"
+	},
+	{
+		"uic": 8711611,
+		"line": "E",
+		"label": "CHELLES GOURNAY"
+	},
+	{
+		"uic": 8711611,
+		"line": "P",
+		"label": "CHELLES GOURNAY"
+	},
+	{
+		"uic": 8711613,
+		"line": "P",
+		"label": "LONGUEVILLE"
+	},
+	{
+		"uic": 8711616,
+		"line": "P",
+		"label": "PROVINS"
+	},
+	{
+		"uic": 8711617,
+		"line": "P",
+		"label": "SAINTE-COLOMBE SEPTVEILLES"
+	},
+	{
+		"uic": 8711621,
+		"line": "E",
+		"label": "TOURNAN"
+	},
+	{
+		"uic": 8711621,
+		"line": "P",
+		"label": "TOURNAN"
+	},
+	{
+		"uic": 8711622,
+		"line": "P",
+		"label": "MARLES EN BRIE"
+	},
+	{
+		"uic": 8711624,
+		"line": "P",
+		"label": "MORTCERF"
+	},
+	{
+		"uic": 8711626,
+		"line": "P",
+		"label": "GUERARD LA CELLE SUR MORIN"
+	},
+	{
+		"uic": 8711627,
+		"line": "P",
+		"label": "FAREMOUTIERS POMMEUSE"
+	},
+	{
+		"uic": 8711628,
+		"line": "P",
+		"label": "MOUROUX"
+	},
+	{
+		"uic": 8711629,
+		"line": "P",
+		"label": "VAIRES TORCY"
+	},
+	{
+		"uic": 8711630,
+		"line": "P",
+		"label": "COULOMMIERS"
+	},
+	{
+		"uic": 8711631,
+		"line": "P",
+		"label": "LAGNY THORIGNY"
+	},
+	{
+		"uic": 8711632,
+		"line": "P",
+		"label": "ESBLY"
+	},
+	{
+		"uic": 8711634,
+		"line": "P",
+		"label": "CHAILLY BOISSY LE CHATEL"
+	},
+	{
+		"uic": 8711635,
+		"line": "P",
+		"label": "CHAUFFRY"
+	},
+	{
+		"uic": 8711636,
+		"line": "P",
+		"label": "SAINT-SIMEON"
+	},
+	{
+		"uic": 8711637,
+		"line": "P",
+		"label": "SAINT-REMY LA VANNE"
+	},
+	{
+		"uic": 8711640,
+		"line": "P",
+		"label": "MONTRY CONDE"
+	},
+	{
+		"uic": 8711649,
+		"line": "P",
+		"label": "TRILPORT"
+	},
+	{
+		"uic": 8711650,
+		"line": "P",
+		"label": "CHANGIS SAINT-JEAN"
+	},
+	{
+		"uic": 8711651,
+		"line": "P",
+		"label": "LA FERTE SOUS JOUARRE"
+	},
+	{
+		"uic": 8711655,
+		"line": "P",
+		"label": "NANTEUIL SAACY"
+	},
+	{
+		"uic": 8711656,
+		"line": "P",
+		"label": "NOGENT LARTAUD CHARLY"
+	},
+	{
+		"uic": 8711657,
+		"line": "P",
+		"label": "CHEZY SUR MARNE"
+	},
+	{
+		"uic": 8711658,
+		"line": "P",
+		"label": "CHATEAU THIERRY"
+	},
+	{
+		"uic": 8711661,
+		"line": "P",
+		"label": "ISLES ARMENTIERES CONGIS"
+	},
+	{
+		"uic": 8711663,
+		"line": "P",
+		"label": "LIZY SUR OURCQ"
+	},
+	{
+		"uic": 8711664,
+		"line": "P",
+		"label": "CROUY SUR OURCQ"
+	},
+	{
+		"uic": 8711666,
+		"line": "P",
+		"label": "MAREUIL SUR OURCQ"
+	},
+	{
+		"uic": 8711667,
+		"line": "P",
+		"label": "LA FERTE MILON"
+	},
+	{
+		"uic": 8711673,
+		"line": "P",
+		"label": "COUILLY SAINT-GERMAIN QUINCY"
+	},
+	{
+		"uic": 8711674,
+		"line": "P",
+		"label": "VILLIERS MONTBARBIN"
+	},
+	{
+		"uic": 8711677,
+		"line": "P",
+		"label": "CRECY LA CHAPELLE"
+	},
+	{
+		"uic": 8716478,
+		"line": "D",
+		"label": "STADE DE FRANCE SAINT-DENIS"
+	},
+	{
+		"uic": 8716479,
+		"line": "B",
+		"label": "LA PLAINE STADE DE FRANCE - Saint-Denis Aubervilliers"
+	},
+	{
+		"uic": 8727101,
+		"line": "D",
+		"label": "SAINT-DENIS"
+	},
+	{
+		"uic": 8727101,
+		"line": "H",
+		"label": "SAINT-DENIS"
+	},
+	{
+		"uic": 8727102,
+		"line": "B",
+		"label": "GARE DU NORD RER"
+	},
+	{
+		"uic": 8727102,
+		"line": "D",
+		"label": "GARE DU NORD RER"
+	},
+	{
+		"uic": 8727103,
+		"line": "H",
+		"label": "PARIS NORD (GARE DU NORD)"
+	},
+	{
+		"uic": 8727103,
+		"line": "K",
+		"label": "PARIS NORD (GARE DU NORD)"
+	},
+	{
+		"uic": 8727112,
+		"line": "H",
+		"label": "EPINAY VILLETANEUSE"
+	},
+	{
+		"uic": 8727114,
+		"line": "C",
+		"label": "EPINAY SUR SEINE"
+	},
+	{
+		"uic": 8727116,
+		"line": "D",
+		"label": "PIERREFITTE STAINS"
+	},
+	{
+		"uic": 8727117,
+		"line": "H",
+		"label": "LA BARRE ORMESSON"
+	},
+	{
+		"uic": 8727120,
+		"line": "C",
+		"label": "GENNEVILLIERS"
+	},
+	{
+		"uic": 8727124,
+		"line": "C",
+		"label": "SAINT-OUEN"
+	},
+	{
+		"uic": 8727130,
+		"line": "B",
+		"label": "LA COURNEUVE AUBERVILLIERS"
+	},
+	{
+		"uic": 8727139,
+		"line": "B",
+		"label": "LE BOURGET"
+	},
+	{
+		"uic": 8727140,
+		"line": "B",
+		"label": "DRANCY"
+	},
+	{
+		"uic": 8727141,
+		"line": "B",
+		"label": "AULNAY SOUS BOIS"
+	},
+	{
+		"uic": 8727141,
+		"line": "K",
+		"label": "AULNAY SOUS BOIS"
+	},
+	{
+		"uic": 8727141,
+		"line": "T4",
+		"label": "AULNAY SOUS BOIS"
+	},
+	{
+		"uic": 8727142,
+		"line": "B",
+		"label": "SEVRAN LIVRY"
+	},
+	{
+		"uic": 8727143,
+		"line": "B",
+		"label": "VERT GALANT"
+	},
+	{
+		"uic": 8727144,
+		"line": "B",
+		"label": "SEVRAN BEAUDOTTES"
+	},
+	{
+		"uic": 8727145,
+		"line": "B",
+		"label": "VILLEPINTE"
+	},
+	{
+		"uic": 8727146,
+		"line": "B",
+		"label": "AEROPORT CHARLES DE GAULLE  1 - Roissy"
+	},
+	{
+		"uic": 8727147,
+		"line": "B",
+		"label": "LE BLANC MESNIL"
+	},
+	{
+		"uic": 8727148,
+		"line": "B",
+		"label": "PARC DES EXPOSITIONS"
+	},
+	{
+		"uic": 8727151,
+		"line": "B",
+		"label": "VILLEPARISIS MITRY LE NEUF"
+	},
+	{
+		"uic": 8727152,
+		"line": "B",
+		"label": "MITRY CLAYE"
+	},
+	{
+		"uic": 8727152,
+		"line": "K",
+		"label": "MITRY CLAYE"
+	},
+	{
+		"uic": 8727153,
+		"line": "K",
+		"label": "DAMMARTIN JUILLY SAINT-MARD"
+	},
+	{
+		"uic": 8727155,
+		"line": "K",
+		"label": "LE PLESSIS BELLEVILLE"
+	},
+	{
+		"uic": 8727157,
+		"line": "K",
+		"label": "NANTEUIL LE HAUDOIN"
+	},
+	{
+		"uic": 8727158,
+		"line": "K",
+		"label": "ORMOY VILLERS"
+	},
+	{
+		"uic": 8727159,
+		"line": "K",
+		"label": "CREPY EN VALOIS"
+	},
+	{
+		"uic": 8727202,
+		"line": "H",
+		"label": "VILLAINES"
+	},
+	{
+		"uic": 8727203,
+		"line": "H",
+		"label": "SEUGY"
+	},
+	{
+		"uic": 8727204,
+		"line": "K",
+		"label": "COMPANS"
+	},
+	{
+		"uic": 8727205,
+		"line": "K",
+		"label": "THIEUX NANTOUILLET"
+	},
+	{
+		"uic": 8727214,
+		"line": "C",
+		"label": "LES GRESILLONS"
+	},
+	{
+		"uic": 8727600,
+		"line": "D",
+		"label": "CREIL"
+	},
+	{
+		"uic": 8727600,
+		"line": "H",
+		"label": "CREIL"
+	},
+	{
+		"uic": 8727602,
+		"line": "H",
+		"label": "ENGHIEN LES BAINS"
+	},
+	{
+		"uic": 8727603,
+		"line": "H",
+		"label": "CHAMP DE COURSES DENGHIEN"
+	},
+	{
+		"uic": 8753413,
+		"line": "C",
+		"label": "ERMONT EAUBONNE"
+	},
+	{
+		"uic": 8753413,
+		"line": "H",
+		"label": "ERMONT EAUBONNE"
+	},
+	{
+		"uic": 8753413,
+		"line": "J",
+		"label": "ERMONT EAUBONNE"
+	},
+	{
+		"uic": 8727606,
+		"line": "C",
+		"label": "CERNAY"
+	},
+	{
+		"uic": 8727606,
+		"line": "H",
+		"label": "CERNAY"
+	},
+	{
+		"uic": 8727607,
+		"line": "C",
+		"label": "FRANCONVILLE LE PLESSIS BOUCHARD"
+	},
+	{
+		"uic": 8727607,
+		"line": "H",
+		"label": "FRANCONVILLE LE PLESSIS BOUCHARD"
+	},
+	{
+		"uic": 8727608,
+		"line": "C",
+		"label": "MONTIGNY BEAUCHAMP"
+	},
+	{
+		"uic": 8727608,
+		"line": "H",
+		"label": "MONTIGNY BEAUCHAMP"
+	},
+	{
+		"uic": 8727609,
+		"line": "C",
+		"label": "PIERRELAYE"
+	},
+	{
+		"uic": 8727609,
+		"line": "H",
+		"label": "PIERRELAYE"
+	},
+	{
+		"uic": 8727610,
+		"line": "C",
+		"label": "SAINT-OUEN LAUMONE"
+	},
+	{
+		"uic": 8727610,
+		"line": "H",
+		"label": "SAINT-OUEN LAUMONE"
+	},
+	{
+		"uic": 8727611,
+		"line": "D",
+		"label": "CHANTILLY GOUVIEUX"
+	},
+	{
+		"uic": 8727613,
+		"line": "C",
+		"label": "PONTOISE"
+	},
+	{
+		"uic": 8727613,
+		"line": "H",
+		"label": "PONTOISE"
+	},
+	{
+		"uic": 8727613,
+		"line": "J",
+		"label": "PONTOISE"
+	},
+	{
+		"uic": 8727614,
+		"line": "H",
+		"label": "EPLUCHES"
+	},
+	{
+		"uic": 8727615,
+		"line": "H",
+		"label": "PONT PETIT"
+	},
+	{
+		"uic": 8727616,
+		"line": "H",
+		"label": "CHAPONVAL"
+	},
+	{
+		"uic": 8727617,
+		"line": "C",
+		"label": "SAINT-GRATIEN"
+	},
+	{
+		"uic": 8727618,
+		"line": "J",
+		"label": "SANNOIS"
+	},
+	{
+		"uic": 8727619,
+		"line": "D",
+		"label": "GARGES SARCELLES"
+	},
+	{
+		"uic": 8727622,
+		"line": "D",
+		"label": "VILLIERS LE BEL GONESSE ARNOUVILLE"
+	},
+	{
+		"uic": 8727623,
+		"line": "D",
+		"label": "LES NOUES"
+	},
+	{
+		"uic": 8727624,
+		"line": "D",
+		"label": "GOUSSAINVILLE"
+	},
+	{
+		"uic": 8727625,
+		"line": "D",
+		"label": "LOUVRES"
+	},
+	{
+		"uic": 8727626,
+		"line": "D",
+		"label": "SURVILLIERS FOSSES"
+	},
+	{
+		"uic": 8727627,
+		"line": "D",
+		"label": "ORRY LA VILLE COYE LA FORET"
+	},
+	{
+		"uic": 8727628,
+		"line": "D",
+		"label": "LA BORNE BLANCHE"
+	},
+	{
+		"uic": 8727634,
+		"line": "H",
+		"label": "DEUIL MONTMAGNY"
+	},
+	{
+		"uic": 8727636,
+		"line": "H",
+		"label": "GROSLAY"
+	},
+	{
+		"uic": 8727638,
+		"line": "H",
+		"label": "SARCELLES SAINT-BRICE"
+	},
+	{
+		"uic": 8727639,
+		"line": "H",
+		"label": "ECOUEN EZANVILLE"
+	},
+	{
+		"uic": 8727640,
+		"line": "H",
+		"label": "SAINT-LEU D ESSERENT"
+	},
+	{
+		"uic": 8727641,
+		"line": "H",
+		"label": "PRECY SUR OISE"
+	},
+	{
+		"uic": 8727643,
+		"line": "H",
+		"label": "DOMONT"
+	},
+	{
+		"uic": 8727644,
+		"line": "H",
+		"label": "BORAN SUR OISE"
+	},
+	{
+		"uic": 8727645,
+		"line": "H",
+		"label": "BRUYERES SUR OISE"
+	},
+	{
+		"uic": 8727646,
+		"line": "H",
+		"label": "PERSAN BEAUMONT"
+	},
+	{
+		"uic": 8727648,
+		"line": "H",
+		"label": "BOUFFEMONT MOISSELLES"
+	},
+	{
+		"uic": 8727649,
+		"line": "H",
+		"label": "MONTSOULT MAFFLIERS"
+	},
+	{
+		"uic": 8727650,
+		"line": "H",
+		"label": "PRESLES COURCELLES"
+	},
+	{
+		"uic": 8727651,
+		"line": "H",
+		"label": "CHAMPAGNE SUR OISE"
+	},
+	{
+		"uic": 8727652,
+		"line": "H",
+		"label": "LISLE ADAM PARMAIN"
+	},
+	{
+		"uic": 8727653,
+		"line": "H",
+		"label": "VALMONDOIS"
+	},
+	{
+		"uic": 8727654,
+		"line": "H",
+		"label": "AUVERS SUR OISE"
+	},
+	{
+		"uic": 8727655,
+		"line": "H",
+		"label": "BELLOY SAINT-MARTIN"
+	},
+	{
+		"uic": 8727656,
+		"line": "H",
+		"label": "VIARMES"
+	},
+	{
+		"uic": 8727657,
+		"line": "H",
+		"label": "LUZARCHES"
+	},
+	{
+		"uic": 8727658,
+		"line": "H",
+		"label": "ERMONT HALTE"
+	},
+	{
+		"uic": 8727659,
+		"line": "H",
+		"label": "GROS NOYER SAINT-PRIX"
+	},
+	{
+		"uic": 8727660,
+		"line": "H",
+		"label": "SAINT-LEU LA FORET"
+	},
+	{
+		"uic": 8727662,
+		"line": "H",
+		"label": "VAUCELLES"
+	},
+	{
+		"uic": 8727663,
+		"line": "H",
+		"label": "TAVERNY"
+	},
+	{
+		"uic": 8727664,
+		"line": "H",
+		"label": "BESSANCOURT"
+	},
+	{
+		"uic": 8727665,
+		"line": "H",
+		"label": "FREPILLON"
+	},
+	{
+		"uic": 8727666,
+		"line": "H",
+		"label": "MERY SUR OISE"
+	},
+	{
+		"uic": 8727667,
+		"line": "H",
+		"label": "MERIEL"
+	},
+	{
+		"uic": 8727675,
+		"line": "H",
+		"label": "NOINTEL MOURS"
+	},
+	{
+		"uic": 8728187,
+		"line": "E",
+		"label": "MAGENTA"
+	},
+	{
+		"uic": 8728189,
+		"line": "E",
+		"label": "HAUSSMANN SAINT-LAZARE"
+	},
+	{
+		"uic": 8765479,
+		"line": "E",
+		"label": "ROSA PARKS"
+	},
+	{
+		"uic": 8732832,
+		"line": "C",
+		"label": "BIBLIOTHEQUE FRANCOIS MITTERRAND"
+	},
+	{
+		"uic": 8733293,
+		"line": "C",
+		"label": "MONDESIR"
+	},
+	{
+		"uic": 8733294,
+		"line": "C",
+		"label": "MONNERVILLE CENTRE"
+	},
+	{
+		"uic": 8733295,
+		"line": "C",
+		"label": "ROUTE DE MONNERVILLE"
+	},
+	{
+		"uic": 8733296,
+		"line": "C",
+		"label": "CREDIT AGRICOLE (DOMMERVILLE)"
+	},
+	{
+		"uic": 8733297,
+		"line": "C",
+		"label": "SALLE DES FETES"
+	},
+	{
+		"uic": 8733448,
+		"line": "A",
+		"label": "NEUVILLE UNIVERSITE"
+	},
+	{
+		"uic": 8733448,
+		"line": "L",
+		"label": "NEUVILLE UNIVERSITE"
+	},
+	{
+		"uic": 8733798,
+		"line": "C",
+		"label": "SAINT-OUEN LAUMONE LIESSE"
+	},
+	{
+		"uic": 8733798,
+		"line": "H",
+		"label": "SAINT-OUEN LAUMONE LIESSE"
+	},
+	{
+		"uic": 8736692,
+		"line": "L",
+		"label": "SAINT-GERMAIN EN LAYE BEL AIR FOURQUEUX"
+	},
+	{
+		"uic": 8738101,
+		"line": "C",
+		"label": "PEREIRE LEVALLOIS"
+	},
+	{
+		"uic": 8738102,
+		"line": "C",
+		"label": "NEUILLY PORTE MAILLOT - Palais des Congrès"
+	},
+	{
+		"uic": 8738103,
+		"line": "C",
+		"label": "AVENUE FOCH"
+	},
+	{
+		"uic": 8738104,
+		"line": "C",
+		"label": "AVENUE HENRI MARTIN"
+	},
+	{
+		"uic": 8738107,
+		"line": "J",
+		"label": "BOIS COLOMBES"
+	},
+	{
+		"uic": 8738108,
+		"line": "J",
+		"label": "COLOMBES"
+	},
+	{
+		"uic": 8738109,
+		"line": "J",
+		"label": "LE STADE"
+	},
+	{
+		"uic": 8738111,
+		"line": "L",
+		"label": "PONT CARDINET"
+	},
+	{
+		"uic": 8738112,
+		"line": "L",
+		"label": "CLICHY LEVALLOIS"
+	},
+	{
+		"uic": 8738113,
+		"line": "J",
+		"label": "ASNIERES SUR SEINE"
+	},
+	{
+		"uic": 8738113,
+		"line": "L",
+		"label": "ASNIERES SUR SEINE"
+	},
+	{
+		"uic": 8738114,
+		"line": "J",
+		"label": "OSNY"
+	},
+	{
+		"uic": 8738115,
+		"line": "J",
+		"label": "BOISSY LAILLERIE"
+	},
+	{
+		"uic": 8738116,
+		"line": "J",
+		"label": "MONTGEROULT COURCELLES"
+	},
+	{
+		"uic": 8738117,
+		"line": "J",
+		"label": "US"
+	},
+	{
+		"uic": 8738118,
+		"line": "J",
+		"label": "SANTEUIL LE PERCHAY"
+	},
+	{
+		"uic": 8738119,
+		"line": "J",
+		"label": "CHARS"
+	},
+	{
+		"uic": 8738120,
+		"line": "J",
+		"label": "LA VILLETERTRE"
+	},
+	{
+		"uic": 8738121,
+		"line": "J",
+		"label": "LIANCOURT SAINT PIERRE"
+	},
+	{
+		"uic": 8738122,
+		"line": "J",
+		"label": "CHAUMONT EN VEXIN"
+	},
+	{
+		"uic": 8738123,
+		"line": "J",
+		"label": "TRIE CHATEAU"
+	},
+	{
+		"uic": 8738124,
+		"line": "J",
+		"label": "GISORS"
+	},
+	{
+		"uic": 8738141,
+		"line": "J",
+		"label": "ERAGNY NEUVILLE"
+	},
+	{
+		"uic": 8738142,
+		"line": "J",
+		"label": "SAINT-OUEN LAUMONE QUARTIER DE LEGLISE"
+	},
+	{
+		"uic": 8738145,
+		"line": "A",
+		"label": "CONFLANS FIN DOISE"
+	},
+	{
+		"uic": 8738145,
+		"line": "J",
+		"label": "CONFLANS FIN DOISE"
+	},
+	{
+		"uic": 8738145,
+		"line": "L",
+		"label": "CONFLANS FIN DOISE"
+	},
+	{
+		"uic": 8738147,
+		"line": "J",
+		"label": "CHANTELOUP LES VIGNES"
+	},
+	{
+		"uic": 8738148,
+		"line": "J",
+		"label": "MAURECOURT"
+	},
+	{
+		"uic": 8738149,
+		"line": "J",
+		"label": "ANDRESY"
+	},
+	{
+		"uic": 8738150,
+		"line": "J",
+		"label": "MANTES LA JOLIE"
+	},
+	{
+		"uic": 8738150,
+		"line": "N",
+		"label": "MANTES LA JOLIE"
+	},
+	{
+		"uic": 8738155,
+		"line": "J",
+		"label": "JUZIERS"
+	},
+	{
+		"uic": 8738156,
+		"line": "J",
+		"label": "GARGENVILLE"
+	},
+	{
+		"uic": 8738157,
+		"line": "J",
+		"label": "ISSOU PORCHEVILLE"
+	},
+	{
+		"uic": 8738158,
+		"line": "J",
+		"label": "LIMAY"
+	},
+	{
+		"uic": 8738159,
+		"line": "J",
+		"label": "MANTES STATION"
+	},
+	{
+		"uic": 8738165,
+		"line": "A",
+		"label": "ACHERES VILLE"
+	},
+	{
+		"uic": 8738165,
+		"line": "L",
+		"label": "ACHERES VILLE"
+	},
+	{
+		"uic": 8738171,
+		"line": "N",
+		"label": "MAREIL SUR MAULDRE"
+	},
+	{
+		"uic": 8738172,
+		"line": "N",
+		"label": "MAULE"
+	},
+	{
+		"uic": 8738173,
+		"line": "N",
+		"label": "NEZEL AULNAY"
+	},
+	{
+		"uic": 8738179,
+		"line": "J",
+		"label": "VAL DARGENTEUIL"
+	},
+	{
+		"uic": 8738180,
+		"line": "J",
+		"label": "TRIEL SUR SEINE"
+	},
+	{
+		"uic": 8738181,
+		"line": "J",
+		"label": "VAUX SUR SEINE"
+	},
+	{
+		"uic": 8738182,
+		"line": "J",
+		"label": "THUN LE PARADIS"
+	},
+	{
+		"uic": 8738183,
+		"line": "J",
+		"label": "MEULAN HARDRICOURT"
+	},
+	{
+		"uic": 8738184,
+		"line": "J",
+		"label": "ARGENTEUIL"
+	},
+	{
+		"uic": 8738186,
+		"line": "J",
+		"label": "CORMEILLES EN PARISIS"
+	},
+	{
+		"uic": 8738187,
+		"line": "J",
+		"label": "LA FRETTE MONTIGNY"
+	},
+	{
+		"uic": 8738188,
+		"line": "J",
+		"label": "HERBLAY"
+	},
+	{
+		"uic": 8738189,
+		"line": "J",
+		"label": "CONFLANS SAINTE-HONORINE"
+	},
+	{
+		"uic": 8738190,
+		"line": "A",
+		"label": "CERGY PREFECTURE"
+	},
+	{
+		"uic": 8738190,
+		"line": "L",
+		"label": "CERGY PREFECTURE"
+	},
+	{
+		"uic": 8738200,
+		"line": "L",
+		"label": "BECON LES BRUYERES"
+	},
+	{
+		"uic": 8738220,
+		"line": "L",
+		"label": "COURBEVOIE"
+	},
+	{
+		"uic": 8775801,
+		"line": "L",
+		"label": "LA DEFENSE SNCF"
+	},
+	{
+		"uic": 8775801,
+		"line": "U",
+		"label": "LA DEFENSE SNCF"
+	},
+	{
+		"uic": 8738225,
+		"line": "L",
+		"label": "GARCHES MARNES LA COQUETTE"
+	},
+	{
+		"uic": 8738226,
+		"line": "L",
+		"label": "VAUCRESSON"
+	},
+	{
+		"uic": 8738233,
+		"line": "L",
+		"label": "CHAVILLE RIVE DROITE"
+	},
+	{
+		"uic": 8738233,
+		"line": "U",
+		"label": "CHAVILLE RIVE DROITE"
+	},
+	{
+		"uic": 8738234,
+		"line": "L",
+		"label": "SEVRES VILLE DAVRAY"
+	},
+	{
+		"uic": 8738234,
+		"line": "U",
+		"label": "SEVRES VILLE DAVRAY"
+	},
+	{
+		"uic": 8738235,
+		"line": "L",
+		"label": "SAINT-CLOUD"
+	},
+	{
+		"uic": 8738235,
+		"line": "U",
+		"label": "SAINT-CLOUD"
+	},
+	{
+		"uic": 8738236,
+		"line": "L",
+		"label": "LE VAL DOR"
+	},
+	{
+		"uic": 8738237,
+		"line": "L",
+		"label": "SURESNES MONT VALERIEN"
+	},
+	{
+		"uic": 8738237,
+		"line": "U",
+		"label": "SURESNES MONT VALERIEN"
+	},
+	{
+		"uic": 8738238,
+		"line": "L",
+		"label": "PUTEAUX"
+	},
+	{
+		"uic": 8738238,
+		"line": "U",
+		"label": "PUTEAUX"
+	},
+	{
+		"uic": 8738243,
+		"line": "L",
+		"label": "LA CELLE SAINT-CLOUD"
+	},
+	{
+		"uic": 8738244,
+		"line": "L",
+		"label": "BOUGIVAL"
+	},
+	{
+		"uic": 8738245,
+		"line": "L",
+		"label": "LOUVECIENNES"
+	},
+	{
+		"uic": 8738246,
+		"line": "L",
+		"label": "MARLY LE ROI"
+	},
+	{
+		"uic": 8738247,
+		"line": "L",
+		"label": "LETANG LA VILLE"
+	},
+	{
+		"uic": 8738248,
+		"line": "L",
+		"label": "SAINT-NOM LA BRETECHE FORET DE MARLY"
+	},
+	{
+		"uic": 8738249,
+		"line": "A",
+		"label": "CERGY SAINT-CHRISTOPHE"
+	},
+	{
+		"uic": 8738249,
+		"line": "L",
+		"label": "CERGY SAINT-CHRISTOPHE"
+	},
+	{
+		"uic": 8738265,
+		"line": "A",
+		"label": "CERGY LE HAUT"
+	},
+	{
+		"uic": 8738265,
+		"line": "L",
+		"label": "CERGY LE HAUT"
+	},
+	{
+		"uic": 8738280,
+		"line": "L",
+		"label": "SAINT-GERMAIN EN LAYE GRANDE CEINTURE"
+	},
+	{
+		"uic": 8738281,
+		"line": "L",
+		"label": "MAREIL MARLY"
+	},
+	{
+		"uic": 8738286,
+		"line": "L",
+		"label": "VERSAILLES RIVE DROITE"
+	},
+	{
+		"uic": 8738287,
+		"line": "L",
+		"label": "MONTREUIL"
+	},
+	{
+		"uic": 8738288,
+		"line": "L",
+		"label": "VIROFLAY RIVE DROITE"
+	},
+	{
+		"uic": 738328,
+		"line": "B",
+		"label": "MASSY VERRIERES"
+	},
+	{
+		"uic": 8738328,
+		"line": "C",
+		"label": "MASSY VERRIERES"
+	},
+	{
+		"uic": 8738400,
+		"line": "J",
+		"label": "PARIS SAINT-LAZARE (GARE SAINT-LAZARE)"
+	},
+	{
+		"uic": 8738400,
+		"line": "L",
+		"label": "PARIS SAINT-LAZARE (GARE SAINT-LAZARE)"
+	},
+	{
+		"uic": 8738600, 
+		"line": "L",
+		"label": "LA GARENNE COLOMBES"
+	},
+	{
+		"uic": 8738605,
+		"line": "A",
+		"label": "ACHERES GRAND CORMIER"
+	},
+	{
+		"uic": 8738605,
+		"line": "J",
+		"label": "ACHERES GRAND CORMIER"
+	},
+	{
+		"uic": 8738630,
+		"line": "L",
+		"label": "LES VALLEES"
+	},
+	{
+		"uic": 775802,
+		"line": "A",
+		"label": "NANTERRE PREFECTURE (mauvais code UIC et doublon !)"
+	},
+	{
+		"uic": 8738631,
+		"line": "L",
+		"label": "NANTERRE UNIVERSITE"
+	},
+	{
+		"uic": 8738640,
+		"line": "A",
+		"label": "HOUILLES CARRIERES SUR SEINE"
+	},
+	{
+		"uic": 8738640,
+		"line": "J",
+		"label": "HOUILLES CARRIERES SUR SEINE"
+	},
+	{
+		"uic": 8738640,
+		"line": "L",
+		"label": "HOUILLES CARRIERES SUR SEINE"
+	},
+	{
+		"uic": 8738641,
+		"line": "A",
+		"label": "SARTROUVILLE"
+	},
+	{
+		"uic": 8738641,
+		"line": "L",
+		"label": "SARTROUVILLE"
+	},
+	{
+		"uic": 8738642,
+		"line": "A",
+		"label": "MAISONS LAFFITTE"
+	},
+	{
+		"uic": 8738642,
+		"line": "L",
+		"label": "MAISONS LAFFITTE"
+	},
+	{
+		"uic": 8738657,
+		"line": "A",
+		"label": "POISSY"
+	},
+	{
+		"uic": 8738657,
+		"line": "J",
+		"label": "POISSY"
+	},
+	{
+		"uic": 8738664,
+		"line": "J",
+		"label": "VILLENNES SUR SEINE"
+	},
+	{
+		"uic": 8738665,
+		"line": "J",
+		"label": "VERNOUILLET VERNEUIL"
+	},
+	{
+		"uic": 8738666,
+		"line": "J",
+		"label": "LES CLAIRIERES DE VERNEUIL"
+	},
+	{
+		"uic": 8738668,
+		"line": "J",
+		"label": "LES MUREAUX"
+	},
+	{
+		"uic": 8738673,
+		"line": "J",
+		"label": "AUBERGENVILLE ELISABETHVILLE"
+	},
+	{
+		"uic": 8738676,
+		"line": "J",
+		"label": "EPONE MEZIERES"
+	},
+	{
+		"uic": 8738676,
+		"line": "N",
+		"label": "EPONE MEZIERES"
+	},
+	{
+		"uic": 8739100,
+		"line": "N",
+		"label": "PARIS MONTPARNASSE (GARE MONTPARNASSE)"
+	},
+	{
+		"uic": 8739153,
+		"line": "N",
+		"label": "VANVES MALAKOFF"
+	},
+	{
+		"uic": 8739156,
+		"line": "N",
+		"label": "CLAMART"
+	},
+	{
+		"uic": 8739300,
+		"line": "C",
+		"label": "VERSAILLES CHANTIERS"
+	},
+	{
+		"uic": 8739300,
+		"line": "N",
+		"label": "VERSAILLES CHANTIERS"
+	},
+	{
+		"uic": 8739300,
+		"line": "U",
+		"label": "VERSAILLES CHANTIERS"
+	},
+	{
+		"uic": 8739303,
+		"line": "C",
+		"label": "INVALIDES"
+	},
+	{
+		"uic": 8739304,
+		"line": "C",
+		"label": "PONT DE LALMA"
+	},
+	{
+		"uic": 8739305,
+		"line": "C",
+		"label": "CHAMP DE MARS TOUR EIFFEL"
+	},
+	{
+		"uic": 8739306,
+		"line": "C",
+		"label": "JAVEL"
+	},
+	{
+		"uic": 8739307,
+		"line": "C",
+		"label": "ISSY"
+	},
+	{
+		"uic": 8739308,
+		"line": "C",
+		"label": "MEUDON VAL FLEURY"
+	},
+	{
+		"uic": 8739310,
+		"line": "N",
+		"label": "MEUDON"
+	},
+	{
+		"uic": 8739311,
+		"line": "N",
+		"label": "BELLEVUE"
+	},
+	{
+		"uic": 8739312,
+		"line": "N",
+		"label": "SEVRES RIVE GAUCHE"
+	},
+	{
+		"uic": 8739315,
+		"line": "C",
+		"label": "VERSAILLES RIVE GAUCHE - CHÂTEAU DE VERSAILLES"
+	},
+	{
+		"uic": 8739316,
+		"line": "C",
+		"label": "PORCHEFONTAINE"
+	},
+	{
+		"uic": 8739317,
+		"line": "C",
+		"label": "CHAVILLE VELIZY"
+	},
+	{
+		"uic": 8739320,
+		"line": "N",
+		"label": "CHAVILLE RIVE GAUCHE"
+	},
+	{
+		"uic": 8739321,
+		"line": "C",
+		"label": "VIROFLAY RIVE GAUCHE"
+	},
+	{
+		"uic": 8739321,
+		"line": "N",
+		"label": "VIROFLAY RIVE GAUCHE"
+	},
+	{
+		"uic": 8739322,
+		"line": "C",
+		"label": "SAINT-CYR"
+	},
+	{
+		"uic": 8739322,
+		"line": "N",
+		"label": "SAINT-CYR"
+	},
+	{
+		"uic": 8739322,
+		"line": "U",
+		"label": "SAINT-CYR"
+	},
+	{
+		"uic": 8739325,
+		"line": "N",
+		"label": "LA VERRIERE"
+	},
+	{
+		"uic": 8739325,
+		"line": "U",
+		"label": "LA VERRIERE"
+	},
+	{
+		"uic": 8739327,
+		"line": "N",
+		"label": "COIGNIERES"
+	},
+	{
+		"uic": 8739328,
+		"line": "N",
+		"label": "LES ESSARTS LE ROI"
+	},
+	{
+		"uic": 8739329,
+		"line": "N",
+		"label": "LE PERRAY"
+	},
+	{
+		"uic": 8739330,
+		"line": "C",
+		"label": "ISSY VAL DE SEINE"
+	},
+	{
+		"uic": 8739331,
+		"line": "N",
+		"label": "RAMBOUILLET"
+	},
+	{
+		"uic": 8739332,
+		"line": "C",
+		"label": "PONT DU GARIGLIANO - Hôpital Européen Georges Pompidou"
+	},
+	{
+		"uic": 8739336,
+		"line": "N",
+		"label": "BEYNES"
+	},
+	{
+		"uic": 8739340,
+		"line": "N",
+		"label": "FONTENAY LE FLEURY"
+	},
+	{
+		"uic": 8739341,
+		"line": "N",
+		"label": "VILLEPREUX LES CLAYES"
+	},
+	{
+		"uic": 8739342,
+		"line": "N",
+		"label": "PLAISIR GRIGNON"
+	},
+	{
+		"uic": 8739343,
+		"line": "N",
+		"label": "GARANCIERES LA QUEUE"
+	},
+	{
+		"uic": 8739344,
+		"line": "N",
+		"label": "ORGERUS BEHOUST"
+	},
+	{
+		"uic": 8739345,
+		"line": "N",
+		"label": "TACOIGNIERES RICHEBOURG"
+	},
+	{
+		"uic": 8739346,
+		"line": "N",
+		"label": "HOUDAN"
+	},
+	{
+		"uic": 8739347,
+		"line": "N",
+		"label": "MARCHEZAIS BROUE"
+	},
+	{
+		"uic": 8739348,
+		"line": "N",
+		"label": "DREUX"
+	},
+	{
+		"uic": 8739350,
+		"line": "C",
+		"label": "PETIT JOUY LES LOGES"
+	},
+	{
+		"uic": 8739351,
+		"line": "C",
+		"label": "JOUY EN JOSAS"
+	},
+	{
+		"uic": 8739353,
+		"line": "C",
+		"label": "VAUBOYEN"
+	},
+	{
+		"uic": 8739354,
+		"line": "C",
+		"label": "BIEVRES"
+	},
+	{
+		"uic": 8739356,
+		"line": "C",
+		"label": "IGNY"
+	},
+	{
+		"uic": 739357,
+		"line": "B",
+		"label": "MASSY PALAISEAU"
+	},
+	{
+		"uic": 8739357,
+		"line": "C",
+		"label": "MASSY PALAISEAU"
+	},
+	{
+		"uic": 8739361,
+		"line": "C",
+		"label": "LONGJUMEAU"
+	},
+	{
+		"uic": 8739362,
+		"line": "N",
+		"label": "PLAISIR LES CLAYES"
+	},
+	{
+		"uic": 8739363,
+		"line": "C",
+		"label": "CHILLY MAZARIN"
+	},
+	{
+		"uic": 8739364,
+		"line": "C",
+		"label": "GRAVIGNY BALIZY"
+	},
+	{
+		"uic": 8739365,
+		"line": "C",
+		"label": "PETIT VAUX"
+	},
+	{
+		"uic": 8739383,
+		"line": "N",
+		"label": "TRAPPES"
+	},
+	{
+		"uic": 8739383,
+		"line": "U",
+		"label": "TRAPPES"
+	},
+	{
+		"uic": 8739384,
+		"line": "C",
+		"label": "SAINT-QUENTIN EN YVELINES"
+	},
+	{
+		"uic": 8739384,
+		"line": "N",
+		"label": "SAINT-QUENTIN EN YVELINES"
+	},
+	{
+		"uic": 8739384,
+		"line": "U",
+		"label": "SAINT-QUENTIN EN YVELINES"
+	},
+	{
+		"uic": 8739387,
+		"line": "L",
+		"label": "NOISY LE ROI"
+	},
+	{
+		"uic": 8739388,
+		"line": "N",
+		"label": "VILLIERS NEAUPHLE PONTCHARTRAIN"
+	},
+	{
+		"uic": 8739389,
+		"line": "N",
+		"label": "MONTFORT LAMAURY MERE"
+	},
+	{
+		"uic": 8741560,
+		"line": "J",
+		"label": "VERNON"
+	},
+	{
+		"uic": 8741588,
+		"line": "J",
+		"label": "ROSNY SUR SEINE"
+	},
+	{
+		"uic": 8741589,
+		"line": "J",
+		"label": "BONNIERES"
+	},
+	{
+		"uic": 8743081,
+		"line": "P",
+		"label": "LA FERTE GAUCHER CENTRE"
+	},
+	{
+		"uic": 8743088,
+		"line": "P",
+		"label": "JOUY SUR MORIN MONUMENT"
+	},
+	{
+		"uic": 8743090,
+		"line": "P",
+		"label": "JOUY SUR MORIN EUSTACHE"
+	},
+	{
+		"uic": 8743091,
+		"line": "P",
+		"label": "JOUY SUR MORIN CHAMPGOULIN"
+	},
+	{
+		"uic": 8743179,
+		"line": "T4",
+		"label": "ROUGEMONT CHANTELOUP (T4)"
+	},
+	{
+		"uic": 8749210,
+		"line": "C",
+		"label": "LES ARDOINES"
+	},
+	{
+		"uic": 8754017,
+		"line": "C",
+		"label": "DOURDAN LA FORET"
+	},
+	{
+		"uic": 8754309,
+		"line": "C",
+		"label": "ANGERVILLE"
+	},
+	{
+		"uic": 8754318,
+		"line": "C",
+		"label": "BOULAINVILLIERS"
+	},
+	{
+		"uic": 8754320,
+		"line": "C",
+		"label": "AVENUE DU PRESIDENT KENNEDY - Maison de Radio France"
+	},
+	{
+		"uic": 8754513,
+		"line": "C",
+		"label": "ETAMPES"
+	},
+	{
+		"uic": 8754514,
+		"line": "C",
+		"label": "ETRECHY"
+	},
+	{
+		"uic": 8754515,
+		"line": "C",
+		"label": "CHAMARANDE"
+	},
+	{
+		"uic": 8754516,
+		"line": "C",
+		"label": "LARDY"
+	},
+	{
+		"uic": 8754517,
+		"line": "C",
+		"label": "BOURAY"
+	},
+	{
+		"uic": 8754518,
+		"line": "C",
+		"label": "MAROLLES EN HUREPOIX"
+	},
+	{
+		"uic": 8754519,
+		"line": "C",
+		"label": "BRETIGNY"
+	},
+	{
+		"uic": 8754520,
+		"line": "C",
+		"label": "SAINT-MICHEL SUR ORGE"
+	},
+	{
+		"uic": 8754521,
+		"line": "C",
+		"label": "SAINTE-GENEVIEVE DES BOIS"
+	},
+	{
+		"uic": 8754522,
+		"line": "C",
+		"label": "EPINAY SUR ORGE"
+	},
+	{
+		"uic": 8754523,
+		"line": "C",
+		"label": "SAVIGNY SUR ORGE"
+	},
+	{
+		"uic": 8754524,
+		"line": "C",
+		"label": "JUVISY"
+	},
+	{
+		"uic": 8754524,
+		"line": "D",
+		"label": "JUVISY"
+	},
+	{
+		"uic": 8754525,
+		"line": "C",
+		"label": "ATHIS MONS"
+	},
+	{
+		"uic": 8754526,
+		"line": "C",
+		"label": "ABLON"
+	},
+	{
+		"uic": 8754527,
+		"line": "C",
+		"label": "VILLENEUVE LE ROI"
+	},
+	{
+		"uic": 8754528,
+		"line": "C",
+		"label": "CHOISY LE ROI"
+	},
+	{
+		"uic": 8754529,
+		"line": "C",
+		"label": "VITRY SUR SEINE"
+	},
+	{
+		"uic": 8754530,
+		"line": "C",
+		"label": "IVRY SUR SEINE"
+	},
+	{
+		"uic": 8754535,
+		"line": "C",
+		"label": "SAINT-MARTIN D ETAMPES"
+	},
+	{
+		"uic": 8754545,
+		"line": "C",
+		"label": "LA NORVILLE SAINT-GERMAIN LES ARPAJON"
+	},
+	{
+		"uic": 8754546,
+		"line": "C",
+		"label": "ARPAJON"
+	},
+	{
+		"uic": 8754547,
+		"line": "C",
+		"label": "EGLY"
+	},
+	{
+		"uic": 8754548,
+		"line": "C",
+		"label": "BREUILLET BRUYERES LE CHATEL"
+	},
+	{
+		"uic": 8754549,
+		"line": "C",
+		"label": "BREUILLET VILLAGE"
+	},
+	{
+		"uic": 8754550,
+		"line": "C",
+		"label": "SAINT-CHERON"
+	},
+	{
+		"uic": 8754551,
+		"line": "C",
+		"label": "SERMAISE"
+	},
+	{
+		"uic": 8754552,
+		"line": "C",
+		"label": "DOURDAN"
+	},
+	{
+		"uic": 8754619,
+		"line": "C",
+		"label": "PONT DE RUNGIS Aéroport dOrly"
+	},
+	{
+		"uic": 8754620,
+		"line": "C",
+		"label": "ORLY VILLE"
+	},
+	{
+		"uic": 8754622,
+		"line": "C",
+		"label": "LES SAULES"
+	},
+	{
+		"uic": 8754629,
+		"line": "C",
+		"label": "RUNGIS LA FRATERNELLE"
+	},
+	{
+		"uic": 8754631,
+		"line": "C",
+		"label": "CHEMIN DANTONY"
+	},
+	{
+		"uic": 8754702,
+		"line": "C",
+		"label": "PARIS AUSTERLITZ (GARE DAUSTERLITZ)"
+	},
+	{
+		"uic": 8754730,
+		"line": "C",
+		"label": "MUSEE DORSAY"
+	},
+	{
+		"uic": 8754731,
+		"line": "C",
+		"label": "SAINT MICHEL NOTRE DAME RER C"
+	},
+	{
+		"uic": 8760880,
+		"line": "D",
+		"label": "CRETEIL POMPADOUR"
+	},
+	{
+		"uic": 8768100,
+		"line": "D",
+		"label": "CORBEIL ESSONNES"
+	},
+	{
+		"uic": 8768115,
+		"line": "D",
+		"label": "MAISONS ALFORT ALFORTVILLE"
+	},
+	{
+		"uic": 8768124,
+		"line": "D",
+		"label": "LE VERT DE MAISONS"
+	},
+	{
+		"uic": 8768130,
+		"line": "D",
+		"label": "VIGNEUX SUR SEINE"
+	},
+	{
+		"uic": 8768131,
+		"line": "D",
+		"label": "VIRY CHATILLON"
+	},
+	{
+		"uic": 8768133,
+		"line": "D",
+		"label": "RIS ORANGIS"
+	},
+	{
+		"uic": 8768134,
+		"line": "D",
+		"label": "ORANGIS BOIS DE LEPINE"
+	},
+	{
+		"uic": 8768135,
+		"line": "D",
+		"label": "GRAND BOURG"
+	},
+	{
+		"uic": 8768136,
+		"line": "D",
+		"label": "EVRY - Val de Seine"
+	},
+	{
+		"uic": 8768137,
+		"line": "D",
+		"label": "GRIGNY CENTRE"
+	},
+	{
+		"uic": 8768138,
+		"line": "D",
+		"label": "EVRY COURCOURONNES - Centre"
+	},
+	{
+		"uic": 8768139,
+		"line": "D",
+		"label": "LE BRAS DE FER - Evry Génopole"
+	},
+	{
+		"uic": 8768140,
+		"line": "D",
+		"label": "MOULIN GALANT"
+	},
+	{
+		"uic": 8768141,
+		"line": "D",
+		"label": "MENNECY"
+	},
+	{
+		"uic": 8768143,
+		"line": "D",
+		"label": "BALLANCOURT"
+	},
+	{
+		"uic": 8768145,
+		"line": "D",
+		"label": "LA FERTE ALAIS"
+	},
+	{
+		"uic": 8768147,
+		"line": "D",
+		"label": "BOUTIGNY"
+	},
+	{
+		"uic": 8768148,
+		"line": "D",
+		"label": "MAISSE"
+	},
+	{
+		"uic": 8768151,
+		"line": "D",
+		"label": "BUNO GIRONVILLE"
+	},
+	{
+		"uic": 8768160,
+		"line": "D",
+		"label": "ESSONNES ROBINSON"
+	},
+	{
+		"uic": 8768161,
+		"line": "D",
+		"label": "VILLABE"
+	},
+	{
+		"uic": 8768162,
+		"line": "D",
+		"label": "LE PLESSIS CHENET"
+	},
+	{
+		"uic": 8768163,
+		"line": "D",
+		"label": "LE COUDRAY MONTCEAUX"
+	},
+	{
+		"uic": 8768180,
+		"line": "D",
+		"label": "VILLENEUVE TRIAGE"
+	},
+	{
+		"uic": 8768182,
+		"line": "D",
+		"label": "VILLENEUVE SAINT-GEORGES"
+	},
+	{
+		"uic": 8768185,
+		"line": "D",
+		"label": "VILLENEUVE PRAIRIE"
+	},
+	{
+		"uic": 8768200,
+		"line": "D",
+		"label": "MELUN"
+	},
+	{
+		"uic": 8768200,
+		"line": "R",
+		"label": "MELUN"
+	},
+	{
+		"uic": 8768210,
+		"line": "D",
+		"label": "MONTGERON CROSNE"
+	},
+	{
+		"uic": 8768211,
+		"line": "D",
+		"label": "YERRES"
+	},
+	{
+		"uic": 8768212,
+		"line": "D",
+		"label": "BRUNOY"
+	},
+	{
+		"uic": 8768213,
+		"line": "D",
+		"label": "BOUSSY SAINT-ANTOINE"
+	},
+	{
+		"uic": 8768214,
+		"line": "D",
+		"label": "COMBS LA VILLE QUINCY"
+	},
+	{
+		"uic": 8768215,
+		"line": "D",
+		"label": "LIEUSAINT MOISSY"
+	},
+	{
+		"uic": 8768216,
+		"line": "D",
+		"label": "CESSON"
+	},
+	{
+		"uic": 8768217,
+		"line": "D",
+		"label": "LE MEE"
+	},
+	{
+		"uic": 8768218,
+		"line": "D",
+		"label": "SAVIGNY LE TEMPLE NANDY"
+	},
+	{
+		"uic": 8768220,
+		"line": "R",
+		"label": "BOIS LE ROI"
+	},
+	{
+		"uic": 8768221,
+		"line": "R",
+		"label": "FONTAINEBLEAU AVON"
+	},
+	{
+		"uic": 8768225,
+		"line": "R",
+		"label": "THOMERY"
+	},
+	{
+		"uic": 8768227,
+		"line": "R",
+		"label": "MORET VENEUX LES SABLONS"
+	},
+	{
+		"uic": 8768229,
+		"line": "R",
+		"label": "SAINT-MAMMES"
+	},
+	{
+		"uic": 8768230,
+		"line": "R",
+		"label": "MONTEREAU"
+	},
+	{
+		"uic": 8768240,
+		"line": "R",
+		"label": "LIVRY SUR SEINE"
+	},
+	{
+		"uic": 8768241,
+		"line": "R",
+		"label": "CHARTRETTES"
+	},
+	{
+		"uic": 8768242,
+		"line": "R",
+		"label": "FONTAINE LE PORT"
+	},
+	{
+		"uic": 8768243,
+		"line": "R",
+		"label": "HERICY"
+	},
+	{
+		"uic": 8768244,
+		"line": "R",
+		"label": "VULAINES SUR SEINE SAMOREAU"
+	},
+	{
+		"uic": 8768245,
+		"line": "R",
+		"label": "CHAMPAGNE SUR SEINE"
+	},
+	{
+		"uic": 8768246,
+		"line": "R",
+		"label": "VERNOU SUR SEINE"
+	},
+	{
+		"uic": 8768247,
+		"line": "R",
+		"label": "LA GRANDE PAROISSE"
+	},
+	{
+		"uic": 8768250,
+		"line": "D",
+		"label": "VOSVES"
+	},
+	{
+		"uic": 8768251,
+		"line": "D",
+		"label": "BOISSISE LE ROI"
+	},
+	{
+		"uic": 8768252,
+		"line": "D",
+		"label": "PONTHIERRY PRINGY"
+	},
+	{
+		"uic": 8768254,
+		"line": "D",
+		"label": "SAINT-FARGEAU"
+	},
+	{
+		"uic": 8768400,
+		"line": "R",
+		"label": "MONTARGIS"
+	},
+	{
+		"uic": 8768410,
+		"line": "R",
+		"label": "MONTIGNY SUR LOING"
+	},
+	{
+		"uic": 8768411,
+		"line": "R",
+		"label": "BOURRON MARLOTTE GREZ"
+	},
+	{
+		"uic": 8768412,
+		"line": "R",
+		"label": "NEMOURS SAINT-PIERRE"
+	},
+	{
+		"uic": 8768419,
+		"line": "R",
+		"label": "BAGNEAUX SUR LOING"
+	},
+	{
+		"uic": 8768421,
+		"line": "R",
+		"label": "SOUPPES CHÂTEAU LANDON"
+	},
+	{
+		"uic": 8768423,
+		"line": "R",
+		"label": "DORDIVES"
+	},
+	{
+		"uic": 8768424,
+		"line": "R",
+		"label": "FERRIERES FONTENAY"
+	},
+	{
+		"uic": 8768440,
+		"line": "D",
+		"label": "BOIGNEVILLE"
+	},
+	{
+		"uic": 8768441,
+		"line": "D",
+		"label": "MALESHERBES"
+	},
+	{
+		"uic": 8768603,
+		"line": "D",
+		"label": "PARIS - GARE DE LYON"
+	},
+	{
+		"uic": 8768603,
+		"line": "R",
+		"label": "PARIS - GARE DE LYON"
+	},
+	{
+		"uic": 8768666,
+		"line": "R",
+		"label": "PARIS BERCY (GARE DE BERCY)"
+	},
+	{
+		"uic": 8773006,
+		"line": "A",
+		"label": "VAL DEUROPE"
+	},
+	{
+		"uic": 8775498,
+		"line": "A",
+		"label": "BUSSY SAINT-GEORGES"
+	},
+	{
+		"uic": 8775499,
+		"line": "A",
+		"label": "MARNE LA VALLEE CHESSY"
+	},
+	{
+		"uic": 8775800,
+		"line": "A",
+		"label": "CHARLES DE GAULLE ETOILE"
+	},
+	{
+		"uic": 8775801,
+		"line": "A",
+		"label": "GARE DE LA DEFENSE RER A"
+	},
+	{
+		"uic": 8775802,
+		"line": "A",
+		"label": "GARE DE NANTERRE PREFECTURE"
+	},
+	{
+		"uic": 8775803,
+		"line": "A",
+		"label": "GARE DE NANTERRE UNIVERSITE RER A"
+	},
+	{
+		"uic": 8775804,
+		"line": "A",
+		"label": "NANTERRE VILLE"
+	},
+	{
+		"uic": 8775805,
+		"line": "A",
+		"label": "RUEIL MALMAISON"
+	},
+	{
+		"uic": 8775806,
+		"line": "A",
+		"label": "CHATOU CROISSY"
+	},
+	{
+		"uic": 8775807,
+		"line": "A",
+		"label": "LE VESINET CENTRE"
+	},
+	{
+		"uic": 8775808,
+		"line": "A",
+		"label": "LE VESINET LE PECQ"
+	},
+	{
+		"uic": 8775809,
+		"line": "A",
+		"label": "SAINT-GERMAIN EN LAYE"
+	},
+	{
+		"uic": 8775810,
+		"line": "A",
+		"label": "NATION"
+	},
+	{
+		"uic": 8775811,
+		"line": "A",
+		"label": "VINCENNES"
+	},
+	{
+		"uic": 8775812,
+		"line": "A",
+		"label": "FONTENAY SOUS BOIS"
+	},
+	{
+		"uic": 8775813,
+		"line": "A",
+		"label": "NOGENT SUR MARNE"
+	},
+	{
+		"uic": 8775814,
+		"line": "A",
+		"label": "JOINVILLE LE PONT"
+	},
+	{
+		"uic": 8775815,
+		"line": "A",
+		"label": "SAINT-MAUR CRETEIL"
+	},
+	{
+		"uic": 8775816,
+		"line": "A",
+		"label": "LE PARC DE SAINT-MAUR"
+	},
+	{
+		"uic": 8775817,
+		"line": "A",
+		"label": "CHAMPIGNY"
+	},
+	{
+		"uic": 8775818,
+		"line": "A",
+		"label": "LA VARENNE CHENNEVIERES"
+	},
+	{
+		"uic": 8775819,
+		"line": "A",
+		"label": "SUCY BONNEUIL"
+	},
+	{
+		"uic": 8775820,
+		"line": "A",
+		"label": "BOISSY SAINT-LEGER"
+	},
+	{
+		"uic": 8775831,
+		"line": "A",
+		"label": "NEUILLY PLAISANCE"
+	},
+	{
+		"uic": 8775832,
+		"line": "A",
+		"label": "BRY SUR MARNE"
+	},
+	{
+		"uic": 8775833,
+		"line": "A",
+		"label": "NOISY LE GRAND MONT DEST"
+	},
+	{
+		"uic": 8775834,
+		"line": "A",
+		"label": "NOISY CHAMPS"
+	},
+	{
+		"uic": 8775835,
+		"line": "A",
+		"label": "NOISIEL"
+	},
+	{
+		"uic": 8775836,
+		"line": "A",
+		"label": "LOGNES"
+	},
+	{
+		"uic": 8775837,
+		"line": "A",
+		"label": "TORCY"
+	},
+	{
+		"uic": 8775859,
+		"line": "A",
+		"label": "AUBER"
+	},
+	{
+		"uic": 8775860,
+		"line": "A",
+		"label": "CHATELET LES HALLES"
+	},
+	{
+		"uic": 8775860,
+		"line": "B",
+		"label": "CHATELET LES HALLES"
+	},
+	{
+		"uic": 8775860,
+		"line": "D",
+		"label": "CHATELET LES HALLES"
+	},
+	{
+		"uic": 8775861,
+		"line": "B",
+		"label": "LUXEMBOURG"
+	},
+	{
+		"uic": 8775862,
+		"line": "B",
+		"label": "PORT ROYAL"
+	},
+	{
+		"uic": 8775863,
+		"line": "B",
+		"label": "DENFERT ROCHEREAU"
+	},
+	{
+		"uic": 8775864,
+		"line": "B",
+		"label": "CITE UNIVERSITAIRE"
+	},
+	{
+		"uic": 8775865,
+		"line": "B",
+		"label": "GENTILLY"
+	},
+	{
+		"uic": 8775866,
+		"line": "B",
+		"label": "LAPLACE"
+	},
+	{
+		"uic": 8775867,
+		"line": "B",
+		"label": "ARCUEIL CACHAN"
+	},
+	{
+		"uic": 8775868,
+		"line": "B",
+		"label": "BAGNEUX"
+	},
+	{
+		"uic": 8775869,
+		"line": "B",
+		"label": "BOURG LA REINE"
+	},
+	{
+		"uic": 8775870,
+		"line": "B",
+		"label": "SCEAUX"
+	},
+	{
+		"uic": 8775871,
+		"line": "B",
+		"label": "FONTENAY AUX ROSES"
+	},
+	{
+		"uic": 8775872,
+		"line": "B",
+		"label": "ROBINSON"
+	},
+	{
+		"uic": 8775873,
+		"line": "B",
+		"label": "PARC DE SCEAUX"
+	},
+	{
+		"uic": 8775874,
+		"line": "B",
+		"label": "LA CROIX DE BERNY"
+	},
+	{
+		"uic": 8775875,
+		"line": "B",
+		"label": "ANTONY"
+	},
+	{
+		"uic": 8775876,
+		"line": "B",
+		"label": "FONTAINE MICHALON"
+	},
+	{
+		"uic": 8775877,
+		"line": "B",
+		"label": "LES BACONNETS"
+	},
+	{
+		"uic": 8775880,
+		"line": "B",
+		"label": "PALAISEAU"
+	},
+	{
+		"uic": 8775881,
+		"line": "B",
+		"label": "PALAISEAU VILLEBON"
+	},
+	{
+		"uic": 8775882,
+		"line": "B",
+		"label": "LOZERE"
+	},
+	{
+		"uic": 8775883,
+		"line": "B",
+		"label": "LE GUICHET"
+	},
+	{
+		"uic": 8775884,
+		"line": "B",
+		"label": "ORSAY VILLE"
+	},
+	{
+		"uic": 8775885,
+		"line": "B",
+		"label": "BURES SUR YVETTE"
+	},
+	{
+		"uic": 8775886,
+		"line": "B",
+		"label": "LA HACQUINIERE"
+	},
+	{
+		"uic": 8775887,
+		"line": "B",
+		"label": "GIF SUR YVETTE"
+	},
+	{
+		"uic": 8775888,
+		"line": "B",
+		"label": "COURCELLE SUR YVETTE"
+	},
+	{
+		"uic": 8775889,
+		"line": "B",
+		"label": "SAINT-REMY LES CHEVREUSE"
+	},
+	{
+		"uic": 8778543,
+		"line": "B",
+		"label": "SAINT-MICHEL NOTRE DAME RER B"
+	},
+	{
+		"uic": 8798870,
+		"line": "T4",
+		"label": "REMISE A JORELLE (T4)"
+	},
+	{
+		"uic": 8739400,
+		"line": "TER",
+		"label": "CHARTRES"
+	},
+	{
+		"uic": 8739411,
+		"line": "TER",
+		"label": "EPERNON"
+	},
+	{
+		"uic": 8775858,
+		"line": "A",
+		"label": "GARE DE LYON RER A"
+	},
+	{
+		"uic": 8739334,
+		"line": "TER",
+		"label": "GAZERAN"
+	},
+	{
+		"uic": 8739415,
+		"line": "TER",
+		"label": "JOUY"
+	},
+	{
+		"uic": 8775879,
+		"line": "B",
+		"label": "MASSY PALAISEAU RER B"
+	},
+	{
+		"uic": 8739413,
+		"line": "TER",
+		"label": "MAINTENON"
+	},
+	{
+		"uic": 8775878,
+		"line": "B",
+		"label": "MASSY VERRIERES RER B"
+	},
+	{
+		"uic": 8768600,
+		"line": "R",
+		"label": "PARIS - GARE DE LYON (GRANDES LIGNES)"
+	},
+	{
+		"uic": 8739414,
+		"line": "TER",
+		"label": "SAINT PIAT"
+	},
+	{
+		"uic": 8738162,
+		"line": "TER",
+		"label": "BREVAL"
+	},
+	{
+		"uic": 8775830,
+		"line": "A",
+		"label": "VAL DE FONTENAY RER A"
+	},
+	{
+		"uic": 8798871,
+		"line": "T4",
+		"label": "LYCEE HENRI SELLIER (T4)"
+	},
+	{
+		"uic": 8768310,
+		"line": "R",
+		"label": "VILLENEUVE LA GUYARD"
+	},
+	{
+		"uic": 8768312,
+		"line": "R",
+		"label": "CHAMPIGNY SUR YONNE"
+	},
+	{
+		"uic": 8768313,
+		"line": "R",
+		"label": "PONT SUR YONNE"
+	},
+	{
+		"uic": 8768300,
+		"line": "R",
+		"label": "SENS"
+	},
+	{
+		"uic": 8768320,
+		"line": "R",
+		"label": "ETIGNY VERON"
+	},
+	{
+		"uic": 8768321,
+		"line": "R",
+		"label": "VILLENEUVE SUR YONNE"
+	},
+	{
+		"uic": 8768322,
+		"line": "R",
+		"label": "SAINT JULIEN DU SAULT"
+	},
+	{
+		"uic": 8768324,
+		"line": "R",
+		"label": "JOIGNY"
+	},
+	{
+		"uic": 8768326,
+		"line": "R",
+		"label": "LAROCHE MIGENNES"
+	}
+]

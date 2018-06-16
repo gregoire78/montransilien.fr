@@ -1,0 +1,2412 @@
+[
+	{
+		"code": "AB",
+		"uic7": 8727141,
+		"nom_gare_sncf": "Aulnay sous Bois"
+	},
+	{
+		"code": "ABL",
+		"uic7": 8754526,
+		"nom_gare_sncf": "Ablon"
+	},
+	{
+		"code": "ACW",
+		"uic7": 8738165,
+		"nom_gare_sncf": "Achères-Ville"
+	},
+	{
+		"code": "AEE",
+		"uic7": 8738113,
+		"nom_gare_sncf": "Asnières sur Seine"
+	},
+	{
+		"code": "AEH",
+		"uic7": 8738673,
+		"nom_gare_sncf": "Aubergenville Élisabethville"
+	},
+	{
+		"code": "AHM",
+		"uic7": 8738104,
+		"nom_gare_sncf": "Avenue Henri Martin"
+	},
+	{
+		"code": "ALC",
+		"uic7": 8727130,
+		"nom_gare_sncf": "Aubervilliers La Courneuve"
+	},
+	{
+		"code": "ANY",
+		"uic7": 8738149,
+		"nom_gare_sncf": "Andrésy"
+	},
+	{
+		"code": "APK",
+		"uic7": 8754320,
+		"nom_gare_sncf": "Avenue du Président Kennedy"
+	},
+	{
+		"code": "ARK",
+		"uic7": 8775867,
+		"nom_gare_sncf": "Arcueil Cachan"
+	},
+	{
+		"code": "ARP",
+		"uic7": 8754546,
+		"nom_gare_sncf": "Arpajon"
+	},
+	{
+		"code": "ARW",
+		"uic7": 8738184,
+		"nom_gare_sncf": "Argenteuil"
+	},
+	{
+		"code": "ATH",
+		"uic7": 8754525,
+		"nom_gare_sncf": "Athis Mons"
+	},
+	{
+		"code": "ATW",
+		"uic7": 8775875,
+		"nom_gare_sncf": "Antony"
+	},
+	{
+		"code": "AUU",
+		"uic7": 8775859,
+		"nom_gare_sncf": "Auber"
+	},
+	{
+		"code": "AUW",
+		"uic7": 8727654,
+		"nom_gare_sncf": "Auvers-sur-Oise"
+	},
+	{
+		"code": "AVF",
+		"uic7": 8738103,
+		"nom_gare_sncf": "Avenue Foch"
+	},
+	{
+		"code": "BAM",
+		"uic7": 8727147,
+		"nom_gare_sncf": "Blanc Mesnil"
+	},
+	{
+		"code": "BBN",
+		"uic7": 8727628,
+		"nom_gare_sncf": "La Borne Blanche"
+	},
+	{
+		"code": "BCO",
+		"uic7": 8738107,
+		"nom_gare_sncf": "Bois Colombes"
+	},
+	{
+		"code": "BDE",
+		"uic7": 8727144,
+		"nom_gare_sncf": "Sevran Beaudottes"
+	},
+	{
+		"code": "BDY",
+		"uic7": 8711340,
+		"nom_gare_sncf": "Bondy"
+	},
+	{
+		"code": "BEC",
+		"uic7": 8738200,
+		"nom_gare_sncf": "Bécon les Bruyères"
+	},
+	{
+		"code": "BEL",
+		"uic7": 8736692,
+		"nom_gare_sncf": "Saint-Germain-en-Laye Bel Air Fourqueux"
+	},
+	{
+		"code": "BFM",
+		"uic7": 8732832,
+		"nom_gare_sncf": "Bibliothèque François Mitterrand"
+	},
+	{
+		"code": "BFX",
+		"uic7": 8768139,
+		"nom_gare_sncf": "Le Bras de Fer"
+	},
+	{
+		"code": "BGK",
+		"uic7": 8775868,
+		"nom_gare_sncf": "Bagneux"
+	},
+	{
+		"code": "BGV",
+		"uic7": 8738244,
+		"nom_gare_sncf": "Bougival"
+	},
+	{
+		"code": "BIH",
+		"uic7": 8754548,
+		"nom_gare_sncf": "Breuillet Bruyères le Chatel"
+	},
+	{
+		"code": "BIS",
+		"uic7": 8739354,
+		"nom_gare_sncf": "Bièvres"
+	},
+	{
+		"code": "BJN",
+		"uic7": 8768147,
+		"nom_gare_sncf": "Boutigny"
+	},
+	{
+		"code": "BJR",
+		"uic7": 8768220,
+		"nom_gare_sncf": "Bois Le Roi"
+	},
+	{
+		"code": "BKR",
+		"uic7": 8768251,
+		"nom_gare_sncf": "Boissise-le-Roi"
+	},
+	{
+		"code": "BLA",
+		"uic7": 8738115,
+		"nom_gare_sncf": "Boissy-l'Aillerie"
+	},
+	{
+		"code": "BLU",
+		"uic7": 8739311,
+		"nom_gare_sncf": "Bellevue"
+	},
+	{
+		"code": "BNR",
+		"uic7": 8741589,
+		"nom_gare_sncf": "Bonnières"
+	},
+	{
+		"code": "BNY",
+		"uic7": 8768212,
+		"nom_gare_sncf": "Brunoy"
+	},
+	{
+		"code": "BOF",
+		"uic7": 8727648,
+		"nom_gare_sncf": "Bouffemont Moisselles"
+	},
+	{
+		"code": "BOM",
+		"uic7": 8768411,
+		"nom_gare_sncf": "Bourron Marlotte Grez"
+	},
+	{
+		"code": "BQA",
+		"uic7": 8775832,
+		"nom_gare_sncf": "Bry sur Marne"
+	},
+	{
+		"code": "BQC",
+		"uic7": 8775877,
+		"nom_gare_sncf": "Les Baconnets"
+	},
+	{
+		"code": "BQQ",
+		"uic7": 8775869,
+		"nom_gare_sncf": "Bourg la Reine"
+	},
+	{
+		"code": "BQV",
+		"uic7": 8768151,
+		"nom_gare_sncf": "Buno-Gironville"
+	},
+	{
+		"code": "BRK",
+		"uic7": 8727645,
+		"nom_gare_sncf": "Bruyères-sur-Oise"
+	},
+	{
+		"code": "BRN",
+		"uic7": 8727644,
+		"nom_gare_sncf": "Boran-sur-Oise"
+	},
+	{
+		"code": "BRW",
+		"uic7": 8754549,
+		"nom_gare_sncf": "Breuillet Village"
+	},
+	{
+		"code": "BSO",
+		"uic7": 8754517,
+		"nom_gare_sncf": "Bouray"
+	},
+	{
+		"code": "BSR",
+		"uic7": 8727664,
+		"nom_gare_sncf": "Bessancourt"
+	},
+	{
+		"code": "BSW",
+		"uic7": 8727655,
+		"nom_gare_sncf": "Belloy - Saint-Martin"
+	},
+	{
+		"code": "BUR",
+		"uic7": 8768143,
+		"nom_gare_sncf": "Ballancourt"
+	},
+	{
+		"code": "BVA",
+		"uic7": 8738162,
+		"nom_gare_sncf": "Bréval"
+	},
+	{
+		"code": "BVI",
+		"uic7": 8739332,
+		"nom_gare_sncf": "Pont du Garigliano"
+	},
+	{
+		"code": "BVJ",
+		"uic7": 8775885,
+		"nom_gare_sncf": "Bures sur Yvette"
+	},
+	{
+		"code": "BWI",
+		"uic7": 8768440,
+		"nom_gare_sncf": "Boigneville"
+	},
+	{
+		"code": "BWR",
+		"uic7": 8754318,
+		"nom_gare_sncf": "Boulainvilliers"
+	},
+	{
+		"code": "BXG",
+		"uic7": 8775498,
+		"nom_gare_sncf": "Bussy Saint-Georges"
+	},
+	{
+		"code": "BXI",
+		"uic7": 8768213,
+		"nom_gare_sncf": "Boussy Saint-Antoine"
+	},
+	{
+		"code": "BXN",
+		"uic7": 8768419,
+		"nom_gare_sncf": "Bagneaux sur Loing"
+	},
+	{
+		"code": "BXP",
+		"uic7": 8711377,
+		"nom_gare_sncf": "Les Boullereaux Champigny"
+	},
+	{
+		"code": "BXR",
+		"uic7": 8775820,
+		"nom_gare_sncf": "Boissy Saint-Léger"
+	},
+	{
+		"code": "BY",
+		"uic7": 8754519,
+		"nom_gare_sncf": "Brétigny"
+	},
+	{
+		"code": "BYS",
+		"uic7": 8739336,
+		"nom_gare_sncf": "Beynes"
+	},
+	{
+		"code": "CAZ",
+		"uic7": 8739363,
+		"nom_gare_sncf": "Chilly Mazarin"
+	},
+	{
+		"code": "CBK",
+		"uic7": 8738108,
+		"nom_gare_sncf": "Colombes"
+	},
+	{
+		"code": "CBV",
+		"uic7": 8768214,
+		"nom_gare_sncf": "Combs la Ville Quincy"
+	},
+	{
+		"code": "CEG",
+		"uic7": 8727603,
+		"nom_gare_sncf": "Champ de Courses dEnghien"
+	},
+	{
+		"code": "CEJ",
+		"uic7": 8727606,
+		"nom_gare_sncf": "Cernay"
+	},
+	{
+		"code": "CES",
+		"uic7": 8768216,
+		"nom_gare_sncf": "Cesson"
+	},
+	{
+		"code": "CEV",
+		"uic7": 8738122,
+		"nom_gare_sncf": "Chaumont-en-Vexin"
+	},
+	{
+		"code": "CEX",
+		"uic7": 8768163,
+		"nom_gare_sncf": "Le Coudray-Monceaux"
+	},
+	{
+		"code": "CFD",
+		"uic7": 8738145,
+		"nom_gare_sncf": "Conflans-Fin-d'Oise"
+	},
+	{
+		"code": "CGG",
+		"uic7": 8711352,
+		"nom_gare_sncf": "Chenay Gagny"
+	},
+	{
+		"code": "CGJ",
+		"uic7": 8775817,
+		"nom_gare_sncf": "Champigny"
+	},
+	{
+		"code": "CGP",
+		"uic7": 8775800,
+		"nom_gare_sncf": "Charles de Gaulle-Étoile"
+	},
+	{
+		"code": "CGW",
+		"uic7": 8739327,
+		"nom_gare_sncf": "Coignières"
+	},
+	{
+		"code": "CH",
+		"uic7": 8739400,
+		"nom_gare_sncf": "Chartres"
+	},
+	{
+		"code": "CHK",
+		"uic7": 8754515,
+		"nom_gare_sncf": "Chamarande"
+	},
+	{
+		"code": "CHQ",
+		"uic7": 8754631,
+		"nom_gare_sncf": "Chemin dAntony"
+	},
+	{
+		"code": "CHR",
+		"uic7": 8738119,
+		"nom_gare_sncf": "Chars"
+	},
+	{
+		"code": "CHV",
+		"uic7": 8739317,
+		"nom_gare_sncf": "Chaville Vélizy"
+	},
+	{
+		"code": "CJN",
+		"uic7": 8711650,
+		"nom_gare_sncf": "Changis Saint-Jean"
+	},
+	{
+		"code": "CJR",
+		"uic7": 8768241,
+		"nom_gare_sncf": "Chartrettes"
+	},
+	{
+		"code": "CJV",
+		"uic7": 8738265,
+		"nom_gare_sncf": "Cergy le Haut"
+	},
+	{
+		"code": "CL",
+		"uic7": 8727600,
+		"nom_gare_sncf": "Creil"
+	},
+	{
+		"code": "CLC",
+		"uic7": 8711677,
+		"nom_gare_sncf": "Crécy-la-Chapelle"
+	},
+	{
+		"code": "CLL",
+		"uic7": 8738112,
+		"nom_gare_sncf": "Clichy Levallois"
+	},
+	{
+		"code": "CLR",
+		"uic7": 8754528,
+		"nom_gare_sncf": "Choisy le Roi"
+	},
+	{
+		"code": "CLX",
+		"uic7": 8775860,
+		"nom_gare_sncf": "Châtelet les Halles"
+	},
+	{
+		"code": "CLY",
+		"uic7": 8727611,
+		"nom_gare_sncf": "Chantilly Gouvieux"
+	},
+	{
+		"code": "CMA",
+		"uic7": 8739156,
+		"nom_gare_sncf": "Clamart"
+	},
+	{
+		"code": "CME",
+		"uic7": 8768245,
+		"nom_gare_sncf": "Champagne sur Seine"
+	},
+	{
+		"code": "CO",
+		"uic7": 8711630,
+		"nom_gare_sncf": "Coulommiers"
+	},
+	{
+		"code": "COE",
+		"uic7": 8768100,
+		"nom_gare_sncf": "Corbeil Essonnes"
+	},
+	{
+		"code": "COJ",
+		"uic7": 8727204,
+		"nom_gare_sncf": "Compans"
+	},
+	{
+		"code": "CPA",
+		"uic7": 8738186,
+		"nom_gare_sncf": "Cormeilles en Parisis"
+	},
+	{
+		"code": "CPK",
+		"uic7": 8711587,
+		"nom_gare_sncf": "Champbenoist - Poigny"
+	},
+	{
+		"code": "CPM",
+		"uic7": 8739305,
+		"nom_gare_sncf": "Champ de Mars Tour Eiffel"
+	},
+	{
+		"code": "CPO",
+		"uic7": 8727651,
+		"nom_gare_sncf": "Champagne sur Oise"
+	},
+	{
+		"code": "CPW",
+		"uic7": 8727616,
+		"nom_gare_sncf": "Chaponval"
+	},
+	{
+		"code": "CQQ",
+		"uic7": 8711664,
+		"nom_gare_sncf": "Crouy-sur-Ourcq"
+	},
+	{
+		"code": "CSG",
+		"uic7": 8711611,
+		"nom_gare_sncf": "Chelles Gournay"
+	},
+	{
+		"code": "CSH",
+		"uic7": 8738189,
+		"nom_gare_sncf": "Conflans Sainte Honorine"
+	},
+	{
+		"code": "CSY",
+		"uic7": 8768312,
+		"nom_gare_sncf": "Champigny-sur-Yonne"
+	},
+	{
+		"code": "CTH",
+		"uic7": 8711658,
+		"nom_gare_sncf": "Château Thierry"
+	},
+	{
+		"code": "CUF",
+		"uic7": 8775864,
+		"nom_gare_sncf": "Cité Universitaire"
+	},
+	{
+		"code": "CVF",
+		"uic7": 8738147,
+		"nom_gare_sncf": "Chanteloup les Vignes"
+	},
+	{
+		"code": "CVI",
+		"uic7": 8739320,
+		"nom_gare_sncf": "Chaville Rive Gauche"
+	},
+	{
+		"code": "CVW",
+		"uic7": 8775888,
+		"nom_gare_sncf": "Courcelles sur Yvette"
+	},
+	{
+		"code": "CWJ",
+		"uic7": 8738233,
+		"nom_gare_sncf": "Chaville Rive Droite"
+	},
+	{
+		"code": "CYC",
+		"uic7": 8738249,
+		"nom_gare_sncf": "Cergy Saint-Christophe"
+	},
+	{
+		"code": "CYP",
+		"uic7": 8738190,
+		"nom_gare_sncf": "Cergy Préfecture"
+	},
+	{
+		"code": "CYQ",
+		"uic7": 8711673,
+		"nom_gare_sncf": "Couilly Saint-Germain Quincy"
+	},
+	{
+		"code": "CYV",
+		"uic7": 8727159,
+		"nom_gare_sncf": "Crépy-en-Valois"
+	},
+	{
+		"code": "CYZ",
+		"uic7": 8711657,
+		"nom_gare_sncf": "Chézy sur Marne"
+	},
+	{
+		"code": "D",
+		"uic7": 8754552,
+		"nom_gare_sncf": "Dourdan"
+	},
+	{
+		"code": "DA",
+		"uic7": 8754017,
+		"nom_gare_sncf": "Dourdan la Forêt"
+	},
+	{
+		"code": "DAM",
+		"uic7": 8727153,
+		"nom_gare_sncf": "Dammartin Juilly-Saint-Mard"
+	},
+	{
+		"code": "DDI",
+		"uic7": 8768423,
+		"nom_gare_sncf": "Dordives"
+	},
+	{
+		"code": "DEU",
+		"uic7": 8727634,
+		"nom_gare_sncf": "Deuil Montmagny"
+	},
+	{
+		"code": "DFR",
+		"uic7": 8775863,
+		"nom_gare_sncf": "Denfert Rochereau"
+	},
+	{
+		"code": "DMO",
+		"uic7": 8727643,
+		"nom_gare_sncf": "Domont"
+	},
+	{
+		"code": "DRN",
+		"uic7": 8727140,
+		"nom_gare_sncf": "Drancy"
+	},
+	{
+		"code": "DX",
+		"uic7": 8739348,
+		"nom_gare_sncf": "Dreux"
+	},
+	{
+		"code": "ECZ",
+		"uic7": 8727639,
+		"nom_gare_sncf": "Écouen Ézanville"
+	},
+	{
+		"code": "ELW",
+		"uic7": 8738247,
+		"nom_gare_sncf": "LÉtang-la-Ville"
+	},
+	{
+		"code": "ELY",
+		"uic7": 8754547,
+		"nom_gare_sncf": "Égly"
+	},
+	{
+		"code": "EM",
+		"uic7": 8711604,
+		"nom_gare_sncf": "Émerainville Pontault Combault"
+	},
+	{
+		"code": "EN",
+		"uic7": 8727602,
+		"nom_gare_sncf": "Enghien les Bains"
+	},
+	{
+		"code": "EPL",
+		"uic7": 8727614,
+		"nom_gare_sncf": "Épluches"
+	},
+	{
+		"code": "EPN",
+		"uic7": 8739411,
+		"nom_gare_sncf": "Épernon"
+	},
+	{
+		"code": "EPO",
+		"uic7": 8738676,
+		"nom_gare_sncf": "Épone Mézières"
+	},
+	{
+		"code": "EPV",
+		"uic7": 8727112,
+		"nom_gare_sncf": "Épinay Villetaneuse"
+	},
+	{
+		"code": "ERA",
+		"uic7": 8738141,
+		"nom_gare_sncf": "Éragny Neuville"
+	},
+	{
+		"code": "ERM",
+		"uic7": 8727658,
+		"nom_gare_sncf": "Ermont Halte"
+	},
+	{
+		"code": "ERT",
+		"uic7": 8727605,
+		"nom_gare_sncf": "Ermont Eaubonne"
+	},
+	{
+		"code": "ERE",
+		"uic7": 8753413,
+		"nom_gare_sncf": "Ermont Eaubonne"
+	},
+	{
+		"code": "ESO",
+		"uic7": 8768160,
+		"nom_gare_sncf": "Essonnes-Robinson"
+	},
+	{
+		"code": "ETP",
+		"uic7": 8754513,
+		"nom_gare_sncf": "Étampes"
+	},
+	{
+		"code": "ETY",
+		"uic7": 8754514,
+		"nom_gare_sncf": "Étrechy"
+	},
+	{
+		"code": "EVC",
+		"uic7": 8768138,
+		"nom_gare_sncf": "Évry Courcouronnes"
+	},
+	{
+		"code": "EVR",
+		"uic7": 8768136,
+		"nom_gare_sncf": "Évry"
+	},
+	{
+		"code": "EY",
+		"uic7": 8711632,
+		"nom_gare_sncf": "Esbly"
+	},
+	{
+		"code": "EYO",
+		"uic7": 8754522,
+		"nom_gare_sncf": "Épinay sur Orge"
+	},
+	{
+		"code": "EYS",
+		"uic7": 8727114,
+		"nom_gare_sncf": "Épinay sur Seine"
+	},
+	{
+		"code": "EYV",
+		"uic7": 8768320,
+		"nom_gare_sncf": "Étigny Véron"
+	},
+	{
+		"code": "FAF",
+		"uic7": 8739340,
+		"nom_gare_sncf": "Fontenay le Fleury"
+	},
+	{
+		"code": "FFY",
+		"uic7": 8768424,
+		"nom_gare_sncf": "Ferrières Fontenay"
+	},
+	{
+		"code": "FMN",
+		"uic7": 8775876,
+		"nom_gare_sncf": "Fontaine Michalon"
+	},
+	{
+		"code": "FMP",
+		"uic7": 8711627,
+		"nom_gare_sncf": "Faremoutiers Pommeuse"
+	},
+	{
+		"code": "FMY",
+		"uic7": 8738187,
+		"nom_gare_sncf": "La Frette Montigny"
+	},
+	{
+		"code": "FNR",
+		"uic7": 8775871,
+		"nom_gare_sncf": "Fontenay aux Roses"
+	},
+	{
+		"code": "FON",
+		"uic7": 8768221,
+		"nom_gare_sncf": "Fontainebleau Avon"
+	},
+	{
+		"code": "FPB",
+		"uic7": 8727607,
+		"nom_gare_sncf": "Franconville Le Plessis Bouchard"
+	},
+	{
+		"code": "FPN",
+		"uic7": 8727665,
+		"nom_gare_sncf": "Frépillon"
+	},
+	{
+		"code": "FPO",
+		"uic7": 8768242,
+		"nom_gare_sncf": "Fontaine le Port"
+	},
+	{
+		"code": "FSB",
+		"uic7": 8775812,
+		"nom_gare_sncf": "Fontenay-sous-Bois"
+	},
+	{
+		"code": "GAJ",
+		"uic7": 8727619,
+		"nom_gare_sncf": "Garges Sarcelles"
+	},
+	{
+		"code": "GAQ",
+		"uic7": 8739343,
+		"nom_gare_sncf": "Garancières la Queue"
+	},
+	{
+		"code": "GAW",
+		"uic7": 8738221,
+		"nom_gare_sncf": "La Défense"
+	},
+	{
+		"code": "GBG",
+		"uic7": 8768135,
+		"nom_gare_sncf": "Grand Bourg"
+	},
+	{
+		"code": "GBI",
+		"uic7": 8739364,
+		"nom_gare_sncf": "Gravigny Balizy"
+	},
+	{
+		"code": "GCM",
+		"uic7": 8711626,
+		"nom_gare_sncf": "Guérard la Celle sur Morin"
+	},
+	{
+		"code": "GCR",
+		"uic7": 8738605,
+		"nom_gare_sncf": "Achères Grand Cormier"
+	},
+	{
+		"code": "GDS",
+		"uic7": 8727102,
+		"nom_gare_sncf": "Paris Nord"
+	},
+	{
+		"code": "PNB",
+		"uic7": 8727103,
+		"nom_gare_sncf": "Paris Nord"
+	},
+	{
+		"code": "PNO",
+		"uic7": 8727100,
+		"nom_gare_sncf": "Paris Nord"
+	},
+	{
+		"code": "GEN",
+		"uic7": 8727120,
+		"nom_gare_sncf": "Gennevilliers"
+	},
+	{
+		"code": "GGG",
+		"uic7": 8768137,
+		"nom_gare_sncf": "Grigny Centre"
+	},
+	{
+		"code": "GGV",
+		"uic7": 8738156,
+		"nom_gare_sncf": "Gargenville"
+	},
+	{
+		"code": "GIF",
+		"uic7": 8775887,
+		"nom_gare_sncf": "Gif sur Yvette"
+	},
+	{
+		"code": "GIS",
+		"uic7": 8738124,
+		"nom_gare_sncf": "Gisors"
+	},
+	{
+		"code": "GMC",
+		"uic7": 8738225,
+		"nom_gare_sncf": "Garches Marnes-la-Coquette"
+	},
+	{
+		"code": "GN",
+		"uic7": 8711351,
+		"nom_gare_sncf": "Gagny"
+	},
+	{
+		"code": "GNX",
+		"uic7": 8727659,
+		"nom_gare_sncf": "Gros Noyer Saint-Prix"
+	},
+	{
+		"code": "GOU",
+		"uic7": 8727624,
+		"nom_gare_sncf": "Goussainville"
+	},
+	{
+		"code": "GPA",
+		"uic7": 8768247,
+		"nom_gare_sncf": "La Grande Paroisse"
+	},
+	{
+		"code": "GRL",
+		"uic7": 8727636,
+		"nom_gare_sncf": "Groslay"
+	},
+	{
+		"code": "GTL",
+		"uic7": 8775865,
+		"nom_gare_sncf": "Gentilly"
+	},
+	{
+		"code": "GUW",
+		"uic7": 8775883,
+		"nom_gare_sncf": "Le Guichet"
+	},
+	{
+		"code": "GYN",
+		"uic7": 8775858,
+		"nom_gare_sncf": "Paris Gare de Lyon"
+	},
+	{
+		"code": "GZ",
+		"uic7": 8711601,
+		"nom_gare_sncf": "Gretz Armainvilliers"
+	},
+	{
+		"code": "GZA",
+		"uic7": 8739334,
+		"nom_gare_sncf": "Gazeran"
+	},
+	{
+		"code": "HAQ",
+		"uic7": 8775886,
+		"nom_gare_sncf": "La Hacquinière"
+	},
+	{
+		"code": "HAR",
+		"uic7": 8738640,
+		"nom_gare_sncf": "Houilles Carrières sur Seine"
+	},
+	{
+		"code": "HER",
+		"uic7": 8768243,
+		"nom_gare_sncf": "Héricy"
+	},
+	{
+		"code": "HOA",
+		"uic7": 8739346,
+		"nom_gare_sncf": "Houdan"
+	},
+	{
+		"code": "HRY",
+		"uic7": 8738188,
+		"nom_gare_sncf": "Herblay"
+	},
+	{
+		"code": "HSL",
+		"uic7": 8728189,
+		"nom_gare_sncf": "Haussman Saint-Lazare"
+	},
+	{
+		"code": "IAC",
+		"uic7": 8711661,
+		"nom_gare_sncf": "Isles-Armentières-Congis"
+	},
+	{
+		"code": "IAP",
+		"uic7": 8727652,
+		"nom_gare_sncf": "LIsle Adam Parmain"
+	},
+	{
+		"code": "IBM",
+		"uic7": 8768162,
+		"nom_gare_sncf": "Le Plessis-Chenet"
+	},
+	{
+		"code": "IGY",
+		"uic7": 8739356,
+		"nom_gare_sncf": "Igny"
+	},
+	{
+		"code": "INV",
+		"uic7": 8739303,
+		"nom_gare_sncf": "Invalides"
+	},
+	{
+		"code": "IPO",
+		"uic7": 8738157,
+		"nom_gare_sncf": "Issou Porcheville"
+	},
+	{
+		"code": "ISP",
+		"uic7": 8739330,
+		"nom_gare_sncf": "Issy Val de Seine"
+	},
+	{
+		"code": "ISY",
+		"uic7": 8739307,
+		"nom_gare_sncf": "Issy"
+	},
+	{
+		"code": "IV",
+		"uic7": 8754530,
+		"nom_gare_sncf": "Ivry sur Seine"
+	},
+	{
+		"code": "JAS",
+		"uic7": 8739351,
+		"nom_gare_sncf": "Jouy en Josas"
+	},
+	{
+		"code": "JOI",
+		"uic7": 8768324,
+		"nom_gare_sncf": "Joigny"
+	},
+	{
+		"code": "JOY",
+		"uic7": 8739415,
+		"nom_gare_sncf": "Jouy"
+	},
+	{
+		"code": "JUZ",
+		"uic7": 8738155,
+		"nom_gare_sncf": "Juziers"
+	},
+	{
+		"code": "JVL",
+		"uic7": 8739306,
+		"nom_gare_sncf": "Javel"
+	},
+	{
+		"code": "JVR",
+		"uic7": 8775814,
+		"nom_gare_sncf": "Joinville-le-Pont"
+	},
+	{
+		"code": "JY",
+		"uic7": 8754524,
+		"nom_gare_sncf": "Juvisy"
+	},
+	{
+		"code": "KOU",
+		"uic7": 8738220,
+		"nom_gare_sncf": "Courbevoie"
+	},
+	{
+		"code": "KRW",
+		"uic7": 8768210,
+		"nom_gare_sncf": "Montgeron Crosne"
+	},
+	{
+		"code": "KVE",
+		"uic7": 8738666,
+		"nom_gare_sncf": "Les Clairières de Verneuil"
+	},
+	{
+		"code": "LAD",
+		"uic7": 8749210,
+		"nom_gare_sncf": "Les Ardoines"
+	},
+	{
+		"code": "LAR",
+		"uic7": 8768326,
+		"nom_gare_sncf": "Laroche Migennes"
+	},
+	{
+		"code": "LBJ",
+		"uic7": 8727117,
+		"nom_gare_sncf": "La Barre Ormesson"
+	},
+	{
+		"code": "LBT",
+		"uic7": 8727139,
+		"nom_gare_sncf": "Le Bourget"
+	},
+	{
+		"code": "LCB",
+		"uic7": 8738243,
+		"nom_gare_sncf": "La Celle-Saint-Cloud"
+	},
+	{
+		"code": "LDU",
+		"uic7": 8775801,
+		"nom_gare_sncf": "La Défense Grande Arche"
+	},
+	{
+		"code": "LEG",
+		"uic7": 8727214,
+		"nom_gare_sncf": "Les Grésillons"
+	},
+	{
+		"code": "LFA",
+		"uic7": 8768145,
+		"nom_gare_sncf": "La Ferté Alais"
+	},
+	{
+		"code": "LFC",
+		"uic7": 8738245,
+		"nom_gare_sncf": "Louveciennes"
+	},
+	{
+		"code": "LFJ",
+		"uic7": 8711651,
+		"nom_gare_sncf": "La Ferté sous Jouarre"
+	},
+	{
+		"code": "LFM",
+		"uic7": 8711667,
+		"nom_gare_sncf": "La Ferté Milon"
+	},
+	{
+		"code": "LGK",
+		"uic7": 8738600,
+		"nom_gare_sncf": "La Garenne Colombes"
+	},
+	{
+		"code": "LGY",
+		"uic7": 8711631,
+		"nom_gare_sncf": "Lagny Thorigny"
+	},
+	{
+		"code": "LIE",
+		"uic7": 8733798,
+		"nom_gare_sncf": "Saint-Ouen l'Aumône Liesse"
+	},
+	{
+		"code": "LIM",
+		"uic7": 8738158,
+		"nom_gare_sncf": "Limay"
+	},
+	{
+		"code": "LIU",
+		"uic7": 8768215,
+		"nom_gare_sncf": "Lieusaint Moissy"
+	},
+	{
+		"code": "LJA",
+		"uic7": 8775866,
+		"nom_gare_sncf": "Laplace"
+	},
+	{
+		"code": "LJU",
+		"uic7": 8739361,
+		"nom_gare_sncf": "Longjumeau"
+	},
+	{
+		"code": "LMU",
+		"uic7": 8738668,
+		"nom_gare_sncf": "Les Mureaux"
+	},
+	{
+		"code": "LNX",
+		"uic7": 8727623,
+		"nom_gare_sncf": "Les Noues"
+	},
+	{
+		"code": "LON",
+		"uic7": 8711613,
+		"nom_gare_sncf": "Longueville"
+	},
+	{
+		"code": "LOV",
+		"uic7": 8727625,
+		"nom_gare_sncf": "Louvres"
+	},
+	{
+		"code": "LPE",
+		"uic7": 8739329,
+		"nom_gare_sncf": "Le Perray"
+	},
+	{
+		"code": "LPN",
+		"uic7": 8716479,
+		"nom_gare_sncf": "La Plaine Stade de France"
+	},
+	{
+		"code": "LQK",
+		"uic7": 8738121,
+		"nom_gare_sncf": "Liancourt-Saint-Pierre"
+	},
+	{
+		"code": "LQN",
+		"uic7": 8775836,
+		"nom_gare_sncf": "Lognes"
+	},
+	{
+		"code": "LSD",
+		"uic7": 8738109,
+		"nom_gare_sncf": "Le Stade"
+	},
+	{
+		"code": "LSI",
+		"uic7": 8739328,
+		"nom_gare_sncf": "Les Essarts le Roi"
+	},
+	{
+		"code": "LSW",
+		"uic7": 8754622,
+		"nom_gare_sncf": "Les Saules"
+	},
+	{
+		"code": "LUZ",
+		"uic7": 8727657,
+		"nom_gare_sncf": "Luzarches"
+	},
+	{
+		"code": "LVZ",
+		"uic7": 8775818,
+		"nom_gare_sncf": "La Varenne Chennevières"
+	},
+	{
+		"code": "LWA",
+		"uic7": 8738630,
+		"nom_gare_sncf": "Les Vallées"
+	},
+	{
+		"code": "LXJ",
+		"uic7": 8775861,
+		"nom_gare_sncf": "Luxembourg"
+	},
+	{
+		"code": "LYO",
+		"uic7": 8754516,
+		"nom_gare_sncf": "Lardy"
+	},
+	{
+		"code": "LYQ",
+		"uic7": 8768240,
+		"nom_gare_sncf": "Livry sur Seine"
+	},
+	{
+		"code": "LYV",
+		"uic7": 8711380,
+		"nom_gare_sncf": "Les Yvris Noisy Le Grand"
+	},
+	{
+		"code": "LZO",
+		"uic7": 8711663,
+		"nom_gare_sncf": "Lizy-sur-Ourcq"
+	},
+	{
+		"code": "LZV",
+		"uic7": 8775882,
+		"nom_gare_sncf": "Lozère"
+	},
+	{
+		"code": "MAE",
+		"uic7": 8738172,
+		"nom_gare_sncf": "Maule"
+	},
+	{
+		"code": "MAL",
+		"uic7": 8768441,
+		"nom_gare_sncf": "Malesherbes"
+	},
+	{
+		"code": "MAQ",
+		"uic7": 8711666,
+		"nom_gare_sncf": "Mareuil-sur-Ourcq"
+	},
+	{
+		"code": "MBP",
+		"uic7": 8727608,
+		"nom_gare_sncf": "Montigny Beauchamp"
+	},
+	{
+		"code": "MBR",
+		"uic7": 8739347,
+		"nom_gare_sncf": "Marchezais Broué"
+	},
+	{
+		"code": "MDN",
+		"uic7": 8739310,
+		"nom_gare_sncf": "Meudon"
+	},
+	{
+		"code": "MDS",
+		"uic7": 8754730,
+		"nom_gare_sncf": "Musée d'Orsay"
+	},
+	{
+		"code": "MEA",
+		"uic7": 8711610,
+		"nom_gare_sncf": "Meaux"
+	},
+	{
+		"code": "MEL",
+		"uic7": 8768200,
+		"nom_gare_sncf": "Melun"
+	},
+	{
+		"code": "MFA",
+		"uic7": 8768115,
+		"nom_gare_sncf": "Maisons Alfort Alfortville"
+	},
+	{
+		"code": "MFL",
+		"uic7": 8738287,
+		"nom_gare_sncf": "Montreuil"
+	},
+	{
+		"code": "MFY",
+		"uic7": 8739308,
+		"nom_gare_sncf": "Meudon Val Fleury"
+	},
+	{
+		"code": "MGT",
+		"uic7": 8728187,
+		"nom_gare_sncf": "Magenta"
+	},
+	{
+		"code": "MHD",
+		"uic7": 8738183,
+		"nom_gare_sncf": "Meulan Hardricourt"
+	},
+	{
+		"code": "MJM",
+		"uic7": 8738171,
+		"nom_gare_sncf": "Mareil sur Mauldre"
+	},
+	{
+		"code": "MJW",
+		"uic7": 8768140,
+		"nom_gare_sncf": "Moulin-Galant"
+	},
+	{
+		"code": "MKN",
+		"uic7": 8768410,
+		"nom_gare_sncf": "Montigny sur Loing"
+	},
+	{
+		"code": "MKU",
+		"uic7": 8738116,
+		"nom_gare_sncf": "Montgeroult - Courcelles"
+	},
+	{
+		"code": "MLB",
+		"uic7": 8711622,
+		"nom_gare_sncf": "Marles en Brie"
+	},
+	{
+		"code": "MLF",
+		"uic7": 8738642,
+		"nom_gare_sncf": "Maisons Laffitte"
+	},
+	{
+		"code": "MLM",
+		"uic7": 8739389,
+		"nom_gare_sncf": "Montfort l'Amaury Méré"
+	},
+	{
+		"code": "MLR",
+		"uic7": 8738246,
+		"nom_gare_sncf": "Marly-le-Roi"
+	},
+	{
+		"code": "MLV",
+		"uic7": 8727667,
+		"nom_gare_sncf": "Meriel"
+	},
+	{
+		"code": "MNY",
+		"uic7": 8768141,
+		"nom_gare_sncf": "Mennecy"
+	},
+	{
+		"code": "MOF",
+		"uic7": 8711624,
+		"nom_gare_sncf": "Mortcerf"
+	},
+	{
+		"code": "MOR",
+		"uic7": 8768227,
+		"nom_gare_sncf": "Morêt Veneux les Sablons"
+	},
+	{
+		"code": "MP",
+		"uic7": 8775879,
+		"nom_gare_sncf": "Massy Palaiseau RER B"
+	},
+	{
+		"code": "MPJ",
+		"uic7": 8738281,
+		"nom_gare_sncf": "Mareil-Marly"
+	},
+	{
+		"code": "MPU",
+		"uic7": 8739357,
+		"nom_gare_sncf": "Massy Palaiseau RER C"
+	},
+	{
+		"code": "MRK",
+		"uic7": 8738148,
+		"nom_gare_sncf": "Maurecourt"
+	},
+	{
+		"code": "MRT",
+		"uic7": 8711608,
+		"nom_gare_sncf": "Mormant"
+	},
+	{
+		"code": "MS",
+		"uic7": 8768400,
+		"nom_gare_sncf": "Montargis"
+	},
+	{
+		"code": "MSN",
+		"uic7": 8768148,
+		"nom_gare_sncf": "Maisse"
+	},
+	{
+		"code": "MSO",
+		"uic7": 8727649,
+		"nom_gare_sncf": "Montsoult Maffliers"
+	},
+	{
+		"code": "MSX",
+		"uic7": 8754518,
+		"nom_gare_sncf": "Marolles en Hurepoix"
+	},
+	{
+		"code": "MTE",
+		"uic7": 8738150,
+		"nom_gare_sncf": "Mantes la Jolie"
+	},
+	{
+		"code": "MTN",
+		"uic7": 8739413,
+		"nom_gare_sncf": "Maintenon"
+	},
+	{
+		"code": "MTQ",
+		"uic7": 8738159,
+		"nom_gare_sncf": "Mantes Station"
+	},
+	{
+		"code": "MTU",
+		"uic7": 8768230,
+		"nom_gare_sncf": "Montereau"
+	},
+	{
+		"code": "MVC",
+		"uic7": 8775499,
+		"nom_gare_sncf": "Marne la Vallée Chessy"
+	},
+	{
+		"code": "MVH",
+		"uic7": 8738237,
+		"nom_gare_sncf": "Suresnes Mont Valérien"
+	},
+	{
+		"code": "MVP",
+		"uic7": 8775878,
+		"nom_gare_sncf": "Massy Verrières RER B"
+	},
+	{
+		"code": "MVW",
+		"uic7": 8738328,
+		"nom_gare_sncf": "Massy Verrières RER C"
+	},
+	{
+		"code": "MWO",
+		"uic7": 8727666,
+		"nom_gare_sncf": "Méry sur Oise"
+	},
+	{
+		"code": "MXK",
+		"uic7": 8711628,
+		"nom_gare_sncf": "Mouroux"
+	},
+	{
+		"code": "MY",
+		"uic7": 8727152,
+		"nom_gare_sncf": "Mitry Claye"
+	},
+	{
+		"code": "MYD",
+		"uic7": 8711640,
+		"nom_gare_sncf": "Montry Condé"
+	},
+	{
+		"code": "NAA",
+		"uic7": 8711656,
+		"nom_gare_sncf": "Nogent lArtaud Charly"
+	},
+	{
+		"code": "NAF",
+		"uic7": 8775802,
+		"nom_gare_sncf": "Nanterre Préfecture"
+	},
+	{
+		"code": "NAN",
+		"uic7": 8711609,
+		"nom_gare_sncf": "Nangis"
+	},
+	{
+		"code": "NAU",
+		"uic7": 8711655,
+		"nom_gare_sncf": "Nanteuil Saacy"
+	},
+	{
+		"code": "NC1",
+		"uic7": 8775809,
+		"nom_gare_sncf": "Saint-Germain-en-Laye"
+	},
+	{
+		"code": "NC2",
+		"uic7": 8775808,
+		"nom_gare_sncf": "Le Vésinet Le Pecq"
+	},
+	{
+		"code": "NC3",
+		"uic7": 8775804,
+		"nom_gare_sncf": "Nanterre Ville"
+	},
+	{
+		"code": "NC4",
+		"uic7": 8775807,
+		"nom_gare_sncf": "Le Vésinet-Centre"
+	},
+	{
+		"code": "NC5",
+		"uic7": 8775806,
+		"nom_gare_sncf": "Chatou-Croissy"
+	},
+	{
+		"code": "NC6",
+		"uic7": 8775805,
+		"nom_gare_sncf": "Rueil-Malmaison"
+	},
+	{
+		"code": "NC7",
+		"uic7": 8775803,
+		"nom_gare_sncf": "Nanterre Université RER A"
+	},
+	{
+		"code": "NG",
+		"uic7": 8754545,
+		"nom_gare_sncf": "La Norville Saint-Germain lès Arpajon"
+	},
+	{
+		"code": "NGM",
+		"uic7": 8775813,
+		"nom_gare_sncf": "Nogent-sur-Marne"
+	},
+	{
+		"code": "NH",
+		"uic7": 8727157,
+		"nom_gare_sncf": "Nanteuil-le-Haudoin"
+	},
+	{
+		"code": "NIO",
+		"uic7": 8739387,
+		"nom_gare_sncf": "Noisy-le-Roi"
+	},
+	{
+		"code": "NLP",
+		"uic7": 8711374,
+		"nom_gare_sncf": "Nogent Le Perreux"
+	},
+	{
+		"code": "NO",
+		"uic7": 8727675,
+		"nom_gare_sncf": "Nointel - Mours"
+	},
+	{
+		"code": "NPT",
+		"uic7": 8738102,
+		"nom_gare_sncf": "Neuilly Porte Maillot"
+	},
+	{
+		"code": "NSL",
+		"uic7": 8775835,
+		"nom_gare_sncf": "Noisiel"
+	},
+	{
+		"code": "NSP",
+		"uic7": 8768412,
+		"nom_gare_sncf": "Nemours Saint-Pierre"
+	},
+	{
+		"code": "NSY",
+		"uic7": 8711321,
+		"nom_gare_sncf": "Noisy Le Sec"
+	},
+	{
+		"code": "NTN",
+		"uic7": 8775810,
+		"nom_gare_sncf": "Nation"
+	},
+	{
+		"code": "NUE",
+		"uic7": 8733448,
+		"nom_gare_sncf": "Neuville Université"
+	},
+	{
+		"code": "NUN",
+		"uic7": 8738631,
+		"nom_gare_sncf": "Nanterre Université Transilien L"
+	},
+	{
+		"code": "NYC",
+		"uic7": 8775834,
+		"nom_gare_sncf": "Noisy Champs"
+	},
+	{
+		"code": "NYG",
+		"uic7": 8775833,
+		"nom_gare_sncf": "Noisy le Grand Mont d'Est"
+	},
+	{
+		"code": "NYP",
+		"uic7": 8775831,
+		"nom_gare_sncf": "Neuilly Plaisance"
+	},
+	{
+		"code": "NZL",
+		"uic7": 8738173,
+		"nom_gare_sncf": "Nezel Aulnay"
+	},
+	{
+		"code": "OBP",
+		"uic7": 8768134,
+		"nom_gare_sncf": "Orangis Bois de lÉpine"
+	},
+	{
+		"code": "OGB",
+		"uic7": 8739344,
+		"nom_gare_sncf": "Orgerus Behoust"
+	},
+	{
+		"code": "ORM",
+		"uic7": 8727158,
+		"nom_gare_sncf": "Ormoy-Villers"
+	},
+	{
+		"code": "ORS",
+		"uic7": 8775884,
+		"nom_gare_sncf": "Orsay Ville"
+	},
+	{
+		"code": "ORY",
+		"uic7": 8727627,
+		"nom_gare_sncf": "Orry la Ville Coye"
+	},
+	{
+		"code": "OSN",
+		"uic7": 8738114,
+		"nom_gare_sncf": "Osny"
+	},
+	{
+		"code": "OY",
+		"uic7": 8754620,
+		"nom_gare_sncf": "Orly Ville"
+	},
+	{
+		"code": "OZF",
+		"uic7": 8711602,
+		"nom_gare_sncf": "Ozoir la Ferrière"
+	},
+	{
+		"code": "PAA",
+		"uic7": 8768603,
+		"nom_gare_sncf": "Paris Gare de Lyon"
+	},
+	{
+		"code": "PAN",
+		"uic7": 8711320,
+		"nom_gare_sncf": "Pantin"
+	},
+	{
+		"code": "PAW",
+		"uic7": 8775881,
+		"nom_gare_sncf": "Palaiseau Villebon"
+	},
+	{
+		"code": "PAX",
+		"uic7": 8775880,
+		"nom_gare_sncf": "Palaiseau"
+	},
+	{
+		"code": "PCX",
+		"uic7": 8775873,
+		"nom_gare_sncf": "Parc de Sceaux"
+	},
+	{
+		"code": "PDM",
+		"uic7": 8739304,
+		"nom_gare_sncf": "Pont de lAlma"
+	},
+	{
+		"code": "PE",
+		"uic7": 8711300,
+		"nom_gare_sncf": "Paris Est"
+	},
+	{
+		"code": "PEB",
+		"uic7": 8727646,
+		"nom_gare_sncf": "Persan Beaumont"
+	},
+	{
+		"code": "PEX",
+		"uic7": 8727148,
+		"nom_gare_sncf": "Parc des Expositions"
+	},
+	{
+		"code": "PG",
+		"uic7": 8739342,
+		"nom_gare_sncf": "Plaisir Grignon"
+	},
+	{
+		"code": "PIE",
+		"uic7": 8739362,
+		"nom_gare_sncf": "Plaisir les Clayes"
+	},
+	{
+		"code": "PJ",
+		"uic7": 8739350,
+		"nom_gare_sncf": "Petit Jouy les Loges"
+	},
+	{
+		"code": "PKY",
+		"uic7": 8711127,
+		"nom_gare_sncf": "Porte de Clichy"
+	},
+	{
+		"code": "PLB",
+		"uic7": 8727155,
+		"nom_gare_sncf": "Plessis-Belleville"
+	},
+	{
+		"code": "PLY",
+		"uic7": 8768600,
+		"nom_gare_sncf": "Paris Gare de Lyon"
+	},
+	{
+		"code": "PMP",
+		"uic7": 8739100,
+		"nom_gare_sncf": "Paris Montparnasse"
+	},
+	{
+		"code": "PVA",
+		"uic7": 8739100,
+		"nom_gare_sncf": "Paris Montparnasse"
+	},
+	{
+		"code": "VAU",
+		"uic7": 8739110,
+		"nom_gare_sncf": "Paris Vaugirard"
+	},
+	{
+		"code": "POA",
+		"uic7": 8739316,
+		"nom_gare_sncf": "Porchefontaine"
+	},
+	{
+		"code": "POP",
+		"uic7": 8768252,
+		"nom_gare_sncf": "Ponthierry-Pringy"
+	},
+	{
+		"code": "PPD",
+		"uic7": 8760880,
+		"nom_gare_sncf": "Créteil Pompadour"
+	},
+	{
+		"code": "PPT",
+		"uic7": 8727615,
+		"nom_gare_sncf": "Pont-Petit"
+	},
+	{
+		"code": "PRF",
+		"uic7": 8727116,
+		"nom_gare_sncf": "Pierrefitte Stains"
+	},
+	{
+		"code": "PRO",
+		"uic7": 8711616,
+		"nom_gare_sncf": "Provins"
+	},
+	{
+		"code": "PRQ",
+		"uic7": 8727650,
+		"nom_gare_sncf": "Presles - Courcelles"
+	},
+	{
+		"code": "PRR",
+		"uic7": 8738101,
+		"nom_gare_sncf": "Pereire Levallois"
+	},
+	{
+		"code": "PRU",
+		"uic7": 8754619,
+		"nom_gare_sncf": "Pont de Rungis Aéroport d'Orly"
+	},
+	{
+		"code": "PRY",
+		"uic7": 8727609,
+		"nom_gare_sncf": "Pierrelaye"
+	},
+	{
+		"code": "PSE",
+		"uic7": 8727613,
+		"nom_gare_sncf": "Pontoise"
+	},
+	{
+		"code": "PSL",
+		"uic7": 8738400,
+		"nom_gare_sncf": "Paris Saint-Lazare"
+	},
+	{
+		"code": "PSY",
+		"uic7": 8738657,
+		"nom_gare_sncf": "Poissy"
+	},
+	{
+		"code": "PTC",
+		"uic7": 8738111,
+		"nom_gare_sncf": "Pont Cardinet"
+	},
+	{
+		"code": "PTX",
+		"uic7": 8738238,
+		"nom_gare_sncf": "Puteaux"
+	},
+	{
+		"code": "PUY",
+		"uic7": 8768313,
+		"nom_gare_sncf": "Pont-sur-Yonne"
+	},
+	{
+		"code": "PV",
+		"uic7": 8739365,
+		"nom_gare_sncf": "Petit Vaux"
+	},
+	{
+		"code": "PWR",
+		"uic7": 8775862,
+		"nom_gare_sncf": "Port Royal"
+	},
+	{
+		"code": "PXO",
+		"uic7": 8775816,
+		"nom_gare_sncf": "Le Parc de Saint-Maur"
+	},
+	{
+		"code": "PYO",
+		"uic7": 8727641,
+		"nom_gare_sncf": "Précy-sur-Oise"
+	},
+	{
+		"code": "PZB",
+		"uic7": 8754702,
+		"nom_gare_sncf": "Paris Austerlitz"
+	},
+	{
+		"code": "RBI",
+		"uic7": 8711369,
+		"nom_gare_sncf": "Rosny Bois Perrier"
+	},
+	{
+		"code": "RBT",
+		"uic7": 8739331,
+		"nom_gare_sncf": "Rambouillet"
+	},
+	{
+		"code": "RF",
+		"uic7": 8754629,
+		"nom_gare_sncf": "Rungis la Fraternelle"
+	},
+	{
+		"code": "RIS",
+		"uic7": 8768133,
+		"nom_gare_sncf": "Ris Orangis"
+	},
+	{
+		"code": "RNS",
+		"uic7": 8775872,
+		"nom_gare_sncf": "Robinson"
+	},
+	{
+		"code": "ROB",
+		"uic7": 8711603,
+		"nom_gare_sncf": "Roissy en Brie"
+	},
+	{
+		"code": "RPA",
+		"uic7": 8765479,
+		"nom_gare_sncf": "Rosa Parks"
+	},
+	{
+		"code": "RSB",
+		"uic7": 8711370,
+		"nom_gare_sncf": "Rosny sous Bois"
+	},
+	{
+		"code": "RSY",
+		"uic7": 8727146,
+		"nom_gare_sncf": "Aéroport Charles de Gaulle 1"
+	},
+	{
+		"code": "RVM",
+		"uic7": 8711347,
+		"nom_gare_sncf": "Le Raincy Villemomble"
+	},
+	{
+		"code": "RYR",
+		"uic7": 8700147,
+		"nom_gare_sncf": "Aéroport Charles de Gaulle 2 TGV"
+	},
+	{
+		"code": "SAO",
+		"uic7": 8754523,
+		"nom_gare_sncf": "Savigny sur Orge"
+	},
+	{
+		"code": "SCD",
+		"uic7": 8738235,
+		"nom_gare_sncf": "Saint-Cloud"
+	},
+	{
+		"code": "SCR",
+		"uic7": 8739322,
+		"nom_gare_sncf": "Saint-Cyr"
+	},
+	{
+		"code": "SCW",
+		"uic7": 8754550,
+		"nom_gare_sncf": "Saint-Chéron"
+	},
+	{
+		"code": "SDE",
+		"uic7": 8727101,
+		"nom_gare_sncf": "Saint-Denis"
+	},
+	{
+		"code": "SES",
+		"uic7": 8768300,
+		"nom_gare_sncf": "Sens"
+	},
+	{
+		"code": "SEV",
+		"uic7": 8727142,
+		"nom_gare_sncf": "Sevran Livry"
+	},
+	{
+		"code": "SF",
+		"uic7": 8768229,
+		"nom_gare_sncf": "Saint-Mammès"
+	},
+	{
+		"code": "SFD",
+		"uic7": 8716478,
+		"nom_gare_sncf": "Stade de France Saint-Denis"
+	},
+	{
+		"code": "SGM",
+		"uic7": 8738280,
+		"nom_gare_sncf": "Saint-Germain-en-Laye Grande Ceinture"
+	},
+	{
+		"code": "SGT",
+		"uic7": 8727617,
+		"nom_gare_sncf": "Saint-Gratien"
+	},
+	{
+		"code": "SHL",
+		"uic7": 8754731,
+		"nom_gare_sncf": "Saint-Michel Notre Dame RER C"
+	},
+	{
+		"code": "SHO",
+		"uic7": 8754520,
+		"nom_gare_sncf": "Saint-Michel sur Orge"
+	},
+	{
+		"code": "SJX",
+		"uic7": 8768322,
+		"nom_gare_sncf": "Saint-Julien-du-Sault"
+	},
+	{
+		"code": "SKX",
+		"uic7": 8775870,
+		"nom_gare_sncf": "Sceaux"
+	},
+	{
+		"code": "SLF",
+		"uic7": 8727660,
+		"nom_gare_sncf": "Saint-Leu la Forêt"
+	},
+	{
+		"code": "SLL",
+		"uic7": 8727638,
+		"nom_gare_sncf": "Sarcelles Saint-Brice"
+	},
+	{
+		"code": "SLT",
+		"uic7": 8727640,
+		"nom_gare_sncf": "Saint-Leu dEsserent"
+	},
+	{
+		"code": "SME",
+		"uic7": 8754535,
+		"nom_gare_sncf": "Saint-Martin d'Étampes"
+	},
+	{
+		"code": "SNB",
+		"uic7": 8738248,
+		"nom_gare_sncf": "Saint-Nom-la-Bretèche Forêt de Marly"
+	},
+	{
+		"code": "SNM",
+		"uic7": 8775889,
+		"nom_gare_sncf": "Saint-Rémy lès Chevreuse"
+	},
+	{
+		"code": "SNN",
+		"uic7": 8727618,
+		"nom_gare_sncf": "Sannois"
+	},
+	{
+		"code": "SOA",
+		"uic7": 8727610,
+		"nom_gare_sncf": "Saint-Ouen l'Aumône"
+	},
+	{
+		"code": "SOS",
+		"uic7": 8727124,
+		"nom_gare_sncf": "Saint-Ouen"
+	},
+	{
+		"code": "SPI",
+		"uic7": 8739414,
+		"nom_gare_sncf": "Saint-Piat"
+	},
+	{
+		"code": "SPP",
+		"uic7": 8768421,
+		"nom_gare_sncf": "Souppes Château Landon"
+	},
+	{
+		"code": "SQY",
+		"uic7": 8739384,
+		"nom_gare_sncf": "Saint-Quentin en Yvelines"
+	},
+	{
+		"code": "SUR",
+		"uic7": 8727626,
+		"nom_gare_sncf": "Survilliers Fosses"
+	},
+	{
+		"code": "SVL",
+		"uic7": 8738641,
+		"nom_gare_sncf": "Sartrouville"
+	},
+	{
+		"code": "SVR",
+		"uic7": 8739312,
+		"nom_gare_sncf": "Sèvres Rive Gauche"
+	},
+	{
+		"code": "SWY",
+		"uic7": 8727203,
+		"nom_gare_sncf": "Seugy"
+	},
+	{
+		"code": "SXE",
+		"uic7": 8754551,
+		"nom_gare_sncf": "Sermaise"
+	},
+	{
+		"code": "SXG",
+		"uic7": 8754521,
+		"nom_gare_sncf": "Sainte Geneviève des Bois"
+	},
+	{
+		"code": "TAE",
+		"uic7": 8739345,
+		"nom_gare_sncf": "Tacoignières Richebourg"
+	},
+	{
+		"code": "TLP",
+		"uic7": 8711649,
+		"nom_gare_sncf": "Trilport"
+	},
+	{
+		"code": "TMR",
+		"uic7": 8768225,
+		"nom_gare_sncf": "Thomery"
+	},
+	{
+		"code": "TNT",
+		"uic7": 8727205,
+		"nom_gare_sncf": "Thieux - Nantouillet"
+	},
+	{
+		"code": "TOC",
+		"uic7": 8775837,
+		"nom_gare_sncf": "Torcy"
+	},
+	{
+		"code": "TOU",
+		"uic7": 8711621,
+		"nom_gare_sncf": "Tournan"
+	},
+	{
+		"code": "TPA",
+		"uic7": 8738182,
+		"nom_gare_sncf": "Thun le Paradis"
+	},
+	{
+		"code": "TRH",
+		"uic7": 8738123,
+		"nom_gare_sncf": "Trie-Château"
+	},
+	{
+		"code": "TSS",
+		"uic7": 8738180,
+		"nom_gare_sncf": "Triel sur Seine"
+	},
+	{
+		"code": "TVO",
+		"uic7": 8739383,
+		"nom_gare_sncf": "Trappes"
+	},
+	{
+		"code": "TVY",
+		"uic7": 8727663,
+		"nom_gare_sncf": "Taverny"
+	},
+	{
+		"code": "US",
+		"uic7": 8738117,
+		"nom_gare_sncf": "Us"
+	},
+	{
+		"code": "VAI",
+		"uic7": 8711629,
+		"nom_gare_sncf": "Vaires Torcy"
+	},
+	{
+		"code": "VBB",
+		"uic7": 8711674,
+		"nom_gare_sncf": "Villiers-Montbarbin"
+	},
+	{
+		"code": "VBO",
+		"uic7": 8739353,
+		"nom_gare_sncf": "Vauboyen"
+	},
+	{
+		"code": "VBV",
+		"uic7": 8768161,
+		"nom_gare_sncf": "Villabé"
+	},
+	{
+		"code": "VC",
+		"uic7": 8739300,
+		"nom_gare_sncf": "Versailles Chantiers"
+	},
+	{
+		"code": "VCN",
+		"uic7": 8738226,
+		"nom_gare_sncf": "Vaucresson"
+	},
+	{
+		"code": "VCX",
+		"uic7": 8727662,
+		"nom_gare_sncf": "Vaucelles"
+	},
+	{
+		"code": "VD",
+		"uic7": 8768124,
+		"nom_gare_sncf": "Le Vert de Maisons"
+	},
+	{
+		"code": "VDA",
+		"uic7": 8738179,
+		"nom_gare_sncf": "Val dArgenteuil"
+	},
+	{
+		"code": "VDE",
+		"uic7": 8773006,
+		"nom_gare_sncf": "Val dEurope"
+	},
+	{
+		"code": "VDF",
+		"uic7": 8711371,
+		"nom_gare_sncf": "Val de Fontenay RER E"
+	},
+	{
+		"code": "VDO",
+		"uic7": 8738236,
+		"nom_gare_sncf": "Le Val dOr"
+	},
+	{
+		"code": "VDV",
+		"uic7": 8738234,
+		"nom_gare_sncf": "Sèvres Ville d'Avray"
+	},
+	{
+		"code": "VEH",
+		"uic7": 8739388,
+		"nom_gare_sncf": "Villiers Neauphle Pontchartrain"
+	},
+	{
+		"code": "VEP",
+		"uic7": 8739341,
+		"nom_gare_sncf": "Villepreux les Clayes"
+	},
+	{
+		"code": "VET",
+		"uic7": 8738665,
+		"nom_gare_sncf": "Vernouillet Verneuil"
+	},
+	{
+		"code": "VFD",
+		"uic7": 8738288,
+		"nom_gare_sncf": "Viroflay Rive Droite"
+	},
+	{
+		"code": "VFG",
+		"uic7": 8739321,
+		"nom_gare_sncf": "Viroflay Rive Gauche"
+	},
+	{
+		"code": "VFR",
+		"uic7": 8775830,
+		"nom_gare_sncf": "Val de Fontenay RER A"
+	},
+	{
+		"code": "VGL",
+		"uic7": 8727143,
+		"nom_gare_sncf": "Vert Galant"
+	},
+	{
+		"code": "VGS",
+		"uic7": 8768130,
+		"nom_gare_sncf": "Vigneux sur Seine"
+	},
+	{
+		"code": "VIB",
+		"uic7": 8727622,
+		"nom_gare_sncf": "Villiers le Bel Gonesse Arnouville"
+	},
+	{
+		"code": "VII",
+		"uic7": 8727151,
+		"nom_gare_sncf": "Villeparisis Mitry Le Neuf"
+	},
+	{
+		"code": "VMD",
+		"uic7": 8727653,
+		"nom_gare_sncf": "Valmondois"
+	},
+	{
+		"code": "VMK",
+		"uic7": 8739153,
+		"nom_gare_sncf": "Vanves Malakoff"
+	},
+	{
+		"code": "VMS",
+		"uic7": 8727656,
+		"nom_gare_sncf": "Viarmes"
+	},
+	{
+		"code": "VNC",
+		"uic7": 8775811,
+		"nom_gare_sncf": "Vincennes"
+	},
+	{
+		"code": "VNL",
+		"uic7": 8711607,
+		"nom_gare_sncf": "Verneuil lÉtang"
+	},
+	{
+		"code": "VOM",
+		"uic7": 8768250,
+		"nom_gare_sncf": "Vosves"
+	},
+	{
+		"code": "VP",
+		"uic7": 8768185,
+		"nom_gare_sncf": "Villeneuve Prairie"
+	},
+	{
+		"code": "VPN",
+		"uic7": 8727145,
+		"nom_gare_sncf": "Villepinte"
+	},
+	{
+		"code": "VRD",
+		"uic7": 8738286,
+		"nom_gare_sncf": "Versailles Rive Droite"
+	},
+	{
+		"code": "VRG",
+		"uic7": 8739315,
+		"nom_gare_sncf": "Versailles Château Rive Gauche"
+	},
+	{
+		"code": "VRI",
+		"uic7": 8754527,
+		"nom_gare_sncf": "Villeneuve le Roi"
+	},
+	{
+		"code": "VSG",
+		"uic7": 8768182,
+		"nom_gare_sncf": "Villeneuve Saint-Georges"
+	},
+	{
+		"code": "VSM",
+		"uic7": 8711379,
+		"nom_gare_sncf": "Villiers sur Marne Le Plessis Trévise"
+	},
+	{
+		"code": "VSS",
+		"uic7": 8768246,
+		"nom_gare_sncf": "Vernou sur Seine"
+	},
+	{
+		"code": "VSW",
+		"uic7": 8738664,
+		"nom_gare_sncf": "Villennes sur Seine"
+	},
+	{
+		"code": "VTV",
+		"uic7": 8768180,
+		"nom_gare_sncf": "Villeneuve Triage"
+	},
+	{
+		"code": "VUN",
+		"uic7": 8768244,
+		"nom_gare_sncf": "Vulaines sur Seine Samoreau"
+	},
+	{
+		"code": "VVG",
+		"uic7": 8768310,
+		"nom_gare_sncf": "Villeneuve la Guyard"
+	},
+	{
+		"code": "VW",
+		"uic7": 8727202,
+		"nom_gare_sncf": "Villaines"
+	},
+	{
+		"code": "VWC",
+		"uic7": 8768131,
+		"nom_gare_sncf": "Viry Châtillon"
+	},
+	{
+		"code": "VWT",
+		"uic7": 8738120,
+		"nom_gare_sncf": "La Villetertre"
+	},
+	{
+		"code": "VXS",
+		"uic7": 8738181,
+		"nom_gare_sncf": "Vaux sur Seine"
+	},
+	{
+		"code": "VY",
+		"uic7": 8754529,
+		"nom_gare_sncf": "Vitry sur Seine"
+	},
+	{
+		"code": "VYE",
+		"uic7": 8768321,
+		"nom_gare_sncf": "Villeneuve sur Yonne"
+	},
+	{
+		"code": "VYL",
+		"uic7": 8739325,
+		"nom_gare_sncf": "La Verrière"
+	},
+	{
+		"code": "WEE",
+		"uic7": 8768217,
+		"nom_gare_sncf": "Le Mée"
+	},
+	{
+		"code": "XBY",
+		"uic7": 8775874,
+		"nom_gare_sncf": "La Croix de Berny"
+	},
+	{
+		"code": "XCS",
+		"uic7": 8711617,
+		"nom_gare_sncf": "Saint-Colombe - Septveilles"
+	},
+	{
+		"code": "XFA",
+		"uic7": 8768254,
+		"nom_gare_sncf": "Saint-Fargeau"
+	},
+	{
+		"code": "XMC",
+		"uic7": 8775815,
+		"nom_gare_sncf": "Saint-Maur-Créteil"
+	},
+	{
+		"code": "XND",
+		"uic7": 8778543,
+		"nom_gare_sncf": "Saint-Michel Notre Dame RER B"
+	},
+	{
+		"code": "XOA",
+		"uic7": 8738142,
+		"nom_gare_sncf": "Saint-Ouen l'Aumône Quartier de lÉglise"
+	},
+	{
+		"code": "XPY",
+		"uic7": 8738118,
+		"nom_gare_sncf": "Santeuil - Le Perchay"
+	},
+	{
+		"code": "YES",
+		"uic7": 8768211,
+		"nom_gare_sncf": "Yerres"
+	},
+	{
+		"code": "ZTN",
+		"uic7": 8768218,
+		"nom_gare_sncf": "Savigny le Temple Nandy"
+	},
+	{
+		"code": "ZUB",
+		"uic7": 8775819,
+		"nom_gare_sncf": "Sucy Bonneuil"
+	}
+]
