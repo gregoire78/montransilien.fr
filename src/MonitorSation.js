@@ -1,11 +1,13 @@
 import React from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 import moment from 'moment-timezone';
 import Marquee from './Marquee';
 import _ from 'lodash';
 import { Map, TileLayer } from 'react-leaflet';
 import {Helmet} from "react-helmet";
 import {API_IP, SSL, THNDER_KEY} from './config';
+import Loader from 'react-loaders';
 //import {Helmet} from 'react-helmet';
 //import {VelocityComponent} from 'velocity-react';
 import 'moment/locale/fr';
@@ -14,38 +16,7 @@ import './big.css';
 import './small.css';
 import './metrodna.css';
 
-function ListOfTrainLoading() {
-    return (
-        <div>
-            <div className="station-name"><span>Chargement ...</span></div>
-            <div id="listetrains">
-                {[0,1,2,3,4,5,6].map((train, i) => {
-                    return (
-                        <div className="train" key={i}>
-                            <div className="force-height"></div>
-                            <div className="group group-left">
-                                <span className="numero-train">ABCD</span>
-                                <span className="retard-train">attente</span><br className="after-retard-train"/>
-                            </div>
-                            <div className="group group-middle">
-                                <span className="heure-train">--:--</span>
-                            </div>
-                            <div className="group">
-                                <span className="destination-train">
-                                    <span className="transilien symbole light alpha" style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} /> 
-                                    <span className="rer symbole light alpha" style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} /> Chargement ...
-                                </span>
-                                <div className="desserte-train"><p>...</p></div>
-                            </div>
-                        </div>
-                    )
-                })}
-            </div>
-        </div>
-    );
-  }
-  
-  function ListOfTrainLoaded(props) {
+function ListOfTrainLoaded(props) {
     let stationHeight;
     let stationElem;
     return (
@@ -86,7 +57,7 @@ function ListOfTrainLoading() {
             </div>
         </div>
     );
-  }
+}
 
 export default class MonitorStation extends React.Component {
 
@@ -97,7 +68,8 @@ export default class MonitorStation extends React.Component {
             trains: [],
             currentTime: moment().locale('fr'),
             isLoading: false,
-            stationDetails: {}
+            stationDetails: {},
+            error: false
         };
     }
 
@@ -109,8 +81,7 @@ export default class MonitorStation extends React.Component {
             document.title = this.state.station.name;
         })
         .catch(error => {
-            this.setState({station: error.response.data.station, isLoading: false});
-            document.title = this.state.station.name;
+            this.setState({error: true})
         });
     }
 
@@ -150,7 +121,15 @@ export default class MonitorStation extends React.Component {
 //<img src="#" alt={train.route.line}/>
     render()  {
         const listOfTrains = this.state.isLoading ? (
-            <ListOfTrainLoading />
+            <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                height: '100%',
+                alignItems: 'center',
+                backgroundColor: 'rgba(25, 25, 39, 0.88)',
+            }}>
+                <Loader type="pacman" active style={{height: "50px"}} />
+            </div>
         ) : (
             <ListOfTrainLoaded data={this.state} />
         )
@@ -164,6 +143,7 @@ export default class MonitorStation extends React.Component {
                 </Helmet>*/}
                 <div id="heure" className="voie" title={moment(this.state.currentTime).format('LLLL')}>{moment(this.state.currentTime).format('LT')} <small>{moment(this.state.currentTime).format('ss')}</small></div>
                 {listOfTrains}
+                {this.state.error === true ? <Redirect to="/" /> : ""}
                 <div id="bottomList"></div>
                 {_.isEmpty(this.state.stationDetails) ? "" : 
                     <Map
