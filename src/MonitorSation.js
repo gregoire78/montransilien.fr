@@ -102,7 +102,7 @@ export default class MonitorStation extends React.Component {
         this.setState({isLoading: true});
         this.getTrainList().then(() => this.getStationDetails(this.state.station.uic));
         //this.interval = setInterval(this.timer.bind(this), 2000);
-        this.interval = setInterval(this.getTrainList.bind(this), 10000);
+        this.interval = setInterval(this.getTrainList.bind(this), 15000);
         this.intervalTime = setInterval(this.timer.bind(this), 1000);
         //this.getTrainList(this.props.match.params.uic)
     }
