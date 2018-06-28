@@ -5,10 +5,10 @@ import Footer from './Footer';
 import _ from 'lodash';
 import './App.css';
 import Loader from 'react-loaders';
-import {Helmet} from "react-helmet";
+//import {Helmet} from "react-helmet";
 import 'loaders.css';
-import { Map, TileLayer } from 'react-leaflet';
-import {THNDER_KEY} from './config';
+//import { Map, TileLayer } from 'react-leaflet';
+//import {THNDER_KEY} from './config';
 import garesId from './gares.json';
 import lignes from './lignes.json';
 
@@ -61,8 +61,9 @@ export default class Home extends React.Component {
          * https://robwu.nl/cors-anywhere.html
          * https://github.com/Rob--W/cors-anywhere/
          * https://medium.com/netscape/hacking-it-out-when-cors-wont-let-you-be-great-35f6206cc646
+         * https://stormy-atoll-29313.herokuapp.com/ (le miens)
          */
-        axios.get(`https://stormy-atoll-29313.herokuapp.com/https://transilien.mobi/getProchainTrainAutocomplete?value=${encodeURI(value)}`)
+        axios.get(`https://cors-anywhere.herokuapp.com/https://transilien.mobi/getProchainTrainAutocomplete?value=${encodeURI(value)}`)
         .then(response => {
             if(!response.data.error)
                 this.setState({stations: response.data, isLoading: false})
@@ -80,12 +81,12 @@ export default class Home extends React.Component {
     }
 
     render() {
-        let firstStation = _.first(this.state.stations);
+        //let firstStation = _.first(this.state.stations);
         return (
             <div id="Home">
-                <Helmet>
+                {/*<Helmet>
                     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"/>
-                </Helmet>
+                </Helmet>*/}
                 <div className="content">
                     <h1><img src="./favicon144.png" alt="logo train" /><span>Mon Transilien</span></h1>
                     <div className="search">
@@ -103,24 +104,24 @@ export default class Home extends React.Component {
                         </div>
                     </div>
                 </div>
-                {_.isEmpty(this.state.stations) ? "" : 
-                    <Map
-                        zoomControl={false}
-                        scrollWheelZoom={false}
-                        style={{position: 'fixed',top: '0',left: '0',zIndex: '-100',width: '100%', height: '100%', margin:'auto'}}
-                        center={[firstStation.latitude, firstStation.longitude]}
-                        zoom={17}
-                    >
-                        <TileLayer
-                            attribution="Tiles Courtesy of <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a> - &amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-                            url={"https://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=" + THNDER_KEY }
-                        />
-                        {/*<Marker position={[firstStation.latitude, firstStation.longitude]}>
-                            <Popup>
-                                <span><p>Gare de {firstStation.name}</p><p>{firstStation.address}</p></span>
-                            </Popup>
-                        </Marker>*/}
-                    </Map>
+                {//_.isEmpty(this.state.stations) ? "" : 
+                 //   <Map
+                 //       zoomControl={false}
+                 //       scrollWheelZoom={false}
+                 //       style={{position: 'fixed',top: '0',left: '0',zIndex: '-100',width: '100%', height: '100%', margin:'auto'}}
+                 //       center={[firstStation.latitude, firstStation.longitude]}
+                 //       zoom={17}
+                 //   >
+                 //       <TileLayer
+                 //           attribution="Tiles Courtesy of <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a> - &amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                 //           url={"https://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=" + THNDER_KEY }
+                 //       />
+                 //       {/*<Marker position={[firstStation.latitude, firstStation.longitude]}>
+                 //           <Popup>
+                 //               <span><p>Gare de {firstStation.name}</p><p>{firstStation.address}</p></span>
+                 //           </Popup>
+                 //       </Marker>*/}
+                 //   </Map>
                 }
                 <Footer />
             </div>

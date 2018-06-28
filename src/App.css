@@ -64,11 +64,13 @@ form label, form input { vertical-align: middle; }
 
 div#heure {
 	position: fixed;
-	top: -40pt;
+	/*top: -40pt;*/
+	bottom: -40pt;
 	right: 8pt;
 	width: 3.8em;
 	padding: 0.2em;
-	padding-top: 40pt;
+	/*padding-top: 40pt;*/
+	padding-bottom: 40pt;
 	margin: 0;
 
 	background-color: navy;

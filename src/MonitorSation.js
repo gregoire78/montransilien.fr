@@ -16,45 +16,43 @@ import './big.css';
 import './small.css';
 import './metrodna.css';
 
+let stationHeight;
+let stationElem;
+
 function ListOfTrainLoaded(props) {
-    let stationHeight;
-    let stationElem;
     return (
-        <div>
-            <div ref={elem => stationElem = elem} className="station-name"><span>{props.data.station.name}</span></div>
-            <div ref={(elem) => {
-                if(elem){
-                    stationHeight = window.innerHeight - elem.clientHeight;
-                    if(props.data.trains.length >= 7 && stationHeight <= 200) { stationElem.style.height = stationHeight+"px"; stationElem.style.lineHeight = stationHeight+"px";}
-                    else {stationElem.style.height = "100px"; stationElem.style.lineHeight = "100px";}
-                }
-            }} id="listetrains">
-                {props.data.trains.map((train, i) => {
-                    return (
-                        <div className={"train" + (train.state ? (train.state === "retardé" ? " delayed" : ((train.state === "supprimé") ? " canceled" : "")) : "")} key={i}>
-                            <div className="force-height"></div>
-                            <div className="group group-left">
-                                <span className="numero-train">{train.name}</span>
-                                {train.state ? <span className="retard-train">{train.state}</span>: ""}<br className="after-retard-train"/>
-                            </div>
-                            <div className="group group-middle">
-                                <span className="heure-train">{train.expectedDepartureTime}</span>
-                            </div>
-                            <div className="group" style={{marginRight: '3.2em'}}>
-                                <span className="destination-train" title={train.route.long_name}>
-                                    <span className={train.route.type + " symbole light alpha"} style={train.route.type !== 'ter' ? {height: "1em", width: "1em", top: "0.1em", left: "0"} : {height: "1em", top: "0.1em", left: "0"}} />
-                                    {train.route.type !== 'ter' ? <span className={train.route.type + " alpha ligne" + train.route.line} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />: ''}
-                                    {" "+train.terminus}
-                                </span>
-                                <span className="infos-track">{train.nature ? <span className="train-nature"><span style={{fontSize: '0.7em'}}>train<br/></span>{train.nature}</span> : ""}{train.lane !== " " && train.lane !== "BL" ? <span className="voie-train">{train.lane}</span> : ''}</span>
-                                <div className="desserte-train" title={train.journey_text}>
-                                    {train.journey.length !== 0 ? <Marquee velocity={0.06}>{train.journey_text_html}</Marquee> : <p>{train.journey_text}</p>}
-                                </div>
+        <div ref={(elem) => {
+            if(elem){
+                stationHeight = window.innerHeight - elem.clientHeight;
+                if(props.data.trains.length >= 7 && stationHeight <= 50) { stationElem.style.height = stationHeight+"px"; stationElem.style.lineHeight = stationHeight+"px";}
+                else {stationElem.style.height = "50px"; stationElem.style.lineHeight = "50px";}
+            }
+        }} id="listetrains">
+            {props.data.trains.map((train, i) => {
+                return (
+                    <div className={"train" + (train.state ? (train.state === "retardé" ? " delayed" : ((train.state === "supprimé") ? " canceled" : "")) : "")} key={i}>
+                        <div className="force-height"></div>
+                        <div className="group group-left">
+                            <span className="numero-train">{train.name}</span>
+                            {train.state ? <span className="retard-train">{train.state}</span>: ""}<br className="after-retard-train"/>
+                        </div>
+                        <div className="group group-middle">
+                            <span className="heure-train">{train.expectedDepartureTime}</span>
+                        </div>
+                        <div className="group" style={{marginRight: '3.2em'}}>
+                            <span className="destination-train" title={train.route.long_name}>
+                                <span className={train.route.type + " symbole light alpha"} style={train.route.type !== 'ter' ? {height: "1em", width: "1em", top: "0.1em", left: "0"} : {height: "1em", top: "0.1em", left: "0"}} />
+                                {train.route.type !== 'ter' ? <span className={train.route.type + " alpha ligne" + train.route.line} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />: ''}
+                                {" "+train.terminus}
+                            </span>
+                            <span className="infos-track">{train.nature ? <span className="train-nature"><span style={{fontSize: '0.7em'}}>train<br/></span>{train.nature}</span> : ""}{train.lane !== " " && train.lane !== "BL" ? <span className="voie-train">{train.lane}</span> : ''}</span>
+                            <div className="desserte-train" title={train.journey_text}>
+                                {train.journey.length !== 0 ? <Marquee velocity={0.06}>{train.journey_text_html}</Marquee> : <p>{train.journey_text}</p>}
                             </div>
                         </div>
-                    )
-                })}
-            </div>
+                    </div>
+                )
+            })}
         </div>
     );
 }
@@ -100,9 +98,11 @@ export default class MonitorStation extends React.Component {
 
     componentDidMount() {
         this.setState({isLoading: true});
-        this.getTrainList().then(() => this.getStationDetails(this.state.station.uic));
+        this.getTrainList().then(() => {
+            this.interval = setInterval(this.getTrainList.bind(this), 15000);
+            this.getStationDetails(this.state.station.uic)
+        });
         //this.interval = setInterval(this.timer.bind(this), 2000);
-        this.interval = setInterval(this.getTrainList.bind(this), 15000);
         this.intervalTime = setInterval(this.timer.bind(this), 1000);
         //this.getTrainList(this.props.match.params.uic)
     }
@@ -142,8 +142,8 @@ export default class MonitorStation extends React.Component {
                     <link rel="stylesheet" type="text/css" href="dark.css" />
                 </Helmet>*/}
                 <div id="heure" className="voie" title={moment(this.state.currentTime).format('LLLL')}>{moment(this.state.currentTime).format('LT')} <small>{moment(this.state.currentTime).format('ss')}</small></div>
+                <div ref={elem => stationElem = elem} className="station-name"><span>{this.state.station.name}</span></div>
                 {listOfTrains}
-                {this.state.error === true ? <Redirect to="/" /> : ""}
                 <div id="bottomList"></div>
                 {_.isEmpty(this.state.stationDetails) ? "" : 
                     <Map
@@ -158,6 +158,7 @@ export default class MonitorStation extends React.Component {
                         />
                     </Map>
                 }
+                {this.state.error === true ? <Redirect to="/" /> : ""}
             </div>
         )
     }
