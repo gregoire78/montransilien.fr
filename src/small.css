@@ -20,5 +20,8 @@
 
 	.no-data { display: none; }
 	.desserte-train {display: none;}
+	div .train:hover .desserte-train {display: block;}
+	.symbole  {display: none}
+	.symbole.ter  {display: inline-block}
 }
 

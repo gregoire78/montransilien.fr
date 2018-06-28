@@ -24,7 +24,7 @@ function ListOfTrainLoaded(props) {
         <div ref={(elem) => {
             if(elem){
                 stationHeight = window.innerHeight - elem.clientHeight;
-                if(props.data.trains.length >= 7 && stationHeight <= 50) { stationElem.style.height = stationHeight+"px"; stationElem.style.lineHeight = stationHeight+"px";}
+                if(props.data.trains.length >= 7 && stationHeight <= 95) { stationElem.style.height = stationHeight+"px"; stationElem.style.lineHeight = stationHeight+"px";}
                 else {stationElem.style.height = "50px"; stationElem.style.lineHeight = "50px";}
             }
         }} id="listetrains">
@@ -39,7 +39,7 @@ function ListOfTrainLoaded(props) {
                         <div className="group group-middle">
                             <span className="heure-train">{train.expectedDepartureTime}</span>
                         </div>
-                        <div className="group" style={{marginRight: '3.2em'}}>
+                        <div className="group">
                             <span className="destination-train" title={train.route.long_name}>
                                 <span className={train.route.type + " symbole light alpha"} style={train.route.type !== 'ter' ? {height: "1em", width: "1em", top: "0.1em", left: "0"} : {height: "1em", top: "0.1em", left: "0"}} />
                                 {train.route.type !== 'ter' ? <span className={train.route.type + " alpha ligne" + train.route.line} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />: ''}
