@@ -63,7 +63,7 @@ export default class Home extends React.Component {
          * https://medium.com/netscape/hacking-it-out-when-cors-wont-let-you-be-great-35f6206cc646
          * https://stormy-atoll-29313.herokuapp.com/ (le miens)
          */
-        axios.get(`https://cors-anywhere.herokuapp.com/https://transilien.mobi/getProchainTrainAutocomplete?value=${encodeURI(value)}`)
+        axios.get(`https://stormy-atoll-29313.herokuapp.com/https://transilien.mobi/getProchainTrainAutocomplete?value=${encodeURI(value)}`)
         .then(response => {
             if(!response.data.error)
                 this.setState({stations: response.data, isLoading: false})

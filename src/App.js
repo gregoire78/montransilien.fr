@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Monitor from './Monitor';
-import MonitorSation from './MonitorSation';
+import MonitorSation from './NewMonitorSation';
 import Home from './Home';
 
 class App extends Component {

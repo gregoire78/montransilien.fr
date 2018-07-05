@@ -17,7 +17,8 @@
 		text-align: center;
 		word-wrap: pre;
 	}
-	div.group-left span { display: inline-block;  }
+	div.group-left span { display: block; }
+	br.after-retard-train {display: none}
 	div.group-middle { width: 4.5em; text-align: center; }
 	span.mission-train { display: inline-block; }
 

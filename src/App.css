@@ -169,6 +169,11 @@ div.train div.desserte-train {
 	overflow: hidden;
 	white-space: nowrap;
 }
+div.train div.desserte-train small {
+	font-size: 0.65em;
+	opacity: 0.5;
+}
+
 /*div.train div.desserte-train marquee {
 	position: relative;
 	bottom: -0.1em;
@@ -204,6 +209,7 @@ div.train.canceled span.dot-separator { color : #ffbdb8; }
 
 
 span.numero-train { color: #679fd2; min-width: 75px;}
+span.distance-train { color: orangered; font-size: 0.65em; }
 
 div#error {
 	z-index: 10;

@@ -10,6 +10,8 @@
 
 	span.mission-train:after, 
 		span.retard-train:before { color: white; content: "\00a0•\00a0"; color: yellowgreen}
+		span.distance-train {font-size: 11pt;}
+		span.distance-train:before { color: white; content: "\00a0•\00a0"; color: yellowgreen}
 	span.destination-train { font-size: 140%; }
 	div#line_filter ul:before { content: "LignesÂ : "; }
 
@@ -20,6 +22,7 @@
 
 	.no-data { display: none; }
 	.desserte-train {display: none;}
+	div .train:hover {padding-bottom: 0}
 	div .train:hover .desserte-train {display: block;}
 	.symbole  {display: none}
 	.symbole.ter  {display: inline-block}
