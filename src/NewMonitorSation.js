@@ -8,6 +8,7 @@ import { Map, TileLayer } from 'react-leaflet';
 import {Helmet} from "react-helmet";
 import {API_IP, SSL, THNDER_KEY} from './config';
 import Loader from 'react-loaders';
+import Modal from 'react-modal';
 //import {Helmet} from 'react-helmet';
 //import {VelocityComponent} from 'velocity-react';
 import 'moment/locale/fr';
@@ -35,7 +36,7 @@ function ListOfTrainLoaded(props) {
                         <div className="group group-left">
                             <span className="numero-train">{train.name}</span>
                             {train.state ? <span className="retard-train">{train.state}</span>: ""}
-                            {train.distance ? <span className="distance-train">{train.distance.dataToDisplay.distance}</span>: ""}
+                            {train.distance ? <span title={train.distance.lPosReport} onClick={() => props.openModal(train.distance.linkMap)} className="distance-train">{train.distance.dataToDisplay.distance}</span>: ""}
                             <br className="after-retard-train"/>
                         </div>
                         <div className="group group-middle">
@@ -59,6 +60,15 @@ function ListOfTrainLoaded(props) {
     );
 }
 
+const customStyles = {
+content : {
+    overflow: 'initial'
+}
+};
+
+// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
+Modal.setAppElement('body')
+
 export default class MonitorStation extends React.Component {
 
     constructor(props) {
@@ -69,9 +79,13 @@ export default class MonitorStation extends React.Component {
             trafic: [],
             currentTime: moment().locale('fr'),
             isLoading: false,
-            error: false
+            error: false,
+            modalIsOpen: false,
+            url: ''
         };
         this.tr3a = this.props.match.params.tr3a;
+        this.openModal = this.openModal.bind(this);
+        this.closeModal = this.closeModal.bind(this);
     }
 
     getTrainList() {
@@ -134,6 +148,14 @@ export default class MonitorStation extends React.Component {
         this.setState({ currentTime: moment().locale('fr') });
     }
 
+    openModal(url) {
+        this.setState({modalIsOpen: true, url: url });
+    }
+
+    closeModal() {
+        this.setState({modalIsOpen: false});
+    }
+
 //<img src="#" alt={train.route.line}/>
     render()  {
         const listOfTrains = this.state.isLoading ? (
@@ -147,7 +169,7 @@ export default class MonitorStation extends React.Component {
                 <Loader type="pacman" active style={{height: "50px"}} />
             </div>
         ) : (
-            <ListOfTrainLoaded data={this.state} />
+            <ListOfTrainLoaded data={this.state} openModal={this.openModal}/>
         )
         return (
             <div id="listView">
@@ -174,6 +196,14 @@ export default class MonitorStation extends React.Component {
                         />
                     </Map>
                 }
+                <Modal
+                    isOpen={this.state.modalIsOpen}
+                    onRequestClose={this.closeModal}
+                    contentLabel="Example Modal"
+                    style={customStyles}
+                >
+                    <iframe src={this.state.url} title="f" style={{width: '100%', height:'100%', border:'none'}}></iframe>
+                </Modal>
                 {this.state.error === true ? <Redirect to="/" /> : ""}
             </div>
         )

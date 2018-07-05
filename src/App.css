@@ -210,6 +210,7 @@ div.train.canceled span.dot-separator { color : #ffbdb8; }
 
 span.numero-train { color: #679fd2; min-width: 75px;}
 span.distance-train { color: orangered; font-size: 0.65em; }
+span.distance-train:hover { cursor: pointer; }
 
 div#error {
 	z-index: 10;
