@@ -4,7 +4,8 @@ import { Redirect } from 'react-router-dom';
 import moment from 'moment-timezone';
 import Marquee from './Marquee';
 import _ from 'lodash';
-import { Map, TileLayer } from 'react-leaflet';
+import {Icon, LatLngBounds, LatLng} from 'leaflet';
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import {Helmet} from "react-helmet";
 import {API_IP, SSL, THNDER_KEY} from './config';
 import Loader from 'react-loaders';
@@ -36,7 +37,7 @@ function ListOfTrainLoaded(props) {
                         <div className="group group-left">
                             <span className="numero-train">{train.name}</span>
                             {train.state ? <span className="retard-train">{train.state}</span>: ""}
-                            {train.distance ? <span title={train.distance.lPosReport} onClick={() => props.openModal(train.distance.linkMap)} className="distance-train">{train.distance.dataToDisplay.distance}</span>: ""}
+                            {train.distance ? <span title={train.distance.lPosReport} onClick={() => props.openModal(train.distance.gps, train.distance.linkMap)} className="distance-train">{train.distance.dataToDisplay.distance}</span>: ""}
                             <br className="after-retard-train"/>
                         </div>
                         <div className="group group-middle">
@@ -60,12 +61,6 @@ function ListOfTrainLoaded(props) {
     );
 }
 
-const customStyles = {
-content : {
-    overflow: 'initial'
-}
-};
-
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('body')
 
@@ -81,7 +76,8 @@ export default class MonitorStation extends React.Component {
             isLoading: false,
             error: false,
             modalIsOpen: false,
-            url: ''
+            trainPosition: {lat:'',long:''},
+            trainPosLink: ""
         };
         this.tr3a = this.props.match.params.tr3a;
         this.openModal = this.openModal.bind(this);
@@ -148,8 +144,8 @@ export default class MonitorStation extends React.Component {
         this.setState({ currentTime: moment().locale('fr') });
     }
 
-    openModal(url) {
-        this.setState({modalIsOpen: true, url: url });
+    openModal(trainGps, trainUrl) {
+        this.setState({modalIsOpen: true, trainPosition: trainGps, trainPosLink: trainUrl });
     }
 
     closeModal() {
@@ -196,13 +192,55 @@ export default class MonitorStation extends React.Component {
                         />
                     </Map>
                 }
+                 
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onRequestClose={this.closeModal}
                     contentLabel="Example Modal"
-                    style={customStyles}
                 >
-                    <iframe src={this.state.url} title="f" style={{width: '100%', height:'100%', border:'none'}}></iframe>
+
+                    <a href={this.state.trainPosLink} target="blank" style={{color: 'black', fontSize: '10px', position: "absolute", zIndex: "2"}}>sncf position en temps réél</a>
+                    
+                    {_.isEmpty(this.state.station) ? "" :
+                    <Map
+                        zoomControl={true}
+                        scrollWheelZoom={true}
+                        style={{width: '100%', height: '100%', zIndex: "1"}}
+                        center={new LatLng(this.state.trainPosition.lat, this.state.trainPosition.long)}
+                        bounds={new LatLngBounds(
+                            new LatLng(this.state.trainPosition.lat, this.state.trainPosition.long),
+                            new LatLng(this.state.station.gps.lat, this.state.station.gps.long)
+                        )}
+                        zoom={14}>
+                        <TileLayer
+                            attribution="Tiles Courtesy of <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a> - &amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                            url={"https://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=" + THNDER_KEY }
+                        />
+                        {/*<TileLayer
+                            attribution="sncf transport map"
+                            url={"https://gis-de-c.haf.as/hafas-tiles/v1/sncf_osm/1/{z}/{x}/{y}.png" }
+                        />*/}
+                        <TileLayer
+                            attribution=""
+                            url={"https://gis-de-c.haf.as/hafas-tiles/sncf_tracks/1/{z}/{x}/{y}.png" }
+                        />
+                        <Marker position={new LatLng(this.state.trainPosition.lat, this.state.trainPosition.long)} icon={new Icon({
+                            iconUrl: "https://sncf-maps.hafas.de/hafas-res/img/livemap/icons/train_line_newwhite.png",
+                            iconAnchor: [17, 41]
+                        })}>
+                        </Marker>
+                        <Marker position={new LatLng(this.state.station.gps.lat, this.state.station.gps.long)} icon={new Icon({
+                            iconUrl: "https://sncf-maps.hafas.de/hafas-res/img/livemap/icons/station_normalstate.png",
+                            iconAnchor: [8, 8],
+                            popupAnchor: [0, 0],
+                            iconSize: [16,16]
+                        })}>
+                            <Popup>
+                                <span>A pretty CSS3 popup. <br/> Easily customizable.</span>
+                            </Popup>
+                        </Marker>
+                    </Map>}
+
                 </Modal>
                 {this.state.error === true ? <Redirect to="/" /> : ""}
             </div>
