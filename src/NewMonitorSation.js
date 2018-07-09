@@ -77,7 +77,8 @@ export default class MonitorStation extends React.Component {
             error: false,
 
             modalIsOpen: false,
-            train: {}
+            train: {},
+            number: 0
         };
         this.tr3a = this.props.match.params.tr3a;
         this.openModal = this.openModal.bind(this);
@@ -145,7 +146,15 @@ export default class MonitorStation extends React.Component {
     }
 
     openModal(number) {
-        this.setState({modalIsOpen: true, train: _.find(this.state.trains, ['number', number])})
+        this.setState({modalIsOpen: true, number: number, train: _.find(this.state.trains, ['number', number])})
+    }
+
+    componentDidUpdate(){
+        // update marker position train
+        const train = _.find(this.state.trains, ['number', this.state.number])
+        if(this.state.modalIsOpen && this.state.train !== train) {
+            this.setState({train: train})
+        }
     }
 
     closeModal() {
@@ -197,7 +206,7 @@ export default class MonitorStation extends React.Component {
                         isOpen={this.state.modalIsOpen}
                         onRequestClose={this.closeModal}
                         contentLabel="Example Modal">
-                        <a href={this.state.train.distance.linkMap} target="blank" style={{color: 'black', fontSize: '10px', position: "absolute", zIndex: "2"}}>sncf position en temps réél {this.state.train.distance.lPosReport}</a> 
+                        <a href={this.state.train.distance.linkMap} target="blank" style={{color: 'black', fontSize: '10px', position: "absolute", zIndex: "2"}}>sncf position en temps réél {this.state.train.distance.lPosReport} {this.state.train.route.name} ({this.state.train.departure + " - " + this.state.train.terminus})</a> 
                         <MapTrain train={this.state.train} station={this.state.station} />
                     </Modal>
                 }
