@@ -62,8 +62,17 @@ function ListOfTrainLoaded(props) {
 }
 
 // Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
-Modal.setAppElement('body')
-
+Modal.setAppElement('body');
+//Modal.defaultStyles.overlay.backgroundColor = 'cornsilk';
+const customStyles = {
+    content : {
+        padding : "10px",
+        top     : '10px',
+        left    : '10px',
+        right   : '10px',
+        bottom  : '10px',
+    }
+  };
 export default class MonitorStation extends React.Component {
 
     constructor(props) {
@@ -205,7 +214,8 @@ export default class MonitorStation extends React.Component {
                     <Modal
                         isOpen={this.state.modalIsOpen}
                         onRequestClose={this.closeModal}
-                        contentLabel="Example Modal">
+                        contentLabel="Example Modal"
+                        style={customStyles}>
                         <a href={this.state.train.distance.linkMap} target="blank" style={{color: 'black', fontSize: '10px', position: "absolute", zIndex: "2"}}>sncf position en temps réél {this.state.train.distance.lPosReport} {this.state.train.route.name} ({this.state.train.departure + " - " + this.state.train.terminus})</a> 
                         <MapTrain train={this.state.train} station={this.state.station} />
                     </Modal>
