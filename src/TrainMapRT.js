@@ -1,10 +1,24 @@
 import React from 'react';
 import {Icon, LatLngBounds, LatLng} from 'leaflet';
-import { Map, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet';
+import { Map, TileLayer, Marker, Popup, ZoomControl, Polyline } from 'react-leaflet';
+import moment from 'moment-timezone';
 import {THNDER_KEY} from './config';
+import 'moment/locale/fr';
 
 export default class TrainMapRT extends React.Component {
-    
+    constructor(props) {
+        super(props);
+        this.marker = [];
+    }
+
+    openPopupMarker(idx){
+        this.marker[idx].leafletElement.openPopup();
+    }
+
+    closePopupMarker(idx){
+        this.marker[idx].leafletElement.closePopup();
+    }
+
     render() {
         return (<Map
                     zoomControl={false}
@@ -27,7 +41,11 @@ export default class TrainMapRT extends React.Component {
                     />*/}
                     <TileLayer
                         attribution=""
-                        url={"https://gis-de-c.haf.as/hafas-tiles/sncf_tracks/1/{z}/{x}/{y}.png" }
+                        url={
+                            "https://gis-de-c.haf.as/hafas-tiles/sncf_tracks/1/{z}/{x}/{y}.png"
+                            /*"https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png"*/
+                            /*"https://{s}.tiles.openrailwaymap.org/maxspeed/{z}/{x}/{y}.png"*/
+                         }
                     />
                     <Marker position={new LatLng(this.props.train.distance.gps.lat, this.props.train.distance.gps.long)} icon={new Icon({
                         iconUrl: `data:image/svg+xml;base64,
@@ -48,18 +66,60 @@ export default class TrainMapRT extends React.Component {
                         iconAnchor: [17, 52.8]
                     })}>
                     </Marker>
-                    <ExtendedMarker position={new LatLng(this.props.station.gps.lat, this.props.station.gps.long)} icon={new Icon({
-                        iconUrl: "https://sncf-maps.hafas.de/hafas-res/img/livemap/icons/station_normalstate.png",
-                        iconAnchor: [8, 8],
-                        popupAnchor: [0, 0],
-                        iconSize: [16,16]
-                    })}>
+                    {this.props.train.journey ? this.props.train.journey.map((jrn, idx) => {
+                        return (
+                            <Marker key={`marker-${idx}`} 
+                                ref={marker => { this.marker[idx] = marker; }}
+                                position={new LatLng(jrn.stop_point.coord.lat, jrn.stop_point.coord.lon)}
+                                icon={new Icon({
+                                    iconUrl: "https://sncf-maps.hafas.de/hafas-res/img/livemap/icons/station_normalstate.png",
+                                    iconAnchor: [8, 8],
+                                    popupAnchor: [0, 0],
+                                    iconSize: [16,16]
+                                })}
+                                onMouseOver={() => this.openPopupMarker(idx)}
+                                onMouseOut ={() => this.closePopupMarker(idx)}>
+                                <Popup>
+                                    <span>
+                                        <b>{jrn.stop_point.name}</b>
+                                        <p>Départ {moment(jrn.departure_time, "HHmmss").format('HH[h]mm')}</p>
+                                    </span>
+                                </Popup>
+                            </Marker>
+                        )
+                    }): ""}
+                    <ExtendedMarker
+                        position={new LatLng(this.props.station.gps.lat, this.props.station.gps.long)}>
                         <Popup>
                             <span>
                                 <b>{this.props.station.name}</b>
+                                <p>Départ {moment(this.props.train.expectedDepartureTime, "HH[:]mm").format('HH[h]mm')}</p>
                             </span>
                         </Popup>
                     </ExtendedMarker>
+                    <Polyline weight={4} color="wheat" positions={[
+                        new LatLng(this.props.train.distance.gps.lat, this.props.train.distance.gps.long),
+                        new LatLng(this.props.station.gps.lat, this.props.station.gps.long)]} >
+                        <Popup>
+                            <span>
+                                <b>{this.props.train.distance.dataToDisplay.distance}</b>
+                            </span>
+                        </Popup>
+                    </Polyline>
+                    {this.props.train.journey ? 
+                        <Polyline 
+                            weight={5}
+                            color={"#"+this.props.train.route.line.color}
+                            positions={this.props.train.journey.map((jrn, idx) => {return new LatLng(jrn.stop_point.coord.lat, jrn.stop_point.coord.lon)})} >
+                            <Popup>
+                                <span>
+                                    <p>{this.props.train.route.name}<br/>
+                                    ({this.props.train.departure + " -> " + this.props.train.terminus})<br/>
+                                    <span style={{color: "#"+this.props.train.route.line.color}}>Ligne {this.props.train.route.line.code}</span></p>
+                                </span>
+                            </Popup>
+                        </Polyline> : ""
+                    }
                 </Map>)
     }
 }
