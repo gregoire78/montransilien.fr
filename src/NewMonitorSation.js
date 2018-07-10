@@ -51,7 +51,7 @@ function ListOfTrainLoaded(props) {
                             </span>
                             <span className="infos-track">{train.nature ? <span className="train-nature"><span style={{fontSize: '0.7em'}}>train<br/></span>{train.nature}</span> : ""}{train.lane !== " " ? <span className="voie-train">{train.lane}</span> : ''}</span>
                             <div className="desserte-train" title={train.journey_text}>
-                                {train.journey_redux.length !== 0 ? <Marquee velocity={0.06}>{train.journey_text_html}</Marquee> : <p>{train.journey_text}</p>}
+                                {train.journey_redux ? (train.journey_redux.length !== 0 ? <Marquee velocity={0.06}>{train.journey_text_html}</Marquee> : <p>{train.journey_text}</p>) : <p>desserte indisponible</p>}
                             </div>
                         </div>
                     </div>
