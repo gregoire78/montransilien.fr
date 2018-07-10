@@ -1,13 +1,13 @@
 import React from 'react';
 import {Icon, LatLngBounds, LatLng} from 'leaflet';
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import { Map, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet';
 import {THNDER_KEY} from './config';
 
 export default class TrainMapRT extends React.Component {
     
     render() {
         return (<Map
-                    zoomControl={true}
+                    zoomControl={false}
                     scrollWheelZoom={true}
                     style={{width: '100%', height: '100%', zIndex: "1"}}
                     //center={new LatLng(this.props.train.distance.gps.lat, this.props.train.distance.gps.long)}
@@ -16,6 +16,7 @@ export default class TrainMapRT extends React.Component {
                         new LatLng(this.props.station.gps.lat, this.props.station.gps.long)
                     )}
                     zoom={14}>
+                    <ZoomControl position="bottomleft"/>
                     <TileLayer
                         attribution="Tiles Courtesy of <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a> - &amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                         url={"https://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=" + THNDER_KEY }

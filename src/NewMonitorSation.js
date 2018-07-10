@@ -217,6 +217,7 @@ export default class MonitorStation extends React.Component {
                         contentLabel="Example Modal"
                         style={customStyles}>
                         <a href={this.state.train.distance.linkMap} target="blank" style={{color: 'black', fontSize: '10px', position: "absolute", zIndex: "2"}}>sncf position en temps réél {this.state.train.distance.lPosReport} {this.state.train.route.name} ({this.state.train.departure + " - " + this.state.train.terminus})</a> 
+                        <button onClick={this.closeModal} style={{position: 'absolute',zIndex: 2,right: 0,top: 0,background: 'none',border: 'none',fontSize: '1em',cursor: 'pointer'}}>✖</button>
                         <MapTrain train={this.state.train} station={this.state.station} />
                     </Modal>
                 }
