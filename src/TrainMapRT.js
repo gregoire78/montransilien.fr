@@ -42,9 +42,10 @@ export default class TrainMapRT extends React.Component {
                     <TileLayer
                         attribution=""
                         url={
-                            "https://gis-de-c.haf.as/hafas-tiles/sncf_tracks/1/{z}/{x}/{y}.png"
+                            /*"https://gis-de-c.haf.as/hafas-tiles/sncf_tracks/1/{z}/{x}/{y}.png"*/
                             /*"https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png"*/
                             /*"https://{s}.tiles.openrailwaymap.org/maxspeed/{z}/{x}/{y}.png"*/
+                            "https://wxs.ign.fr/an7nvfzojv5wa96dsga5nk8w/geoportail/wmts?layer=TRANSPORTNETWORKS.RAILWAYS&style=normal&tilematrixset=PM&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fpng&TileMatrix={z}&TileCol={x}&TileRow={y}"
                          }
                     />
                     <Marker position={new LatLng(this.props.train.distance.gps.lat, this.props.train.distance.gps.long)} icon={new Icon({
