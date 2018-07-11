@@ -72,7 +72,7 @@ export default class TrainMapRT extends React.Component {
                                 })}
                                 /*onMouseOver={() => this.openPopupMarker(idx)}
                                 onMouseOut ={() => this.closePopupMarker(idx)}*/>
-                                <Tooltip opacity={0.9} permanent={idx == 0 || idx == (this.props.train.journey.length-1)} /*closeButton={false} autoClose={false} autoPan={false} */>
+                                <Tooltip opacity={0.9} permanent={idx === 0 || idx === (this.props.train.journey.length-1)} /*closeButton={false} autoClose={false} autoPan={false} */>
                                     <div>
                                         <b>{jrn.stop_point.name}</b><br/>
                                         {moment(jrn.departure_time, "HHmmss").format('HH[h]mm')}
