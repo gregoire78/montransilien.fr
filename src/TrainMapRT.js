@@ -95,7 +95,7 @@ export default class TrainMapRT extends React.Component {
                         <Popup minWidth='200' closeOnClick={false} autoPan={false} autoClose={false}>
                             <div>
                                 <span style={{position: "absolute",bottom: 0,height: "2em", width: "4em",right: 0,marginRight: "5px", marginBottom: "5px" }}>
-                                    <span className={this.props.train.route.line.type + " symbole alpha pop"} style={this.props.train.route.line.type !== 'ter' ? {height: "2em", width: "2em", top: "0.1em", left: "0"} : {height: "2em", top: "0.1em", left: "0"}} />
+                                    <span className={this.props.train.route.line.type + " symbole alpha pop"} style={this.props.train.route.line.type !== 'ter' ? {height: "2em", width: "2em", top: "0.1em", left: "0"} : {height: "2em", width: "4em", top: "0.1em", left: "0"}} />
                                     {this.props.train.route.line.type !== 'ter' ? <span className={this.props.train.route.line.type + " pop alpha ligne" + this.props.train.route.line.code} style={{height: "2em", width: "2em", top: "0.1em", left: "0"}} />: ''}
                                 </span>
                                 <b>{" "+this.props.train.terminus}</b><br/>
