@@ -26,5 +26,6 @@
 	div .train:hover .desserte-train {display: block;}
 	.symbole  {display: none}
 	.symbole.ter  {display: inline-block}
+	.symbole.pop  {display: inline-block}
 }
 

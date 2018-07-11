@@ -61,16 +61,16 @@ export default class TrainMapRT extends React.Component {
                                 })}
                                 onMouseOver={() => this.openPopupMarker(idx)}
                                 onMouseOut ={() => this.closePopupMarker(idx)}>
-                                <Popup>
+                                <Popup closeButton={false} autoClose={false} autoPan={false} >
                                     <span>
-                                        <b>{jrn.stop_point.name}</b>
-                                        <p>Départ {moment(jrn.departure_time, "HHmmss").format('HH[h]mm')}</p>
+                                        <b>{jrn.stop_point.name}</b><br/>
+                                        {moment(jrn.departure_time, "HHmmss").format('HH[h]mm')}
                                     </span>
                                 </Popup>
                             </Marker>
                         )
                     }): ""}
-                    <Marker
+                    <ExtendedMarker
                         position={new LatLng(this.props.train.distance.gps.lat, this.props.train.distance.gps.long)}
                         icon={new Icon({
                             iconUrl: `data:image/svg+xml;base64,
@@ -89,21 +89,26 @@ export default class TrainMapRT extends React.Component {
                                     </svg>
                                 `)}`,
                                 iconAnchor: [17, 52.8],
-                                popupAnchor: [0, -40]
+                                popupAnchor: [0, -50]
                             })
                         }>
-                        <Popup>
-                            <span>
-                                <b>{this.props.train.distance.dataToDisplay.distance}</b>
-                            </span>
+                        <Popup minWidth='200' closeOnClick={false} autoPan={false} autoClose={false}>
+                            <div>
+                                <span style={{position: "absolute",bottom: 0,height: "2em", width: "4em",right: 0,marginRight: "5px", marginBottom: "5px" }}>
+                                    <span className={this.props.train.route.line.type + " symbole alpha pop"} style={this.props.train.route.line.type !== 'ter' ? {height: "2em", width: "2em", top: "0.1em", left: "0"} : {height: "2em", top: "0.1em", left: "0"}} />
+                                    {this.props.train.route.line.type !== 'ter' ? <span className={this.props.train.route.line.type + " pop alpha ligne" + this.props.train.route.line.code} style={{height: "2em", width: "2em", top: "0.1em", left: "0"}} />: ''}
+                                </span>
+                                <b>{" "+this.props.train.terminus}</b><br/>
+                                {this.props.train.name} - {this.props.train.number} - {this.props.train.distance.dataToDisplay.distance} 
+                            </div>
                         </Popup>
-                    </Marker>
+                    </ExtendedMarker>
                     <ExtendedMarker
                         position={new LatLng(this.props.station.gps.lat, this.props.station.gps.long)}>
-                        <Popup>
+                        <Popup closeOnClick={false} autoPan={false} autoClose={false}>
                             <span>
-                                <b>{this.props.station.name}</b>
-                                <p>Départ {moment(this.props.train.expectedDepartureTime, "HH[:]mm").format('HH[h]mm')}</p>
+                                <b>{this.props.station.name}</b><br/>
+                                {moment(this.props.train.expectedDepartureTime, "HH[:]mm").format('HH[h]mm')} - {this.props.train.state}
                             </span>
                         </Popup>
                     </ExtendedMarker>
@@ -112,11 +117,19 @@ export default class TrainMapRT extends React.Component {
                             weight={5}
                             color={"#"+this.props.train.route.line.color}
                             positions={this.props.train.journey.map((jrn, idx) => {return new LatLng(jrn.stop_point.coord.lat, jrn.stop_point.coord.lon)})} >
-                            <Popup>
+                            <Popup autoPan={false} autoClose={false}>
                                 <span>
-                                    <p>{this.props.train.route.name}<br/>
+                                    {this.props.train.route.name}<br/>
                                     ({this.props.train.departure + " -> " + this.props.train.terminus})<br/>
-                                    <span style={{color: "#"+this.props.train.route.line.color}}>Ligne {this.props.train.route.line.code}</span></p>
+                                    <span style={{color: "#"+this.props.train.route.line.color}}>Ligne {this.props.train.route.line.code}</span>
+                                    <hr/>
+                                    {this.props.train.journey ?
+                                        <ul style={{paddingLeft: "19px", margin: "0", maxHeight: "90px", overflow: "auto"}}>
+                                            {this.props.train.journey.map((jrn, idx) => {
+                                                return <li key={idx}>{jrn.stop_point.name} - <b>{moment(jrn.departure_time, "HHmmss").format('HH[h]mm')}</b></li>
+                                            })}
+                                        </ul>
+                                    : ""}
                                 </span>
                             </Popup>
                         </Polyline> : ""
