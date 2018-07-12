@@ -41,114 +41,114 @@ export default class TrainMapRT extends React.Component {
     }
 
     render() {
-        return (<Map
-                    ref={ map => {this.map = map;}}
-                    zoomControl={false}
-                    scrollWheelZoom={true}
-                    style={{width: '100%', height: '100%', zIndex: "1"}}
-                    //center={new LatLng(this.props.train.distance.gps.lat, this.props.train.distance.gps.long)}
-                    bounds={new LatLngBounds(
-                        new LatLng(this.props.train.distance.gps.lat, this.props.train.distance.gps.long),
-                        new LatLng(this.props.station.gps.lat, this.props.station.gps.long)
-                    )}
-                    boundsOptions={{padding: [170, 170]}}
-                    zoom={14}>
-                    <ZoomControl position="bottomleft"/>
-                    <TileLayer
-                        attribution="Tiles Courtesy of <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a> - &amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-                        url={"https://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=" + THNDER_KEY }
-                    />
-                    {/*<TileLayer
-                        attribution="sncf transport map"
-                        url={"https://gis-de-c.haf.as/hafas-tiles/v1/sncf_osm/1/{z}/{x}/{y}.png" }
-                    />*/}
-                    <TileLayer
-                        attribution=""
-                        url={
-                            //"https://gis-de-c.haf.as/hafas-tiles/sncf_tracks/1/{z}/{x}/{y}.png"
-                            //"https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png"
-                            //"https://{s}.tiles.openrailwaymap.org/maxspeed/{z}/{x}/{y}.png"
-                            "https://wxs.ign.fr/an7nvfzojv5wa96dsga5nk8w/geoportail/wmts?layer=TRANSPORTNETWORKS.RAILWAYS&style=normal&tilematrixset=PM&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fpng&TileMatrix={z}&TileCol={x}&TileRow={y}"
-                         }
-                    />
+        return (
+            <Map
+                ref={ map => {this.map = map;}}
+                zoomControl={false}
+                scrollWheelZoom={true}
+                style={{width: '100%', height: '100%', zIndex: "1"}}
+                //center={new LatLng(this.props.train.distance.gps.lat, this.props.train.distance.gps.long)}
+                bounds={new LatLngBounds(
+                    new LatLng(this.props.train.distance.gps.lat, this.props.train.distance.gps.long),
+                    new LatLng(this.props.station.gps.lat, this.props.station.gps.long)
+                )}
+                boundsOptions={{padding: [105, 105]}}
+                zoom={14}>
+                <ZoomControl position="bottomleft"/>
+                <TileLayer
+                    attribution="Tiles Courtesy of <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a> - &amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                    url={"https://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=" + THNDER_KEY }
+                />
+                {/*<TileLayer
+                    attribution="sncf transport map"
+                    url={"https://gis-de-c.haf.as/hafas-tiles/v1/sncf_osm/1/{z}/{x}/{y}.png" }
+                />*/}
+                {/*<TileLayer
+                    attribution=""
+                    url={
+                        //"https://gis-de-c.haf.as/hafas-tiles/sncf_tracks/1/{z}/{x}/{y}.png"
+                        //"https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png"
+                        //"https://{s}.tiles.openrailwaymap.org/maxspeed/{z}/{x}/{y}.png"
+                        "https://wxs.ign.fr/an7nvfzojv5wa96dsga5nk8w/geoportail/wmts?layer=TRANSPORTNETWORKS.RAILWAYS&style=normal&tilematrixset=PM&Service=WMTS&Request=GetTile&Version=1.0.0&Format=image%2Fpng&TileMatrix={z}&TileCol={x}&TileRow={y}"
+                        }
+                />*/}
+                
+                
+                <GeoJSON data={geo} style={(feature)=>this.geoJsonDisplay(feature)} weight={4}>
+
+                    <Popup autoPan={false} autoClose={false}>
+                        <div>
+                            <div style={{color: "#"+this.props.train.route.line.color}}>Ligne {this.props.train.route.line.code}</div>
+                            {this.props.train.route.name}<br/>
+                            ({this.props.train.departure + " ➡ " + this.props.train.terminus})
+                            <hr/>
+                            {this.props.train.journey ?
+                                <ul style={{paddingLeft: "19px", margin: "0", maxHeight: "90px", overflow: "auto"}}>
+                                    {this.props.train.journey.map((jrn, idx) => {
+                                        return <li key={idx}>{jrn.stop_point.name} - <b>{moment(jrn.departure_time, "HHmmss").format('HH[h]mm')}</b></li>
+                                    })}
+                                </ul>
+                            : ""}
+                        </div>
+                    </Popup>
+                    
+                    {this.props.train.journey ? this.props.train.journey.map((jrn, idx) => {
+                        return (
+                            <Marker key={`marker-${idx}`} 
+                                ref={marker => { this.marker[idx] = marker; }}
+                                position={new LatLng(jrn.stop_point.coord.lat, jrn.stop_point.coord.lon)}
+                                icon={new Icon({
+                                    iconUrl: `data:image/svg+xml;base64,
+                                    ${btoa(`
+                                        <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="5.2245083mm" height="5.2245083mm" viewBox="0 0 5.2245083 5.2245083" version="1.1">
+                                            <g transform="translate(-14.372119,-66.203511)">
+                                                <circle
+                                                style="fill:white;fill-opacity:1;stroke:#${this.props.train.route.line.color};stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                                                cx="16.984373"
+                                                cy="68.815765"
+                                                r="1.9507958" />
+                                            </g>
+                                        </svg>
+                                    `)}`,
+                                    iconAnchor: [10, 10],
+                                    popupAnchor: [0, 0],
+                                    iconSize: [20,20]
+                                })}
+                                /*onMouseOver={() => this.openPopupMarker(idx)}
+                                onMouseOut ={() => this.closePopupMarker(idx)}*/>
+                                <Tooltip opacity={0.9} permanent={idx === 0 || idx === (this.props.train.journey.length-1)} /*closeButton={false} autoClose={false} autoPan={false} */>
+                                    <div>
+                                        <b>{jrn.stop_point.name}</b><br/>
+                                        {moment(jrn.departure_time, "HHmmss").format('HH[h]mm')}
+                                    </div>
+                                </Tooltip>
+                            </Marker>
+                        )
+                    }): ""}
                     
                     {this.props.train.journey ? 
-                    <GeoJSON data={geo} style={(feature)=>this.geoJsonDisplay(feature)} >
-
-                        <Popup autoPan={false} autoClose={false}>
-                            <div>
-                                <div style={{color: "#"+this.props.train.route.line.color}}>Ligne {this.props.train.route.line.code}</div>
-                                {this.props.train.route.name}<br/>
-                                ({this.props.train.departure + " ➡ " + this.props.train.terminus})
-                                <hr/>
-                                {this.props.train.journey ?
-                                    <ul style={{paddingLeft: "19px", margin: "0", maxHeight: "90px", overflow: "auto"}}>
-                                        {this.props.train.journey.map((jrn, idx) => {
-                                            return <li key={idx}>{jrn.stop_point.name} - <b>{moment(jrn.departure_time, "HHmmss").format('HH[h]mm')}</b></li>
-                                        })}
-                                    </ul>
-                                : ""}
-                            </div>
-                        </Popup>
-
-                        {this.props.train.journey.map((jrn, idx) => {
-                            return (
-                                <Marker key={`marker-${idx}`} 
-                                    ref={marker => { this.marker[idx] = marker; }}
-                                    position={new LatLng(jrn.stop_point.coord.lat, jrn.stop_point.coord.lon)}
-                                    icon={new Icon({
-                                        iconUrl: `data:image/svg+xml;base64,
-                                        ${btoa(`
-                                            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="5.2245083mm" height="5.2245083mm" viewBox="0 0 5.2245083 5.2245083" version="1.1">
-                                                <g transform="translate(-14.372119,-66.203511)">
-                                                    <circle
-                                                    style="fill:white;fill-opacity:1;stroke:#${this.props.train.route.line.color};stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-                                                    cx="16.984373"
-                                                    cy="68.815765"
-                                                    r="1.9507958" />
-                                                </g>
-                                            </svg>
-                                        `)}`,
-                                        iconAnchor: [10, 10],
-                                        popupAnchor: [0, 0],
-                                        iconSize: [20,20]
-                                    })}
-                                    /*onMouseOver={() => this.openPopupMarker(idx)}
-                                    onMouseOut ={() => this.closePopupMarker(idx)}*/>
-                                    <Tooltip opacity={0.9} permanent={idx === 0 || idx === (this.props.train.journey.length-1)} /*closeButton={false} autoClose={false} autoPan={false} */>
-                                        <div>
-                                            <b>{jrn.stop_point.name}</b><br/>
-                                            {moment(jrn.departure_time, "HHmmss").format('HH[h]mm')}
-                                        </div>
-                                    </Tooltip>
-                                </Marker>
-                            )
+                    <Polyline
+                        opacity={0.5}
+                        weight={1.5}
+                        dashArray= "5 10"
+                        color={"#"+this.props.train.route.line.color}
+                        positions={this.props.train.journey.map((jrn, idx) => {return new LatLng(jrn.stop_point.coord.lat, jrn.stop_point.coord.lon)})} >
+                        {this.props.train.journey.map((jrn, idx, arr) => {
+                            /**Arrow chemin */
+                            if(idx+1 < arr.length){
+                                const diffLat = arr[idx+1].stop_point.coord.lat - jrn.stop_point.coord.lat
+                                const diffLng = arr[idx+1].stop_point.coord.lon - jrn.stop_point.coord.lon                               
+                                const angle = 360 - (Math.atan2(diffLat, diffLng)*57.295779513082)
+                                return (
+                                    <Marker key={`direction-${idx}`}
+                                        position={new LatLng(Number(jrn.stop_point.coord.lat) + Number(diffLat/2), Number(jrn.stop_point.coord.lon) + Number(diffLng/2))}
+                                        icon={new divIcon({ className: "arrowIcon", iconSize: new Point(30,45), iconAnchor: new Point(15,22.5), 
+                                        html : `<div style = 'text-shadow: 1px 0 0 #3c3c3c, -1px 0 0 #3c3c3c, 0 1px 0 #3c3c3c, 0 -1px 0 #3c3c3c, .5px .5px #3c3c3c, -0.5px -0.5px 0 #3c3c3c, 0.5px -1px 0 #3c3c3c, -0.5px 0.5px 0 #3c3c3c;color: #${this.props.train.route.line.color};font-size: 30px; -webkit-transform: rotate(${angle}deg)'>➜</div>`
+                                    })} />
+                                )
+                            } else return ""
                         })}
-                        
-                        <Polyline
-                            opacity={0.5}
-                            weight={1.5}
-                            dashArray= "5 10"
-                            color={"#"+this.props.train.route.line.color}
-                            positions={this.props.train.journey.map((jrn, idx) => {return new LatLng(jrn.stop_point.coord.lat, jrn.stop_point.coord.lon)})} >
-                            {this.props.train.journey.map((jrn, idx, arr) => {
-                                /**Arrow chemin */
-                                if(idx+1 < arr.length){
-                                    const diffLat = arr[idx+1].stop_point.coord.lat - jrn.stop_point.coord.lat
-                                    const diffLng = arr[idx+1].stop_point.coord.lon - jrn.stop_point.coord.lon                               
-                                    const angle = 360 - (Math.atan2(diffLat, diffLng)*57.295779513082)
-                                    return (
-                                        <Marker key={`direction-${idx}`}
-                                            position={new LatLng(Number(jrn.stop_point.coord.lat) + Number(diffLat/2), Number(jrn.stop_point.coord.lon) + Number(diffLng/2))}
-                                            icon={new divIcon({ className: "arrowIcon", iconSize: new Point(30,45), iconAnchor: new Point(15,22.5), 
-                                            html : `<div style = 'text-shadow: 1px 0 0 #3c3c3c, -1px 0 0 #3c3c3c, 0 1px 0 #3c3c3c, 0 -1px 0 #3c3c3c, .5px .5px #3c3c3c, -0.5px -0.5px 0 #3c3c3c, 0.5px -1px 0 #3c3c3c, -0.5px 0.5px 0 #3c3c3c;color: #${this.props.train.route.line.color};font-size: 30px; -webkit-transform: rotate(${angle}deg)'>➜</div>`
-                                        })} />
-                                    )
-                                } else return ""
-                            })}
-                        </Polyline>
-
-                    </GeoJSON> : ""}
+                    </Polyline>:""}
 
                     <ExtendedMarker
                         position={new LatLng(this.props.train.distance.gps.lat, this.props.train.distance.gps.long)}
@@ -194,8 +194,11 @@ export default class TrainMapRT extends React.Component {
                             </div>
                         </Popup>
                     </ExtendedMarker>
-                    
-                </Map>)
+
+                </GeoJSON> 
+
+            </Map>
+        )
     }
 }
 
