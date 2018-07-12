@@ -51,7 +51,7 @@ export default class TrainMapRT extends React.Component {
                         new LatLng(this.props.train.distance.gps.lat, this.props.train.distance.gps.long),
                         new LatLng(this.props.station.gps.lat, this.props.station.gps.long)
                     )}
-                    boundsOptions={{padding: [100, 100]}}
+                    boundsOptions={{padding: [170, 170]}}
                     zoom={14}>
                     <ZoomControl position="bottomleft"/>
                     <TileLayer
@@ -187,7 +187,7 @@ export default class TrainMapRT extends React.Component {
                     </ExtendedMarker>
                     <ExtendedMarker
                         position={new LatLng(this.props.station.gps.lat, this.props.station.gps.long)}>
-                        <Popup closeOnClick={false} autoPan={false} autoClose={false}>
+                        <Popup closeOnClick={true} autoPan={false} autoClose={false}>
                             <div>
                                 <b>{this.props.station.name}</b><br/>
                                 {moment(this.props.train.expectedDepartureTime, "HH[:]mm").format('HH[h]mm')} - {this.props.train.state}
