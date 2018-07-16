@@ -19,6 +19,8 @@
 
 .Marquee { overflow-x: hidden; }
 .MarqueeContent { display: inline-block;}
+.MarqueeY { overflow-y: hidden;font-size: 18pt}
+.MarqueeYContent { display: block;padding: 5pt;}
 
 .material-icons {
   /*font-family: 'Material Icons';*/
@@ -113,13 +115,15 @@ div#listView {
 }
 div#bottomList {
 	flex: 1 1 auto;
+	display: flex;
+	align-items: flex-end;
 }
 span.infos-track{
 	right: 0;
 	position: absolute;
 	margin-right: 0.2em;
 	display: inline-flex;
-    align-items: center;
+	align-items: center;
 }
 span.train-nature {
 	margin-right: 0.4em;
@@ -341,6 +345,9 @@ span.dot-separator {
 .content {
 	min-height: calc(100vh - 50px);
 }
+.content-list {
+	min-height: calc(100vh - 3em);
+}
 footer {
 	text-align: center;
 	background-color: #222;
@@ -363,4 +370,12 @@ footer {
 
 .leaflet-bottom.leaflet-right {
 	display: none;
+}
+
+.trafic {
+	/*padding: 5pt;*/
+	height: 3em;
+	overflow: hidden;
+	/*white-space: nowrap;*/
+	background-color: rgba(37, 36, 56, 0.88);
 }
