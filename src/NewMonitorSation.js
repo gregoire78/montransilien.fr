@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
-import moment from 'moment-timezone';
 import Marquee from './Marquee';
-import MarqueeY from './MarqueeY';
+import Horloge from './Horloge';
+import Slider from "react-slick";
+import Textfit from "react-textfit";
 import MapTrain from './TrainMapRT';
 import _ from 'lodash';
 import { Map, TileLayer} from 'react-leaflet';
@@ -13,7 +14,6 @@ import Loader from 'react-loaders';
 import Modal from 'react-modal';
 //import {Helmet} from 'react-helmet';
 //import {VelocityComponent} from 'velocity-react';
-import 'moment/locale/fr';
 import './App.css';
 import './big.css';
 import './small.css';
@@ -63,13 +63,35 @@ function ListOfTrainLoaded(props) {
 }
 
 function TraficMessage(props) {
+    const settings = {
+        dots: false,
+        arrows: false,
+        infinite: true,
+        vertical: true,
+        verticalSwiping: true,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        speed: 2000,
+        accessibility: false,
+        className: "slide-trafic"
+    };
     return (
         <div className="trafic">
-            <MarqueeY velocity={0.035}>
+            <Slider {...settings}>
                 {props.data.trafic.map((obj, k) => {
-                    return (<div key={k}>{obj.contenu}</div>)
+                    let content = obj.typeMessage === "TRAVAUX" ? { contenu: obj.contenu, color: "rgba(255, 152, 0)" } : { contenu: obj.detailsFormatTexte, color: "rgba(255, 0, 0)" };
+                    const text = `${obj.ligne.libelle} : ${content.contenu}`
+                    return (
+                        <div key={k}>
+                            <div style={{ height: "3em", color: content.color }}>
+                                <Textfit className="fite" mode="multi" forceSingleModeWidth={false}>
+                                    {text}
+                                </Textfit>
+                            </div>
+                        </div>
+                    )
                 })}
-            </MarqueeY>
+            </Slider>
         </div>
     )
 }
@@ -94,7 +116,6 @@ export default class MonitorStation extends React.Component {
             station: {},
             trains: [],
             trafic: [],
-            currentTime: moment().locale('fr'),
             isLoading: false,
             error: false,
 
@@ -152,19 +173,12 @@ export default class MonitorStation extends React.Component {
             }
         })
         .catch(error => {});
-        this.intervalTime = setInterval(this.timer.bind(this), 1000);
     }
 
     componentWillUnmount() {
         // use intervalId from the state to clear the interval
         clearInterval(this.interval);
-        clearInterval(this.intervalTime);
         clearInterval(this.intervalTrafic);
-    }
-    
-    timer() {
-        // setState method is used to update the state
-        this.setState({ currentTime: moment().locale('fr') });
     }
 
     openModal(number) {
@@ -207,7 +221,7 @@ export default class MonitorStation extends React.Component {
                     {/*<Helmet defer={true} >
                         <link rel="stylesheet" type="text/css" href="dark.css" />
                     </Helmet>*/}
-                    <div id="heure" className="voie" title={moment(this.state.currentTime).format('LLLL')}>{moment(this.state.currentTime).format('LT')} <small>{moment(this.state.currentTime).format('ss')}</small></div>
+                    <Horloge />
                     <div ref={elem => stationElem = elem} className="station-name"><span>{this.state.station.name}</span></div>
                     {listOfTrains}
                     <div id="bottomList">
@@ -238,7 +252,9 @@ export default class MonitorStation extends React.Component {
                     }
                     {this.state.error === true ? <Redirect to="/" /> : ""}
                 </div>
-                <TraficMessage data={this.state} />
+                {_.isEmpty(this.state.trafic) ? "" :
+                    <TraficMessage data={this.state} />
+                }
             </div>
         )
     }

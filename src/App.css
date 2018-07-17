@@ -1,3 +1,5 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
 @font-face {
 	font-family: 'Material Icons';
 	font-style: normal;
@@ -379,3 +381,7 @@ footer {
 	/*white-space: nowrap;*/
 	background-color: rgba(37, 36, 56, 0.88);
 }
+.slide-trafic .slick-slide {
+	border: none;
+}
+.fite{height: 2.5em;margin: 0.2em}
