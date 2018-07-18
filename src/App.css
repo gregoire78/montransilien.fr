@@ -114,6 +114,7 @@ div#listView {
 	display: flex;
 	flex-flow: column;
 	height: 100%;
+	min-height: calc(100vh - 3em);
 }
 div#bottomList {
 	flex: 1 1 auto;
@@ -347,9 +348,6 @@ span.dot-separator {
 .content {
 	min-height: calc(100vh - 50px);
 }
-.content-list {
-	min-height: calc(100vh - 3em);
-}
 footer {
 	text-align: center;
 	background-color: #222;
@@ -381,7 +379,13 @@ footer {
 	/*white-space: nowrap;*/
 	background-color: rgba(37, 36, 56, 0.88);
 }
+.content-trafic {
+	height: 2.6em;
+	padding:.2em;
+	text-align: justify;
+	text-justify: inter-word;
+}
 .slide-trafic .slick-slide {
 	border: none;
 }
-.fite{height: 2.5em;margin: 0.2em}
+.fite{height: 100%;}

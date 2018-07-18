@@ -79,12 +79,14 @@ function TraficMessage(props) {
         <div className="trafic">
             <Slider {...settings}>
                 {props.data.trafic.map((obj, k) => {
-                    let content = obj.typeMessage === "TRAVAUX" ? { contenu: obj.contenu, color: "rgba(255, 152, 0)" } : { contenu: obj.detailsFormatTexte, color: "rgba(255, 0, 0)" };
+                    let content = obj.typeMessage === "TRAVAUX" ? { contenu: obj.contenu, color: "#ffac33" } : 
+                                ( obj.typeMessage === "TRAFIC" ?  { contenu: obj.detailsFormatTexte, color: "#ff3d3d" } : 
+                                                                  { contenu: obj.detailsFormatTexte, color: "#8BC34A" });
                     const text = `${obj.ligne.libelle} : ${content.contenu}`
                     return (
                         <div key={k}>
-                            <div style={{ height: "3em", color: content.color }}>
-                                <Textfit className="fite" mode="multi" forceSingleModeWidth={false}>
+                            <div className="content-trafic" style={{ color: content.color }}>
+                                <Textfit className="fite" mode="multi" forceSingleModeWidth={false} max={40}>
                                     {text}
                                 </Textfit>
                             </div>
@@ -152,7 +154,25 @@ export default class MonitorStation extends React.Component {
     getTrafic() {
         return axios.post(`${SSL ? 'https' : 'http'}://${API_IP}/trafic`, {lines:this.state.station.lines})
         .then(response => {
-            this.setState({trafic: response.data})
+            if(!_.isEmpty(response.data)){
+                this.setState({trafic: response.data})
+            } else {
+                this.state.station.lines.map(line => {
+                    if (!_.some(response.data, ['ligne.libelleNumero', line])) {
+                        return response.data.push({
+                            ligne: {
+                                libelle: "Ligne " + line
+                            },
+                            typeMessage: "NORMAL",
+                            detailsFormatTexte: "Trafic normal"
+                        })
+                    } else return false
+                })
+                this.setState({trafic: response.data})
+            }
+        })
+        .catch(error => {
+            this.setState({trafic: []})
         });
     }
 
@@ -197,7 +217,6 @@ export default class MonitorStation extends React.Component {
         this.setState({modalIsOpen: false});
     }
 
-//<img src="#" alt={train.route.line}/>
     render()  {
         const listOfTrains = this.state.isLoading ? (
             <div style={{
@@ -252,9 +271,7 @@ export default class MonitorStation extends React.Component {
                     }
                     {this.state.error === true ? <Redirect to="/" /> : ""}
                 </div>
-                {_.isEmpty(this.state.trafic) ? "" :
-                    <TraficMessage data={this.state} />
-                }
+                <TraficMessage data={this.state} />
             </div>
         )
     }
