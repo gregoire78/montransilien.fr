@@ -64,7 +64,7 @@ function ListOfTrainLoaded(props) {
 
 function TraficMessage(props) {
     const settings = {
-        dots: false,
+        dots: true,
         arrows: false,
         infinite: true,
         vertical: true,
@@ -73,7 +73,10 @@ function TraficMessage(props) {
         autoplaySpeed: 5000,
         speed: 2000,
         accessibility: false,
-        className: "slide-trafic"
+        className: "slide-trafic",
+        appendDots: dots => (
+            <ul id="dots-trafic"> {dots} </ul>
+        ),
     };
     return (
         <div className="trafic">
@@ -233,45 +236,46 @@ export default class MonitorStation extends React.Component {
         )
         return (
             <div>
+                <Helmet>
+                    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css" />
+                </Helmet>
                 <div id="listView" className="content-list">
-                    <Helmet>
-                        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"/>
-                    </Helmet>
                     {/*<Helmet defer={true} >
                         <link rel="stylesheet" type="text/css" href="dark.css" />
                     </Helmet>*/}
                     <Horloge />
-                    <div ref={elem => stationElem = elem} className="station-name"><span>{this.state.station.name}</span></div>
+                    {!this.state.isLoading ? <div ref={elem => stationElem = elem} className="station-name"><span>{this.state.station.name}</span></div> : ""}
                     {listOfTrains}
                     <div id="bottomList">
                     </div>
-                    {_.isEmpty(this.state.station) ? "" : 
-                        <Map
-                            zoomControl={false}
-                            scrollWheelZoom={false}
-                            style={{position: 'fixed',top: '0',left: '0',zIndex: '-100',width: '100%', height: '100%', margin:'auto'}}
-                            center={[this.state.station.gps.lat, this.state.station.gps.long]}
-                            zoom={18}>
-                            <TileLayer
-                                attribution="Tiles Courtesy of <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a> - &amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-                                url={"https://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=" + THNDER_KEY }
-                            />
-                        </Map>
-                    }
-                    {_.isEmpty(this.state.train) ? "" :
-                        <Modal
-                            isOpen={this.state.modalIsOpen}
-                            onRequestClose={this.closeModal}
-                            contentLabel="Example Modal"
-                            style={customStyles}>
-                            <a href={this.state.train.distance.linkMap} target="blank" style={{color: 'black', fontSize: '10px', position: "absolute", zIndex: "2"}}>sncf position en temps réél {this.state.train.distance.lPosReport} {this.state.train.route.name} ({this.state.train.departure + " ➜ " + this.state.train.terminus})</a> 
-                            <button onClick={this.closeModal} style={{position: 'absolute',zIndex: 2,right: 0,top: 0,background: 'white',border: 'none',fontSize: '1em',cursor: 'pointer'}}>✖</button>
-                            <MapTrain train={this.state.train} station={this.state.station} />
-                        </Modal>
-                    }
-                    {this.state.error === true ? <Redirect to="/" /> : ""}
                 </div>
-                <TraficMessage data={this.state} />
+                {!this.state.isLoading ? <TraficMessage data={this.state} /> : ""}
+
+                {_.isEmpty(this.state.station) ? "" :
+                    <Map
+                        zoomControl={false}
+                        scrollWheelZoom={false}
+                        style={{ position: 'fixed', top: '0', left: '0', zIndex: '-100', width: '100%', height: '100%', margin: 'auto' }}
+                        center={[this.state.station.gps.lat, this.state.station.gps.long]}
+                        zoom={18}>
+                        <TileLayer
+                            attribution="Tiles Courtesy of <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a> - &amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                            url={"https://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=" + THNDER_KEY}
+                        />
+                    </Map>
+                }
+                {_.isEmpty(this.state.train) ? "" :
+                    <Modal
+                        isOpen={this.state.modalIsOpen}
+                        onRequestClose={this.closeModal}
+                        contentLabel="Example Modal"
+                        style={customStyles}>
+                        <a href={this.state.train.distance.linkMap} target="blank" style={{ color: 'black', fontSize: '10px', position: "absolute", zIndex: "2" }}>sncf position en temps réél {this.state.train.distance.lPosReport} {this.state.train.route.name} ({this.state.train.departure + " ➜ " + this.state.train.terminus})</a>
+                        <button onClick={this.closeModal} style={{ position: 'absolute', zIndex: 2, right: 0, top: 0, background: 'white', border: 'none', fontSize: '1em', cursor: 'pointer' }}>✖</button>
+                        <MapTrain train={this.state.train} station={this.state.station} />
+                    </Modal>
+                }
+                {this.state.error === true ? <Redirect to="/" /> : ""}
             </div>
         )
     }

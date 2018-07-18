@@ -389,3 +389,21 @@ footer {
 	border: none;
 }
 .fite{height: 100%;}
+#dots-trafic {
+	position: absolute;
+	top: auto;
+	bottom: 0;
+	overflow: hidden;
+	white-space: nowrap;
+}
+#dots-trafic li {
+	width: 10px;
+	height: 10px;
+}
+#dots-trafic.slick-dots li button {
+	width: 10px;
+	height: 10px;
+}
+#dots-trafic.slick-dots li button:before {
+	color: #7a7a9c;
+}
