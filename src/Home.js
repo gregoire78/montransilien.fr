@@ -17,121 +17,122 @@ import lignes from './db/lignes.json';
  * https://stackoverflow.com/questions/23123138/perform-debounce-in-react-js
  */
 export class SearchBox extends React.Component {
-    constructor (props) {
-        super(props);
-        this.state = { query: this.props.query};
-        this.handleChange = this.handleChange.bind(this);
-    }
+	constructor(props) {
+		super(props);
+		this.state = { query: this.props.query };
+		this.handleChange = this.handleChange.bind(this);
+	}
 
-    componentWillMount () {
-        this.handleSearchDebounced = _.debounce(() => {
-            this.props.handleSearch.apply(this, [this.state.query]);
-        }, 500);
-    }
+	componentWillMount() {
+		this.handleSearchDebounced = _.debounce(() => {
+			this.props.handleSearch.apply(this, [this.state.query]);
+		}, 500);
+	}
 
-    handleChange (event) {
-        this.setState({query: event.target.value});
-        this.handleSearchDebounced();
-    }
+	handleChange(event) {
+		this.setState({ query: event.target.value });
+		this.handleSearchDebounced();
+	}
 
-    render () {
-        return (
-            <input type="search" placeholder={this.props.placeholder} value={this.state.query} onChange={this.handleChange} />
-        );
-    }
+	render() {
+		return (
+			<input type="search" placeholder={this.props.placeholder} value={this.state.query} onChange={this.handleChange} />
+		);
+	}
 }
 
 export default class Home extends React.Component {
-    constructor (props) {
-        super(props);
-        this.state = {result: "", stations: [], isLoading: false};
-        this.handleSearch = this.handleSearch.bind(this);
-    }
+	constructor(props) {
+		super(props);
+		this.state = { result: "", stations: [], isLoading: false };
+		this.handleSearch = this.handleSearch.bind(this);
+	}
 
-    getLignes(trea) {
-        const uic = _.result(_.find(garesId, (obj) => {
+	getLignes(trea) {
+		const uic = _.result(_.find(garesId, (obj) => {
 			return obj.code === trea;
-        }), 'uic7');
-        return _.filter(lignes, {"uic": uic}).map(values => {return values.line})
-    }
+		}), 'uic7');
+		return _.filter(lignes, { "uic": uic }).map(values => { return values.line })
+	}
 
-    getDataAutocomplete(value) {
-        /**
-         * https://robwu.nl/cors-anywhere.html
-         * https://github.com/Rob--W/cors-anywhere/
-         * https://medium.com/netscape/hacking-it-out-when-cors-wont-let-you-be-great-35f6206cc646
-         * https://stormy-atoll-29313.herokuapp.com/ (le miens)
-         */
-        axios.get(`https://stormy-atoll-29313.herokuapp.com/https://transilien.mobi/getProchainTrainAutocomplete?value=${encodeURI(value)}`)
-        .then(response => {
-            if(!response.data.error)
-                this.setState({stations: response.data, isLoading: false})
-            else
-                this.setState({stations: [], isLoading: false})
-        })
-        .catch(error => {
-            this.setState({stations: [], isLoading: false})
-        });
-    }
+	getDataAutocomplete(value) {
+		/**
+		 * https://robwu.nl/cors-anywhere.html
+		 * https://github.com/Rob--W/cors-anywhere/
+		 * https://medium.com/netscape/hacking-it-out-when-cors-wont-let-you-be-great-35f6206cc646
+		 * https://stormy-atoll-29313.herokuapp.com/ (le miens)
+		 */
+		axios.get(`https://stormy-atoll-29313.herokuapp.com/https://transilien.mobi/getProchainTrainAutocomplete?value=${encodeURI(value)}`)
+			.then(response => {
+				if (!response.data.error)
+					this.setState({ stations: response.data, isLoading: false })
+				else
+					this.setState({ stations: [], isLoading: false })
+			})
+			.catch(error => {
+				this.setState({ stations: [], isLoading: false })
+			});
+	}
 
-    handleSearch(query) {
-        this.setState({result: query, isLoading: true});
-        this.getDataAutocomplete(query);
-    }
+	handleSearch(query) {
+		this.setState({ result: query, isLoading: true });
+		this.getDataAutocomplete(query);
+	}
 
-    render() {
-        //let firstStation = _.first(this.state.stations);
-        return (
-            <div id="Home">
-                {/*<Helmet>
-                    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"/>
-                </Helmet>*/}
-                <div className="content">
-                    <h1><img src="./favicon144.png" alt="logo train" /><span>Mon Transilien</span></h1>
-                    <div className="search">
-                        <SearchBox query={this.state.result} placeholder="Rechercher une gare" handleSearch={this.handleSearch} />
-                        <Loader type="ball-pulse" color="#e6e014" style={{transform: 'scale(0.5)'}} active={this.state.isLoading} size="md"/>
-                        <div>
-                            {this.state.stations.map((v,i) => {
-                                const line = !_.isEmpty(v.lignes) ? v.lignes.map(values => {return values.idLigne}) : this.getLignes(v.codeTR3A);
-                                return (
-                                <p key={i} style={{marginTop: ".3em"}}>
-                                    <Link to={v.codeTR3A} ><LignesSymboles lignes={line}/> {v.name}</Link>
-                                </p>
-                                )
-                            })}
-                        </div>
-                    </div>
-                </div>
-                {//_.isEmpty(this.state.stations) ? "" : 
-                 //   <Map
-                 //       zoomControl={false}
-                 //       scrollWheelZoom={false}
-                 //       style={{position: 'fixed',top: '0',left: '0',zIndex: '-100',width: '100%', height: '100%', margin:'auto'}}
-                 //       center={[firstStation.latitude, firstStation.longitude]}
-                 //       zoom={17}
-                 //   >
-                 //       <TileLayer
-                 //           attribution="Tiles Courtesy of <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a> - &amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-                 //           url={"https://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=" + THNDER_KEY }
-                 //       />
-                 //       {/*<Marker position={[firstStation.latitude, firstStation.longitude]}>
-                 //           <Popup>
-                 //               <span><p>Gare de {firstStation.name}</p><p>{firstStation.address}</p></span>
-                 //           </Popup>
-                 //       </Marker>*/}
-                 //   </Map>
-                }
-                <Footer />
-            </div>
-        )
-    }
+	render() {
+		//let firstStation = _.first(this.state.stations);
+		return (
+			<div id="Home">
+				{/*<Helmet>
+					<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"/>
+				</Helmet>*/}
+				<div className="content">
+					<h1><img src="./favicon144.png" alt="logo train" /><span>Mon Transilien</span></h1>
+					<div className="search">
+						<SearchBox query={this.state.result} placeholder="Rechercher une gare" handleSearch={this.handleSearch} />
+						<Loader type="ball-pulse" color="#e6e014" style={{ transform: 'scale(0.5)' }} active={this.state.isLoading} size="md" />
+						<div>
+							{this.state.stations.map((v, i) => {
+								const line = !_.isEmpty(v.lignes) ? v.lignes.map(values => { return values.idLigne }) : this.getLignes(v.codeTR3A);
+								return (
+									<p key={i} style={{ marginTop: ".3em" }}>
+										<Link to={v.codeTR3A} ><LignesSymboles lignes={line} /> {v.name}</Link>
+									</p>
+								)
+							})}
+						</div>
+					</div>
+				</div>
+				{
+				//	_.isEmpty(this.state.stations) ? "" :
+				//		<Map
+				//			zoomControl={false}
+				//			scrollWheelZoom={false}
+				//			style={{ position: 'fixed', top: '0', left: '0', zIndex: '-100', width: '100%', height: '100%', margin: 'auto' }}
+				//			center={[firstStation.latitude, firstStation.longitude]}
+				//			zoom={17}
+				//		>
+				//			<TileLayer
+				//				attribution="Tiles Courtesy of <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a> - &amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+				//				url={"https://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=" + THNDER_KEY}
+				//			/>
+				//			{/*<Marker position={[firstStation.latitude, firstStation.longitude]}>
+				//				<Popup>
+				//					<span><p>Gare de {firstStation.name}</p><p>{firstStation.address}</p></span>
+				//				</Popup>
+				//			</Marker>*/}
+				//		</Map>
+				}
+				<Footer />
+			</div>
+		)
+	}
 }
 
 function LignesSymboles(props) {
-    return props.lignes.map((ligne, i) => {
-        return (
-            <span key={i} className={"line-img alpha ligne" + ligne} style={{height: "1em", width: "1em", top: "0.1em", left: "0"}} />
-        )
-    })
+	return props.lignes.map((ligne, i) => {
+		return (
+			<span key={i} className={"line-img alpha ligne" + ligne} style={{ height: "1em", width: "1em", top: "0.1em", left: "0" }} />
+		)
+	})
 }
