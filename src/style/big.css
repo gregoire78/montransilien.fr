@@ -38,16 +38,21 @@
 	div.train div.desserte-train {
 		width: calc(100vw - 9.5em);
 	}
-	
+
 	span.infos-track{
 		margin-top: 0.2em;
 	}
 	span.voie-train {
 		align-items: center;
 	}
+	div#bottomList {
+		flex: 1 1 auto;
+		display: flex;
+		align-items: flex-end;
+	}
 
-	@media screen and (min-width: 600px)  { body, input {/* font-size: 14pt; */} }
-	@media screen and (min-width: 750px)  { body, input {/* font-size: 16pt; */} }
+	/*@media screen and (min-width: 600px)  { body, input { font-size: 14pt; } }*/
+	/*@media screen and (min-width: 750px)  { body, input { font-size: 16pt; } }*/
 	@media screen and (min-width: 950px)  { body, input { font-size: 18pt; } footer { font-size: 10pt } }
 	@media screen and (min-width: 1050px) { body, input { font-size: 20pt; } footer { font-size: 10pt } }
 	@media screen and (min-width: 1200px) { body, input { font-size: 22pt; } footer { font-size: 10pt } }

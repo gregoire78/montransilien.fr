@@ -5,10 +5,6 @@ import Marquee from './Marquee';
 import {API_IP} from './config';
 //import {VelocityComponent} from 'velocity-react';
 import 'moment/locale/fr';
-import './App.css';
-import './big.css';
-import './metrodna.css';
-import './dark.css';
 
 function ListOfTrainLoading() {
     let stationHeight;

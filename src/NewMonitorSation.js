@@ -14,10 +14,6 @@ import Loader from 'react-loaders';
 import Modal from 'react-modal';
 //import {Helmet} from 'react-helmet';
 //import {VelocityComponent} from 'velocity-react';
-import './App.css';
-import './big.css';
-import './small.css';
-import './metrodna.css';
 
 let stationHeight;
 let stationElem;
@@ -70,8 +66,8 @@ function TraficMessage(props) {
         vertical: true,
         verticalSwiping: true,
         autoplay: true,
-        autoplaySpeed: 5000,
-        speed: 2000,
+        autoplaySpeed: 8000,
+        speed: 1500,
         accessibility: false,
         className: "slide-trafic",
         appendDots: dots => (
@@ -85,12 +81,12 @@ function TraficMessage(props) {
                     let content = obj.typeMessage === "TRAVAUX" ? { contenu: obj.contenu, color: "#ffac33" } : 
                                 ( obj.typeMessage === "TRAFIC" ?  { contenu: obj.detailsFormatTexte, color: "#ff3d3d" } : 
                                                                   { contenu: obj.detailsFormatTexte, color: "#8BC34A" });
-                    const text = `${obj.ligne.libelle} : ${content.contenu}`
+                    //const text = `${obj.ligne.libelle} : ${content.contenu}`
                     return (
                         <div key={k}>
                             <div className="content-trafic" style={{ color: content.color }}>
                                 <Textfit className="fite" mode="multi" forceSingleModeWidth={false} max={40}>
-                                    {text}
+                                    <div><span style={{background: "black",fontStyle: "italic", paddingRight: "0.25em",paddingLeft: "0.1em"}}>{obj.ligne.libelle}</span> {content.contenu}</div>
                                 </Textfit>
                             </div>
                         </div>
@@ -246,10 +242,10 @@ export default class MonitorStation extends React.Component {
                     <Horloge />
                     {!this.state.isLoading ? <div ref={elem => stationElem = elem} className="station-name"><span>{this.state.station.name}</span></div> : ""}
                     {listOfTrains}
-                    <div id="bottomList">
-                    </div>
+                    <div id="bottomList"></div>
+                    {!this.state.isLoading ? <TraficMessage data={this.state} /> : ""}
+                    <div id="bottomList-small"></div>
                 </div>
-                {!this.state.isLoading ? <TraficMessage data={this.state} /> : ""}
 
                 {_.isEmpty(this.state.station) ? "" :
                     <Map

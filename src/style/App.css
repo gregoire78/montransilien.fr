@@ -16,7 +16,12 @@
 	font-family: 'sncf';
 	font-style: normal;
 	font-weight: 400;
-	src: url('./fonts/achemine-webfont.ttf') format('truetype');
+	src: url(../fonts/achemine-webfont.ttf) format('truetype');
+}
+
+body {
+	margin: 0;
+	padding: 0;
 }
 
 .Marquee { overflow-x: hidden; }
@@ -114,12 +119,7 @@ div#listView {
 	display: flex;
 	flex-flow: column;
 	height: 100%;
-	min-height: calc(100vh - 3em);
-}
-div#bottomList {
-	flex: 1 1 auto;
-	display: flex;
-	align-items: flex-end;
+	min-height: 100vh
 }
 span.infos-track{
 	right: 0;
@@ -397,13 +397,13 @@ footer {
 	white-space: nowrap;
 }
 #dots-trafic li {
-	width: 10px;
-	height: 10px;
+	margin: 0;
+	padding:0
 }
 #dots-trafic.slick-dots li button {
-	width: 10px;
-	height: 10px;
+	padding: 0;
 }
 #dots-trafic.slick-dots li button:before {
-	color: #7a7a9c;
+	color: #c5c5d8;
+	line-height: 30px;
 }

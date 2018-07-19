@@ -27,6 +27,8 @@
 	.symbole  {display: none}
 	.symbole.ter  {display: inline-block}
 	.symbole.pop  {display: inline-block}
-
+	div#bottomList-small {
+		flex: 1 1 auto;
+	}
 }
 

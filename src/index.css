@@ -1,5 +1,5 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+@import './style/App.css';
+@import './style/big.css';
+@import './style/small.css';
+@import './style/metrodna.css';
+@import './style/dark.css';

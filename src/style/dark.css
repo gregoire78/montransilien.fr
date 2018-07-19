@@ -41,7 +41,7 @@ div.train:nth-child(2n+1) {
 
 div.train:nth-child(2n),
 div.station-name,
-div#bottomList {
+div#bottomList, div#bottomList-small {
 	background-color: rgba(25, 25, 39, 0.88);
 }
 

@@ -11,10 +11,6 @@ import Loader from 'react-loaders';
 //import {Helmet} from 'react-helmet';
 //import {VelocityComponent} from 'velocity-react';
 import 'moment/locale/fr';
-import './App.css';
-import './big.css';
-import './small.css';
-import './metrodna.css';
 
 let stationHeight;
 let stationElem;

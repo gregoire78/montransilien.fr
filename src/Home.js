@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Footer from './Footer';
 import _ from 'lodash';
-import './App.css';
 import Loader from 'react-loaders';
 //import {Helmet} from "react-helmet";
 import 'loaders.css';
 //import { Map, TileLayer } from 'react-leaflet';
 //import {THNDER_KEY} from './config';
-import garesId from './gares.json';
-import lignes from './lignes.json';
+import garesId from './db/gares.json';
+import lignes from './db/lignes.json';
 
 /**
  * https://reactjs.org/docs/forms.html#controlled-components
