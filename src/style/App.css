@@ -389,6 +389,11 @@ footer {
 	border: none;
 }
 .fite{height: 100%;}
+.fite img {
+	height: 100%;
+	height: -webkit-fill-available;
+	height: -moz-available;
+}
 #dots-trafic {
 	position: absolute;
 	top: auto;

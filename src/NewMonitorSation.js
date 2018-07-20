@@ -78,15 +78,18 @@ function TraficMessage(props) {
 		<div className="trafic">
 			<Slider {...settings}>
 				{props.data.trafic.map((obj, k) => {
-					let content = obj.typeMessage === "TRAVAUX" ? { contenu: obj.contenu, color: "#ffac33" } :
-						(obj.typeMessage === "TRAFIC" ? { contenu: obj.detailsFormatTexte, color: "#ff3d3d" } :
+					let content = obj.typeMessage === "TRAVAUX" ? { contenu: obj.contenu, color: "#EA663A" } :
+						(obj.typeMessage === "TRAFIC" ? { contenu: obj.detailsFormatTexte, color: "#DC0052" } :
 							{ contenu: obj.detailsFormatTexte, color: "#8BC34A" });
 					//const text = `${obj.ligne.libelle} : ${content.contenu}`
 					return (
 						<div key={k}>
 							<div className="content-trafic" style={{ color: content.color }}>
 								<Textfit className="fite" mode="multi" forceSingleModeWidth={false} max={40}>
-									<div><span style={{ background: "black", fontStyle: "italic", paddingRight: "0.25em", paddingLeft: "0.1em" }}>{obj.ligne.libelle}</span> {content.contenu}</div>
+									<div style={{display: "flex", justifyContent: "space-between"}}>
+										{obj.typeMessage != "NORMAL" ? <div className="logo-trafic-info" style={{padding: "0.17em"}}><img src={require('./tn-icon-'+obj.typeMessage.toLowerCase()+'.svg')} alt="" /></div>:""}
+										<div><span style={{ background: "black", fontStyle: "italic", paddingRight: "0.25em", paddingLeft: "0.1em" }}><span>{obj.ligne.libelle}</span></span> {content.contenu}</div>
+									</div>
 								</Textfit>
 							</div>
 						</div>

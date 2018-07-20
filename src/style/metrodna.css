@@ -1444,3 +1444,28 @@
 .line-img.ligneE.alpha {
   background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000"><circle cx="500" cy="500" r="465" fill="transparent" stroke="%23D582B1" stroke-width="70" stroke-miterlimit="10"/><path fill="%23D582B1" d="M359.56 734.27V259.15l294.36-.11v85.55H465.17v97.52h182.05v82.06l-182.05.12v124.59l198.46-.2v85.59H359.56"/></svg>');
 }
+
+.line-img.ligneT4.alpha {
+  background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000"><circle cx="500" cy="500" r="465" fill="transparent" stroke="%23FBC525" stroke-width="70" stroke-miterlimit="10"/><path fill="%23FCC322" d="M504.063 763.56V657.93H289.22v-88.087l227.734-333.366h84.505v333.008h65.16v88.444h-65.17v105.63h-97.39zm0-194.075V390.09l-120.67 179.395h120.67z"/></svg>');
+}
+
+
+.signe {
+  position: relative;
+  top: 0.2em;
+  display: inline-block;
+  width: 1em; /* Doit avoir la même valeur que background-size + 0.1 em, pour éviter les erreurs d'arrondi lorsque les em sont convertis en pixels */
+  height: 1em; /* Pareil */
+  background-size:95%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  text-indent: -5000px;
+}
+
+.trafic {
+  background-image: url('data:image/svg+xml;utf-8,<svg width="1000" height="1000" viewBox="0 0 30 30" version="1.1" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg"> <path style="fill:#c1272d" d="M 26.46,21.18 17.58,6.05 A 3.08,3.08 0 0 0 15,4.33 3.08,3.08 0 0 0 12.42,6.05 L 3.54,21.18 a 3.07,3.07 0 0 0 -0.22,3.1 3.12,3.12 0 0 0 2.8,1.39 h 17.75 a 3.14,3.14 0 0 0 2.8,-1.39 3.08,3.08 0 0 0 -0.21,-3.1 z" id="path5197" /> <ellipse style="fill:#ffffff" cx="15" cy="21.1" rx="1.45" ry="1.42" /> <path style="fill:#ffffff" d="m 15,9.39 a 1.44,1.44 0 0 0 -1.45,1.43 v 5.75 a 1.45,1.45 0 0 0 2.89,0 V 10.82 A 1.44,1.44 0 0 0 15,9.39 Z" /></svg>')
+}
+
+.travaux {
+  background-image: url('data:image/svg+xml;utf-8,<svg width="1000" height="1000" viewBox="0 0 30 30" version="1.1" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg"> <path style="fill:#c1272d" d="M 26.46,21.18 17.58,6.05 A 3.08,3.08 0 0 0 15,4.33 3.08,3.08 0 0 0 12.42,6.05 L 3.54,21.18 a 3.07,3.07 0 0 0 -0.22,3.1 3.12,3.12 0 0 0 2.8,1.39 h 17.75 a 3.14,3.14 0 0 0 2.8,-1.39 3.08,3.08 0 0 0 -0.21,-3.1 z" id="path5197" /> <ellipse style="fill:#ffffff" cx="15" cy="21.1" rx="1.45" ry="1.42" /> <path style="fill:#ffffff" d="m 15,9.39 a 1.44,1.44 0 0 0 -1.45,1.43 v 5.75 a 1.45,1.45 0 0 0 2.89,0 V 10.82 A 1.44,1.44 0 0 0 15,9.39 Z" /></svg>')
+}

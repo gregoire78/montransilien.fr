@@ -24,7 +24,7 @@ export default class TrainMapRT extends React.Component {
 		if (feature.properties.indice_lig === this.props.train.route.line.code) {
 			return { color: "#" + this.props.train.route.line.color }
 		}
-		else if (feature.properties.mode === this.props.train.route.line.type.toUpperCase()) {
+		else if (feature.properties.mode === this.props.train.route.line.type.toUpperCase() && feature.properties.mode !== "RER") {
 			return { color: "#3c3c3c" }
 		} else {
 			return { color: "transparent" };
@@ -80,7 +80,7 @@ export default class TrainMapRT extends React.Component {
 						<div>
 							<div style={{ color: "#" + this.props.train.route.line.color }}>Ligne {this.props.train.route.line.code}</div>
 							{this.props.train.route.name}<br />
-							({this.props.train.departure + " ➡ " + this.props.train.terminus})
+							({this.props.train.departure + " ➜ " + this.props.train.terminus})
 							<hr />
 							{this.props.train.journey ?
 								<ul style={{ paddingLeft: "19px", margin: "0", maxHeight: "90px", overflow: "auto" }}>
