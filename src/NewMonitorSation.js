@@ -86,7 +86,7 @@ function TraficMessage(props) {
 						<div key={k}>
 							<div className="content-trafic" style={{ color: content.color }}>
 								<Textfit className="fite" mode="multi" forceSingleModeWidth={false} max={40}>
-									<div style={{display: "flex", justifyContent: "space-between"}}>
+									<div style={{display: "flex", justifyContent: "flex-start"}}>
 										{obj.typeMessage != "NORMAL" ? <div className="logo-trafic-info" style={{padding: "0.17em"}}><img src={require('./tn-icon-'+obj.typeMessage.toLowerCase()+'.svg')} alt="" /></div>:""}
 										<div><span style={{ background: "black", fontStyle: "italic", paddingRight: "0.25em", paddingLeft: "0.1em" }}><span>{obj.ligne.libelle}</span></span> {content.contenu}</div>
 									</div>
