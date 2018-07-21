@@ -11,6 +11,23 @@ export default class Marquee extends React.Component {
 		this.x = 0;
 	}
 
+	/**
+	 * update on resize or every 0.5s
+	 */
+	/*componentDidMount() {
+		this.interval = setInterval(() => this.setState({ time: Date.now() }), 500);
+	}
+	componentWillUnmount() {
+		clearInterval(this.interval);
+	}*/
+	resize = () => this.forceUpdate()
+	componentDidMount() {
+		window.addEventListener('resize', this.resize)
+	}
+	componentWillUnmount() {
+		window.removeEventListener('resize', this.resize)
+	}
+
 	setOuterRef_(ref) {
 		this.outerDiv = ref;
 		this.start();
