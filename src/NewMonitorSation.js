@@ -6,7 +6,7 @@ import Horloge from './Horloge';
 import Slider from "react-slick";
 import Textfit from "react-textfit";
 import MapTrain from './TrainMapRT';
-import _ from 'lodash';
+import {isEmpty, some, find} from 'lodash';
 import { Map, TileLayer } from 'react-leaflet';
 import { Helmet } from "react-helmet";
 import { API_IP, SSL, THNDER_KEY } from './config';
@@ -156,11 +156,11 @@ export default class MonitorStation extends React.Component {
 	getTrafic() {
 		return axios.post(`${SSL ? 'https' : 'http'}://${API_IP}/trafic`, { lines: this.state.station.lines })
 			.then(response => {
-				if (!_.isEmpty(response.data)) {
+				if (!isEmpty(response.data)) {
 					this.setState({ trafic: response.data })
 				} else {
 					this.state.station.lines.map(line => {
-						if (!_.some(response.data, ['ligne.libelleNumero', line])) {
+						if (!some(response.data, ['ligne.libelleNumero', line])) {
 							return response.data.push({
 								ligne: {
 									libelle: "Ligne " + line
@@ -204,12 +204,12 @@ export default class MonitorStation extends React.Component {
 	}
 
 	openModal(number) {
-		this.setState({ modalIsOpen: true, number: number, train: _.find(this.state.trains, ['number', number]) })
+		this.setState({ modalIsOpen: true, number: number, train: find(this.state.trains, ['number', number]) })
 	}
 
 	componentDidUpdate() {
 		// update marker position train
-		const train = _.find(this.state.trains, ['number', this.state.number])
+		const train = find(this.state.trains, ['number', this.state.number])
 		if (this.state.modalIsOpen && this.state.train !== train) {
 			this.setState({ train: train })
 		}
@@ -250,7 +250,7 @@ export default class MonitorStation extends React.Component {
 					<div id="bottomList-small"></div>
 				</div>
 
-				{_.isEmpty(this.state.station) ? "" :
+				{isEmpty(this.state.station) ? "" :
 					<Map
 						zoomControl={false}
 						scrollWheelZoom={false}
@@ -263,7 +263,7 @@ export default class MonitorStation extends React.Component {
 						/>
 					</Map>
 				}
-				{_.isEmpty(this.state.train) ? "" :
+				{isEmpty(this.state.train) ? "" :
 					<Modal
 						isOpen={this.state.modalIsOpen}
 						onRequestClose={this.closeModal}

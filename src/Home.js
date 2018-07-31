@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Footer from './Footer';
-import _ from 'lodash';
+import {result, filter, debounce, find, isEmpty} from 'lodash';
 import Loader from 'react-loaders';
 //import {Helmet} from "react-helmet";
 import 'loaders.css';
@@ -24,7 +24,7 @@ export class SearchBox extends React.Component {
 	}
 
 	componentWillMount() {
-		this.handleSearchDebounced = _.debounce(() => {
+		this.handleSearchDebounced = debounce(() => {
 			this.props.handleSearch.apply(this, [this.state.query]);
 		}, 500);
 	}
@@ -49,10 +49,10 @@ export default class Home extends React.Component {
 	}
 
 	getLignes(trea) {
-		const uic = _.result(_.find(garesId, (obj) => {
+		const uic = result(find(garesId, (obj) => {
 			return obj.code === trea;
 		}), 'uic7');
-		return _.filter(lignes, { "uic": uic }).map(values => { return values.line })
+		return filter(lignes, { "uic": uic }).map(values => { return values.line })
 	}
 
 	getDataAutocomplete(value) {
@@ -62,7 +62,7 @@ export default class Home extends React.Component {
 		 * https://medium.com/netscape/hacking-it-out-when-cors-wont-let-you-be-great-35f6206cc646
 		 * https://stormy-atoll-29313.herokuapp.com/ (le miens)
 		 */
-		axios.get(`//app.gregoirejoncour.xyz/https://transilien.mobi/getProchainTrainAutocomplete?value=${encodeURI(value)}`)
+		axios.get(`https://app.gregoirejoncour.xyz/https://transilien.mobi/getProchainTrainAutocomplete?value=${encodeURI(value)}`)
 			.then(response => {
 				if (!response.data.error)
 					this.setState({ stations: response.data, isLoading: false })
@@ -93,7 +93,7 @@ export default class Home extends React.Component {
 						<Loader type="ball-pulse" color="#e6e014" style={{ transform: 'scale(0.5)' }} active={this.state.isLoading} size="md" />
 						<div>
 							{this.state.stations.map((v, i) => {
-								const line = !_.isEmpty(v.lignes) ? v.lignes.map(values => { return values.idLigne }) : this.getLignes(v.codeTR3A);
+								const line = !isEmpty(v.lignes) ? v.lignes.map(values => { return values.idLigne }) : this.getLignes(v.codeTR3A);
 								return (
 									<p key={i} style={{ marginTop: ".3em" }}>
 										<Link to={v.codeTR3A} ><LignesSymboles lignes={line} /> {v.name}</Link>
@@ -104,7 +104,7 @@ export default class Home extends React.Component {
 					</div>
 				</div>
 				{
-				//	_.isEmpty(this.state.stations) ? "" :
+				//	isEmpty(this.state.stations) ? "" :
 				//		<Map
 				//			zoomControl={false}
 				//			scrollWheelZoom={false}
