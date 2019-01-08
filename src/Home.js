@@ -48,11 +48,8 @@ export default class Home extends React.Component {
 		this.handleSearch = this.handleSearch.bind(this);
 	}
 
-	getLignes(trea) {
-		const uic = result(find(garesId, (obj) => {
-			return obj.code === trea;
-		}), 'uic7');
-		return filter(lignes, { "uic": uic }).map(values => { return values.line })
+	getLignes(uic) {
+		return filter(lignes, { "uic": parseInt(uic) }).map(values => { return values.line })
 	}
 
 	getDataAutocomplete(value) {
@@ -62,7 +59,7 @@ export default class Home extends React.Component {
 		 * https://medium.com/netscape/hacking-it-out-when-cors-wont-let-you-be-great-35f6206cc646
 		 * https://stormy-atoll-29313.herokuapp.com/ (le miens)
 		 */
-		axios.get(`https://app.gregoirejoncour.xyz/https://transilien.mobi/getProchainTrainAutocomplete?value=${encodeURI(value)}`)
+		axios.get(`http://localhost:3000/v1/search/gare/${encodeURI(value)}`)
 			.then(response => {
 				if (!response.data.error)
 					this.setState({ stations: response.data, isLoading: false })
@@ -93,10 +90,11 @@ export default class Home extends React.Component {
 						<Loader type="ball-pulse" color="#e6e014" style={{ transform: 'scale(0.5)' }} active={this.state.isLoading} size="md" />
 						<div>
 							{this.state.stations.map((v, i) => {
-								const line = !isEmpty(v.lignes) ? v.lignes.map(values => { return values.idLigne }) : this.getLignes(v.codeTR3A);
+								const line = this.getLignes(v.id);
+								console.log(line)
 								return (
 									<p key={i} style={{ marginTop: ".3em" }}>
-										<Link to={v.codeTR3A} ><LignesSymboles lignes={line} /> {v.name}</Link>
+										<Link to={v.id} ><LignesSymboles lignes={line} /> {v.name}</Link>
 									</p>
 								)
 							})}

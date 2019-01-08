@@ -566,16 +566,19 @@
 	},
 	{
 		"uic": 8753413,
+		"uic": 8727605,
 		"line": "C",
 		"label": "ERMONT EAUBONNE"
 	},
 	{
 		"uic": 8753413,
+		"uic": 8727605,
 		"line": "H",
 		"label": "ERMONT EAUBONNE"
 	},
 	{
 		"uic": 8753413,
+		"uic": 8727605,
 		"line": "J",
 		"label": "ERMONT EAUBONNE"
 	},
@@ -1216,11 +1219,13 @@
 	},
 	{
 		"uic": 8775801,
+		"uic": 8738221,
 		"line": "L",
 		"label": "LA DEFENSE SNCF"
 	},
 	{
 		"uic": 8775801,
+		"uic": 8738221,
 		"line": "U",
 		"label": "LA DEFENSE SNCF"
 	},
@@ -2416,6 +2421,7 @@
 	},
 	{
 		"uic": 8775801,
+		"uic": 8738221,
 		"line": "A",
 		"label": "GARE DE LA DEFENSE RER A"
 	},
@@ -2426,6 +2432,7 @@
 	},
 	{
 		"uic": 8775803,
+		"uic":8738631,
 		"line": "A",
 		"label": "GARE DE NANTERRE UNIVERSITE RER A"
 	},
