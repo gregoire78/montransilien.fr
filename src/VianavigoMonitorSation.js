@@ -133,7 +133,7 @@ export default class MonitorStation extends React.Component {
 	}
 
 	getTrainList() {
-		return axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/v1/realtime/uic/${this.uic}`)
+		return axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/v1/realtime/uic/${this.uic}?lat=${this.state.station.gps.lat}&long=${this.state.station.gps.long}`)
 			.then(response => {
 				console.log(response.data)
 				this.setState({ trains: response.data, isLoading: false })
@@ -154,7 +154,7 @@ export default class MonitorStation extends React.Component {
 	}
 
 	getTrafic() {
-		return axios.post(`${SSL ? 'https' : 'http'}://${API_IP}/trafic`, { lines: this.state.station.lines })
+		return axios.post(`${SSL ? 'https' : 'http'}://${API_IP}/v1/trafic`, { lines: this.state.station.lines.map(v=>v.code) })
 			.then(response => {
 				if (!isEmpty(response.data)) {
 					this.setState({ trafic: response.data })
