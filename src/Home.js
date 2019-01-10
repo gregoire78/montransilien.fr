@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Footer from './Footer';
-import {result, filter, debounce, find, isEmpty} from 'lodash';
+import {filter, debounce} from 'lodash';
 import Loader from 'react-loaders';
 //import {Helmet} from "react-helmet";
 import 'loaders.css';
 //import { Map, TileLayer } from 'react-leaflet';
 //import {THNDER_KEY} from './config';
-import garesId from './db/gares.json';
+//import garesId from './db/gares.json';
 import lignes from './db/lignes.json';
 
 /**
@@ -49,7 +49,7 @@ export default class Home extends React.Component {
 	}
 
 	getLignes(uic) {
-		return filter(lignes, { "uic": parseInt(uic) }).map(values => { return values.line })
+		return filter(lignes, { "uic": parseInt(uic, 10) }).map(values => { return values.line })
 	}
 
 	getDataAutocomplete(value) {

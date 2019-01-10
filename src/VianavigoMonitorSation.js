@@ -5,18 +5,45 @@ import Marquee from './Marquee';
 import Horloge from './Horloge';
 import Slider from "react-slick";
 import Textfit from "react-textfit";
-import MapTrain from './TrainMapRT';
+import MapTrain from './vianavigoTrainMapRT';
 import {isEmpty, some, find} from 'lodash';
 import { Map, TileLayer } from 'react-leaflet';
 import { Helmet } from "react-helmet";
 import { API_IP, SSL, THNDER_KEY } from './config';
 import Loader from 'react-loaders';
 import Modal from 'react-modal';
+import moment from 'moment-timezone';
 //import {Helmet} from 'react-helmet';
 //import {VelocityComponent} from 'velocity-react';
 
 let stationHeight;
 let stationElem;
+
+function getArrivalStatus(arrivalStatus) {
+	switch(arrivalStatus) {
+		case 'DELAYED':
+			return "retardé";
+		case 'CANCELLED':
+			return "supprimé";
+		case 'ON_TIME':
+			return "à l'heure";
+		default:
+			return "";
+	}
+}
+
+function getCommercialMode(type) {
+	switch(type) {
+		case 'TRAIN':
+			return "transilien";
+		case 'RER':
+			return "rer";
+		case 'TER':
+			return "ter";
+		default:
+			return "";
+	}
+}
 
 function ListOfTrainLoaded(props) {
 	return (
@@ -29,26 +56,26 @@ function ListOfTrainLoaded(props) {
 		}} id="listetrains">
 			{props.data.trains.map((train, i) => {
 				return (
-					<div className={"train" + (train.state ? (train.state === "retardé" ? " delayed" : ((train.state === "supprimé") ? " canceled" : "")) : "")} key={i}>
+					<div className={"train " + train.arrivalStatus.toLowerCase()} key={i}>
 						<div className="force-height"></div>
 						<div className="group group-left">
-							<span className="numero-train">{train.name}</span>
-							{train.state ? <span className="retard-train">{train.state}</span> : ""}
-							{train.distance ? <span title={train.distance.lPosReport} onClick={() => props.openModal(train.number)} className="distance-train">{train.distance.dataToDisplay.distance}</span> : ""}
+							<span className="numero-train">{train.vehicleName}</span>
+							<span className="retard-train">{getArrivalStatus(train.arrivalStatus)}</span>
+							{train.distance ? <span title={train.distance.lPosReport} onClick={() => props.openModal(train.distance.savedNumber)} className="distance-train">{train.distance.dataToDisplay.distance}</span> : ""}
 							<br className="after-retard-train" />
 						</div>
 						<div className="group group-middle">
-							<span className="heure-train">{train.expectedDepartureTime}</span>
+							<span className="heure-train">{moment(train.expectedDepartureTime).format('HH:mm')}</span>
 						</div>
 						<div className="group">
-							<span className="destination-train" title={train.route.name}>
-								<span className={train.route.line.type + " symbole light alpha"} style={train.route.line.type !== 'ter' ? { height: "1em", width: "1em", top: "0.1em", left: "0" } : { height: "1em", top: "0.1em", left: "0" }} />
-								{train.route.line.type !== 'ter' ? <span className={train.route.line.type + " alpha ligne" + train.route.line.code} style={{ height: "1em", width: "1em", top: "0.1em", left: "0" }} /> : ''}
-								{" " + train.terminus}
+							<span className="destination-train" title={train.stop_informations.route.name}>
+								<span className={getCommercialMode(train.type) + " symbole light alpha"} style={train.type !== 'TER' ? { height: "1em", width: "1em", top: "0.1em", left: "0" } : { height: "1em", top: "0.1em", left: "0" }} />
+								{train.type !== 'TER' ? <span className={getCommercialMode(train.type) + " alpha ligne" + train.line.code} style={{ height: "1em", width: "1em", top: "0.1em", left: "0" }} /> : ''}
+								{" " + train.destinationName}
 							</span>
-							<span className="infos-track">{train.nature ? <span className="train-nature"><span style={{ fontSize: '0.7em' }}>train<br /></span>{train.nature}</span> : ""}{train.lane !== " " ? <span className="voie-train">{train.lane}</span> : ''}</span>
+							<span className="infos-track">{train.nature ? <span className="train-nature"><span style={{ fontSize: '0.7em' }}>train<br /></span>{train.nature}</span> : ""}{train.arrivalPlatformName !== " " ? <span className="voie-train">{train.arrivalPlatformName}</span> : ''}</span>
 							<div className="desserte-train" title={train.journey_text}>
-								{train.journey_redux ? (train.journey_redux.length !== 0 ? <Marquee velocity={0.06}>{train.journey_text_html}</Marquee> : <p>{train.journey_text}</p>) : <p>desserte indisponible</p>}
+								{train.journey_redux ? (train.journey_redux.length !== 0 ? <Marquee velocity={0.06}>{train.journey_text_html}</Marquee> : <p>{train.journey_text}</p>) : ""}
 							</div>
 						</div>
 					</div>
@@ -135,8 +162,7 @@ export default class MonitorStation extends React.Component {
 	getTrainList() {
 		return axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/v1/realtime/uic/${this.uic}?lat=${this.state.station.gps.lat}&long=${this.state.station.gps.long}`)
 			.then(response => {
-				console.log(response.data)
-				this.setState({ trains: response.data, isLoading: false })
+				this.setState({ trains: response.data.monitored_stop_visit, isLoading: false })
 			})
 			.catch(error => {
 				this.setState({ error: true })
@@ -204,12 +230,12 @@ export default class MonitorStation extends React.Component {
 	}
 
 	openModal(number) {
-		this.setState({ modalIsOpen: true, number: number, train: find(this.state.trains, ['number', number]) })
+		this.setState({ modalIsOpen: true, number: number.toString(), train: find(this.state.trains, ['vehicleNumber', number.toString()]) })
 	}
 
 	componentDidUpdate() {
 		// update marker position train
-		const train = find(this.state.trains, ['number', this.state.number])
+		const train = find(this.state.trains, ['vehicleNumber', this.state.number])
 		if (this.state.modalIsOpen && this.state.train !== train) {
 			this.setState({ train: train })
 		}
@@ -269,7 +295,7 @@ export default class MonitorStation extends React.Component {
 						onRequestClose={this.closeModal}
 						contentLabel="Example Modal"
 						style={customStyles}>
-						<a href={this.state.train.distance.linkMap} target="blank" style={{ color: 'black', fontSize: '10px', position: "absolute", zIndex: "2" }}>sncf position en temps réél {this.state.train.distance.lPosReport} {this.state.train.route.name} ({this.state.train.departure + " ➜ " + this.state.train.terminus})</a>
+						<a href={this.state.train.distance.linkMap} target="blank" style={{ color: 'black', fontSize: '10px', position: "absolute", zIndex: "2" }}>sncf position en temps réél {this.state.train.distance.lPosReport} {this.state.train.stop_informations.route.name} ({this.state.train.departure + " ➜ " + this.state.train.destinationName})</a>
 						<button onClick={this.closeModal} style={{ position: 'absolute', zIndex: 2, right: 0, top: 0, background: 'white', border: 'none', fontSize: '1em', cursor: 'pointer' }}>✖</button>
 						<MapTrain train={this.state.train} station={this.state.station} />
 					</Modal>
