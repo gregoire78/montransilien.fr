@@ -91,7 +91,6 @@ export default class Home extends React.Component {
 						<div>
 							{this.state.stations.map((v, i) => {
 								const line = this.getLignes(v.id);
-								console.log(line)
 								return (
 									<p key={i} style={{ marginTop: ".3em" }}>
 										<Link to={v.id} ><LignesSymboles lignes={line} /> {v.name}</Link>

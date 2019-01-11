@@ -391,8 +391,8 @@ footer {
 .fite{height: 100%;}
 .fite img {
 	height: 100%;
-	height: -webkit-fill-available;
 	height: -moz-available;
+	height: stretch;
 }
 #dots-trafic {
 	position: absolute;
