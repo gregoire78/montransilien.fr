@@ -28,7 +28,7 @@ function getArrivalStatus(arrivalStatus) {
 		case 'ON_TIME':
 			return "à l'heure";
 		default:
-			return "";
+			return arrivalStatus;
 	}
 }
 
@@ -56,11 +56,11 @@ function ListOfTrainLoaded(props) {
 		}} id="listetrains">
 			{props.data.trains.map((train, i) => {
 				return (
-					<div className={"train " + train.arrivalStatus.toLowerCase()} key={i}>
+					<div className={"train " + (train.arrivalStatus ? train.arrivalStatus.toLowerCase() : "")} key={i}>
 						<div className="force-height"></div>
 						<div className="group group-left">
 							<span className="numero-train">{train.vehicleName}</span>
-							<span className="retard-train">{getArrivalStatus(train.arrivalStatus)}</span>
+							<span className="retard-train">{getArrivalStatus(train.late)}</span>
 							{train.distance ? <span title={train.distance.lPosReport} onClick={() => props.openModal(train.distance.savedNumber)} className="distance-train">{train.distance.dataToDisplay.distance}</span> : ""}
 							<br className="after-retard-train" />
 						</div>
@@ -68,10 +68,10 @@ function ListOfTrainLoaded(props) {
 							<span className="heure-train">{moment(train.expectedDepartureTime).format('HH:mm')}</span>
 						</div>
 						<div className="group">
-							<span className="destination-train" title={train.stop_informations.route.name}>
+							<span className="destination-train" title={train.stop_informations ? train.stop_informations.route.name : ""}>
 								<span className={getCommercialMode(train.type) + " symbole light alpha"} style={train.type !== 'TER' ? { height: "1em", width: "1em", top: "0.1em", left: "0" } : { height: "1em", top: "0.1em", left: "0" }} />
 								{train.type !== 'TER' ? <span className={getCommercialMode(train.type) + " alpha ligne" + train.line.code} style={{ height: "1em", width: "1em", top: "0.1em", left: "0" }} /> : ''}
-								{" " + train.destinationName}
+								{" " + train.destinationName.replace(/GARE D(\w|')/i,"")}
 							</span>
 							<span className="infos-track">{train.nature ? <span className="train-nature"><span style={{ fontSize: '0.7em' }}>train<br /></span>{train.nature}</span> : ""}{train.arrivalPlatformName !== " " ? <span className="voie-train">{train.arrivalPlatformName}</span> : ''}</span>
 							<div className="desserte-train" title={train.journey_text}>
@@ -295,7 +295,7 @@ export default class MonitorStation extends React.Component {
 						onRequestClose={this.closeModal}
 						contentLabel="Example Modal"
 						style={customStyles}>
-						<a href={this.state.train.distance.linkMap} target="blank" style={{ color: 'black', fontSize: '10px', position: "absolute", zIndex: "2" }}>sncf position en temps réél {this.state.train.distance.lPosReport} {this.state.train.stop_informations.route.name} ({this.state.train.departure + " ➜ " + this.state.train.destinationName})</a>
+						<a href={this.state.train.distance.linkMap} target="blank" style={{ color: 'black', fontSize: '10px', position: "absolute", zIndex: "2" }}>sncf position en temps réél {this.state.train.distance.lPosReport} {this.state.train.stop_informations ? this.state.train.stop_informations.route.name : ""} ({" ➜ " + this.state.train.destinationName})</a>
 						<button onClick={this.closeModal} style={{ position: 'absolute', zIndex: 2, right: 0, top: 0, background: 'white', border: 'none', fontSize: '1em', cursor: 'pointer' }}>✖</button>
 						<MapTrain train={this.state.train} station={this.state.station} />
 					</Modal>

@@ -65,8 +65,8 @@ export default class TrainMapRT extends React.Component {
 					<Popup autoPan={false} autoClose={false}>
 						<div>
 							<div style={{ color: this.props.train.color.code_hexadecimal }}>Ligne {this.props.train.line.code}</div>
-							{this.props.train.stop_informations.route.name}<br />
-							({this.props.train.stop_informations.stop_point.name + " ➜ " + this.props.train.destinationName})
+							{this.props.train.stop_informations ? this.props.train.stop_informations.route.name : ""}<br />
+							({" ➜ " + this.props.train.destinationName})
 							<hr />
 							{this.props.train.journey ?
 								<ul style={{ paddingLeft: "19px", margin: "0", maxHeight: "90px", overflow: "auto" }}>
