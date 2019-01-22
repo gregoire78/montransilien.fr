@@ -1577,7 +1577,7 @@
 	{
 		"code": "NUN",
 		"uic7": 8738631,
-		"nom_gare_sncf": "Nanterre Université Transilien L"
+		"nom_gare_sncf": "Nanterre Université"
 	},
 	{
 		"code": "NYC",
@@ -2172,7 +2172,7 @@
 	{
 		"code": "VDO",
 		"uic7": 8738236,
-		"nom_gare_sncf": "Le Val dOr"
+		"nom_gare_sncf": "Le Val d'Or"
 	},
 	{
 		"code": "VDV",

@@ -8,7 +8,7 @@ import Loader from 'react-loaders';
 import 'loaders.css';
 //import { Map, TileLayer } from 'react-leaflet';
 //import {THNDER_KEY} from './config';
-//import garesId from './db/gares.json';
+import garesId from './db/gares.json';
 import lignes from './db/lignes.json';
 
 /**
@@ -52,6 +52,10 @@ export default class Home extends React.Component {
 		return filter(lignes, { "uic": parseInt(uic, 10) }).map(values => { return values.line })
 	}
 
+	getGareName(uic) {
+		return filter(garesId, { "uic7": parseInt(uic, 10) }).map(values => { return values.nom_gare_sncf })
+	}
+
 	getDataAutocomplete(value) {
 		/**
 		 * https://robwu.nl/cors-anywhere.html
@@ -93,7 +97,7 @@ export default class Home extends React.Component {
 								const line = this.getLignes(v.id);
 								return (
 									<p key={i} style={{ marginTop: ".3em" }}>
-										<Link to={v.id} ><LignesSymboles lignes={line} /> {v.name}</Link>
+										<Link to={v.id} ><LignesSymboles lignes={line} /> {this.getGareName(v.id)}</Link>
 									</p>
 								)
 							})}
