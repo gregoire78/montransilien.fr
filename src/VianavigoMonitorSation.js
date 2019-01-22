@@ -6,13 +6,14 @@ import Horloge from './Horloge';
 import Slider from "react-slick";
 import Textfit from "react-textfit";
 import MapTrain from './vianavigoTrainMapRT';
-import {isEmpty, some, find} from 'lodash';
+import {isEmpty, some, find, join, map} from 'lodash';
 import { Map, TileLayer } from 'react-leaflet';
 import { Helmet } from "react-helmet";
 import { API_IP, SSL, THNDER_KEY } from './config';
 import Loader from 'react-loaders';
 import Modal from 'react-modal';
 import moment from 'moment-timezone';
+import garesId from './db/gares.json';
 //import {Helmet} from 'react-helmet';
 //import {VelocityComponent} from 'velocity-react';
 
@@ -74,8 +75,8 @@ function ListOfTrainLoaded(props) {
 								{" " + train.destinationName.replace(/GARE D(\w|')/i,"")}
 							</span>
 							<span className="infos-track">{train.nature ? <span className="train-nature"><span style={{ fontSize: '0.7em' }}>train<br /></span>{train.nature}</span> : ""}{train.arrivalPlatformName !== " " ? <span className="voie-train">{train.arrivalPlatformName}</span> : ''}</span>
-							<div className="desserte-train" title={train.journey_text}>
-								{train.journey_redux ? (train.journey_redux.length !== 0 ? <Marquee velocity={0.06}>{train.journey_text_html}</Marquee> : <p>{train.journey_text}</p>) : ""}
+							<div className="desserte-train" title={train.vehicle_journey_text}>
+								{train.vehicle_journey_redux ? (train.vehicle_journey_redux.length !== 0 ? <Marquee velocity={0.06}>{join(map(train.vehicle_journey_redux, (o) => {return garesId.filter((v)=>{ return v.uic7 === parseInt(o.stop_point.id.split(":")[3], 10) }).map(values => { return values.nom_gare_sncf });}), ' <span class="dot-separator">•</span> ')}</Marquee> : <p>{train.vehicle_journey_text}</p>) : ""}
 							</div>
 						</div>
 					</div>

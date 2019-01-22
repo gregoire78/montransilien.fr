@@ -1,6 +1,6 @@
 import React from 'react';
-import { Icon, LatLngBounds, LatLng } from 'leaflet';
-import { Map, TileLayer, Marker, Popup, ZoomControl } from 'react-leaflet';
+import { Icon, LatLngBounds, LatLng, divIcon, Point } from 'leaflet';
+import { Map, TileLayer, Marker, Popup, ZoomControl, Tooltip, Polyline } from 'react-leaflet';
 import moment from 'moment-timezone';
 import { THNDER_KEY } from './config';
 import 'moment/locale/fr';
@@ -47,6 +47,66 @@ export default class TrainMapRT extends React.Component {
 					attribution="Tiles Courtesy of <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a> - &amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
 					url={"https://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=" + THNDER_KEY}
 				/>
+
+				{this.props.train.vehicle_journey ? this.props.train.vehicle_journey.map((jrn, idx) => {
+					return (
+						<Marker key={`marker-${idx}`}
+							ref={marker => { this.marker[idx] = marker; }}
+							position={new LatLng(jrn.stop_point.coord.lat, jrn.stop_point.coord.lon)}
+							icon={new Icon({
+								iconUrl: `data:image/svg+xml;base64,
+								${btoa(`
+									<svg xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" width="5.2245083mm" height="5.2245083mm" viewBox="0 0 5.2245083 5.2245083" version="1.1">
+										<g transform="translate(-14.372119,-66.203511)">
+											<circle
+											style="fill:white;fill-opacity:1;stroke:${this.props.train.color.code_hexadecimal};stroke-width:1.32291663;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+											cx="16.984373"
+											cy="68.815765"
+											r="1.9507958" />
+										</g>
+									</svg>
+								`)}`,
+								iconAnchor: [10, 10],
+								popupAnchor: [0, 0],
+								iconSize: [20, 20]
+							})}
+							/*onMouseOver={() => this.openPopupMarker(idx)}
+							onMouseOut ={() => this.closePopupMarker(idx)}*/>
+							<Tooltip opacity={0.9} permanent={idx === 0 || idx === (this.props.train.vehicle_journey.length - 1)} /*closeButton={false} autoClose={false} autoPan={false} */>
+								<div>
+									<b>{jrn.stop_point.name}</b><br />
+									{moment(jrn.departure_time, "HHmmss").format('HH[h]mm')}
+								</div>
+							</Tooltip>
+						</Marker>
+					)
+				}) : ""}
+
+				{this.props.train.vehicle_journey ?
+					<Polyline
+						opacity={0.5}
+						weight={1.5}
+						dashArray="5 10"
+						color={this.props.train.color.code_hexadecimal}
+						positions={this.props.train.vehicle_journey.map((jrn, idx) => { return new LatLng(jrn.stop_point.coord.lat, jrn.stop_point.coord.lon) })} >
+						{this.props.train.vehicle_journey.map((jrn, idx, arr) => {
+							/**Arrow chemin */
+							if (idx + 1 < arr.length) {
+								const diffLat = arr[idx + 1].stop_point.coord.lat - jrn.stop_point.coord.lat
+								const diffLng = arr[idx + 1].stop_point.coord.lon - jrn.stop_point.coord.lon
+								const angle = 360 - (Math.atan2(diffLat, diffLng) * 57.295779513082)
+								return (
+									<Marker key={`direction-${idx}`}
+										position={new LatLng(Number(jrn.stop_point.coord.lat) + Number(diffLat / 2), Number(jrn.stop_point.coord.lon) + Number(diffLng / 2))}
+										icon={new divIcon({
+											className: "arrowIcon", iconSize: new Point(30, 45), iconAnchor: new Point(15, 22.5),
+											html: `<div style = 'text-shadow: 1px 0 0 #3c3c3c, -1px 0 0 #3c3c3c, 0 1px 0 #3c3c3c, 0 -1px 0 #3c3c3c, .5px .5px #3c3c3c, -0.5px -0.5px 0 #3c3c3c, 0.5px -1px 0 #3c3c3c, -0.5px 0.5px 0 #3c3c3c;color: ${this.props.train.color.code_hexadecimal};font-size: 30px; -webkit-transform: rotate(${angle}deg)'>➜</div>`
+										})} />
+								)
+							} else return ""
+						})}
+					</Polyline> : ""
+				}
 
 				<ExtendedMarker
 					position={new LatLng(this.props.train.distance.gps.lat, this.props.train.distance.gps.long)}
