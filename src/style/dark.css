@@ -53,14 +53,14 @@ div.train span.dot-separator { color : #7a7a9c; }
 
 div.train.delayed:nth-child(2n)   { background-color: #a05522; }
 div.train.delayed:nth-child(2n+1) { background-color: #b63; }
-div.train.canceled { background-color: #b44; }
+div.train.cancelled { background-color: #b44; }
 
 div.train.delayed div.desserte-train,
 	div.train.delayed span.numero-train { color: #d9a45a; }
 div.train.delayed span.dot-separator { color : #ffcf8d; }
-div.train.canceled div.desserte-train,
-	div.train.canceled span.numero-train { color: #e89090; }
-div.train.canceled span.dot-separator { color : #ffbdb8; }
+div.train.cancelled div.desserte-train,
+	div.train.cancelled span.numero-train { color: #e89090; }
+div.train.cancelled span.dot-separator { color : #ffbdb8; }
 
 /*div.train:nth-child(2n) span.voie-train {
 	background-color: #252438;

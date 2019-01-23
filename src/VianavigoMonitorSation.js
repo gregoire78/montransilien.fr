@@ -61,7 +61,7 @@ function ListOfTrainLoaded(props) {
 						<div className="force-height"></div>
 						<div className="group group-left">
 							<span className="numero-train">{train.vehicleName}</span>
-							<span className="retard-train">{getArrivalStatus(train.late)}</span>
+							<span className="retard-train">{getArrivalStatus(train.arrivalStatus)}</span>
 							{train.distance ? <span title={train.distance.lPosReport} onClick={() => props.openModal(train.distance.savedNumber)} className="distance-train">{train.distance.dataToDisplay.distance}</span> : ""}
 							<br className="after-retard-train" />
 						</div>
@@ -74,7 +74,7 @@ function ListOfTrainLoaded(props) {
 								{train.type !== 'TER' ? <span className={getCommercialMode(train.type) + " alpha ligne" + train.line.code} style={{ height: "1em", width: "1em", top: "0.1em", left: "0" }} /> : ''}
 								{" " + train.destinationName.replace(/GARE D(\w|')/i,"")}
 							</span>
-							<span className="infos-track">{train.nature ? <span className="train-nature"><span style={{ fontSize: '0.7em' }}>train<br /></span>{train.nature}</span> : ""}{train.arrivalPlatformName !== " " ? <span className="voie-train">{train.arrivalPlatformName}</span> : ''}</span>
+							<span className="infos-track">{train.nature ? <span className="train-nature"><span style={{ fontSize: '0.7em' }}>train<br /></span>{train.nature}</span> : ""}{train.arrivalPlatformName && train.arrivalPlatformName !== " " ? <span className="voie-train">{train.arrivalPlatformName}</span> : ''}</span>
 							<div className="desserte-train" title={train.vehicle_journey_text}>
 								{train.vehicle_journey_redux ? (train.vehicle_journey_redux.length !== 0 ? <Marquee velocity={0.06}>{join(map(train.vehicle_journey_redux, (o) => {return garesId.filter((v)=>{ return v.uic7 === parseInt(o.stop_point.id.split(":")[3], 10) }).map(values => { return values.nom_gare_sncf });}), ' <span class="dot-separator">•</span> ')}</Marquee> : <p>{train.vehicle_journey_text}</p>) : ""}
 							</div>
@@ -153,7 +153,8 @@ export default class MonitorStation extends React.Component {
 
 			modalIsOpen: false,
 			train: {},
-			number: 0
+			number: 0,
+			geo: {}
 		};
 		this.uic = this.props.match.params.uic;
 		this.openModal = this.openModal.bind(this);
@@ -209,9 +210,8 @@ export default class MonitorStation extends React.Component {
 		document.title = "Chargement gare ...";
 	}
 
-	componentDidMount() {
-		this.setState({ isLoading: true });
-
+	async componentDidMount() {
+		this.setState({ isLoading: true, geo: (await import('./db/traces-du-reseau-ferre-idf.json')).default });
 		this.getStation()
 			.then(() => Promise.all([this.getTrainList(), this.getTrafic()]))
 			.then(() => {
@@ -298,7 +298,7 @@ export default class MonitorStation extends React.Component {
 						style={customStyles}>
 						<a href={this.state.train.distance.linkMap} target="blank" style={{ color: 'black', fontSize: '10px', position: "absolute", zIndex: "2" }}>sncf position en temps réél {this.state.train.distance.lPosReport} {this.state.train.stop_informations ? this.state.train.stop_informations.route.name : ""} ({" ➜ " + this.state.train.destinationName})</a>
 						<button onClick={this.closeModal} style={{ position: 'absolute', zIndex: 2, right: 0, top: 0, background: 'white', border: 'none', fontSize: '1em', cursor: 'pointer' }}>✖</button>
-						<MapTrain train={this.state.train} station={this.state.station} />
+						<MapTrain train={this.state.train} station={this.state.station} geo={this.state.geo} />
 					</Modal>
 				}
 				{this.state.error === true ? <Redirect to="/" /> : ""}
