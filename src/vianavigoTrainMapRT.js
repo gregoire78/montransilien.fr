@@ -2,6 +2,7 @@ import React from 'react';
 import { Icon, LatLngBounds, LatLng, divIcon, Point } from 'leaflet';
 import { Map, TileLayer, Marker, Popup, ZoomControl, Tooltip, Polyline, GeoJSON } from 'react-leaflet';
 import moment from 'moment-timezone';
+import {filter} from 'lodash';
 import { THNDER_KEY } from './config';
 import 'moment/locale/fr';
 
@@ -40,7 +41,6 @@ export default class TrainMapRT extends React.Component {
 	}
 
 	render() {
-		console.log(this.props.geo)
 		return (
 			<Map
 				ref={map => { this.map = map; }}
@@ -60,7 +60,7 @@ export default class TrainMapRT extends React.Component {
 					url={"https://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=" + THNDER_KEY}
 				/>
 
-				<GeoJSON data={this.props.geo} style={(feature) => this.geoJsonDisplay(feature)} weight={4}>
+				<GeoJSON data={{"type":"FeatureCollection","features": filter(this.props.geo.features, (feature)=>{return feature.properties.indice_lig === this.props.train.line.code})}} style={{ color: this.props.train.color.code_hexadecimal }} /*style={(feature) => this.geoJsonDisplay(feature)}*/ weight={4}>
 					{this.props.train.vehicle_journey ? this.props.train.vehicle_journey.map((jrn, idx) => {
 						return (
 							<Marker key={`marker-${idx}`}

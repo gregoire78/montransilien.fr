@@ -211,7 +211,7 @@ export default class MonitorStation extends React.Component {
 	}
 
 	async componentDidMount() {
-		this.setState({ isLoading: true, geo: (await import('./db/traces-du-reseau-ferre-idf.json')).default });
+		this.setState({ isLoading: true, geo: (await import('./db/traces-du-reseau-ferre-idf.json')) });
 		this.getStation()
 			.then(() => Promise.all([this.getTrainList(), this.getTrafic()]))
 			.then(() => {
