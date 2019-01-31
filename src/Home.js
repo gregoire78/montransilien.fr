@@ -94,10 +94,10 @@ export default class Home extends React.Component {
 						<Loader type="ball-pulse" color="#e6e014" style={{ transform: 'scale(0.5)' }} active={this.state.isLoading} size="md" />
 						<div>
 							{this.state.stations.map((v, i) => {
-								const line = this.getLignes(v.id);
+								const line = this.getLignes(v.id.split(':')[3]);
 								return (
 									<p key={i} style={{ marginTop: ".3em" }}>
-										<Link to={v.id} ><LignesSymboles lignes={line} /> {this.getGareName(v.id)}</Link>
+										<Link to={v.id.split(':')[3]} ><LignesSymboles lignes={line} /> {this.getGareName(v.id.split(':')[3])}</Link>
 									</p>
 								)
 							})}
