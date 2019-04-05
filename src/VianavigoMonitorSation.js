@@ -62,7 +62,7 @@ function ListOfTrainLoaded(props) {
 						<div className="group group-left">
 							<span className="numero-train">{train.vehicleName}</span>
 							<span className="retard-train">{getArrivalStatus(train.arrivalStatus)}</span>
-							{train.distance ? <span title={train.distance.lPosReport} onClick={() => props.openModal(train.distance.savedNumber)} className="distance-train">{train.distance.dataToDisplay.distance}</span> : ""}
+							{train.distance ? <span title={`dernière postion à ${train.distance.lPosReport}`} onClick={() => props.openModal(train.distance.savedNumber)} className="distance-train">{train.distance.dataToDisplay.distance}</span> : ""}
 							<br className="after-retard-train" />
 						</div>
 						<div className="group group-middle">

@@ -10,6 +10,7 @@ import 'loaders.css';
 //import {THNDER_KEY} from './config';
 import garesId from './db/gares.json';
 import lignes from './db/lignes.json';
+import { API_IP, SSL } from './config';
 
 /**
  * https://reactjs.org/docs/forms.html#controlled-components
@@ -63,7 +64,7 @@ export default class Home extends React.Component {
 		 * https://medium.com/netscape/hacking-it-out-when-cors-wont-let-you-be-great-35f6206cc646
 		 * https://stormy-atoll-29313.herokuapp.com/ (le miens)
 		 */
-		axios.get(`http://localhost:3000/v1/search/gare/${encodeURI(value)}`)
+		axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/v1/search/gare/${encodeURI(value)}`)
 			.then(response => {
 				if (!response.data.error)
 					this.setState({ stations: response.data, isLoading: false })
