@@ -191,7 +191,7 @@ export default class MonitorStation extends React.Component {
 						if (!some(response.data, ['ligne.libelleNumero', line])) {
 							return response.data.push({
 								ligne: {
-									libelle: "Ligne " + line
+									libelle: "Ligne " + line.code
 								},
 								typeMessage: "NORMAL",
 								detailsFormatTexte: "Trafic normal"
