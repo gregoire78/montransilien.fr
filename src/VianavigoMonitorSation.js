@@ -57,16 +57,16 @@ function ListOfTrainLoaded(props) {
 		}} id="listetrains">
 			{props.data.trains.map((train, i) => {
 				return (
-					<div className={"train " + (train.arrivalStatus ? train.arrivalStatus.toLowerCase() : "")} key={i}>
+					<div className={"train " + (train.arrivalStatus ? train.arrivalStatus.toLowerCase() : "")} key={`${i}_${train.vehicleNumber}`}>
 						<div className="force-height"></div>
 						<div className="group group-left">
 							<span className="numero-train">{train.vehicleName}</span>
-							<span className="retard-train">{getArrivalStatus(train.late ? train.late : train.arrivalStatus)}</span>
+							<span className="retard-train">{getArrivalStatus(train.late && train.arrivalStatus !== "CANCELLED" ? train.late : train.arrivalStatus)}</span>
 							{train.distance ? <span title={`dernière postion à ${train.distance.lPosReport}`} onClick={() => props.openModal(train.distance.savedNumber)} className="distance-train">{train.distance.dataToDisplay.distance}</span> : ""}
 							<br className="after-retard-train" />
 						</div>
 						<div className="group group-middle">
-							<span className="heure-train">{moment(train.expectedDepartureTime).format('HH:mm')}</span>
+							<span className="heure-train">{moment(train.expectedDepartureTime ? train.expectedDepartureTime : train.aimedDepartureTime).format('HH:mm')}</span>
 						</div>
 						<div className="group">
 							<span className="destination-train" title={train.stop_informations ? train.stop_informations.route.name : ""}>
