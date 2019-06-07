@@ -72,11 +72,11 @@ function ListOfTrainLoaded(props) {
 							<span className="destination-train" title={train.stop_informations ? train.stop_informations.route.name : ""}>
 								<span className={getCommercialMode(train.type) + " symbole light alpha"} style={train.type !== 'TER' ? { height: "1em", width: "1em", top: "0.1em", left: "0" } : { height: "1em", top: "0.1em", left: "0" }} />
 								{train.type !== 'TER' ? <span className={getCommercialMode(train.type) + " alpha ligne" + train.line.code} style={{ height: "1em", width: "1em", top: "0.1em", left: "0" }} /> : ''}
-								{" " + train.destinationName.replace(/GARE D(\w|')/i,"")}
+								{" " + train.destinationName_rename}
 							</span>
 							<span className="infos-track">{train.nature ? <span className="train-nature"><span style={{ fontSize: '0.7em' }}>train<br /></span>{train.nature}</span> : ""}{train.arrivalPlatformName && train.arrivalPlatformName !== " " ? <span className="voie-train">{train.arrivalPlatformName}</span> : ''}</span>
 							<div className="desserte-train" title={train.vehicle_journey_text}>
-								{train.vehicle_journey_redux ? (train.vehicle_journey_redux.length !== 0 ? <Marquee velocity={0.06}>{join(map(train.vehicle_journey_redux, (o) => {return garesId.filter((v)=>{ return v.uic7 === parseInt(o.stop_point.id.split(":")[3], 10) }).map(values => { return values.nom_gare_sncf });}), ' <span class="dot-separator">•</span> ')}</Marquee> : <p>{train.vehicle_journey_text}</p>) : ""}
+								{train.vehicle_journey_redux ? (train.vehicle_journey_redux.length !== 0 ? <Marquee velocity={0.06}>{join(map(train.vehicle_journey_redux, (o) => {return o.rename}), ' <span class="dot-separator">•</span> ')}</Marquee> : <p>{train.vehicle_journey_text}</p>) : ""}
 							</div>
 						</div>
 					</div>
@@ -162,7 +162,7 @@ export default class MonitorStation extends React.Component {
 	}
 
 	getTrainList() {
-		return axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/v1/realtime/uic/${this.uic}?lat=${this.state.station.gps.lat}&long=${this.state.station.gps.long}`)
+		return axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/v2/realtime/uic/${this.uic}?lat=${this.state.station.gps.lat}&long=${this.state.station.gps.long}`)
 			.then(response => {
 				this.setState({ trains: response.data.monitored_stop_visit, isLoading: false })
 			})
@@ -296,7 +296,7 @@ export default class MonitorStation extends React.Component {
 						onRequestClose={this.closeModal}
 						contentLabel="Example Modal"
 						style={customStyles}>
-						<a href={this.state.train.distance.linkMap} target="blank" style={{ color: 'black', fontSize: '10px', position: "absolute", zIndex: "2" }}>sncf position en temps réél {this.state.train.distance.lPosReport} {this.state.train.stop_informations ? this.state.train.stop_informations.route.name : ""} ({" ➜ " + this.state.train.destinationName})</a>
+						<a href={this.state.train.distance.linkMap} target="blank" style={{ color: 'black', fontSize: '10px', position: "absolute", zIndex: "2" }}>sncf position en temps réél {this.state.train.distance.lPosReport} {this.state.train.stop_informations ? this.state.train.stop_informations.route.name : ""} ({" ➜ " + this.state.train.destinationName_rename})</a>
 						<button onClick={this.closeModal} style={{ position: 'absolute', zIndex: 2, right: 0, top: 0, background: 'white', border: 'none', fontSize: '1em', cursor: 'pointer' }}>✖</button>
 						<MapTrain train={this.state.train} station={this.state.station} geo={this.state.geo} />
 					</Modal>
