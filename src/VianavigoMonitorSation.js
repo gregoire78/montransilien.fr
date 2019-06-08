@@ -6,14 +6,13 @@ import Horloge from './Horloge';
 import Slider from "react-slick";
 import Textfit from "react-textfit";
 import MapTrain from './vianavigoTrainMapRT';
-import {isEmpty, some, find, join, map} from 'lodash';
+import { isEmpty, some, find, join, map } from 'lodash';
 import { Map, TileLayer } from 'react-leaflet';
 import { Helmet } from "react-helmet";
 import { API_IP, SSL, THNDER_KEY } from './config';
 import Loader from 'react-loaders';
 import Modal from 'react-modal';
 import moment from 'moment-timezone';
-import garesId from './db/gares.json';
 //import {Helmet} from 'react-helmet';
 //import {VelocityComponent} from 'velocity-react';
 
@@ -21,7 +20,7 @@ let stationHeight;
 let stationElem;
 
 function getArrivalStatus(arrivalStatus) {
-	switch(arrivalStatus) {
+	switch (arrivalStatus) {
 		case 'DELAYED':
 			return "retardé";
 		case 'CANCELLED':
@@ -34,7 +33,7 @@ function getArrivalStatus(arrivalStatus) {
 }
 
 function getCommercialMode(type) {
-	switch(type) {
+	switch (type) {
 		case 'TRAIN':
 			return "transilien";
 		case 'RER':
@@ -69,15 +68,17 @@ function ListOfTrainLoaded(props) {
 							<span className="heure-train">{moment(train.expectedDepartureTime ? train.expectedDepartureTime : train.aimedDepartureTime).format('HH:mm')}</span>
 						</div>
 						<div className="group">
-							<span className="destination-train" title={train.stop_informations ? train.stop_informations.route.name : ""}>
+							<span className="destination-train" title={(train.stop_informations ? train.stop_informations.route.name : "") + "\n" + train.vehicle_journey_text}>
 								<span className={getCommercialMode(train.type) + " symbole light alpha"} style={train.type !== 'TER' ? { height: "1em", width: "1em", top: "0.1em", left: "0" } : { height: "1em", top: "0.1em", left: "0" }} />
-								{train.type !== 'TER' ? <span className={getCommercialMode(train.type) + " alpha ligne" + train.line.code} style={{ height: "1em", width: "1em", top: "0.1em", left: "0" }} /> : ''}
-								{" " + train.destinationName.replace(/GARE D(\w|')/i,"")}
+								{train.type !== 'TER' && train.line ? <span className={getCommercialMode(train.type) + " alpha ligne" + train.line.code} style={{ height: "1em", width: "1em", top: "0.1em", left: "0" }} /> : ''}
+								{" " + train.destinationName_rename}
 							</span>
 							<span className="infos-track">{train.nature ? <span className="train-nature"><span style={{ fontSize: '0.7em' }}>train<br /></span>{train.nature}</span> : ""}{train.arrivalPlatformName && train.arrivalPlatformName !== " " ? <span className="voie-train">{train.arrivalPlatformName}</span> : ''}</span>
-							<div className="desserte-train" title={train.vehicle_journey_text}>
-								{train.vehicle_journey_redux ? (train.vehicle_journey_redux.length !== 0 ? <Marquee velocity={0.06}>{join(map(train.vehicle_journey_redux, (o) => {return garesId.filter((v)=>{ return v.uic7 === parseInt(o.stop_point.id.split(":")[3], 10) }).map(values => { return values.nom_gare_sncf });}), ' <span class="dot-separator">•</span> ')}</Marquee> : <p>{train.vehicle_journey_text}</p>) : ""}
-							</div>
+							{(i <= 1) &&
+								<div className="desserte-train" title={train.vehicle_journey_text}>
+									{train.vehicle_journey_redux ? (train.vehicle_journey_redux.length !== 0 ? <Marquee velocity={0.06}>{join(map(train.vehicle_journey_redux, (o) => { return o.rename }), ' <span class="dot-separator">•</span> ')}</Marquee> : <p>{train.vehicle_journey_text}</p>) : ""}
+								</div>
+							}
 						</div>
 					</div>
 				)
@@ -114,8 +115,8 @@ function TraficMessage(props) {
 						<div key={k}>
 							<div className="content-trafic" style={{ color: content.color }}>
 								<Textfit className="fite" mode="multi" forceSingleModeWidth={false} max={40}>
-									<div style={{display: "flex", justifyContent: "flex-start"}}>
-										{obj.typeMessage !== "NORMAL" ? <div className="logo-trafic-info" style={{padding: "0.23em"}}><img src={require('./tn-icon-'+obj.typeMessage.toLowerCase()+'.svg')} alt="" /></div>:""}
+									<div style={{ display: "flex", justifyContent: "flex-start" }}>
+										{obj.typeMessage !== "NORMAL" ? <div className="logo-trafic-info" style={{ padding: "0.23em" }}><img src={require('./tn-icon-' + obj.typeMessage.toLowerCase() + '.svg')} alt="" /></div> : ""}
 										<div><span style={{ background: "black", fontStyle: "italic", paddingRight: "0.25em", paddingLeft: "0.1em" }}><span>{obj.ligne.libelle}</span></span> {content.contenu}</div>
 									</div>
 								</Textfit>
@@ -162,7 +163,7 @@ export default class MonitorStation extends React.Component {
 	}
 
 	getTrainList() {
-		return axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/v1/realtime/uic/${this.uic}?lat=${this.state.station.gps.lat}&long=${this.state.station.gps.long}`)
+		return axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/v2/realtime/uic/${this.uic}?lat=${this.state.station.gps.lat}&long=${this.state.station.gps.long}`)
 			.then(response => {
 				this.setState({ trains: response.data.monitored_stop_visit, isLoading: false })
 			})
@@ -182,7 +183,7 @@ export default class MonitorStation extends React.Component {
 	}
 
 	getTrafic() {
-		return axios.post(`${SSL ? 'https' : 'http'}://${API_IP}/v1/trafic`, { lines: this.state.station.lines.map(v=>v.code) })
+		return axios.post(`${SSL ? 'https' : 'http'}://${API_IP}/v1/trafic`, { lines: this.state.station.lines.map(v => v.code) })
 			.then(response => {
 				if (!isEmpty(response.data)) {
 					this.setState({ trafic: response.data })
