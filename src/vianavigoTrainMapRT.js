@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon, LatLngBounds, LatLng, divIcon, Point } from 'leaflet';
-import { Map, TileLayer, Marker, Popup, ZoomControl, Tooltip, Polyline, GeoJSON } from 'react-leaflet';
+import { Map, TileLayer, Marker, Popup, ZoomControl, Tooltip, Polyline, GeoJSON, ScaleControl } from 'react-leaflet';
 import moment from 'moment-timezone';
 import {filter} from 'lodash';
 import { THNDER_KEY } from './config';
@@ -55,6 +55,7 @@ export default class TrainMapRT extends React.Component {
 				boundsOptions={{ padding: [105, 105] }}
 				zoom={14}>
 				<ZoomControl position="bottomleft" />
+				<ScaleControl position="bottomleft" />
 				<TileLayer
 					attribution="Tiles Courtesy of <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a> - &amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
 					url={"https://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=" + THNDER_KEY}
