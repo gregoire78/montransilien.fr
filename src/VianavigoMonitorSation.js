@@ -16,9 +16,6 @@ import moment from 'moment-timezone';
 //import {Helmet} from 'react-helmet';
 //import {VelocityComponent} from 'velocity-react';
 
-let stationHeight;
-let stationElem;
-
 function getArrivalStatus(arrivalStatus) {
 	switch (arrivalStatus) {
 		case 'DELAYED':
@@ -47,13 +44,7 @@ function getCommercialMode(type) {
 
 function ListOfTrainLoaded(props) {
 	return (
-		<div ref={(elem) => {
-			if (elem) {
-				stationHeight = window.innerHeight - elem.clientHeight;
-				if (props.data.trains.length >= 7 && stationHeight <= 95) { stationElem.style.height = stationHeight + "px"; stationElem.style.lineHeight = stationHeight + "px"; }
-				else { stationElem.style.height = "50px"; stationElem.style.lineHeight = "50px"; }
-			}
-		}} id="listetrains">
+		<div id="listetrains">
 			{props.data.trains.map((train, i) => {
 				return (
 					<div className={"train " + (train.arrivalStatus ? train.arrivalStatus.toLowerCase() : "")} key={`${i}_${train.vehicleNumber}`}>
@@ -61,7 +52,6 @@ function ListOfTrainLoaded(props) {
 						<div className="group group-left">
 							<span className="numero-train">{train.vehicleName}</span>
 							<span className="retard-train">{getArrivalStatus(train.late && train.arrivalStatus !== "CANCELLED" ? train.late : train.arrivalStatus)}</span>
-							{train.distance ? <span title={`dernière postion à ${train.distance.lPosReport}`} onClick={() => props.openModal(train.distance.savedNumber)} className="distance-train">{train.distance.dataToDisplay.distance}</span> : ""}
 							<br className="after-retard-train" />
 						</div>
 						<div className="group group-middle">
@@ -72,10 +62,11 @@ function ListOfTrainLoaded(props) {
 								<span className={getCommercialMode(train.type) + " symbole light alpha"} style={train.type !== 'TER' ? { height: "1em", width: "1em", top: "0.1em", left: "0" } : { height: "1em", top: "0.1em", left: "0" }} />
 								{train.type !== 'TER' && train.line ? <span className={getCommercialMode(train.type) + " alpha ligne" + train.line.code} style={{ height: "1em", width: "1em", top: "0.1em", left: "0" }} /> : ''}
 								{" " + train.destinationName_rename}
+								
 							</span>
-							<span className="infos-track">{train.nature ? <span className="train-nature"><span style={{ fontSize: '0.7em' }}>train<br /></span>{train.nature}</span> : ""}{train.arrivalPlatformName && train.arrivalPlatformName !== " " ? <span className="voie-train">{train.arrivalPlatformName}</span> : ''}</span>
+							<span className="infos-track">{train.distance ? <span title={`dernière postion à ${train.distance.lPosReport}`} onClick={() => props.openModal(train.distance.savedNumber)} className="distance-train train-nature"> {train.distance.dataToDisplay.distance}</span> : ""}{train.arrivalPlatformName && train.arrivalPlatformName !== " " ? <span className="voie-train">{train.arrivalPlatformName}</span> : ''}</span>
 							{(i <= 1) &&
-								<div className="desserte-train" title={train.vehicle_journey_text}>
+								<div className="desserte-train">
 									{train.vehicle_journey_redux ? (train.vehicle_journey_redux.length !== 0 ? <Marquee velocity={0.06}>{join(map(train.vehicle_journey_redux, (o) => { return o.rename }), ' <span class="dot-separator">•</span> ')}</Marquee> : <p>{train.vehicle_journey_text}</p>) : ""}
 								</div>
 							}
@@ -271,7 +262,7 @@ export default class MonitorStation extends React.Component {
 						<link rel="stylesheet" type="text/css" href="dark.css" />
 					</Helmet>*/}
 					<Horloge />
-					{!this.state.isLoading ? <div ref={elem => stationElem = elem} className="station-name"><span>{this.state.station.name}</span></div> : ""}
+					{!this.state.isLoading ? <div className="station-name"><span>{this.state.station.name}</span></div> : ""}
 					{listOfTrains}
 					<div id="bottomList"></div>
 					{!this.state.isLoading ? <TraficMessage data={this.state} /> : ""}

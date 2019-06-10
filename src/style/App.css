@@ -96,7 +96,7 @@ div#heure small {
   color: #59599e;
 }
 div#heure.voie {
-	right: 45pt;
+	right: 120pt;
 }
 
 div#more_options { cursor: default; }
@@ -293,6 +293,7 @@ div.station-name {
 	background-color: #164770;
 	/*padding: 2px 0;*/
 	cursor: none;
+	font-size: 50%;
 }
 /*div.station-name span {
 	vertical-align: middle;

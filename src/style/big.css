@@ -30,7 +30,7 @@
 
 	div#listetrains.retard-flip div.group-left span.numero-train.no-flip { display: inline-block; }
 
-	span.destination-train { font-size: 160%; }
+	span.destination-train { font-size: 135%; }
 	div.force-height { min-height: 2.5em; }
 
 	div#line_filter ul:before { content: "Montrer lignesÂ : "; }
