@@ -13,6 +13,7 @@ import { API_IP, SSL, THNDER_KEY } from './config';
 import Loader from 'react-loaders';
 import Modal from 'react-modal';
 import moment from 'moment-timezone';
+import ReactTooltip from 'react-tooltip';
 //import {Helmet} from 'react-helmet';
 //import {VelocityComponent} from 'velocity-react';
 
@@ -58,12 +59,13 @@ function ListOfTrainLoaded(props) {
 							<span className="heure-train">{moment(train.expectedDepartureTime ? train.expectedDepartureTime : train.aimedDepartureTime).format('HH:mm')}</span>
 						</div>
 						<div className="group">
-							<span className="destination-train" title={(train.stop_informations ? train.stop_informations.route.name : "") + "\n" + train.vehicle_journey_text}>
+							<span className="destination-train" data-for='traintitle' data-tip={JSON.stringify({vj : train.vehicle_journey_redux, info: train.stop_informations ? train.stop_informations.route.name : ""})}>
 								<span className={getCommercialMode(train.type) + " symbole light alpha"} style={train.type !== 'TER' ? { height: "1em", width: "1em", top: "0.1em", left: "0" } : { height: "1em", top: "0.1em", left: "0" }} />
 								{train.type !== 'TER' && train.line ? <span className={getCommercialMode(train.type) + " alpha ligne" + train.line.code} style={{ height: "1em", width: "1em", top: "0.1em", left: "0" }} /> : ''}
 								{" " + train.destinationName_rename}
 								
 							</span>
+							
 							<span className="infos-track">{train.distance ? <span title={`dernière postion à ${train.distance.lPosReport}`} onClick={() => props.openModal(train.distance.savedNumber)} className="distance-train train-nature"> {train.distance.dataToDisplay.distance}</span> : ""}{train.arrivalPlatformName && train.arrivalPlatformName !== " " ? <span className="voie-train">{train.arrivalPlatformName}</span> : ''}</span>
 							{(i <= 1) &&
 								<div className="desserte-train">
@@ -74,6 +76,7 @@ function ListOfTrainLoaded(props) {
 					</div>
 				)
 			})}
+			<ReactTooltip id='traintitle' getContent={(dataTip) => {return dataTip ? <div><p style={{textDecoration: "underline"}}>{JSON.parse(dataTip).info}</p>{JSON.parse(dataTip).vj.map((v)=>{return (<div>{v.departure_time_formated} - {v.rename}</div>)})}</div> : "" }}></ReactTooltip>
 		</div>
 	);
 }
