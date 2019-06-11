@@ -59,13 +59,13 @@ function ListOfTrainLoaded(props) {
 							<span className="heure-train">{moment(train.expectedDepartureTime ? train.expectedDepartureTime : train.aimedDepartureTime).format('HH:mm')}</span>
 						</div>
 						<div className="group">
-							<span className="destination-train" data-for='traintitle' data-tip={JSON.stringify({vj : train.vehicle_journey_redux, info: train.stop_informations ? train.stop_informations.route.name : ""})}>
+							<span className="destination-train" data-for='traintitle' data-tip={JSON.stringify({ vj: train.vehicle_journey_redux, info: train.stop_informations ? train.stop_informations.route.name : "" })}>
 								<span className={getCommercialMode(train.type) + " symbole light alpha"} style={train.type !== 'TER' ? { height: "1em", width: "1em", top: "0.1em", left: "0" } : { height: "1em", top: "0.1em", left: "0" }} />
 								{train.type !== 'TER' && train.line ? <span className={getCommercialMode(train.type) + " alpha ligne" + train.line.code} style={{ height: "1em", width: "1em", top: "0.1em", left: "0" }} /> : ''}
 								{" " + train.destinationName_rename}
-								
+
 							</span>
-							
+
 							<span className="infos-track">{train.distance ? <span title={`dernière postion à ${train.distance.lPosReport}`} onClick={() => props.openModal(train.distance.savedNumber)} className="distance-train train-nature"> {train.distance.dataToDisplay.distance}</span> : ""}{train.arrivalPlatformName && train.arrivalPlatformName !== " " ? <span className="voie-train">{train.arrivalPlatformName}</span> : ''}</span>
 							{(i <= 1) &&
 								<div className="desserte-train">
@@ -76,7 +76,7 @@ function ListOfTrainLoaded(props) {
 					</div>
 				)
 			})}
-			<ReactTooltip id='traintitle' getContent={(dataTip) => {return dataTip ? <div><p style={{textDecoration: "underline"}}>{JSON.parse(dataTip).info}</p>{JSON.parse(dataTip).vj.map((v)=>{return (<div>{v.departure_time_formated} - {v.rename}</div>)})}</div> : "" }}></ReactTooltip>
+			<ReactTooltip id='traintitle' getContent={(dataTip) => { return dataTip ? <div><p style={{ textDecoration: "underline" }}>{JSON.parse(dataTip).info}</p>{JSON.parse(dataTip).vj.map((v, k) => { return (<div key={k}>{v.departure_time_formated} - {v.rename}</div>) })}</div> : "" }}></ReactTooltip>
 		</div>
 	);
 }
@@ -159,7 +159,7 @@ export default class MonitorStation extends React.Component {
 	getTrainList() {
 		return axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/v2/realtime/uic/${this.uic}?lat=${this.state.station.gps.lat}&long=${this.state.station.gps.long}`)
 			.then(response => {
-				this.setState({ trains: response.data.monitored_stop_visit, isLoading: false })
+				this.setState({ trains: response.data.monitored_stop_visit, isLoading: false }, () => { ReactTooltip.rebuild(); })
 			})
 			.catch(error => {
 				this.setState({ error: true })
