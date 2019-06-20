@@ -157,7 +157,7 @@ export default class MonitorStation extends React.Component {
 	}
 
 	getTrainList() {
-		return axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/v2/realtime/uic/${this.uic}?lat=${this.state.station.gps.lat}&long=${this.state.station.gps.long}`)
+		return axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/v2/realtime/zde/${this.uic}?lat=${this.state.station.gps.lat}&long=${this.state.station.gps.long}`)
 			.then(response => {
 				this.setState({ trains: response.data.monitored_stop_visit, isLoading: false }, () => { ReactTooltip.rebuild(); })
 			})
@@ -167,7 +167,7 @@ export default class MonitorStation extends React.Component {
 	}
 
 	getStation() {
-		return axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/v1/search/uic/${this.uic}`)
+		return axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/v2/search/zde/${this.uic}`)
 			.then(response => {
 				this.setState({ station: response.data });
 			})
