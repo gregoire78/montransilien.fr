@@ -62,12 +62,12 @@ function ListOfTrainLoaded(props) {
 							<span className="destination-train" data-for='traintitle' data-tip={JSON.stringify({ vj: train.vehicle_journey_redux, info: train.stop_informations ? train.stop_informations.route.name : "" })}>
 								<span className={getCommercialMode(train.type) + " symbole light alpha"} style={train.type !== 'TER' ? { height: "1em", width: "1em", top: "0.1em", left: "0" } : { height: "1em", top: "0.1em", left: "0" }} />
 								{train.type !== 'TER' && train.line ? <span className={getCommercialMode(train.type) + " alpha ligne" + train.line.code} style={{ height: "1em", width: "1em", top: "0.1em", left: "0" }} /> : ''}
-								{" " + train.destinationName_rename}
+								{" " + (train.destinationName_rename ? train.destinationName_rename : train.destinationName)}
 
 							</span>
 
 							<span className="infos-track">{train.distance ? <span title={`dernière postion à ${train.distance.lPosReport}`} onClick={() => props.openModal(train.distance.savedNumber)} className="distance-train train-nature"> {train.distance.dataToDisplay.distance}</span> : ""}{train.arrivalPlatformName && train.arrivalPlatformName !== " " ? <span className="voie-train">{train.arrivalPlatformName}</span> : ''}</span>
-							{(i <= 1) &&
+							{//(i <= 1) &&
 								<div className="desserte-train">
 									{train.vehicle_journey_redux ? (train.vehicle_journey_redux.length !== 0 ? <Marquee velocity={0.06}>{join(map(train.vehicle_journey_redux, (o) => { return o.rename }), ' <span class="dot-separator">•</span> ')}</Marquee> : <p>{train.vehicle_journey_text}</p>) : ""}
 								</div>
