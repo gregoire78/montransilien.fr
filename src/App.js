@@ -9,8 +9,9 @@ class App extends Component {
       <Router>
         <Switch>
           <Route exact path="/" component={Home}/>
-          {/*<Route exact path="/:uic(\d{8})" component={Monitor}/>*/}
-          <Route exact path="/:uic(\d{7})" component={Monitor}/>
+          {/*<Route exact path="/:uic(\d{8})" component={Monitor}/>
+          <Route exact path="/:uic(\d{7})" component={Monitor}/>*/}
+          <Route exact path="/:uic" component={Monitor}/>
           <Route render={() => <h1>Page not found</h1>} />
         </Switch>
       </Router>
