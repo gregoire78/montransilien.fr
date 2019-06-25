@@ -11,6 +11,7 @@ import 'loaders.css';
 import garesId from './db/gares.json';
 import lignes from './db/lignes.json';
 import { API_IP, SSL } from './config';
+import HomeMap from './HomeMap';
 
 /**
  * https://reactjs.org/docs/forms.html#controlled-components
@@ -88,7 +89,7 @@ export default class Home extends React.Component {
 				{/*<Helmet>
 					<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"/>
 				</Helmet>*/}
-				<div className="content">
+				{/*<div className="content">
 					<h1><img src="./favicon144.png" alt="logo train" /><span>Mon Transilien</span></h1>
 					<div className="search">
 						<SearchBox query={this.state.result} placeholder="Rechercher une gare" handleSearch={this.handleSearch} />
@@ -104,7 +105,8 @@ export default class Home extends React.Component {
 							})}
 						</div>
 					</div>
-				</div>
+						</div>*/}
+						<HomeMap />
 				{
 				//	isEmpty(this.state.stations) ? "" :
 				//		<Map
@@ -124,8 +126,9 @@ export default class Home extends React.Component {
 				//				</Popup>
 				//			</Marker>*/}
 				//		</Map>
+				//
+				//<Footer />
 				}
-				<Footer />
 			</div>
 		)
 	}
