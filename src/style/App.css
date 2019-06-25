@@ -305,7 +305,9 @@ span.dot-separator {
 }
 
 
-
+#Home {
+	font-size: 50%;
+}
 #Home h1 {
 	display: flex;
 	align-items:center;
