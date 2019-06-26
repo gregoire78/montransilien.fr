@@ -133,7 +133,7 @@ export default class MonitorStation extends React.Component {
 	getTrainList() {
 		return axios.get(`${SSL ? 'https' : 'http'}://${API_IP}/v2/realtime/zde/${this.uic}?lat=${this.state.station.gps.lat}&long=${this.state.station.gps.long}`)
 			.then(response => {
-				this.setState({ trains: assign(this.state.trains, response.data.monitored_stop_visit), isLoading: false }, () => { ReactTooltip.rebuild(); })
+				this.setState({ trains: assign(fill(new Array(8), null), response.data.monitored_stop_visit), isLoading: false }, () => { ReactTooltip.rebuild(); })
 			})
 			.catch(error => {
 				this.setState({ error: true })
@@ -223,7 +223,7 @@ export default class MonitorStation extends React.Component {
 					<h1 style={{ textAlign: 'center' }}>{this.state.station.name}</h1>
 					<ListOfTrainLoaded trains={this.state.trains} openModal={this.openModal} />
 					<div id="bottomList"></div>
-					{this.state.trafic.length > 0 && <TraficMessage trafic={this.state.trafic} />}
+					<TraficMessage trafic={this.state.trafic} />
 					<div id="bottomList-small"></div>
 				</div>
 
