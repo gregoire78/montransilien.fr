@@ -56,7 +56,7 @@ export default function Map() {
         /*style: function(feature) {
           return styles[feature.getGeometry().getType()];
         }*/
-        style: function(feature) {
+        style: function (feature) {
           //let size = feature.get("features").length;
           let size = _.uniqBy(feature.get("features"), o => {
             return o.get("codifligne_line_id");
@@ -112,7 +112,7 @@ export default function Map() {
       });
 
       map.addInteraction(select);
-      select.on("select", function(e) {
+      select.on("select", function (e) {
         const feature = e.target.getFeatures().item(0);
         if (feature) {
           const features = feature.get("features");
@@ -128,7 +128,7 @@ export default function Map() {
                 (o, i) =>
                   `<span class="line-img ligne${o} alpha" style="height: 1em; width: 1em; top: 0.1em; left: 0;"></span>`
               )
-              .join(" ") +
+              .join("<span style='padding: 0.1em;'></span>") +
             `<br/><a href='${uic}' target='_blank'>${uic}</a>`;
           overlay.setPosition(feature.getGeometry().getCoordinates());
         } else {
@@ -138,7 +138,7 @@ export default function Map() {
       map.addOverlay(overlay);
 
       // cursor change on point
-      map.on("pointermove", function(evt) {
+      map.on("pointermove", function (evt) {
         map.getTargetElement().style.cursor = map.hasFeatureAtPixel(evt.pixel)
           ? "pointer"
           : "";
@@ -150,7 +150,7 @@ export default function Map() {
         //overlay.setPosition(undefined);
       });
       map.on("moveend", e => {
-        const zoom = e.map.getView().getZoom();
+        //const zoom = e.map.getView().getZoom();
         /*if (zoom >= 15) {
           layerIgnRoads.setVisible(true);
           layerIgnCadastre.setVisible(true);
@@ -162,7 +162,7 @@ export default function Map() {
     } /*[]*/
   );
   return (
-    <>
+    <div id="Home">
       <div
         id="overlay"
         style={{
@@ -176,6 +176,6 @@ export default function Map() {
         }}
       />
       <div id={id} style={{ width: "100vw", height: "100vh" }} />
-    </>
+    </div>
   );
 }

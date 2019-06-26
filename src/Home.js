@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Footer from './Footer';
-import {filter, debounce} from 'lodash';
+import { filter, debounce } from 'lodash';
 import Loader from 'react-loaders';
 //import {Helmet} from "react-helmet";
 import 'loaders.css';
@@ -11,7 +11,6 @@ import 'loaders.css';
 import garesId from './db/gares.json';
 import lignes from './db/lignes.json';
 import { API_IP, SSL } from './config';
-import HomeMap from './HomeMap';
 
 /**
  * https://reactjs.org/docs/forms.html#controlled-components
@@ -89,7 +88,7 @@ export default class Home extends React.Component {
 				{/*<Helmet>
 					<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css"/>
 				</Helmet>*/}
-				{/*<div className="content">
+				<div className="content">
 					<h1><img src="./favicon144.png" alt="logo train" /><span>Mon Transilien</span></h1>
 					<div className="search">
 						<SearchBox query={this.state.result} placeholder="Rechercher une gare" handleSearch={this.handleSearch} />
@@ -105,30 +104,28 @@ export default class Home extends React.Component {
 							})}
 						</div>
 					</div>
-						</div>*/}
-						<HomeMap />
+				</div>
 				{
-				//	isEmpty(this.state.stations) ? "" :
-				//		<Map
-				//			zoomControl={false}
-				//			scrollWheelZoom={false}
-				//			style={{ position: 'fixed', top: '0', left: '0', zIndex: '-100', width: '100%', height: '100%', margin: 'auto' }}
-				//			center={[firstStation.latitude, firstStation.longitude]}
-				//			zoom={17}
-				//		>
-				//			<TileLayer
-				//				attribution="Tiles Courtesy of <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a> - &amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-				//				url={"https://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=" + THNDER_KEY}
-				//			/>
-				//			{/*<Marker position={[firstStation.latitude, firstStation.longitude]}>
-				//				<Popup>
-				//					<span><p>Gare de {firstStation.name}</p><p>{firstStation.address}</p></span>
-				//				</Popup>
-				//			</Marker>*/}
-				//		</Map>
-				//
-				//<Footer />
+					//	isEmpty(this.state.stations) ? "" :
+					//		<Map
+					//			zoomControl={false}
+					//			scrollWheelZoom={false}
+					//			style={{ position: 'fixed', top: '0', left: '0', zIndex: '-100', width: '100%', height: '100%', margin: 'auto' }}
+					//			center={[firstStation.latitude, firstStation.longitude]}
+					//			zoom={17}
+					//		>
+					//			<TileLayer
+					//				attribution="Tiles Courtesy of <a href=&quot;http://www.thunderforest.com&quot; target=&quot;_blank&quot;>Thunderforest</a> - &amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+					//				url={"https://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=" + THNDER_KEY}
+					//			/>
+					//			{/*<Marker position={[firstStation.latitude, firstStation.longitude]}>
+					//				<Popup>
+					//					<span><p>Gare de {firstStation.name}</p><p>{firstStation.address}</p></span>
+					//				</Popup>
+					//			</Marker>*/}
+					//		</Map>
 				}
+				<Footer />
 			</div>
 		)
 	}

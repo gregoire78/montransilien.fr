@@ -1,0 +1,173 @@
+div#listetrains {
+    display: table;
+    width: 100%;
+}
+
+div#listView {
+    display: flex;
+    flex-flow: column;
+    /*height: 100%;*/
+    min-height: 100vh
+}
+
+div.train {
+    display: table-row;
+    width: 100%;
+    height: 100px;
+}
+
+div.train.with-desserte {
+    height: 135px;
+}
+
+div.train:nth-child(2n+1) {
+    background-color: #0c5da5;
+}
+
+div.train:nth-child(2n) {
+    background-color: #043a6b;
+}
+
+div.train {
+    background-color: #0c5da5;
+}
+
+div.train span.heure-train {
+    color: #ffcf42;
+}
+
+div.group {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.group-left span {
+    display: block;
+}
+
+div.group-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+div.group-right {
+    max-width: calc(100vw - 9.5em);
+}
+
+span.destination-train {
+    display: flex;
+    align-items: center;
+}
+
+div.train span.numero-train {
+    color: #679fd2;
+}
+
+div.train span.retard-train {
+    font-size: 80%;
+}
+
+div.train div.desserte-train {
+    padding: 0;
+    color: #679fd2;
+    /*height: 1.3em;*/
+    /*line-height: 1em;*/
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+div.train div.desserte-train small {
+    font-size: 0.5em;
+    opacity: 0.5;
+}
+
+span.dot-separator {
+    color: #e6e014;
+}
+
+span.destination-train .text {
+    white-space: nowrap;
+    overflow: hidden;
+    width: calc(100vw - 11.5em - 0.2em);
+    text-overflow: ellipsis;
+    /*min-width: 10em;*/
+}
+
+span.infos-track {
+    /*right: 0;
+    position: absolute;*/
+    /*margin-right: 0.2em;*/
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+}
+
+span.voie-train {
+    align-items: center;
+}
+
+span.train-nature {
+    margin-right: 0.4em;
+    /*font-style: italic;*/
+    font-family: Arial, Helvetica, sans-serif;
+    /*font-size: 0.75em;*/
+    font-size: 0.715em;
+    border-left: 1px solid white;
+    padding-left: .3em;
+    width: 2.2em;
+}
+span.no.train-nature {
+    border-left: 1px solid transparent;
+}
+
+span.voie-train {
+    display: inline-flex;
+    /*align-items: flex-end;*/
+    justify-content: center;
+    /*text-align: center;*/
+    /*line-height: 1.3em;*/
+    width: 1.3em;
+    height: 1.3em;
+    border: .08em solid #ccc;
+    border-radius: 5px;
+    padding: .05em;
+    /* letter-spacing: -2px; */
+}
+
+/***
+DELAYED - CANCELED
+***/
+div.train.delayed:nth-child(2n) {
+    background-color: #a05522;
+}
+
+div.train.delayed:nth-child(2n+1) {
+    background-color: #b63;
+}
+
+div.train.canceled {
+    background-color: #b44;
+}
+
+div.train.delayed div.desserte-train,
+div.train.delayed span.numero-train {
+    color: #d9a45a;
+}
+
+div.train.delayed span.dot-separator {
+    color: #ffcf8d;
+}
+
+div.train.canceled div.desserte-train,
+div.train.canceled span.numero-train {
+    color: #e89090;
+}
+
+div.train.canceled span.dot-separator {
+    color: #ffbdb8;
+}
