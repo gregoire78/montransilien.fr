@@ -6,8 +6,8 @@
 	background-color: #222;
 }
 .content-trafic {
-	height: 2.6em;
-	padding:.2em;
+	height: 3em;
+	/*padding:.2em;*/
 	text-align: justify;
 	text-justify: inter-word;
 }
@@ -23,7 +23,7 @@
 #dots-trafic {
 	position: absolute;
 	top: auto;
-	bottom: 0;
+	bottom: 0.3em;
 	overflow: hidden;
 	white-space: nowrap;
 }
