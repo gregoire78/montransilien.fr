@@ -1,5 +1,11 @@
-@import './style/App.css';
+/*@import './style/App.css';
 @import './style/metrodna.css';
 @import './style/dark.css';
 @import './style/big.css';
-@import './style/small.css';
+@import './style/small.css';*/
+@import './styles/App.css';
+@import './styles/Horloge.css';
+@import './styles/Trafic.css';
+@import './styles/metrodna.css';
+@import './styles/Table.css';
+@import './styles/Big.css';

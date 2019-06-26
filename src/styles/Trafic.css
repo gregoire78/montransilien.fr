@@ -1,0 +1,40 @@
+.trafic {
+	/*padding: 5pt;*/
+	height: 3em;
+	overflow: hidden;
+	/*white-space: nowrap;*/
+	background-color: #222;
+}
+.content-trafic {
+	height: 2.6em;
+	padding:.2em;
+	text-align: justify;
+	text-justify: inter-word;
+}
+.slide-trafic .slick-slide {
+	border: none;
+}
+.fite{height: 100%;}
+.fite img {
+	height: 100%;
+	height: -moz-available;
+	height: stretch;
+}
+#dots-trafic {
+	position: absolute;
+	top: auto;
+	bottom: 0;
+	overflow: hidden;
+	white-space: nowrap;
+}
+#dots-trafic li {
+	margin: 0;
+	padding:0
+}
+#dots-trafic.slick-dots li button {
+	padding: 0;
+}
+#dots-trafic.slick-dots li button:before {
+	color: #c5c5d8;
+	line-height: 30px;
+}

@@ -1,0 +1,29 @@
+div#heure {
+	position: fixed;
+	top: -40pt;
+	/*bottom: -40pt;*/
+	/*right: 8pt;*/
+	right: 0;
+	width: 3.8em;
+	/*padding: 0.2em;*/
+	padding-top: 40pt;
+	/*padding-bottom: 40pt;*/
+	margin: 0;
+
+	background-color: #043a6b;
+	/*border-radius: 0.56em;*/
+	border-radius: 0 0 0 10px;
+	/*border: white 0.18em solid;*/
+	font-size: 125%;
+
+	z-index: 1;
+	cursor: default;
+
+	text-align: center;
+}
+div#heure small {
+  color: #59599e;
+}
+/*div#heure.voie {
+	right: 45pt;
+}*/
