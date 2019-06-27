@@ -64,7 +64,7 @@ function ListOfTrainLoaded(props) {
 								</div>
 								{(k <= 1) &&
 									<div className="desserte-train">
-										{train.vehicle_journey_redux ? (train.vehicle_journey_redux.length !== 0 ? <Marquee velocity={0.06}>{join(map(train.vehicle_journey_redux, (o) => { return o.rename }), ' <span class="dot-separator">•</span> ')}</Marquee> : <p>{train.vehicle_journey_text}</p>) : ""}
+										{train.vehicle_journey_redux ? (train.vehicle_journey_redux.length !== 0 ? <Marquee velocity={0.06}>{join(map(train.vehicle_journey_redux, (o) => { return o.rename }), ' <span class="dot-separator">•</span> ')}</Marquee> : train.vehicle_journey_text) : ""}
 									</div>
 								}
 							</div>
@@ -82,7 +82,7 @@ function ListOfTrainLoaded(props) {
 							<div className="group group-right">
 								<div className="group-details">
 									<span className="destination-train">
-										<span className="text">&nbsp;</span>
+										<span className="text">{props.isLoading && k <= 1? 'Chargement ...' : <>&nbsp;</>}</span>
 									</span>
 								</div>
 								{(k <= 1) &&
@@ -118,7 +118,7 @@ export default class MonitorStation extends React.Component {
 			station: { name: <>&nbsp;</>, lines: [] },
 			trains: fill(new Array(8), null),
 			trafic: [],
-			isLoading: false,
+			isLoading: true,
 			error: false,
 
 			modalIsOpen: false,
@@ -180,7 +180,6 @@ export default class MonitorStation extends React.Component {
 	}
 
 	async componentDidMount() {
-		this.setState({ isLoading: true})
 		this.socket.on('connect', () => {
 			this.getStation()
 				.then(() => this.socket.emit('hello', { zde: this.uic, lat: this.state.station.gps.lat, long: this.state.station.gps.long })) // on envoi le bonjour au server
@@ -235,7 +234,7 @@ export default class MonitorStation extends React.Component {
 				<div id="listView" className="content-list">
 					<Horloge />
 					<h1 style={{ textAlign: 'center' }}>{this.state.station.name}</h1>
-					<ListOfTrainLoaded trains={this.state.trains} openModal={this.openModal} />
+					<ListOfTrainLoaded trains={this.state.trains} openModal={this.openModal} isLoading={this.state.isLoading} />
 					<div id="bottomList"></div>
 					<TraficMessage trafic={this.state.trafic} />
 					<div id="bottomList-small"></div>
