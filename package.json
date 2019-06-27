@@ -21,6 +21,7 @@
     "react-textfit": "^1.1.0",
     "react-tooltip": "^3.10.0",
     "slick-carousel": "^1.8.1",
+    "socket.io-client": "^2.2.0",
     "throttle-debounce": "^1.1.0",
     "uuid": "^3.3.2",
     "velocity-react": "^1.4.3"

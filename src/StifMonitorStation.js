@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import io from 'socket.io-client';
 import Marquee from './Marquee';
 import Horloge from './Horloge';
 import Slider from "react-slick";
@@ -128,6 +129,7 @@ export default class MonitorStation extends React.Component {
 		this.uic = this.props.match.params.uic;
 		this.openModal = this.openModal.bind(this);
 		this.closeModal = this.closeModal.bind(this);
+		this.socket = io.connect(`${SSL ? 'https' : 'http'}://${API_IP}`);
 	}
 
 	getTrainList() {
@@ -178,21 +180,33 @@ export default class MonitorStation extends React.Component {
 	}
 
 	async componentDidMount() {
-		this.setState({ isLoading: true, geo: (await import('./db/traces-du-reseau-ferre-idf.json')) });
-		this.getStation()
-			.then(() => Promise.all([this.getTrainList(), this.getTrafic()]))
-			.then(() => {
-				if (!this.state.error) {
-					this.interval = setInterval(this.getTrainList.bind(this), 15000);
-					this.intervalTrafic = setInterval(this.getTrafic.bind(this), 60000);
-				}
-			})
-			.catch(error => { });
+		this.setState({ isLoading: true})
+		this.socket.on('connect', () => {
+			this.getStation()
+				.then(() => this.socket.emit('hello', { zde: this.uic, lat: this.state.station.gps.lat, long: this.state.station.gps.long })) // on envoi le bonjour au server
+				.then(() => Promise.all([/*this.getTrainList(),*/ this.getTrafic()]))
+				.then(async () => {
+					if (!this.state.error) {
+						this.setState({ geo: (await import('./db/traces-du-reseau-ferre-idf.json')) });
+						//this.interval = setInterval(this.getTrainList.bind(this), 15000);
+						this.intervalTrafic = setInterval(this.getTrafic.bind(this), 60000);
+					}
+				})
+				.catch(error => { });
+		});
+
+		this.socket.on('trains_by_server', async (data) => {
+			console.log(data)
+			this.setState((prevState) => {
+				// fill array with null si moins de 8 resultats
+				return { trains: assign(fill(new Array(8), null), data.monitored_stop_visit), isLoading: false }
+			}, () => { ReactTooltip.rebuild(); });
+		});
 	}
 
 	componentWillUnmount() {
 		// use intervalId from the state to clear the interval
-		clearInterval(this.interval);
+		//clearInterval(this.interval);
 		clearInterval(this.intervalTrafic);
 	}
 
