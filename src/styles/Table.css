@@ -150,7 +150,7 @@ div.train.delayed:nth-child(2n+1) {
     background-color: #b63;
 }
 
-div.train.canceled {
+div.train.cancelled {
     background-color: #b44;
 }
 
@@ -163,11 +163,11 @@ div.train.delayed span.dot-separator {
     color: #ffcf8d;
 }
 
-div.train.canceled div.desserte-train,
-div.train.canceled span.numero-train {
+div.train.cancelled div.desserte-train,
+div.train.cancelled span.numero-train {
     color: #e89090;
 }
 
-div.train.canceled span.dot-separator {
+div.train.cancelled span.dot-separator {
     color: #ffbdb8;
 }
