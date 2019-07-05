@@ -51,7 +51,7 @@ function ListOfTrainLoaded(props) {
 								<span className="heure-train">{moment(train.expectedDepartureTime ? train.expectedDepartureTime : train.aimedDepartureTime).format('HH:mm')}</span></div>
 							<div className="group group-right">
 								<div className="group-details">
-									<span className="destination-train" data-for='traintitle' data-tip={JSON.stringify({ vj: train.vehicle_journey_redux, info: train.stop_informations ? train.stop_informations.route.name : "" })}>
+									<span className="destination-train" data-for='traintitle' data-tip-disable={!(train.vehicle_journey_redux.length > 0)} data-tip={JSON.stringify({ vj: train.vehicle_journey_redux, info: train.stop_informations ? train.stop_informations.route.name : "" })}>
 										<span className={type + " symbole light alpha"} style={{ height: "1em", width: "1em", left: "0" }} />
 										<span className={type + " alpha ligne" + train.line.code} style={{ height: "1em", width: "1em", left: "0", marginRight: "5px" }} />
 										<span className="text">{train.destinationName_rename ? train.destinationName_rename : train.destinationName}</span>
@@ -82,7 +82,7 @@ function ListOfTrainLoaded(props) {
 							<div className="group group-right">
 								<div className="group-details">
 									<span className="destination-train">
-										<span className="text">{props.isLoading && k <= 1? 'Chargement ...' : <>&nbsp;</>}</span>
+										<span className="text">{props.isLoading && k <= 1 ? 'Chargement ...' : <>&nbsp;</>}</span>
 									</span>
 								</div>
 								{(k <= 1) &&
@@ -93,7 +93,12 @@ function ListOfTrainLoaded(props) {
 					)
 				}
 			})}
-			<ReactTooltip id='traintitle' getContent={(dataTip) => { return dataTip ? <div><p style={{ textDecoration: "underline" }}>{JSON.parse(dataTip).info}</p>{JSON.parse(dataTip).vj.map((v, k) => { return (<div key={k}>{v.departure_time_formated} - {v.rename}</div>) })}</div> : "" }}></ReactTooltip>
+			<ReactTooltip id='traintitle' getContent={(dataTip) => {
+				return dataTip ? <div>
+					<p style={{ textDecoration: "underline" }}>{JSON.parse(dataTip).info}</p>
+					{JSON.parse(dataTip).vj.map((v, k) => { return (<div key={k}>{v.departure_time_formated} - {v.rename}</div>) })}
+				</div> : ""
+			}}></ReactTooltip>
 		</div>
 	);
 }
