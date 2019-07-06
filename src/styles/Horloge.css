@@ -16,7 +16,7 @@ div#heure {
 	/*border: white 0.18em solid;*/
 	font-size: 125%;
 
-	z-index: 1;
+	z-index: 0;
 	cursor: default;
 
 	text-align: center;
