@@ -45,7 +45,7 @@ function ListOfTrainLoaded(props) {
 						<div key={`${k}_${train.vehicleNumber}`} className={"train " + (train.arrivalStatus ? train.arrivalStatus.toLowerCase() : "")}>
 							<div className="group group-left">
 								<span className="numero-train">{train.vehicleName}</span>
-								<span className="retard-train">{getArrivalStatus(train.late && train.arrivalStatus !== "CANCELLED" ? train.late : train.arrivalStatus)}</span>
+								{train.arrivalStatus && <span className="retard-train">{getArrivalStatus(train.late && train.arrivalStatus !== "CANCELLED" ? train.late : train.arrivalStatus)}</span>}
 							</div>
 							<div className="group group-middle">
 								<span className="heure-train">{moment(train.expectedDepartureTime ? train.expectedDepartureTime : train.aimedDepartureTime).format('HH:mm')}</span></div>
