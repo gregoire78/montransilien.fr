@@ -200,7 +200,6 @@ export default class MonitorStation extends React.Component {
 		});
 
 		this.socket.on('trains_by_server', async (data) => {
-			console.log(data)
 			this.setState((prevState) => {
 				// fill array with null si moins de 8 resultats
 				return { trains: assign(fill(new Array(8), null), data.monitored_stop_visit), isLoading: false }
