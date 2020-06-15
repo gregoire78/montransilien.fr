@@ -171,7 +171,8 @@ export default class MonitorStation extends React.Component {
 									libelle: "Ligne " + line.code
 								},
 								typeMessage: "NORMAL",
-								detailsFormatTexte: "Trafic normal"
+								detailsFormatTexte: "Trafic normal",
+								contenu: "Trafic normal",
 							})
 						} else return false
 					})
@@ -281,8 +282,8 @@ function TraficMessage(props) {
 			<Slider {...settings}>
 				{props.trafic.map((obj, k) => {
 					let content = obj.typeMessage === "TRAVAUX" ? { contenu: obj.contenu, color: "#EA663A" } :
-						(obj.typeMessage === "TRAFIC" ? { contenu: obj.detailsFormatTexte, color: "#DC0052" } :
-							{ contenu: obj.detailsFormatTexte, color: "#8BC34A" });
+						(obj.typeMessage === "TRAFIC" ? { contenu: obj.contenu, color: "#DC0052" } :
+							{ contenu: obj.contenu, color: "#8BC34A" });
 					//const text = `${obj.ligne.libelle} : ${content.contenu}`
 					return (
 						<div key={k}>
