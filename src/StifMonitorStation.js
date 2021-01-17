@@ -290,7 +290,7 @@ function TraficMessage(props) {
 							<div className="content-trafic" style={{ color: content.color }}>
 								<Textfit className="fite" mode="multi" forceSingleModeWidth={false} max={40}>
 									<div style={{ display: "flex", justifyContent: "flex-start" }}>
-										{obj.typeMessage !== "NORMAL" ? <div className="logo-trafic-info" style={{ padding: "0.23em" }}><img src={require('./tn-icon-' + obj.typeMessage.toLowerCase() + '.svg')} alt="" /></div> : ""}
+										{obj.typeMessage === "TRAFIC" || obj.typeMessage === "TRAVAUX" ? <div className="logo-trafic-info" style={{ padding: "0.23em" }}><img src={require('./tn-icon-' + obj.typeMessage.toLowerCase() + '.svg')} alt="" /></div> : ""}
 										<div style={{ padding: "0.23em" }}><span style={{ background: "black", fontStyle: "italic", paddingRight: "0.25em", paddingLeft: "0.1em" }}><span>{obj.ligne.libelle}</span></span> {content.contenu}</div>
 									</div>
 								</Textfit>
