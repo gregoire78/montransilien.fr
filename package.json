@@ -6,7 +6,7 @@
     "axios": "^0.21.1",
     "leaflet": "^1.6.0",
     "loaders.css": "^0.1.2",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "moment-timezone": "^0.5.27",
     "ol": "^5.3.3",
     "react": "^16.12.0",
